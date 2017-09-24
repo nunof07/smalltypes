@@ -1,0 +1,12 @@
+{
+	"compilerOptions": {
+		"target": "ES5",
+		"sourceMap": true,
+		"module": "amd",
+		"outFile": "js/pong.js"
+	},
+    "exclude": [
+		"node_modules",
+		"bin"
+	]
+}
