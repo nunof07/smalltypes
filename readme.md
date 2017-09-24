@@ -1,6 +1,6 @@
 # Pong
 
-Pong game made with Phaser.
+Pong game made with [Phaser](http://phaser.io/).
 
 ## Credits
 
@@ -9,7 +9,7 @@ Pong game made with Phaser.
 
 ### Art tools used
 
-- [Bitmap Font Generator](Bitmap Font Generator): to create bitmap fonts from TrueType.
+- [Bitmap Font Generator](http://www.angelcode.com/products/bmfont/): to create bitmap fonts from TrueType.
 - [Bfxr](http://www.bfxr.net/): to create sound effects.
 - [Piskel](http://www.piskelapp.com/): to draw sprites.
 
