@@ -13,23 +13,13 @@ Pong game made with [Phaser](http://phaser.io/).
 - [Bfxr](http://www.bfxr.net/): to create sound effects.
 - [Piskel](http://www.piskelapp.com/): to draw sprites.
 
-## Requirements
-
-- Install npm.
-- Install Typescript: `npm install -g typescript`.
-- Install Typescript typings: `npm install -g typings`.
-
 ## Setup
 
 - Clone repo.
+- Install npm.
 - Run `npm install` to install dependencies.
 
-## Build
+## Build/Run
 
-- Install Visual Studio Code.
-- Run build task: `Ctrl+Shift+B`.
-
-## Play
-
-- Run game using `npm start`.
+- Run `gulp`. Default task will build, start server and watch for changes.
 - Open game in browser (check console for which URL to use).

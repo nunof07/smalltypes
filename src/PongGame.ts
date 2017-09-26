@@ -2,7 +2,7 @@ import BootState from './states/BootState';
 import PreloaderState from './states/PreloaderState';
 import GameState from './states/GameState';
 
-export class PongGame {
+export default class PongGame {
 	private _game: Phaser.Game;
 
 	constructor() {
