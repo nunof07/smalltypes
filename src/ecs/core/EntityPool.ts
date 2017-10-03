@@ -1,7 +1,7 @@
 import Entity from './Entity';
-import Component from './Component';
+import ComponentId from './ComponentId';
 
 export default interface EntityPool {
     create(): Entity;
-    query(components: Component[]): Entity[];
+    query(components: ComponentId[]): Entity[];
 }

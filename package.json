@@ -16,6 +16,7 @@
     "gulp-load-plugins": "^1.5.0",
     "gulp-util": "^3.0.8",
     "gulp-watch": "^4.3.11",
+    "nano-ecs": "^2.2.1",
     "phaser-ce": "^2.8.8",
     "tsify": "^3.0.3",
     "typescript": "^2.5.3",
