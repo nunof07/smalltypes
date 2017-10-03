@@ -24,7 +24,7 @@ export default class NanoEntityPool implements EntityPool {
     }
 
     public create(): Entity {
-        var entity = this.nano.createEntity();
+        const entity = this.nano.createEntity();
         this.entities[entity.id] = new NanoEntity(entity);
 
         return this.entities[entity.id];
@@ -32,7 +32,7 @@ export default class NanoEntityPool implements EntityPool {
 
     public query(components: ComponentId[]): Entity[] {
         // REDO
-        var entities = this.nano.queryComponents(components);
+        const entities = this.nano.queryComponents(components);
 
         return entities.map(entity =>
             this.entities[entity.id]
