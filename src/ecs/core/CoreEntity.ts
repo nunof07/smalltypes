@@ -2,19 +2,14 @@ import Entity from './Entity';
 import Component from './Component';
 import ComponentId from './ComponentId';
 import ComponentNotFoundError from './ComponentNotFoundError';
+import ComponentDuplicateError from './ComponentDuplicateError';
 
 export default class CoreEntity implements Entity {
     private entityId: string;
-
-    /**
-     * Hashed collection of components.
-     * Key is component id.
-     * Value is component object.
-     */
-    private components: any;
+    private components: Map<ComponentId, Component>;
 
     constructor (id: string) {
-        this.components = {};
+        this.components = new Map();
         this.entityId = id;
     }
 
@@ -23,7 +18,11 @@ export default class CoreEntity implements Entity {
     }
 
     attach(component: Component): Entity {
-        this.components[component.id().get()] = component;
+        if (this.components.has(component.id())) {
+            throw new ComponentDuplicateError();
+        }
+        this.components.set(component.id(), component);
+
         return this;
     }
 
@@ -31,21 +30,20 @@ export default class CoreEntity implements Entity {
         components.forEach(component => {
             this.attach(component);
         });
+
         return this;
     }
 
     has(components: ComponentId[]): boolean {
-        return components.every(id => {
-            return id.get() in this.components;
-        });
+        return components.every(id => this.components.has(id));
     }
 
     get(component: ComponentId): Component {
-        if (typeof this.components[component.get()] === 'undefined') {
+        if (this.components.has(component)) {
             throw new ComponentNotFoundError();
         }
 
-        return this.components[component.get()];
+        return this.components.get(component);
     }
 
 }

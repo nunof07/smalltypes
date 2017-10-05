@@ -12,6 +12,7 @@ export default class CoreSystemCollection implements SystemCollection {
 
     register(system: System): SystemCollection {
         this.systems.push(system);
+
         return this;
     }
 
@@ -19,41 +20,39 @@ export default class CoreSystemCollection implements SystemCollection {
         systems.forEach(system => {
             this.register(system);
         });
-        return this;
-    }
-
-    private run(entities: EntityPool, callback: (system: System, entity: Entity) => void): SystemCollection {
-        this.systems.forEach(system => {
-            entities.query(system.components())
-                .forEach(entity => {
-                    callback(system, entity);
-                });
-        });
 
         return this;
     }
 
     initialize(entities: EntityPool): SystemCollection {
-        return this.run(entities, (system, entity) => {
-            system.initialize(entity);
+        this.systems.forEach(system => {
+            system.initialize(entities);
         });
+
+        return this;
     }
 
     start(entities: EntityPool): SystemCollection {
-        return this.run(entities, (system, entity) => {
-            system.start(entity);
+        this.systems.forEach(system => {
+            system.start(entities);
         });
+
+        return this;
     }
 
     process(entities: EntityPool): SystemCollection {
-        return this.run(entities, (system, entity) => {
-            system.process(entity);
+        this.systems.forEach(system => {
+            system.process(entities);
         });
+
+        return this;
     }
 
     finish(entities: EntityPool): SystemCollection {
-        return this.run(entities, (system, entity) => {
-            system.finish(entity);
+        this.systems.forEach(system => {
+            system.finish(entities);
         });
+
+        return this;
     }
 }

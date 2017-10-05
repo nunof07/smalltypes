@@ -10,11 +10,13 @@ export default class BitmapText implements Component {
     private textPosition: Position;
     private textFont: BitmapFont;
     private textSize: number;
+    private text: string;
 
-    constructor(position: Position, font: BitmapFont, size: number) {
+    constructor(position: Position, font: BitmapFont, size: number, text: string = '') {
         this.textPosition = position;
         this.textFont = font;
         this.textSize = size;
+        this.text = text;
     }
 
     id(): ComponentId {
@@ -31,6 +33,16 @@ export default class BitmapText implements Component {
 
     size(): number {
         return this.textSize;
+    }
+
+    value(): string {
+        return this.text;
+    }
+
+    update(value: string): BitmapText {
+        this.text = value;
+
+        return this;
     }
 
 }
