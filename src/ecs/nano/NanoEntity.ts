@@ -1,6 +1,7 @@
 import Entity from '../core/Entity';
 import Component from '../core/Component';
 import ComponentId from '../core/ComponentId';
+import ComponentRegistry from '../core/ComponentRegistry';
 
 export default class NanoEntity implements Entity {
     /**
@@ -9,12 +10,15 @@ export default class NanoEntity implements Entity {
      */
     private entity: any;
 
+    private registry: ComponentRegistry;
+
     /**
      * 
      * @param entity Entity created from nano-ecs.
      */
-    constructor(entity: any) {
+    constructor(entity: any, registry: ComponentRegistry) {
         this.entity = entity;
+        this.registry = registry;
     }
 
     public id(): string {
@@ -22,15 +26,13 @@ export default class NanoEntity implements Entity {
     }
 
     public attach(component: Component): void {
+        this.registry.add(component);
         this.entity.addComponent(component);
     }
 
     public has(components: ComponentId[]): boolean {
-        // REDO
         return this.entity.hasAllComponents(
-            components.map(component =>
-                component.get()
-            )
+            this.registry.getAll(components)
         );
     }
 
