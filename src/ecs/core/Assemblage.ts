@@ -1,5 +1,6 @@
 import Entity from './Entity';
+import EntityPool from './EntityPool';
 
 export default interface Assemblage {
-    create(): Entity;
+    create(pool: EntityPool): Entity;
 }

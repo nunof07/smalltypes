@@ -48,7 +48,7 @@ export default class GameState extends Phaser.State {
         if (this._ball.sprite.body.blocked.left) {
             this.score(this._players[1], false);
         }
-        
+
         if (this._ball.sprite.body.blocked.right) {
             this.score(this._players[0], true);
         }

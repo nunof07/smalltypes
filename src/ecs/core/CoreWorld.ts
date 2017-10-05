@@ -11,12 +11,23 @@ export default class CoreWorld implements World {
         this.systems = systems;
     }
 
-    initialize(): void {
+    initialize(): World {
         this.systems.initialize(this.entities);
+        return this;
     }
 
-    process(): void {
+    start(): World {
+        this.systems.start(this.entities);
+        return this;
+    }
+
+    process(): World {
         this.systems.process(this.entities);
+        return this;
     }
 
+    finish(): World {
+        this.systems.finish(this.entities);
+        return this;
+    }
 }

@@ -22,8 +22,16 @@ export default class CoreEntity implements Entity {
         return this.entityId;
     }
 
-    attach(component: Component): void {
+    attach(component: Component): Entity {
         this.components[component.id().get()] = component;
+        return this;
+    }
+
+    attachMany(components: Component[]): Entity {
+        components.forEach(component => {
+            this.attach(component);
+        });
+        return this;
     }
 
     has(components: ComponentId[]): boolean {

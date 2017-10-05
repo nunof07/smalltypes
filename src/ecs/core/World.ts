@@ -1,4 +1,6 @@
 export default interface World {
-    initialize(): void;
-    process(): void;
+    initialize(): World;
+    start(): World;
+    process(): World;
+    finish(): World;
 }
