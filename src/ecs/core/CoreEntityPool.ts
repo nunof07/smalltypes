@@ -2,6 +2,7 @@ import EntityPool from './EntityPool';
 import Entity from './Entity';
 import ComponentId from './ComponentId';
 import CoreEntity from './CoreEntity';
+import Assemblage from './Assemblage';
 
 export default class CoreEntityPool implements EntityPool {
     private entities: Entity[];
@@ -19,6 +20,14 @@ export default class CoreEntityPool implements EntityPool {
         this.entities.push(entity);
 
         return entity;
+    }
+
+    createMany(assemblages: Assemblage[]): EntityPool {
+        assemblages.forEach(assemblage => {
+            assemblage.create(this);
+        });
+
+        return this;
     }
 
     query(components: ComponentId[]): Entity[] {

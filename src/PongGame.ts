@@ -1,6 +1,7 @@
 import BootState from './states/BootState';
 import PreloaderState from './states/PreloaderState';
 import GameState from './states/GameState';
+import createWorld from './ecs/Game';
 
 export default class PongGame {
     private _game: Phaser.Game;
@@ -15,6 +16,7 @@ export default class PongGame {
     }
 
     public start() {
+        createWorld(this._game.load, this._game.add);
         this._game.state.add('boot', new BootState());
         this._game.state.add('preloader', new PreloaderState());
         this._game.state.add('game', new GameState());
