@@ -16,10 +16,10 @@ export default class CoreSystemCollection implements SystemCollection {
 
     private run(entities: EntityPool, callback: (system: System, entity: Entity) => void): void {
         this.systems.forEach(system => {
-            const found = entities.query(system.components());
-            found.forEach(entity => {
-                callback(system, entity);
-            });
+            entities.query(system.components())
+                .forEach(entity => {
+                    callback(system, entity);
+                });
         });
     }
 
