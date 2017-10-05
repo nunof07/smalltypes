@@ -6,12 +6,12 @@ export default class CoreWorld implements World {
     private entities: EntityPool;
     private systems: SystemCollection;
 
-    public constructor(entities: EntityPool, systems: SystemCollection) {
+    constructor(entities: EntityPool, systems: SystemCollection) {
         this.entities = entities;
         this.systems = systems;
     }
 
-    public initialize(): void {
+    initialize(): void {
         this.systems.initialize(this.entities);
     }
 

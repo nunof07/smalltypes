@@ -6,11 +6,11 @@ import Entity from './Entity';
 export default class CoreSystemCollection implements SystemCollection {
     private systems: System[];
 
-    public constructor() {
+    constructor() {
         this.systems = [];
     }
 
-    public register(system: System): void {
+    register(system: System): void {
         this.systems.push(system);
     }
 
@@ -23,13 +23,13 @@ export default class CoreSystemCollection implements SystemCollection {
         });
     }
 
-    public initialize(entities: EntityPool): void {
+    initialize(entities: EntityPool): void {
         this.run(entities, (system, entity) => {
             system.initialize(entity);
         });
     }
 
-    public process(entities: EntityPool): void {
+    process(entities: EntityPool): void {
         this.run(entities, (system, entity) => {
             system.process(entity);
         });
