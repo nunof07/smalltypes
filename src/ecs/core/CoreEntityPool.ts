@@ -5,19 +5,19 @@ import CoreEntity from './CoreEntity';
 import Assemblage from './Assemblage';
 
 export default class CoreEntityPool implements EntityPool {
-    private entities: Entity[];
+    private pool: Entity[];
 
     constructor() {
-        this.entities = [];
+        this.pool = [];
     }
 
     private getNewId(): string {
-        return this.entities.length + '';
+        return this.pool.length + '';
     }
 
     create(): Entity {
         const entity = new CoreEntity(this.getNewId());
-        this.entities.push(entity);
+        this.pool.push(entity);
 
         return entity;
     }
@@ -30,10 +30,8 @@ export default class CoreEntityPool implements EntityPool {
         return this;
     }
 
-    query(components: ComponentId[]): Entity[] {
-        return this.entities.filter(entity => {
-            return entity.has(components);
-        });
+    entities(): Entity[] {
+        return this.pool;
     }
 
 }

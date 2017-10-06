@@ -10,6 +10,7 @@
   "author": "",
   "license": "MIT",
   "devDependencies": {
+    "@types/core-js": "^0.9.43",
     "@types/node": "^8.0.32",
     "browserify": "^14.4.0",
     "gulp": "^3.9.1",

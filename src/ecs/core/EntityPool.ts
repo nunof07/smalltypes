@@ -5,5 +5,5 @@ import Assemblage from './Assemblage';
 export default interface EntityPool {
     create(): Entity;
     createMany(assemblages: Assemblage[]): EntityPool;
-    query(components: ComponentId[]): Entity[];
+    entities(): Entity[];
 }
