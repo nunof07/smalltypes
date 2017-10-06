@@ -7,5 +7,4 @@ export default interface SystemCollection {
     initialize(entities: EntityPool): SystemCollection;
     start(entities: EntityPool): SystemCollection;
     process(entities: EntityPool): SystemCollection;
-    finish(entities: EntityPool): SystemCollection;
 }

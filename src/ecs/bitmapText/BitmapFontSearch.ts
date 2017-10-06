@@ -1,12 +1,12 @@
+import { EntityPool } from '../core/index';
+import { Search } from '../core/index';
+import { ComponentSearch } from '../base/index';
 import BitmapFont from './BitmapFont';
-import BitmapText from '../components/BitmapText';
-import EntityPool from '../core/EntityPool';
-import Search from '../core/Search';
-import ComponentSearch from '../core/ComponentSearch';
-import BitmapTextSearch from '../assets/BitmapTextSearch';
+import BitmapText from './BitmapText';
+import BitmapTextSearch from './BitmapTextSearch';
 
 export default class BitmapFontSearch implements Search<BitmapFont> {
-    private search: BitmapTextSearch;
+    private search: ComponentSearch<BitmapText>;
 
     constructor(search: ComponentSearch<BitmapText> = new BitmapTextSearch()) {
         this.search = search;

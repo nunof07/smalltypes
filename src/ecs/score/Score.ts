@@ -1,9 +1,9 @@
-import Component from '../core/Component';
-import ComponentId from '../core/ComponentId';
-import CoreComponentId from '../core/CoreComponentId';
+import { Component } from '../core/index';
+import { ComponentId } from '../core/index';
+import { BaseComponentId } from '../base/index';
 
 export default class Score implements Component {
-    public static readonly ID = new CoreComponentId('score');
+    public static readonly ID = new BaseComponentId('score');
 
     private score: number;
 

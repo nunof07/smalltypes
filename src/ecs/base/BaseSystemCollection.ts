@@ -1,9 +1,9 @@
-import SystemCollection from './SystemCollection';
-import System from './System';
-import EntityPool from './EntityPool';
-import Entity from './Entity';
+import { Entity } from '../core/index';
+import { EntityPool } from '../core/index';
+import { System } from '../core/index';
+import { SystemCollection } from '../core/index';
 
-export default class CoreSystemCollection implements SystemCollection {
+export default class BaseSystemCollection implements SystemCollection {
     private systems: System[];
 
     constructor() {
@@ -43,14 +43,6 @@ export default class CoreSystemCollection implements SystemCollection {
     process(entities: EntityPool): SystemCollection {
         this.systems.forEach(system => {
             system.process(entities);
-        });
-
-        return this;
-    }
-
-    finish(entities: EntityPool): SystemCollection {
-        this.systems.forEach(system => {
-            system.finish(entities);
         });
 
         return this;

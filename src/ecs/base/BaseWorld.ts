@@ -1,8 +1,9 @@
-import World from './World';
-import EntityPool from './EntityPool';
-import SystemCollection from './SystemCollection';
+import { EntityPool } from '../core/index';
+import { SystemCollection } from '../core/index';
+import { World } from '../core/index';
 
-export default class CoreWorld implements World {
+
+export default class BaseWorld implements World {
     private entities: EntityPool;
     private systems: SystemCollection;
 
@@ -23,11 +24,6 @@ export default class CoreWorld implements World {
 
     process(): World {
         this.systems.process(this.entities);
-        return this;
-    }
-
-    finish(): World {
-        this.systems.finish(this.entities);
         return this;
     }
 }

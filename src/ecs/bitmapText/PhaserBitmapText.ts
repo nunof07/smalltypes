@@ -1,11 +1,11 @@
-import System from '../core/System';
-import BitmapText from '../components/BitmapText';
-import ComponentId from '../core/ComponentId';
-import EntityPool from '../core/EntityPool';
-import PhaserBitmapFontLoad from '../assets/PhaserBitmapFontLoad';
-import PhaserBitmapTextFactory from '../assets/PhaserBitmapTextFactory';
-import BitmapFontSearch from '../assets/BitmapFontSearch';
-import BitmapTextSearch from '../assets/BitmapTextSearch';
+import { System } from '../core/index';
+import { ComponentId } from '../core/index';
+import { EntityPool } from '../core/index';
+import BitmapText from './BitmapText';
+import BitmapFontSearch from './BitmapFontSearch';
+import BitmapTextSearch from './BitmapTextSearch';
+import PhaserBitmapFontLoad from './PhaserBitmapFontLoad';
+import PhaserBitmapTextFactory from './PhaserBitmapTextFactory';
 
 /**
  * Loads and creates bitmap text using Phaser.
@@ -17,10 +17,6 @@ export default class PhaserBitmapText implements System {
     constructor(loader: Phaser.Loader, factory: Phaser.GameObjectFactory) {
         this.loader = loader;
         this.factory = factory;
-    }
-
-    components(): ComponentId[] {
-        return [BitmapText.ID];
     }
 
     initialize(entities: EntityPool): System {
@@ -42,11 +38,6 @@ export default class PhaserBitmapText implements System {
     }
 
     process(entities: EntityPool): System {
-        // nothing to do
-        return this;
-    }
-
-    finish(entities: EntityPool): System {
         // nothing to do
         return this;
     }

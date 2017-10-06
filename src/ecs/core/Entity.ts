@@ -1,8 +1,9 @@
 import Component from './Component';
 import ComponentId from './ComponentId';
+import EntityId from './EntityId';
 
 export default interface Entity {
-    id(): string;
+    id(): EntityId;
     attach(component: Component): Entity;
     attachMany(components: Component[]): Entity;
     has(components: ComponentId[]): boolean;

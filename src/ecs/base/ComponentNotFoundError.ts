@@ -1,7 +1,7 @@
-import NotFoundError from './NotFoundError';
+import { NotFoundError } from '../system/index';
 
 export default class ComponentNotFoundError extends NotFoundError {
-    constructor(...args) {
+    constructor(...args: any[]) {
         super(...args);
     }
 }

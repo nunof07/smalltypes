@@ -1,8 +1,8 @@
-import Search from './Search';
-import Component from './Component';
-import ComponentId from './ComponentId';
-import EntityPool from './EntityPool';
-import Entity from './Entity';
+import { Search } from '../core/index';
+import { Component } from '../core/index';
+import { ComponentId } from '../core/index';
+import { EntityPool } from '../core/index';
+import { Entity } from '../core/index';
 import EntitySearch from './EntitySearch';
 
 export default class ComponentSearch<T extends Component> implements Search<T> {

@@ -1,6 +1,6 @@
-import ComponentId from './ComponentId';
+import { EntityId } from '../core/index';
 
-export default class CoreComponentId implements ComponentId {
+export default class BaseEntityId implements EntityId {
     private id: string;
 
     constructor(id: string) {
@@ -10,5 +10,4 @@ export default class CoreComponentId implements ComponentId {
     get(): string {
         return this.id;
     }
-
 }

@@ -1,19 +1,20 @@
-import Entity from './Entity';
-import Component from './Component';
-import ComponentId from './ComponentId';
+import { Entity } from '../core/index';
+import { EntityId } from '../core/index';
+import { Component } from '../core/index';
+import { ComponentId } from '../core/index';
 import ComponentNotFoundError from './ComponentNotFoundError';
 import ComponentDuplicateError from './ComponentDuplicateError';
 
-export default class CoreEntity implements Entity {
-    private entityId: string;
+export default class BaseEntity implements Entity {
+    private entityId: EntityId;
     private components: Map<ComponentId, Component>;
 
-    constructor (id: string) {
+    constructor (id: EntityId) {
         this.components = new Map();
         this.entityId = id;
     }
 
-    id(): string {
+    id(): EntityId {
         return this.entityId;
     }
 
@@ -39,7 +40,7 @@ export default class CoreEntity implements Entity {
     }
 
     get(component: ComponentId): Component {
-        if (this.components.has(component)) {
+        if (!this.components.has(component)) {
             throw new ComponentNotFoundError();
         }
 

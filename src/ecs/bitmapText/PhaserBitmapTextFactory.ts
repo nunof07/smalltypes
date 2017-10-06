@@ -1,4 +1,4 @@
-import BitmapText from '../components/BitmapText';
+import BitmapText from './BitmapText';
 
 export default class BitmapTextFactory {
     private factory: Phaser.GameObjectFactory;

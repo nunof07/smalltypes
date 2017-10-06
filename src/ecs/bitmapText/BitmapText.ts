@@ -1,11 +1,11 @@
-import Component from '../core/Component';
-import ComponentId from '../core/ComponentId';
-import CoreComponentId from '../core/CoreComponentId';
-import BitmapFont from '../assets/BitmapFont';
-import Position from '../assets/Position';
+import { Component } from '../core/index';
+import { ComponentId } from '../core/index';
+import { BaseComponentId } from '../base/index';
+import { Position } from '../position/index';
+import BitmapFont from './BitmapFont';
 
 export default class BitmapText implements Component {
-    public static readonly ID = new CoreComponentId('bitmapText');
+    public static readonly ID = new BaseComponentId('bitmapText');
 
     private textPosition: Position;
     private textFont: BitmapFont;
