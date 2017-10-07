@@ -1,7 +1,5 @@
-import EntityPool from './EntityPool';
+import PhasePool from './PhasePool';
 
 export default interface System {
-    initialize(entities: EntityPool): System;
-    start(entities: EntityPool): System;
-    process(entities: EntityPool): System;
+    phases(): PhasePool;
 }

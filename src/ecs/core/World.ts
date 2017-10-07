@@ -1,5 +1,7 @@
+import EntityPool from './EntityPool';
+import SystemCollection from './SystemCollection';
+
 export default interface World {
-    initialize(): World;
-    start(): World;
-    process(): World;
+    entities(): EntityPool;
+    systems(): SystemCollection;
 }

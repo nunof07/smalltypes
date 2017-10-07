@@ -3,7 +3,7 @@ import { ComponentId } from '../core/index';
 import { BaseComponentId } from '../base/index';
 
 export default class Score implements Component {
-    public static readonly ID = new BaseComponentId('score');
+    public static readonly ID = new BaseComponentId(Score.name);
 
     private score: number;
 

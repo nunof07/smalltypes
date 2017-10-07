@@ -3,4 +3,3 @@
 import PongGame from './PongGame';
 
 new PongGame().start();
-// import './ecs/main';

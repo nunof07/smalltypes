@@ -5,7 +5,7 @@ import { Position } from '../position/index';
 import BitmapFont from './BitmapFont';
 
 export default class BitmapText implements Component {
-    public static readonly ID = new BaseComponentId('bitmapText');
+    public static readonly ID = new BaseComponentId(BitmapText.name);
 
     private textPosition: Position;
     private textFont: BitmapFont;
