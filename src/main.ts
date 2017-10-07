@@ -1,6 +1,6 @@
 /// <reference path="../typings/index.d.ts"/>
 
-import PongGame from './PongGame';
+// import PongGame from './PongGame';
 
-new PongGame().start();
-// import './ecs/main';
+// new PongGame().start();
+import './ecs/main';

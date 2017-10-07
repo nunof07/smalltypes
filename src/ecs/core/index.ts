@@ -1,4 +1,4 @@
-import Assemblage from './Assemblage';
+import Prefab from './Prefab';
 import Component from './Component';
 import ComponentId from './ComponentId';
 import Entity from './Entity';
@@ -10,7 +10,7 @@ import SystemCollection from './SystemCollection';
 import World from './World';
 
 export {
-    Assemblage,
+    Prefab,
     Component,
     ComponentId,
     Entity,

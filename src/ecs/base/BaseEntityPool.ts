@@ -1,8 +1,9 @@
 import { Entity } from '../core/index';
 import { EntityId } from '../core/index';
 import { EntityPool } from '../core/index';
+import { Prefab } from '../core/index';
+import { Component } from '../core/index';
 import { ComponentId } from '../core/index';
-import { Assemblage } from '../core/index';
 import BaseEntity from './BaseEntity';
 import BaseEntityId from './BaseEntityId';
 
@@ -17,16 +18,23 @@ export default class BaseEntityPool implements EntityPool {
         return new BaseEntityId(this.pool.length + '');
     }
 
-    create(): Entity {
-        const entity = new BaseEntity(this.getNewId());
+    create(components?: Component[]): Entity {
+        const entity = new BaseEntity(
+            this.getNewId(),
+            new Map(
+                components.map(component => [component.id(), component] as [ComponentId, Component])
+            )
+        );
         this.pool.push(entity);
 
         return entity;
     }
 
-    createMany(assemblages: Assemblage[]): EntityPool {
-        assemblages.forEach(assemblage => {
-            assemblage.create(this);
+    createMany(prefabs: Prefab[]): EntityPool {
+        prefabs.forEach(prefab => {
+            this.create(
+                prefab.create()
+            );
         });
 
         return this;

@@ -1,9 +1,9 @@
 import Entity from './Entity';
-import ComponentId from './ComponentId';
-import Assemblage from './Assemblage';
+import Component from './Component';
+import Prefab from './Prefab';
 
 export default interface EntityPool {
-    create(): Entity;
-    createMany(assemblages: Assemblage[]): EntityPool;
+    create(components?: Component[]): Entity;
+    createMany(prefabs: Prefab[]): EntityPool;
     entities(): Entity[];
 }

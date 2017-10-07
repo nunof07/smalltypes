@@ -1,5 +1,4 @@
 import { System } from '../core/index';
-import { ComponentId } from '../core/index';
 import { EntityPool } from '../core/index';
 import BitmapText from './BitmapText';
 import BitmapFontSearch from './BitmapFontSearch';

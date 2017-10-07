@@ -9,8 +9,11 @@ export default class BaseEntity implements Entity {
     private entityId: EntityId;
     private components: Map<ComponentId, Component>;
 
-    constructor (id: EntityId) {
-        this.components = new Map();
+    constructor (
+        id: EntityId,
+        components: Map<ComponentId, Component> = new Map()
+    ) {
+        this.components = components;
         this.entityId = id;
     }
 

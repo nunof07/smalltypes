@@ -1,7 +1,7 @@
 import Score from './Score';
-import ScoreAssemblage from './ScoreAssemblage';
+import ScorePrefab from './ScorePrefab';
 
 export {
     Score,
-    ScoreAssemblage
+    ScorePrefab
 };

@@ -1,4 +1,3 @@
-import ComponentId from './ComponentId';
 import EntityPool from './EntityPool';
 
 export default interface System {
