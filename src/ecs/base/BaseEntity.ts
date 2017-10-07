@@ -39,12 +39,12 @@ export default class BaseEntity implements Entity {
         return components.every(id => this.components.has(id));
     }
 
-    get(component: ComponentId): Component {
+    get<T extends Component>(component: ComponentId): T {
         if (!this.components.has(component)) {
             throw new ComponentNotFoundError();
         }
 
-        return this.components.get(component);
+        return this.components.get(component) as T;
     }
 
 }

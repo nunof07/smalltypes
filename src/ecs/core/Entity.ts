@@ -7,5 +7,5 @@ export default interface Entity {
     attach(component: Component): Entity;
     attachMany(components: Component[]): Entity;
     has(components: ComponentId[]): boolean;
-    get(component: ComponentId): Component;
+    get<T extends Component>(component: ComponentId): T;
 }
