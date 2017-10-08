@@ -1,7 +1,7 @@
 import { BaseWorld } from './base/index';
 import { BaseEntityPool } from './base/index';
 import { BaseSystemCollection } from './base/index';
-import { ScorePrefab } from './score/index';
+import { Score } from './score/index';
 import { Position } from './position/index';
 import { BitmapFont } from './bitmapText/index';
 import { PhaserBitmapTextSystem } from './bitmapText/index';
@@ -14,15 +14,31 @@ export default class GameState extends Phaser.State {
 
     init(): void {
         const font = new BitmapFont('Press Start 2P', 'fonts/Press_Start_2P_0.png', 'fonts/Press_Start_2P.fnt');
+        const charSize = 32;
         const entities = new BaseEntityPool()
             .createMany([
-                new ScorePrefab(new Position(128, 128), font),
-                new ScorePrefab(new Position(this.game.world.width - 128, 128), font)
+                new Score(
+                    new Position(
+                        0.25 * this.game.world.width - 2 * charSize,
+                        4 * charSize
+                    ),
+                    font,
+                    charSize
+                ),
+                new Score(
+                    new Position(
+                        0.75 * this.game.world.width - 2 * charSize,
+                        4 * charSize
+                    ),
+                    font,
+                    charSize)
             ]);
-        const systems = new BaseSystemCollection([
-            new PhaserBitmapTextSystem(entities, this.game.load, this.game.add)
-        ]);
-        this.ecs = new BaseWorld(entities, systems);
+        this.ecs = new BaseWorld(
+            entities,
+            new BaseSystemCollection([
+                new PhaserBitmapTextSystem(entities, this.game.load, this.game.add)
+            ])
+        );
     }
 
     preload(): void {

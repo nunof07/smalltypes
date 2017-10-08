@@ -1,26 +1,30 @@
+import { Prefab } from '../core/index';
 import { Component } from '../core/index';
-import { ComponentId } from '../core/index';
-import { BaseComponentId } from '../base/index';
+import { BitmapText } from '../bitmapText/index';
+import { BitmapFont } from '../bitmapText/index';
+import { Position } from '../position/index';
+import ScoreComponent from './ScoreComponent';
 
-export default class Score implements Component {
-    public static readonly ID = new BaseComponentId(Score.name);
+export default class Score implements Prefab {
+    private position: Position;
+    private font: BitmapFont;
+    private charSize: number;
 
-    private score: number;
-
-    constructor() {
-        this.score = 0;
+    constructor(position: Position, font: BitmapFont, charSize: number) {
+        this.position = position;
+        this.font = font;
+        this.charSize = charSize;
     }
 
-    id(): ComponentId {
-        return Score.ID;
+    create(): Component[] {
+        return [
+            new ScoreComponent(),
+            new BitmapText(
+                this.position,
+                this.font,
+                this.charSize,
+                '0'
+            )
+        ];
     }
-
-    value(): number {
-        return this.score;
-    }
-
-    increment(): void {
-        this.score += 1;
-    }
-
 }

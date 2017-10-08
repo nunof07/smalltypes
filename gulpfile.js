@@ -8,7 +8,7 @@ var watchify = require('watchify');
 var plugins = gulpLoadPlugins();
 var paths = {
     build: 'dist',
-    main: 'src/main.ts',
+    main: 'src/ecs/main.ts',
     bundle: 'game.js',
     copy: [
         'src/index.html',

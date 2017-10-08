@@ -1,7 +1,7 @@
+import ScoreComponent from './ScoreComponent';
 import Score from './Score';
-import ScorePrefab from './ScorePrefab';
 
 export {
-    Score,
-    ScorePrefab
+    ScoreComponent,
+    Score
 };
