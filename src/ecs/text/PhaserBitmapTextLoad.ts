@@ -1,7 +1,9 @@
+/// <reference path="../../../typings/index.d.ts"/>
+
 import { Load } from '../base/index';
 import { EntityPool } from '../core/index';
-import PhaserBitmapFontLoad from './PhaserBitmapFontLoad';
-import BitmapFontSearch from './BitmapFontSearch';
+import { BitmapFontSearch } from '../font/index';
+import { PhaserBitmapFontLoad } from '../font/index';
 
 export default class PhaserBitmapTextLoad extends Load {
     private entities: EntityPool;
@@ -14,8 +16,10 @@ export default class PhaserBitmapTextLoad extends Load {
     }
 
     execute(): void {
-        new PhaserBitmapFontLoad(this.loader).load(
-            new BitmapFontSearch().find(this.entities)
-        );
+        new PhaserBitmapFontLoad(this.loader)
+            .load(
+                new BitmapFontSearch()
+                    .find(this.entities)
+            );
     }
 }

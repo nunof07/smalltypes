@@ -38,6 +38,12 @@ export default class BaseEntity implements Entity {
         return this;
     }
 
+    detach(id: ComponentId): Entity {
+        this.components.delete(id);
+
+        return this;
+    }
+
     has(components: ComponentId[]): boolean {
         return components.every(id => this.components.has(id));
     }

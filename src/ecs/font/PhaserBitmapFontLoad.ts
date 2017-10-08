@@ -1,3 +1,5 @@
+/// <reference path="../../../typings/index.d.ts"/>
+
 import BitmapFont from './BitmapFont';
 
 export default class PhaserBitmapFontLoad {
