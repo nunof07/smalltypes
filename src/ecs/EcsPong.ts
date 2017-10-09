@@ -1,7 +1,9 @@
-import BootState from './BootState';
-import GameState from './GameState';
+/// <reference path="../../typings/index.d.ts"/>
 
-export default class EcsPong {
+import { BootState } from './BootState';
+import { GameState } from './GameState';
+
+export class EcsPong {
     private _game: Phaser.Game;
 
     constructor() {

@@ -1,7 +1,1 @@
-import DuplicateError from './DuplicateError';
-import NotFoundError from './NotFoundError';
-
-export {
-    DuplicateError,
-    NotFoundError
-};
+export * from './errors/index';
