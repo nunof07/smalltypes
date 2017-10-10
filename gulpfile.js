@@ -32,7 +32,7 @@ function build() {
     return watchedBrowserify
         .bundle()
         .on('error', function(err){
-            console.log(err.message);
+            console.error(err.message);
             this.emit('end');
         })
         .pipe(source(paths.bundle))
