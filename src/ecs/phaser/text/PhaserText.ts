@@ -3,7 +3,7 @@
 import { WriteText } from '../../core/index';
 
 export class PhaserText implements WriteText {
-    private textObj: { text };
+    private textObj: { text: string };
 
     constructor(text: Phaser.BitmapText) {
         this.textObj = text;

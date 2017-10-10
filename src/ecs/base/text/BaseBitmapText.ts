@@ -2,9 +2,9 @@ import { BitmapFont } from '../../core/index';
 import { ComponentId } from '../../core/index';
 import { Position } from '../../core/index';
 import { BitmapTextComponent } from '../../core/index';
-import { ReadWriteText } from '../../core/index';
 import { WriteText } from '../../core/index';
 import { BaseComponentId } from '../component/index';
+import { ReadWriteText } from './ReadWriteText';
 
 export class BaseBitmapText implements BitmapTextComponent {
     public static readonly ID = new BaseComponentId(BaseBitmapText.name);

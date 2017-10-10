@@ -1,8 +1,8 @@
 import { Prefab } from '../../core/index';
 import { Component } from '../../core/index';
-import { BaseBitmapText } from '../../text/index';
-import { BitmapFont } from '../../font/index';
-import { Position } from '../../position/index';
+import { BaseBitmapText } from '../../base/index';
+import { BitmapFont } from '../../core/index';
+import { Position } from '../../core/index';
 import { ScoreComponent } from './ScoreComponent';
 
 export class Score implements Prefab {

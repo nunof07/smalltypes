@@ -31,6 +31,10 @@ var watchedBrowserify =
 function build() {
     return watchedBrowserify
         .bundle()
+        .on('error', function(err){
+            console.log(err.message);
+            this.emit('end');
+        })
         .pipe(source(paths.bundle))
         .pipe(gulp.dest(paths.build));
 }
