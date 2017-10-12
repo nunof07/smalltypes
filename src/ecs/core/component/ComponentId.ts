@@ -1,4 +1,4 @@
-import { Id } from '../id/index';
+import { Id } from '@core/index';
 
 export interface ComponentId extends Id {
 }

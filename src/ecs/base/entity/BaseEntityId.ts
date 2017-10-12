@@ -1,5 +1,5 @@
-import { EntityId } from '../../core/index';
-import { BaseId } from '../id/index';
+import { EntityId } from '@core/index';
+import { BaseId } from '@base/id/index';
 
 export class BaseEntityId extends BaseId implements EntityId {
 }

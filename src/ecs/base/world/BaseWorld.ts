@@ -1,6 +1,6 @@
-import { EntityPool } from '../../core/index';
-import { SystemCollection } from '../../core/index';
-import { World } from '../../core/index';
+import { EntityPool } from '@core/index';
+import { SystemCollection } from '@core/index';
+import { World } from '@core/index';
 
 export class BaseWorld implements World {
     private entityPool: EntityPool;

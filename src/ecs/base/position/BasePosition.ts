@@ -1,4 +1,4 @@
-import { Position } from '../../core/index';
+import { Position } from '@core/index';
 
 export class BasePosition implements Position {
     private coordinates: number[];

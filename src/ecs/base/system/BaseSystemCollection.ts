@@ -1,6 +1,6 @@
-import { System } from '../../core/index';
-import { SystemCollection } from '../../core/index';
-import { PhaseId } from '../../core/index';
+import { System } from '@core/index';
+import { SystemCollection } from '@core/index';
+import { PhaseId } from '@core/index';
 
 export class BaseSystemCollection implements SystemCollection {
     private systems: System[];

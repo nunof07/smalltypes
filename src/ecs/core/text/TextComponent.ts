@@ -1,6 +1,6 @@
-import { Component } from '../component/index';
-import { Position } from '../position/index';
-import { WriteText } from './WriteText';
+import { Component } from '@core/index';
+import { Position } from '@core/index';
+import { WriteText } from '@core/index';
 
 export interface TextComponent extends Component {
     position(): Position;

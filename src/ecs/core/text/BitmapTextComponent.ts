@@ -1,5 +1,5 @@
-import { BitmapFont } from '../font/index';
-import { TextComponent } from './TextComponent';
+import { BitmapFont } from '@core/index';
+import { TextComponent } from '@core/index';
 
 export interface BitmapTextComponent extends TextComponent {
     font(): BitmapFont;

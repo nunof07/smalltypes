@@ -1,6 +1,6 @@
-import { PhasePool } from '../../core/index';
-import { Phase } from '../../core/index';
-import { PhaseId } from '../../core/index';
+import { PhasePool } from '@core/index';
+import { Phase } from '@core/index';
+import { PhaseId } from '@core/index';
 
 export class BasePhasePool implements PhasePool {
     private phases: Map<PhaseId, Phase>;

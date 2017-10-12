@@ -1,8 +1,8 @@
-import { Entity } from '../../core/index';
-import { EntityPool } from '../../core/index';
-import { Component } from '../../core/index';
-import { ComponentId } from '../../core/index';
-import { Search } from '../../core/index';
+import { Entity } from '@core/index';
+import { EntityPool } from '@core/index';
+import { Component } from '@core/index';
+import { ComponentId } from '@core/index';
+import { Search } from '@core/index';
 
 export class EntitySearch implements Search<Entity> {
     private ids: ComponentId[];

@@ -1,7 +1,7 @@
-import { EntityPool } from '../entity/index';
-import { Phase } from '../phase/index';
-import { PhaseId } from '../phase/index';
-import { System } from './System';
+import { EntityPool } from '@core/index';
+import { Phase } from '@core/index';
+import { PhaseId } from '@core/index';
+import { System } from '@core/index';
 
 export interface SystemCollection {
     register(system: System): SystemCollection;

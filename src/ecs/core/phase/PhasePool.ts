@@ -1,5 +1,5 @@
-import { Phase } from './Phase';
-import { PhaseId } from './PhaseId';
+import { Phase } from '@core/index';
+import { PhaseId } from '@core/index';
 
 export interface PhasePool {
     has(id: PhaseId): boolean;

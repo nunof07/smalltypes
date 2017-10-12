@@ -1,15 +1,15 @@
 /// <reference path="../../typings/index.d.ts"/>
 
-import { BaseWorld } from './base/index';
-import { BaseEntityPool } from './base/index';
-import { BaseSystemCollection } from './base/index';
-import { BasePosition } from './base/index';
-import { BaseBitmapFont } from './base/index';
-import { Load } from './base/index';
-import { Start } from './base/index';
-import { PhaseExecute } from './base/index';
-import { PhaserBitmapTextSystem } from './phaser/index';
-import { Score } from './pong/index';
+import { BaseWorld } from '@base/index';
+import { BaseEntityPool } from '@base/index';
+import { BaseSystemCollection } from '@base//index';
+import { BasePosition } from '@base/index';
+import { BaseBitmapFont } from '@base/index';
+import { Load } from '@base/index';
+import { Start } from '@base/index';
+import { PhaseExecute } from '@base/index';
+import { PhaserBitmapTextSystem } from '@phaser/index';
+import { Score } from '@pong/index';
 
 export class GameState extends Phaser.State {
     private ecs: BaseWorld;

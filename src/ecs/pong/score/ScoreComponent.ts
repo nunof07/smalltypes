@@ -1,6 +1,6 @@
-import { Component } from '../../core/index';
-import { ComponentId } from '../../core/index';
-import { BaseComponentId } from '../../base/index';
+import { Component } from '@core/index';
+import { ComponentId } from '@core/index';
+import { BaseComponentId } from '@base/index';
 
 export class ScoreComponent implements Component {
     public static readonly ID = new BaseComponentId(ScoreComponent.name);

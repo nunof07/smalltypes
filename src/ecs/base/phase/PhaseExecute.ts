@@ -1,6 +1,6 @@
-import { SystemCollection } from '../../core/index';
-import { PhaseId } from '../../core/index';
-import { PhaseSearch } from '../system/index';
+import { SystemCollection } from '@core/index';
+import { PhaseId } from '@core/index';
+import { PhaseSearch } from '@base/system/index';
 
 export class PhaseExecute {
     private systems: SystemCollection;

@@ -1,6 +1,6 @@
 /// <reference path="../../../../typings/index.d.ts"/>
 
-import { WriteText } from '../../core/index';
+import { WriteText } from '@core/index';
 
 export class PhaserText implements WriteText {
     private textObj: { text: string };

@@ -1,9 +1,9 @@
-import { Entity } from '../../core/index';
-import { EntityId } from '../../core/index';
-import { Component } from '../../core/index';
-import { ComponentId } from '../../core/index';
-import { ComponentNotFoundError } from '../component/index';
-import { ComponentDuplicateError } from '../component/index';
+import { Entity } from '@core/index';
+import { EntityId } from '@core/index';
+import { Component } from '@core/index';
+import { ComponentId } from '@core/index';
+import { ComponentNotFoundError } from '@base/component/index';
+import { ComponentDuplicateError } from '@base/component/index';
 
 export class BaseEntity implements Entity {
     private entityId: EntityId;

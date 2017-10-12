@@ -1,4 +1,4 @@
-import { EntityPool } from './EntityPool';
+import { EntityPool } from '@core/index';
 
 export interface Search<T> {
     find(pool: EntityPool): T[];

@@ -1,8 +1,8 @@
-import { EntityPool } from '../../core/index';
-import { BaseSystem } from '../../base/index';
-import { PhaserBitmapTextLoad } from './PhaserBitmapTextLoad';
-import { PhaserBitmapTextStart } from './PhaserBitmapTextStart';
-import { PhaserBitmapTextFactory } from './PhaserBitmapTextFactory';
+import { EntityPool } from '@core/index';
+import { BaseSystem } from '@base/index';
+import { PhaserBitmapTextLoad } from '@phaser/index';
+import { PhaserBitmapTextStart } from '@phaser/index';
+import { PhaserBitmapTextFactory } from '@phaser/index';
 
 /**
  * Loads and creates bitmap text using Phaser.

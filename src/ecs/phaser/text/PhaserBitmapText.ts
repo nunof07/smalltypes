@@ -1,14 +1,14 @@
 /// <reference path="../../../../typings/index.d.ts"/>
 
-import { Component } from '../../core/index';
-import { ComponentId } from '../../core/index';
-import { Position } from '../../core/index';
-import { BitmapFont } from '../../core/index';
-import { BitmapTextComponent } from '../../core/index';
-import { WriteText } from '../../core/index';
-import { BaseComponentId } from '../../base/index';
-import { BasePosition } from '../../base/index';
-import { PhaserText } from '../text/index';
+import { Component } from '@core/index';
+import { ComponentId } from '@core/index';
+import { Position } from '@core/index';
+import { BitmapFont } from '@core/index';
+import { BitmapTextComponent } from '@core/index';
+import { WriteText } from '@core/index';
+import { BaseComponentId } from '@base/index';
+import { BasePosition } from '@base/index';
+import { PhaserText } from '@phaser/index';
 
 export class PhaserBitmapText implements BitmapTextComponent {
     public static readonly ID = new BaseComponentId(PhaserBitmapText.name);

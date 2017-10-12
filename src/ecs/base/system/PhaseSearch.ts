@@ -1,7 +1,7 @@
-import { SystemSearch } from '../../core/index';
-import { SystemCollection } from '../../core/index';
-import { Phase } from '../../core/index';
-import { PhaseId } from '../../core/index';
+import { SystemSearch } from '@core/index';
+import { SystemCollection } from '@core/index';
+import { Phase } from '@core/index';
+import { PhaseId } from '@core/index';
 
 export class PhaseSearch implements SystemSearch<Phase> {
     private id: PhaseId;

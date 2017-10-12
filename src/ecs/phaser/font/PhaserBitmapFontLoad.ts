@@ -1,6 +1,6 @@
 /// <reference path="../../../../typings/index.d.ts"/>
 
-import { BitmapFont } from '../../core/index';
+import { BitmapFont } from '@core/index';
 
 export class PhaserBitmapFontLoad {
     private loader: Phaser.Loader;

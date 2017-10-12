@@ -1,11 +1,11 @@
-import { Entity } from '../../core/index';
-import { EntityId } from '../../core/index';
-import { EntityPool } from '../../core/index';
-import { Prefab } from '../../core/index';
-import { Component } from '../../core/index';
-import { ComponentId } from '../../core/index';
-import { BaseEntity } from './BaseEntity';
-import { BaseEntityId } from './BaseEntityId';
+import { Entity } from '@core/index';
+import { EntityId } from '@core/index';
+import { EntityPool } from '@core/index';
+import { Prefab } from '@core/index';
+import { Component } from '@core/index';
+import { ComponentId } from '@core/index';
+import { BaseEntity } from '@base/entity/index';
+import { BaseEntityId } from '@base/entity/index';
 
 export class BaseEntityPool implements EntityPool {
     private pool: Entity[];

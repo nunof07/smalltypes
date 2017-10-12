@@ -1,9 +1,9 @@
 /// <reference path="../../../../typings/index.d.ts"/>
 
-import { EntityPool } from '../../core/index';
-import { Load } from '../../base/index';
-import { BitmapFontSearch } from '../../base/index';
-import { PhaserBitmapFontLoad } from '../font/index';
+import { EntityPool } from '@core/index';
+import { Load } from '@base/index';
+import { BitmapFontSearch } from '@base/index';
+import { PhaserBitmapFontLoad } from '@phaser/index';
 
 export class PhaserBitmapTextLoad extends Load {
     private entities: EntityPool;

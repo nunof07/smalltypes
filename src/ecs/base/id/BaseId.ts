@@ -1,4 +1,4 @@
-import { Id } from '../../core/index';
+import { Id } from '@core/index';
 
 export class BaseId implements Id {
     private id: string;
