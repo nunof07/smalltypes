@@ -1,0 +1,15 @@
+{
+    "presets": ["env"],
+    "plugins": [
+        ["module-resolver", {
+            "root": ["./"],
+            "alias": {
+                "@base": "./src/ecs/base",
+                "@core": "./src/ecs/core",
+                "@phaser": "./src/ecs/phaser",
+                "@pong": "./src/ecs/pong",
+                "@system": "./src/ecs/system"
+            }
+        }]
+    ]
+}

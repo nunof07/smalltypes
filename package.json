@@ -12,6 +12,9 @@
   "devDependencies": {
     "@types/core-js": "^0.9.43",
     "@types/node": "^8.0.34",
+    "babel-plugin-module-resolver": "^2.7.1",
+    "babel-preset-env": "^1.6.0",
+    "babelify": "^7.3.0",
     "browserify": "^14.4.0",
     "gulp": "^3.9.1",
     "gulp-connect": "^5.0.0",

@@ -1,6 +1,6 @@
 # Pong
 
-Pong game made with [Phaser](http://phaser.io/).
+Pong game made with [Phaser](http://phaser.io/). Written in [TypeScript](https://www.typescriptlang.org/).
 
 ## Credits
 
@@ -23,3 +23,29 @@ Pong game made with [Phaser](http://phaser.io/).
 
 - Run `gulp`. Default task will build, start server and watch for changes.
 - Open game in browser (check console for which URL to use).
+
+The output is transformed with [Babel](https://babeljs.io/) and bundled with [Browserify](http://browserify.org/).
+
+### Config
+
+See:
+
+- `gulp.config.json`.
+- `.babelrc`.
+- `tsconfig.json`.
+
+#### Module resolution
+
+In source code we use `@base/`, `@core/`, etc. to import modules without having to use relative paths.
+
+We need to tell both TypeScript and Babel how to resolve these paths.
+
+For TypeScript:
+
+- Open file `tsconfig.json`.
+- Configure variables `compilerOptions.baseUrl` and `compilerOptions.paths`.
+
+For Babel:
+
+- Open file `.babelrc`.
+- Configure variables `root` and `alias` for `module-resolver` under `plugins`.

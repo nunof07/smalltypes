@@ -1,4 +1,4 @@
-import { Text } from '../../core/index';
+import { Text } from '@core/index';
 
 export class ReadText implements Text {
     private text: string;

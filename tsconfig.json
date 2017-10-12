@@ -1,9 +1,18 @@
 {
     "files": [
-        "src/main.ts"
+        "src/main.ts",
+        "src/ecs/main.ts"
     ],
     "compilerOptions": {
         "noImplicitAny": true,
-        "target": "es6"
+        "target": "es6",
+        "baseUrl": ".",
+        "paths": {
+            "@base/*": ["src/ecs/base/*"],
+            "@core/*": ["src/ecs/core/*"],
+            "@phaser/*": ["src/ecs/phaser/*"],
+            "@pong/*": ["src/ecs/pong/*"],
+            "@system/*": ["src/ecs/system/*"]
+        }
     }
 }

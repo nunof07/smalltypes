@@ -1,0 +1,22 @@
+{
+    "main": "src/ecs/main.ts",
+    "dist": "dist",
+    "bundle": "game.js",
+    "copy": [
+        "src/index.html",
+        "src/assets/**/*",
+        "node_modules/phaser-ce/build/phaser.min.js"
+    ],
+    "browserify": {
+        "basedir": ".",
+        "debug": true,
+        "cache": {},
+        "packageCache": {}
+    },
+    "babel": {
+        "extensions": [
+            ".js",
+            ".ts"
+        ]
+    }
+}

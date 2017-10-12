@@ -4,56 +4,48 @@ var browserify = require('browserify');
 var source = require('vinyl-source-stream');
 var tsify = require('tsify');
 var watchify = require('watchify');
+var babelify = require("babelify");
+var config = require('./gulp.config.json');
 
 var plugins = gulpLoadPlugins();
-var paths = {
-    build: 'dist',
-    main: 'src/main.ts',
-    bundle: 'game.js',
-    copy: [
-        'src/index.html',
-        'src/assets/**/*',
-        'node_modules/phaser-ce/build/phaser.min.js'
-    ]
-};
+config.browserify.entries = [config.main];
 var watchedBrowserify =
     watchify(
-        browserify({
-            basedir: '.',
-            debug: true,
-            entries: [paths.main],
-            cache: {},
-            packageCache: {}
-        })
-        .plugin(tsify)
+        browserify(config.browserify)
+            .plugin(tsify)
+            .transform(babelify, config.babel)
     );
 
 function build() {
     return watchedBrowserify
         .bundle()
-        .on('error', function(err){
-            console.error(err.message);
+        .on('error', function(error){
+            plugins.util.log(
+                plugins.util.colors.bgRed(error.name),
+                plugins.util.colors.yellow(error.message)
+                //error.stack
+            );
             this.emit('end');
         })
-        .pipe(source(paths.bundle))
-        .pipe(gulp.dest(paths.build));
+        .pipe(source(config.bundle))
+        .pipe(gulp.dest(config.dist));
 }
 
 gulp.task('copy', function () {
-    return gulp.src(paths.copy)
-        .pipe(gulp.dest(paths.build));
+    return gulp.src(config.copy)
+        .pipe(gulp.dest(config.dist));
         //.pipe(plugins.connect.reload());
 });
 
 gulp.task('server', function () {
     plugins.connect.server({
-        root: [paths.build],
+        root: [config.dist],
         livereload: true
     });
 });
 
 gulp.task('watch', function () {
-    gulp.watch(paths.copy, ['copy']);
+    gulp.watch(config.copy, ['copy']);
 });
 
 gulp.task('default', ['server', 'copy', 'watch'], build);

@@ -1,4 +1,4 @@
-import { WriteText } from '../../core/index';
+import { WriteText } from '@core/index';
 
 export class ReadWriteText implements WriteText {
     private text: string;
