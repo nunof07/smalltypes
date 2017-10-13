@@ -1,5 +1,3 @@
-/// <reference path="../../../../typings/index.d.ts"/>
-
 import { BitmapTextComponent } from '@core/index';
 
 export class PhaserBitmapTextFactory {

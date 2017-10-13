@@ -21,7 +21,7 @@ export default class Music {
             return true;
         } else {
             this._sound.pause();
-            
+
             return false;
         }
     }

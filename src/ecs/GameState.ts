@@ -1,5 +1,3 @@
-/// <reference path="../../typings/index.d.ts"/>
-
 import { BaseWorld } from '@base/index';
 import { BaseEntityPool } from '@base/index';
 import { BaseSystemCollection } from '@base//index';

@@ -1,5 +1,3 @@
-/// <reference path="../../../../typings/index.d.ts"/>
-
 import { EntityPool } from '@core/index';
 import { Load } from '@base/index';
 import { BitmapFontSearch } from '@base/index';

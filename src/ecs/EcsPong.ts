@@ -1,5 +1,3 @@
-/// <reference path="../../typings/index.d.ts"/>
-
 import { BootState } from './BootState';
 import { GameState } from './GameState';
 

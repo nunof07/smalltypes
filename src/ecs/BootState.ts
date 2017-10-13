@@ -1,5 +1,3 @@
-/// <reference path="../../typings/index.d.ts"/>
-
 export class BootState extends Phaser.State {
     constructor() {
         super();

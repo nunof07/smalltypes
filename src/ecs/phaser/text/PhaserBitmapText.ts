@@ -1,5 +1,3 @@
-/// <reference path="../../../../typings/index.d.ts"/>
-
 import { Component } from '@core/index';
 import { ComponentId } from '@core/index';
 import { Position } from '@core/index';
