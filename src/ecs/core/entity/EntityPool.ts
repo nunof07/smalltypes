@@ -1,9 +1,9 @@
-import { Component } from '@core/index';
+import { ComponentPool } from '@core/index';
 import { Prefab } from '@core/index';
 import { Entity } from '@core/index';
 
 export interface EntityPool {
-    create(components?: Component[]): Entity;
+    create(components?: ComponentPool): Entity;
     createMany(prefabs: Prefab[]): EntityPool;
     entities(): Entity[];
 }

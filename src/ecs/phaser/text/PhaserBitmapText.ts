@@ -10,7 +10,6 @@ import { PhaserText } from '@phaser/index';
 
 export class PhaserBitmapText implements BitmapTextComponent {
     public static readonly ID = new BaseComponentId(PhaserBitmapText.name);
-
     private bitmapText: Phaser.BitmapText;
     private textFont: BitmapFont;
 
@@ -18,21 +17,16 @@ export class PhaserBitmapText implements BitmapTextComponent {
         this.bitmapText = text;
         this.textFont = font;
     }
-
     id(): ComponentId {
         return PhaserBitmapText.ID;
     }
-
     position(): Position {
         return new BasePosition(this.bitmapText.x, this.bitmapText.y);
     }
-
     font(): BitmapFont {
         return this.textFont;
     }
-
     text(): WriteText {
         return new PhaserText(this.bitmapText);
     }
-
 }

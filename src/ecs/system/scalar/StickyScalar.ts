@@ -13,6 +13,7 @@ export class StickyScalar<T> implements Scalar<T> {
         if (!this.isDone) {
             this.result = this.source.value();
             this.source = null; // lose source, no longer need it
+            this.isDone = true;
         }
 
         return this.result;

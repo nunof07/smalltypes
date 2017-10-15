@@ -1,5 +1,5 @@
 {
-    "main": "src/main.ts",
+    "main": "src/ecs/main.ts",
     "dist": "dist",
     "bundle": "game.js",
     "copy": [
