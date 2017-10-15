@@ -16,15 +16,14 @@ export class PhaserBitmapTextStart implements Phase {
             new EntitySearch(BaseBitmapText.ID)
                 .find(entities)
                 .forEach(entity => {
-                    const text = entity.components().get<BitmapTextComponent>(BaseBitmapText.ID);
                     entity.components()
-                        .attach(
-                            new PhaserBitmapText(
+                        .replace<BitmapTextComponent>(
+                            BaseBitmapText.ID,
+                            text => new PhaserBitmapText(
                                 factory.create(text),
                                 text.font()
                             )
-                        )
-                        .detach(text.id());
+                        );
                 });
         });
     }

@@ -24,13 +24,6 @@ export class MapComponentPool implements ComponentPool {
 
         return this;
     }
-    attachMany(components: Component[]): ComponentPool {
-        components.forEach(component => {
-            this.attach(component);
-        });
-
-        return this;
-    }
     detach(id: ComponentId): ComponentPool {
         this.map.delete(id);
 
@@ -45,5 +38,15 @@ export class MapComponentPool implements ComponentPool {
         }
 
         return this.map.get(component) as T;
+    }
+    replace<T extends Component>(
+        id: ComponentId,
+        callback: (component: T) => Component
+    ): ComponentPool {
+        return this.attach(
+            callback(
+                this.get<T>(id)
+            )
+        ).detach(id);
     }
 }
