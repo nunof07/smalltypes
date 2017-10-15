@@ -20,8 +20,8 @@ export class PhaserBitmapTextStart extends Start {
         new EntitySearch(BaseBitmapText.ID)
             .find(this.entities)
             .forEach(entity => {
-                const text = entity.get<BitmapTextComponent>(BaseBitmapText.ID);
-                entity
+                const text = entity.components().get<BitmapTextComponent>(BaseBitmapText.ID);
+                entity.components()
                     .attach(
                         new PhaserBitmapText(
                             this.factory.create(text),

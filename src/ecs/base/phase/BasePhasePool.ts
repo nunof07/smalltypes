@@ -1,16 +1,16 @@
 import { PhasePool } from '@core/index';
 import { Phase } from '@core/index';
 import { PhaseId } from '@core/index';
+import { MapOf } from '@system/index';
 
 export class BasePhasePool implements PhasePool {
     private phases: Map<PhaseId, Phase>;
 
     constructor(phases: Phase[] | Map<PhaseId, Phase>) {
-        this.phases = (phases instanceof Map) ? phases :
-            new Map(
-                phases.map(phase =>
-                    [phase.id(), phase] as [PhaseId, Phase]
-                )
+        this.phases = phases instanceof Map ?
+            phases :
+            new MapOf(phases, phase =>
+                [phase.id(), phase]
             );
     }
 

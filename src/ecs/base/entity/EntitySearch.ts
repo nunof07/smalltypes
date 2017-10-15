@@ -15,6 +15,6 @@ export class EntitySearch implements Search<Entity> {
 
     find(pool: EntityPool): Entity[] {
         return pool.entities()
-            .filter(entity => entity.has(this.ids));
+            .filter(entity => entity.components().has(this.ids));
     }
 }

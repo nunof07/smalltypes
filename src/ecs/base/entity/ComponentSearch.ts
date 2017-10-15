@@ -19,6 +19,6 @@ export class ComponentSearch<T extends Component> implements Search<T> {
 
     find(pool: EntityPool): T[] {
         return this.entitySearch.find(pool)
-            .map(entity => entity.get<T>(this.id));
+            .map(entity => entity.components().get<T>(this.id));
     }
 }
