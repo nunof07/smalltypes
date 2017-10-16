@@ -35,6 +35,7 @@ export class GameState extends Phaser.State {
             entities,
             new BaseSystemCollection([
                 new PhaserBitmapTextSystem(entities, this.game.load, this.game.add)
+                    .create()
             ])
         );
     }

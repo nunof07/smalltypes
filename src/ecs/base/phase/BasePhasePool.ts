@@ -13,11 +13,9 @@ export class BasePhasePool implements PhasePool {
                 [phase.id(), phase]
             );
     }
-
     has(id: PhaseId): boolean {
         return this.phases.has(id);
     }
-
     get<T extends Phase>(id: PhaseId): T {
         return this.phases.get(id) as T;
     }

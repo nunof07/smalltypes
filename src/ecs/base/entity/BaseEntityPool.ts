@@ -22,7 +22,7 @@ export class BaseEntityPool implements EntityPool {
 
         return entity;
     }
-    createMany(prefabs: Prefab[]): EntityPool {
+    createMany(prefabs: Prefab<ComponentPool>[]): EntityPool {
         prefabs.forEach(prefab => {
             this.create(
                 prefab.create()

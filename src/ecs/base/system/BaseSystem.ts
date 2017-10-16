@@ -12,7 +12,6 @@ export class BaseSystem implements System {
             new BasePhasePool(phases) :
             phases;
     }
-
     phases(): PhasePool {
         return this.phasePool;
     }

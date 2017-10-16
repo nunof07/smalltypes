@@ -8,21 +8,6 @@ export class BaseSystemCollection implements SystemCollection {
     constructor(systems?: System[]) {
         this.systems = systems || [];
     }
-
-    register(system: System): SystemCollection {
-        this.systems.push(system);
-
-        return this;
-    }
-
-    registerMany(systems: System[]): SystemCollection {
-        systems.forEach(system => {
-            this.register(system);
-        });
-
-        return this;
-    }
-
     filter(id: PhaseId): System[] {
         return this.systems.filter(system =>
             system.phases().has(id)

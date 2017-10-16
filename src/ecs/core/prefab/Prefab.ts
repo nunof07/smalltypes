@@ -1,5 +1,5 @@
 import { ComponentPool } from '@core/index';
 
-export interface Prefab {
-    create(): ComponentPool;
+export interface Prefab<T> {
+    create(): T;
 }
