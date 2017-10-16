@@ -1,12 +1,12 @@
 import { Prefab } from '@core/index';
-import { ComponentPool } from '@core/index';
+import { Components } from '@core/index';
 import { BaseBitmapText } from '@base/index';
-import { MapComponentPool } from '@base/index';
+import { ComponentsSet } from '@base/index';
 import { BitmapFont } from '@core/index';
 import { Position } from '@core/index';
 import { ScoreComponent } from '@pong/index';
 
-export class Score implements Prefab<ComponentPool> {
+export class Score implements Prefab<Components> {
     private position: Position;
     private font: BitmapFont;
 
@@ -15,8 +15,8 @@ export class Score implements Prefab<ComponentPool> {
         this.font = font;
     }
 
-    create(): ComponentPool {
-        return new MapComponentPool([
+    create(): Components {
+        return new ComponentsSet([
             new ScoreComponent(),
             new BaseBitmapText(this.position, this.font, '0')
         ]);

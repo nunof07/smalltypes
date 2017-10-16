@@ -1,12 +1,12 @@
 import { Component } from '@core/index';
 import { ComponentId } from '@core/index';
-import { ComponentPool } from '@core/index';
+import { Components } from '@core/index';
 import { ComponentDuplicateError } from '@base/component/index';
 import { ComponentNotFoundError } from '@base/component/index';
 import { Entity } from '@core/index';
 import { MapOf } from '@system/index';
 
-export class MapComponentPool implements ComponentPool {
+export class ComponentsSet implements Components {
     private map: Map<ComponentId, Component>;
 
     constructor(components: Map<ComponentId, Component> | Component[] = new Map()) {
@@ -16,7 +16,7 @@ export class MapComponentPool implements ComponentPool {
                 component => [component.id(), component]
             );
     }
-    attach(component: Component): ComponentPool {
+    attach(component: Component): Components {
         if (this.map.has(component.id())) {
             throw new ComponentDuplicateError();
         }
@@ -24,7 +24,7 @@ export class MapComponentPool implements ComponentPool {
 
         return this;
     }
-    detach(id: ComponentId): ComponentPool {
+    detach(id: ComponentId): Components {
         this.map.delete(id);
 
         return this;
@@ -42,11 +42,14 @@ export class MapComponentPool implements ComponentPool {
     replace<T extends Component>(
         id: ComponentId,
         callback: (component: T) => Component
-    ): ComponentPool {
+    ): Components {
         return this.attach(
             callback(
                 this.get<T>(id)
             )
         ).detach(id);
+    }
+    [Symbol.iterator](): Iterator<Component> {
+        return this.map.values();
     }
 }
