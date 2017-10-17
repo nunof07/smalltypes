@@ -1,18 +1,18 @@
-import { PhasePool } from '@core/index';
+import { Phases } from '@core/index';
 import { System } from '@core/index';
 import { Phase } from '@core/index';
 import { PhaseId } from '@core/index';
-import { BasePhasePool } from '@base/phase/index';
+import { PhaseSet } from '@base/phase/index';
 
 export class BaseSystem implements System {
-    private phasePool: PhasePool;
+    private phaseSet: Phases;
 
-    constructor(phases: PhasePool | Phase[] | Map<PhaseId, Phase>) {
-        this.phasePool = (phases instanceof Array || phases instanceof Map) ?
-            new BasePhasePool(phases) :
+    constructor(phases: Phases | Phase[] | Map<PhaseId, Phase>) {
+        this.phaseSet = (phases instanceof Array || phases instanceof Map) ?
+            new PhaseSet(phases) :
             phases;
     }
-    phases(): PhasePool {
-        return this.phasePool;
+    phases(): Phases {
+        return this.phaseSet;
     }
 }

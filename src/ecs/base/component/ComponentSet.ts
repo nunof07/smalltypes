@@ -6,7 +6,7 @@ import { ComponentNotFoundError } from '@base/component/index';
 import { Entity } from '@core/index';
 import { MapOf } from '@system/index';
 
-export class ComponentsSet implements Components {
+export class ComponentSet implements Components {
     private map: Map<ComponentId, Component>;
 
     constructor(components: Map<ComponentId, Component> | Component[] = new Map()) {

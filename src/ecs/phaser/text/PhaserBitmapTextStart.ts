@@ -1,4 +1,4 @@
-import { EntityPool } from '@core/index';
+import { Entities } from '@core/index';
 import { BitmapTextComponent } from '@core/index';
 import { Phase } from '@core/index';
 import { Prefab } from '@core/index';
@@ -9,10 +9,10 @@ import { PhaserBitmapText } from '@phaser/index';
 import { PhaserBitmapTextFactory } from '@phaser/index';
 
 export class PhaserBitmapTextStart implements Prefab<Phase> {
-    private entities: EntityPool;
+    private entities: Entities;
     private factory: PhaserBitmapTextFactory;
 
-    constructor(entities: EntityPool, factory: PhaserBitmapTextFactory) {
+    constructor(entities: Entities, factory: PhaserBitmapTextFactory) {
         this.entities = entities;
         this.factory = factory;
     }

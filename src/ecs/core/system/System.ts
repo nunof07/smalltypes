@@ -1,5 +1,5 @@
-import { PhasePool } from '@core/index';
+import { Phases } from '@core/index';
 
 export interface System {
-    phases(): PhasePool;
+    phases(): Phases;
 }

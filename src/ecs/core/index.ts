@@ -5,6 +5,7 @@ export * from './id/index';
 export * from './phase/index';
 export * from './position/index';
 export * from './prefab/index';
+export * from './search/index';
 export * from './system/index';
 export * from './text/index';
 export * from './world/index';

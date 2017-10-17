@@ -1,7 +1,7 @@
 import { Prefab } from '@core/index';
 import { Components } from '@core/index';
 import { BaseBitmapText } from '@base/index';
-import { ComponentsSet } from '@base/index';
+import { ComponentSet } from '@base/index';
 import { BitmapFont } from '@core/index';
 import { Position } from '@core/index';
 import { ScoreComponent } from '@pong/index';
@@ -16,7 +16,7 @@ export class Score implements Prefab<Components> {
     }
 
     create(): Components {
-        return new ComponentsSet([
+        return new ComponentSet([
             new ScoreComponent(),
             new BaseBitmapText(this.position, this.font, '0')
         ]);

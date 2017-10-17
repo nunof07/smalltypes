@@ -1,11 +1,10 @@
 import { Search } from '@core/index';
 import { Component } from '@core/index';
 import { ComponentId } from '@core/index';
-import { EntityPool } from '@core/index';
-import { Entity } from '@core/index';
+import { Entities } from '@core/index';
 import { EntitySearch } from '@base/entity/index';
 
-export class ComponentSearch<T extends Component> implements Search<T> {
+export class ComponentSearch<T extends Component> implements Search<Entities, T> {
     private id: ComponentId;
     private entitySearch: EntitySearch;
 
@@ -16,9 +15,8 @@ export class ComponentSearch<T extends Component> implements Search<T> {
         this.id = id;
         this.entitySearch = entitySearch;
     }
-
-    find(pool: EntityPool): T[] {
-        return this.entitySearch.find(pool)
+    find(entities: Entities): T[] {
+        return this.entitySearch.find(entities)
             .map(entity => entity.components().get<T>(this.id));
     }
 }

@@ -1,4 +1,4 @@
-import { EntityPool } from '@core/index';
+import { Entities } from '@core/index';
 import { Prefab } from '@core/index';
 import { System } from '@core/index';
 import { BaseSystem } from '@base/index';
@@ -10,11 +10,11 @@ import { PhaserBitmapTextFactory } from '@phaser/index';
  * Loads and creates bitmap text using Phaser.
  */
 export class PhaserBitmapTextSystem implements Prefab<System> {
-    private entities: EntityPool;
+    private entities: Entities;
     private loader: Phaser.Loader;
     private factory: Phaser.GameObjectFactory;
 
-    constructor(entities: EntityPool, loader: Phaser.Loader, factory: Phaser.GameObjectFactory) {
+    constructor(entities: Entities, loader: Phaser.Loader, factory: Phaser.GameObjectFactory) {
         this.entities = entities;
         this.loader = loader;
         this.factory = factory;

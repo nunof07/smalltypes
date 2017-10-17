@@ -1,21 +1,19 @@
-import { EntityPool } from '@core/index';
-import { SystemCollection } from '@core/index';
+import { Entities } from '@core/index';
+import { Systems } from '@core/index';
 import { World } from '@core/index';
 
 export class BaseWorld implements World {
-    private entityPool: EntityPool;
-    private systemCollection: SystemCollection;
+    private entityPool: Entities;
+    private systemCollection: Systems;
 
-    constructor(entities: EntityPool, systems: SystemCollection) {
+    constructor(entities: Entities, systems: Systems) {
         this.entityPool = entities;
         this.systemCollection = systems;
     }
-
-    entities(): EntityPool {
+    entities(): Entities {
         return this.entityPool;
     }
-
-    systems(): SystemCollection {
+    systems(): Systems {
         return this.systemCollection;
     }
 }

@@ -5,7 +5,7 @@ import { ComponentId } from '@core/index';
 import { Components } from '@core/index';
 import { ComponentNotFoundError } from '@base/component/index';
 import { ComponentDuplicateError } from '@base/component/index';
-import { ComponentsSet } from '@base/component/index';
+import { ComponentSet } from '@base/component/index';
 
 export class BaseEntity implements Entity {
     private entityId: EntityId;
@@ -13,7 +13,7 @@ export class BaseEntity implements Entity {
 
     constructor (
         id: EntityId,
-        components: Components = new ComponentsSet()
+        components: Components = new ComponentSet()
     ) {
         this.entityId = id;
         this.entityComponents = components;

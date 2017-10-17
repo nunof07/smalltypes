@@ -1,3 +1,2 @@
 export * from './System';
-export * from './SystemCollection';
-export * from './SystemSearch';
+export * from './Systems';
