@@ -1,5 +1,6 @@
 var gulp = require('gulp');
 var gulpLoadPlugins = require('gulp-load-plugins');
+var tslint = require('tslint');
 var browserify = require('browserify');
 var source = require('vinyl-source-stream');
 var tsify = require('tsify');
@@ -14,7 +15,9 @@ var watchedBrowserify =
         browserify(config.browserify)
             .plugin(tsify)
             .transform(babelify, config.babel)
-    );
+    )
+    .on('update', build)
+    .on('log', plugins.util.log);
 
 function build() {
     return watchedBrowserify
@@ -31,6 +34,17 @@ function build() {
         .pipe(gulp.dest(config.dist));
 }
 
+gulp.task('tslint', function () {
+    var program = tslint.Linter.createProgram('./tsconfig.json');
+
+    return gulp.src(config.ts)
+        .pipe(plugins.tslint({
+            program: program,
+            formatter: 'stylish'
+        }))
+        .pipe(plugins.tslint.report({ emitError: false }));
+});
+
 gulp.task('copy', function () {
     return gulp.src(config.copy)
         .pipe(gulp.dest(config.dist));
@@ -46,8 +60,7 @@ gulp.task('server', function () {
 
 gulp.task('watch', function () {
     gulp.watch(config.copy, ['copy']);
+    gulp.watch(config.ts, ['tslint']);
 });
 
-gulp.task('default', ['server', 'copy', 'watch'], build);
-watchedBrowserify.on('update', build);
-watchedBrowserify.on('log', plugins.util.log);
+gulp.task('default', ['server', 'copy', 'watch', 'tslint'], build);

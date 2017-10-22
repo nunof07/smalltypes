@@ -2,6 +2,7 @@
     "main": "src/main.ts",
     "dist": "dist",
     "bundle": "game.js",
+    "ts": "src/**/*.ts",
     "copy": [
         "src/index.html",
         "src/assets/**/*",
