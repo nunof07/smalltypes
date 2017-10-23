@@ -8,7 +8,8 @@
                 "@core": "./src/ecs/core",
                 "@phaser": "./src/ecs/phaser",
                 "@pong": "./src/ecs/pong",
-                "@system": "./src/ecs/system"
+                "@system": "./src/ecs/system",
+                "@main": "./src/remake/main"
             }
         }]
     ]

@@ -1,19 +1,16 @@
 {
-    "files": [
-        "node_modules/phaser-ce/typescript/phaser.comments.d.ts",
-        "src/main.ts",
-        "src/ecs/main.ts"
-    ],
     "compilerOptions": {
         "noImplicitAny": true,
         "target": "es6",
         "baseUrl": ".",
+        "sourceMap": true,
         "paths": {
             "@base/*": ["src/ecs/base/*"],
             "@core/*": ["src/ecs/core/*"],
             "@phaser/*": ["src/ecs/phaser/*"],
             "@pong/*": ["src/ecs/pong/*"],
-            "@system/*": ["src/ecs/system/*"]
+            "@system/*": ["src/ecs/system/*"],
+            "@main/*": ["src/remake/main/*"]
         }
     }
 }

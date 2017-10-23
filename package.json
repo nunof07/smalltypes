@@ -5,24 +5,53 @@
   "main": "dist/game.js",
   "scripts": {
     "start": "gulp",
-    "test": "echo \"Error: no test specified\" && exit 1"
+    "test": "mocha --recursive --require ts-node/register --require source-map-support/register src/**/*.spec.ts",
+    "coverage": "nyc npm run test"
+  },
+  "nyc": {
+    "include": [
+      "src/remake/main/**/*.ts"
+    ],
+    "extension": [
+      ".ts",
+      ".tsx"
+    ],
+    "exclude": [
+      "**/index.ts",
+      "**/*.d.ts"
+    ],
+    "require": [
+      "ts-node/register"
+    ],
+    "reporter": [
+      "text"
+    ],
+    "all": true
   },
   "author": "",
   "license": "MIT",
   "devDependencies": {
+    "@types/chai": "^4.0.4",
     "@types/core-js": "^0.9.43",
+    "@types/mocha": "^2.2.43",
     "@types/node": "^8.0.34",
     "babel-plugin-module-resolver": "^2.7.1",
     "babel-preset-env": "^1.6.0",
     "babelify": "^7.3.0",
     "browserify": "^14.4.0",
+    "chai": "^4.1.2",
     "gulp": "^3.9.1",
     "gulp-connect": "^5.0.0",
+    "gulp-istanbul": "^1.1.2",
     "gulp-load-plugins": "^1.5.0",
+    "gulp-mocha": "^4.3.1",
     "gulp-tslint": "^8.1.2",
     "gulp-util": "^3.0.8",
     "gulp-watch": "^4.3.11",
+    "nyc": "^11.2.1",
     "phaser-ce": "^2.9.1",
+    "source-map-support": "^0.5.0",
+    "ts-node": "^3.3.0",
     "tsify": "^3.0.3",
     "tslint": "^5.7.0",
     "tslint-microsoft-contrib": "^5.0.1",

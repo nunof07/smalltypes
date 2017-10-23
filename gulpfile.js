@@ -5,9 +5,10 @@ var browserify = require('browserify');
 var source = require('vinyl-source-stream');
 var tsify = require('tsify');
 var watchify = require('watchify');
-var babelify = require("babelify");
+var babelify = require('babelify');
 var config = require('./gulp.config.json');
 
+var watching = true;
 var plugins = gulpLoadPlugins();
 config.browserify.entries = [config.main];
 var watchedBrowserify =
@@ -22,13 +23,16 @@ var watchedBrowserify =
 function build() {
     return watchedBrowserify
         .bundle()
-        .on('error', function(error){
+        .on('error', function (error) {
             plugins.util.log(
                 plugins.util.colors.bgRed(error.name),
                 plugins.util.colors.yellow(error.message)
                 //error.stack
             );
-            this.emit('end');
+
+            if (watching) {
+                this.emit('end');
+            }
         })
         .pipe(source(config.bundle))
         .pipe(gulp.dest(config.dist));
@@ -42,7 +46,28 @@ gulp.task('tslint', function () {
             program: program,
             formatter: 'stylish'
         }))
-        .pipe(plugins.tslint.report({ emitError: false }));
+        .pipe(plugins.tslint.report({
+            emitError: !watching
+        }));
+});
+
+gulp.task('istanbul:hook', function () {
+    return gulp.src([config.ts])
+        .pipe(plugins.istanbul())
+        .pipe(plugins.istanbul.hookRequire());
+});
+
+gulp.task('test', ['istanbul:hook'], function () {
+    return gulp.src(config.test)
+        .pipe(plugins.mocha({
+            require: ['ts-node/register']
+        }))
+        .on('error', function (err) {
+            if (watching) {
+                this.emit('end');
+            }
+        })
+        .pipe(plugins.istanbul.writeReports());
 });
 
 gulp.task('copy', function () {
@@ -59,6 +84,7 @@ gulp.task('server', function () {
 });
 
 gulp.task('watch', function () {
+    watching = true;
     gulp.watch(config.copy, ['copy']);
     gulp.watch(config.ts, ['tslint']);
 });
