@@ -2,7 +2,7 @@
  * Sealed test.
  */
 //import { hello } from '@main/system/index';
-import { hello } from '../../main/system/index';
+import { hello } from '@main/system/index';
 import { expect } from 'chai';
 import * as mocha from 'mocha';
 

@@ -1,4 +1,5 @@
 /**
  * Pong.
  */
-console.log('start');
+import { hello } from '@main/system/index';
+console.log(hello());

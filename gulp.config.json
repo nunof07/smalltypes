@@ -2,7 +2,7 @@
     "main": "src/remake/main/main.ts",
     "dist": "dist",
     "bundle": "game.js",
-    "ts": "src/remake/**/*.ts",
+    "src": "src/remake/**/*.ts",
     "test": "src/**/*.spec.ts",
     "copy": [
         "src/index.html",
@@ -20,6 +20,16 @@
         "extensions": [
             ".js",
             ".ts"
+        ]
+    },
+    "tslint": {
+        "formatter": "stylish"
+    },
+    "mocha": {
+        "require": [
+            "ts-node/register",
+            "tsconfig-paths/register",
+            "source-map-support/register"
         ]
     }
 }

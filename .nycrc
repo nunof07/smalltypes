@@ -1,0 +1,22 @@
+{
+    "include": [
+        "src/remake/main/**/*.ts"
+    ],
+    "extension": [
+        ".ts",
+        ".tsx"
+    ],
+    "exclude": [
+        "**/index.ts",
+        "**/*.d.ts"
+    ],
+    "require": [
+        "ts-node/register",
+        "tsconfig-paths/register",
+        "source-map-support/register"
+    ],
+    "reporter": [
+        "text"
+    ],
+    "all": true
+}

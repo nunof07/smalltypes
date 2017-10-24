@@ -27,7 +27,6 @@ function build() {
             plugins.util.log(
                 plugins.util.colors.bgRed(error.name),
                 plugins.util.colors.yellow(error.message)
-                //error.stack
             );
 
             if (watching) {
@@ -39,42 +38,31 @@ function build() {
 }
 
 gulp.task('tslint', function () {
-    var program = tslint.Linter.createProgram('./tsconfig.json');
+    config.tslint.program = tslint.Linter.createProgram('./tsconfig.json');
 
-    return gulp.src(config.ts)
-        .pipe(plugins.tslint({
-            program: program,
-            formatter: 'stylish'
-        }))
+    return gulp.src(config.src)
+        .pipe(plugins.tslint(config.tslint))
         .pipe(plugins.tslint.report({
             emitError: !watching
         }));
 });
 
-gulp.task('istanbul:hook', function () {
-    return gulp.src([config.ts])
-        .pipe(plugins.istanbul())
-        .pipe(plugins.istanbul.hookRequire());
-});
-
-gulp.task('test', ['istanbul:hook'], function () {
+gulp.task('test', function () {
     return gulp.src(config.test)
-        .pipe(plugins.mocha({
-            require: ['ts-node/register']
-        }))
+        .pipe(plugins.mocha(config.mocha))
         .on('error', function (err) {
             if (watching) {
                 this.emit('end');
             }
-        })
-        .pipe(plugins.istanbul.writeReports());
+        });
 });
 
 gulp.task('copy', function () {
     return gulp.src(config.copy)
         .pipe(gulp.dest(config.dist));
-        //.pipe(plugins.connect.reload());
 });
+
+gulp.task('build', build);
 
 gulp.task('server', function () {
     plugins.connect.server({
@@ -86,7 +74,8 @@ gulp.task('server', function () {
 gulp.task('watch', function () {
     watching = true;
     gulp.watch(config.copy, ['copy']);
-    gulp.watch(config.ts, ['tslint']);
+    gulp.watch(config.src, ['tslint']);
+    gulp.watch([config.src, config.test], ['test']);
 });
 
-gulp.task('default', ['server', 'copy', 'watch', 'tslint'], build);
+gulp.task('default', ['server', 'copy', 'watch', 'tslint', 'test'], build);
