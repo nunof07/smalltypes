@@ -9,7 +9,8 @@
                 "@phaser": "./src/ecs/phaser",
                 "@pong": "./src/ecs/pong",
                 "@system": "./src/ecs/system",
-                "@main": "./src/remake/main"
+                "@main": "./src/remake/main",
+                "@test": "./src/remake/test"
             }
         }]
     ]

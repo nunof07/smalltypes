@@ -1,5 +1,5 @@
 /**
  * Pong.
  */
-import { hello } from '@main/system/index';
-console.log(hello());
+// tslint:disable-next-line:no-console
+console.log('Hello World!');

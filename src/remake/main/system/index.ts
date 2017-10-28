@@ -1,5 +1,6 @@
 /**
  * Sytem index.
  */
-export * from './hello';
+export * from './final';
+export * from './IllegalInheritanceException';
 export * from './sealed';

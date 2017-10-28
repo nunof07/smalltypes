@@ -1,21 +1,14 @@
 /**
- * Sealed test.
+ * Sealed decorator test.
  */
-//import { hello } from '@main/system/index';
-import { hello } from '@main/system/index';
+import { Sealed } from '@test/system/Sealed';
 import { expect } from 'chai';
 import * as mocha from 'mocha';
 
-describe('Hello function', () => {
+describe('sealed decorator', () => {
 
-    it('should return hello world', () => {
-        const result: string = hello();
-        expect(result).to.equal('Hello world!');
+    it('should be sealed', () => {
+        expect(Object.isSealed(Sealed)).to.equal(true, 'sealed must be true');
     });
-
-    // it('should return hello world2', () => {
-    //     const result: string = hello();
-    //     expect(result).to.equal('Hello world2!');
-    // });
 
 });
