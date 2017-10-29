@@ -1,0 +1,4 @@
+/**
+ * Index.
+ */
+export * from './Pong';

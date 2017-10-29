@@ -1,5 +1,6 @@
+import { Pong } from '@main/pong/index';
+
 /**
- * Pong.
+ * Main.
  */
-// tslint:disable-next-line:no-console
-console.log('Hello World!');
+new Pong().start();

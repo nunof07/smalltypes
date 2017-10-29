@@ -1,6 +1,8 @@
 {
     "extends": ["tslint-microsoft-contrib"],
     "rules": {
-        "linebreak-style": [true, "CRLF"]
+        "linebreak-style": [true, "CRLF"],
+        "interface-name": [true, "never-prefix"],
+        "strict-boolean-expressions": [true, "allow-undefined-union"]
     }
 }
