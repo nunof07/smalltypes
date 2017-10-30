@@ -16,9 +16,9 @@ export class State extends Phaser.State {
     }
 
     // tslint:disable-next-line:no-any
-    public init(...args: any[]): void {
-        //this.steps.initializable.init();
-    }
+    // public init(...args: any[]): void {
+    //     //this.steps.initializable.init();
+    // }
 
     // public preload(): void {
 

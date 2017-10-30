@@ -2,7 +2,6 @@ import { final } from '@main/system/index';
 import { frozen } from '@main/system/index';
 import { IsBlank } from '@main/system/scalar/index';
 import { Scalar } from '@main/system/scalar/index';
-import { Undefined } from '@main/system/scalar/index';
 
 /**
  * Cached scalar.
@@ -25,7 +24,7 @@ export class WithFallback<T> implements Scalar<T> {
      * @param scalar Scalar.
      * @param fallback Fallback.
      */
-    constructor(scalar: Scalar<T>, fallback: Scalar<T> = new Undefined()) {
+    constructor(scalar: Scalar<T>, fallback: Scalar<T>) {
         this.source = scalar;
         this.fallback = fallback;
     }

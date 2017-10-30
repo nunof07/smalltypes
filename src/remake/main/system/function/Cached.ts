@@ -7,7 +7,7 @@ import { frozen } from '@main/system/index';
  */
 @final
 @frozen
-export class StickyFunction<X, Y> implements Function<X, Y> {
+export class Cached<X, Y> implements Function<X, Y> {
     /**
      * Function callback.
      */
@@ -36,6 +36,6 @@ export class StickyFunction<X, Y> implements Function<X, Y> {
             this.cache.set(input, this.func.apply(input));
         }
 
-        return this.cache.get(input);
+        return <Y>this.cache.get(input);
     }
 }

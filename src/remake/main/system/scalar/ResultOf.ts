@@ -7,7 +7,7 @@ import { Scalar } from '@main/system/scalar/index';
  */
 @final
 @frozen
-export class ScalarFrom<T> implements Scalar<T> {
+export class ResultOf<T> implements Scalar<T> {
     /**
      * Callback.
      */

@@ -3,7 +3,6 @@
  */
 import { Frozen } from '@test/system/Frozen';
 import { expect } from 'chai';
-import * as mocha from 'mocha';
 
 describe('frozen decorator', () => {
 

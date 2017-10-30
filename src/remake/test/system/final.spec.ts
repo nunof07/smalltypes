@@ -5,7 +5,6 @@ import { IllegalInheritanceException } from '@main/system/index';
 import { Final } from '@test/system/Final';
 import { FinalSub } from '@test/system/FinalSub';
 import { expect } from 'chai';
-import * as mocha from 'mocha';
 
 describe('final decorator', () => {
 

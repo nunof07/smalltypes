@@ -2,9 +2,7 @@ import { AnyIntArray } from '@main/system/index';
 import { final } from '@main/system/index';
 import { frozen } from '@main/system/index';
 import { Randomize } from '@main/system/random/index';
-import { NoBlank } from '@main/system/scalar/index';
 import { Scalar } from '@main/system/scalar/index';
-import { ScalarOf } from '@main/system/scalar/index';
 
 /**
  * Generate random int.
@@ -28,6 +26,7 @@ export class RandomizedInt implements Scalar<number> {
      */
     constructor(randomize: Randomize = new Randomize(), getArray: (length: number) => AnyIntArray) {
         this.randomize = randomize;
+        this.getArray = getArray;
     }
 
     /**

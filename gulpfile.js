@@ -8,7 +8,7 @@ var watchify = require('watchify');
 var babelify = require('babelify');
 var config = require('./gulp.config.json');
 
-var watching = true;
+var watching = false;
 var plugins = gulpLoadPlugins();
 config.browserify.entries = [config.main];
 var watchedBrowserify =
@@ -74,8 +74,19 @@ gulp.task('server', function () {
 gulp.task('watch', function () {
     watching = true;
     gulp.watch(config.copy, ['copy']);
-    gulp.watch(config.src, ['tslint']);
-    gulp.watch([config.src, config.test], ['test']);
+    gulp.watch(config.src, function () { plugins.sequence('tslint', 'test'); });
+    gulp.watch(config.test, ['test']);
 });
 
-gulp.task('default', ['server', 'copy', 'watch', 'tslint', 'test'], build);
+gulp.task('default', function (cb) {
+    watching = true;
+    plugins.sequence(
+        'copy',
+        'tslint',
+        'test',
+        'build',
+        'server',
+        'watch',
+        cb
+    );
+});

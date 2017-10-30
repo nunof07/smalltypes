@@ -1,4 +1,3 @@
-import { final } from '@main/system/index';
 import { Final } from '@test/system/Final';
 
 /**
