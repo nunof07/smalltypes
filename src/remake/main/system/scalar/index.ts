@@ -3,6 +3,7 @@
  */
 export * from './Cached';
 export * from './IsBlank';
+export * from './IsNotBlank';
 export * from './IsNull';
 export * from './IsUndefined';
 export * from './MapOf';
