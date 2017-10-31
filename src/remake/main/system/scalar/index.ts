@@ -10,5 +10,6 @@ export * from './NoBlank';
 export * from './ResultOf';
 export * from './Scalar';
 export * from './ScalarOf';
+export * from './Ternary';
 export * from './Undefined';
 export * from './WithFallback';

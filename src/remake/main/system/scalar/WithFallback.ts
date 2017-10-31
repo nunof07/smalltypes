@@ -2,6 +2,7 @@ import { final } from '@main/system/index';
 import { frozen } from '@main/system/index';
 import { IsBlank } from '@main/system/scalar/index';
 import { Scalar } from '@main/system/scalar/index';
+import { Ternary } from '@main/system/scalar/index';
 
 /**
  * Cached scalar.
@@ -12,12 +13,7 @@ export class WithFallback<T> implements Scalar<T> {
     /**
      * Source.
      */
-    private source: Scalar<T>;
-
-    /**
-     * Fallback value.
-     */
-    private fallback: Scalar<T>;
+    private scalar: Scalar<T>;
 
     /**
      * Ctor.
@@ -25,18 +21,17 @@ export class WithFallback<T> implements Scalar<T> {
      * @param fallback Fallback.
      */
     constructor(scalar: Scalar<T>, fallback: Scalar<T>) {
-        this.source = scalar;
-        this.fallback = fallback;
+        this.scalar = new Ternary(
+            new IsBlank(scalar),
+            fallback,
+            scalar
+        );
     }
 
     /**
      * Get the value.
      */
     public value(): T {
-        if (new IsBlank(this.source).value()) {
-            return this.fallback.value();
-        }
-
-        return this.source.value();
+        return this.scalar.value();
     }
 }
