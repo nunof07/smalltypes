@@ -4,6 +4,19 @@
         "linebreak-style": [true, "CRLF"],
         "interface-name": [true, "never-prefix"],
         "strict-boolean-expressions": [true, "allow-undefined-union"],
-        "no-unused-variable": true
+        "no-unused-variable": true,
+        "function-name": [
+            true,
+            {
+
+                "method-regex": "^([a-z][\\w\\d]+)|(\\[Symbol\\.[a-z][\\w\\d]+\\])$", // original: "^[a-z][\\w\\d]+$"
+
+                // unchanged
+                "private-method-regex": "^[a-z][\\w\\d]+$",
+                "protected-method-regex": "^[a-z][\\w\\d]+$",
+                "static-method-regex": "^[A-Z_\\d]+$",
+                "function-regex": "^[a-z][\\w\\d]+$"
+            }
+        ]
     }
 }
