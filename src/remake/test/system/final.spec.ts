@@ -1,7 +1,7 @@
 /**
  * Final decorator test.
  */
-import { IllegalInheritanceException } from '@main/system/index';
+import { IllegalInheritanceError } from '@main/system/index';
 import { Final } from '@test/system/Final';
 import { FinalSub } from '@test/system/FinalSub';
 import { expect } from 'chai';
@@ -21,7 +21,7 @@ describe('final decorator', () => {
     });
 
     it('should forbid sub classes', () => {
-        expect(() => new FinalSub()).to.throw(IllegalInheritanceException);
+        expect(() => new FinalSub()).to.throw(IllegalInheritanceError);
     });
 
 });

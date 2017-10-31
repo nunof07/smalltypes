@@ -1,6 +1,6 @@
 import { final } from '@main/system/index';
 import { frozen } from '@main/system/index';
-import { IllegalStateException } from '@main/system/index';
+import { IllegalStateError } from '@main/system/index';
 import { IsBlank } from '@main/system/scalar/index';
 import { Scalar } from '@main/system/scalar/index';
 
@@ -21,7 +21,7 @@ export class NoBlank<T> implements Scalar<T> {
 
     public value(): T {
         if (new IsBlank(this.scalar).value()) {
-            throw new IllegalStateException('Must have a value');
+            throw new IllegalStateError('Must have a value');
         }
 
         return this.scalar.value();
