@@ -1,4 +1,4 @@
-import { StateSteps } from '@main/core/index';
+//import { StateSteps } from '@main/core/index';
 import { final } from '@main/system/index';
 import { frozen } from '@main/system/index';
 
@@ -8,11 +8,11 @@ import { frozen } from '@main/system/index';
 @final
 @frozen
 export class State extends Phaser.State {
-    private steps: StateSteps;
+    //private steps: StateSteps;
 
-    constructor(steps: StateSteps) {
+    constructor() {//steps: StateSteps) {
         super();
-        this.steps = steps;
+        //this.steps = steps;
     }
 
     // tslint:disable-next-line:no-any

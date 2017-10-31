@@ -2,9 +2,9 @@ import { Function } from '@main/system/function/index';
 import { AnyIntArray } from '@main/system/index';
 import { final } from '@main/system/index';
 import { frozen } from '@main/system/index';
+import { Crypto } from '@main/system/random/index';
 import { NoBlank } from '@main/system/scalar/index';
 import { Scalar } from '@main/system/scalar/index';
-import { ScalarOf } from '@main/system/scalar/index';
 
 /**
  * Fill array with cryptographically strong random values.
@@ -21,8 +21,8 @@ export class Randomize implements Function<AnyIntArray, AnyIntArray> {
      * Ctor.
      * @param source Source.
      */
-    constructor(source: RandomSource = crypto || (<{ msCrypto?: Crypto }>window).msCrypto) {
-        this.source = new NoBlank(new ScalarOf(source));
+    constructor(source: Scalar<RandomSource> = new Crypto()) {
+        this.source = new NoBlank(source);
     }
 
     /**

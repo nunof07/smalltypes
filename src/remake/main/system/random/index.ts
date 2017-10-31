@@ -1,6 +1,7 @@
 /**
  * Index.
  */
+export * from './Crypto';
 export * from './Randomize';
 export * from './RandomizedInt';
 export * from './RandomizedInt8';

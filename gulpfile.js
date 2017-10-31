@@ -74,7 +74,13 @@ gulp.task('server', function () {
 gulp.task('watch', function () {
     watching = true;
     gulp.watch(config.copy, ['copy']);
-    gulp.watch(config.src, function () { plugins.sequence('tslint', 'test'); });
+    gulp.watch(config.src, function () {
+        plugins.sequence('tslint', 'test')(function (err) {
+            if (err) {
+                plugins.util.log(err);
+            }
+        });
+    });
     gulp.watch(config.test, ['test']);
 });
 
