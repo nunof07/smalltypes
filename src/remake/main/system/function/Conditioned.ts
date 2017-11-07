@@ -1,7 +1,6 @@
 import { Function } from '@main/system/function/index';
 import { final } from '@main/system/index';
 import { frozen } from '@main/system/index';
-import { Scalar } from '@main/system/scalar/index';
 
 /**
  * Function that executes conditionally.
@@ -12,7 +11,7 @@ export class Conditioned<X> implements Function<X, void> {
     /**
      * Condition.
      */
-    private readonly condition: Scalar<boolean>;
+    private readonly condition: Function<X, boolean>;
 
     /**
      * Function.
@@ -24,7 +23,7 @@ export class Conditioned<X> implements Function<X, void> {
      * @param condition Condition.
      * @param func Function.
      */
-    constructor(condition: Scalar<boolean>, func: Function<X, void>) {
+    constructor(condition: Function<X, boolean>, func: Function<X, void>) {
         this.condition = condition;
         this.func = func;
     }
@@ -34,7 +33,7 @@ export class Conditioned<X> implements Function<X, void> {
      * @param input Input.
      */
     public apply(input: X): void {
-        if (this.condition.value()) {
+        if (this.condition.apply(input)) {
             this.func.apply(input);
         }
     }

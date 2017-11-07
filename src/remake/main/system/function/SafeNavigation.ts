@@ -1,4 +1,6 @@
+import { Conditioned } from '@main/system/function/index';
 import { Function } from '@main/system/function/index';
+import { FunctionOf } from '@main/system/function/index';
 import { final } from '@main/system/index';
 import { frozen } from '@main/system/index';
 import { IsNotBlank } from '@main/system/scalar/index';
@@ -20,7 +22,12 @@ export class SafeNavigation<X> implements Function<X, void> {
      * @param func Function.
      */
     constructor(func: Function<X, void>) {
-        this.func = func;
+        this.func = new Conditioned(
+            new FunctionOf((input: X): boolean =>
+                new IsNotBlank(new ScalarOf(input)).value()
+            ),
+            func
+        );
     }
 
     /**
@@ -28,8 +35,6 @@ export class SafeNavigation<X> implements Function<X, void> {
      * @param input Input.
      */
     public apply(input: X): void {
-        if (new IsNotBlank(new ScalarOf(input)).value()) {
-            this.func.apply(input);
-        }
+        this.func.apply(input);
     }
 }
