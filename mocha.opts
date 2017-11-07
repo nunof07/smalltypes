@@ -1,4 +1,5 @@
 --recursive
+--require jsdom-global/register
 --require ts-node/register
 --require tsconfig-paths/register
 --require source-map-support/register

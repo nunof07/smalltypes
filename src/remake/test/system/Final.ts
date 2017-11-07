@@ -1,7 +1,7 @@
 import { final } from '@main/system/index';
 
 /**
- * Sealed class.
+ * Final class.
  */
 @final
 export class Final {

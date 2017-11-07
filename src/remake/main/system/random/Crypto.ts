@@ -14,6 +14,6 @@ export class Crypto implements Scalar<RandomSource> {
     public value(): RandomSource {
         const msCrypto: RandomSource | undefined = (<{ msCrypto?: RandomSource }>window).msCrypto;
 
-        return msCrypto ? msCrypto : crypto;
+        return msCrypto ? msCrypto : window.crypto;
     }
 }
