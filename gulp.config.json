@@ -3,7 +3,7 @@
     "dist": "dist",
     "bundle": "game.js",
     "src": "src/remake/**/*.ts",
-    "test": "src/**/*.spec.ts",
+    "test": "src/remake/test/**/*Test.ts",
     "copy": [
         "src/index.html",
         "src/assets/**/*",
