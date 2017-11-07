@@ -6,7 +6,7 @@
   "scripts": {
     "start": "gulp",
     "lint": "gulp tslint",
-    "test": "mocha --opts mocha.opts src/**/*.spec.ts",
+    "test": "mocha --opts mocha.opts src/remake/test/**/*Test.ts",
     "coverage": "nyc npm run test"
   },
   "author": {

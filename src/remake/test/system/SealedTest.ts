@@ -4,7 +4,7 @@ import { suite } from 'mocha-typescript';
 import { test } from 'mocha-typescript';
 
 /**
- * Sealed decorator test.
+ * {@link sealed} decorator test.
  */
 @suite
 export class SealedTest {

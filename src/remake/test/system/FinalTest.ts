@@ -6,7 +6,7 @@ import { suite } from 'mocha-typescript';
 import { test } from 'mocha-typescript';
 
 /**
- * Final decorator test.
+ * {@link final} decorator test.
  */
 @suite
 export class FinalTest {
@@ -25,8 +25,7 @@ export class FinalTest {
         expect(
             () => new Final('hello')
         ).to.not.throw(
-            Error,
-            'must not throw exception'
+            Error
         );
     }
 
@@ -35,8 +34,7 @@ export class FinalTest {
         expect(
             new Final('hello').hello()
         ).to.equal(
-            'hello',
-            'result must be hello'
+            'hello'
         );
     }
 
@@ -44,6 +42,8 @@ export class FinalTest {
     public forbidsInheritance(): void {
         expect(
             () => new FinalSub()
-        ).to.throw(IllegalInheritanceError);
+        ).to.throw(
+            IllegalInheritanceError
+        );
     }
 }

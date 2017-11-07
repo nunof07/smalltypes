@@ -4,7 +4,7 @@ import { suite } from 'mocha-typescript';
 import { test } from 'mocha-typescript';
 
 /**
- * Frozen decorator test.
+ * {@link frozen} decorator test.
  */
 @suite
 export class FrozenTest {
