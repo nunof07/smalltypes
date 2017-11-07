@@ -11,12 +11,12 @@ export class Cached<X, Y> implements Function<X, Y> {
     /**
      * Function callback.
      */
-    private func: Function<X, Y>;
+    private readonly func: Function<X, Y>;
 
     /**
      * Results map.
      */
-    private cache: Map<X, Y>;
+    private readonly cache: Map<X, Y>;
 
     /**
      * Ctor.

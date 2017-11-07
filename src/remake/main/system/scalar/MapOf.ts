@@ -13,12 +13,12 @@ export class MapOf<Z, K, V> implements Scalar<Map<K, V>> {
     /**
      * Items.
      */
-    private entries: Iterable<Z>;
+    private readonly entries: Iterable<Z>;
 
     /**
      * Function to get key value entry.
      */
-    private getEntry: Function<Z, [K, V]>;
+    private readonly getEntry: Function<Z, [K, V]>;
 
     /**
      * Ctor.

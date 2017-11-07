@@ -13,7 +13,7 @@ export class WithFallback<T> implements Scalar<T> {
     /**
      * Source.
      */
-    private scalar: Scalar<T>;
+    private readonly scalar: Scalar<T>;
 
     /**
      * Ctor.

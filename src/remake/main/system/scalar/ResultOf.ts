@@ -11,7 +11,7 @@ export class ResultOf<T> implements Scalar<T> {
     /**
      * Callback.
      */
-    private callback: () => T;
+    private readonly callback: () => T;
 
     /**
      * Ctor.

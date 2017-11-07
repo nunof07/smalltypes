@@ -14,7 +14,7 @@ export class Cached<T> implements Scalar<T> {
     /**
      * Function to return result.
      */
-    private func: Function<boolean, T>;
+    private readonly func: Function<boolean, T>;
 
     /**
      * Ctor.

@@ -5,7 +5,7 @@ import { final } from '@main/system/index';
  */
 @final
 export class Final {
-    private message: string;
+    private readonly message: string;
 
     constructor(message: string = '') {
         this.message = message;

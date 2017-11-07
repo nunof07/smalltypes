@@ -12,12 +12,12 @@ export class Conditioned<X> implements Function<X, void> {
     /**
      * Condition.
      */
-    private condition: Scalar<boolean>;
+    private readonly condition: Scalar<boolean>;
 
     /**
      * Function.
      */
-    private func: Function<X, void>;
+    private readonly func: Function<X, void>;
 
     /**
      * Ctor.

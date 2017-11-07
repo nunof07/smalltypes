@@ -11,7 +11,7 @@ export class Sharped implements Component {
     /**
      * Game.
      */
-    private game: Phaser.Game;
+    private readonly game: Phaser.Game;
 
     /**
      * Ctor.

@@ -11,7 +11,7 @@ export class FunctionOf<X, Y> implements Function<X, Y> {
     /**
      * Function callback.
      */
-    private func: (input: X) => Y;
+    private readonly func: (input: X) => Y;
 
     /**
      * Ctor.

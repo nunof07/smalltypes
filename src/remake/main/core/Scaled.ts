@@ -11,12 +11,12 @@ export class Scaled implements Component {
     /**
      * Game.
      */
-    private game: Phaser.Game;
+    private readonly game: Phaser.Game;
 
     /**
      * Scale manager.
      */
-    private scale: Phaser.ScaleManager;
+    private readonly scale: Phaser.ScaleManager;
 
     /**
      * Ctor.

@@ -11,12 +11,12 @@ export class Mapped<X, Y> implements Iterator<Y> {
     /**
      * Iterator.
      */
-    private iterator: Iterator<X>;
+    private readonly iterator: Iterator<X>;
 
     /**
      * Function.
      */
-    private func: Function<X, Y>;
+    private readonly func: Function<X, Y>;
 
     /**
      * Ctor.

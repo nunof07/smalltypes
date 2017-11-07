@@ -12,7 +12,7 @@ export class IsNotBlank<T> implements Scalar<boolean> {
     /**
      * Scalar.
      */
-    private scalar: Scalar<T>;
+    private readonly scalar: Scalar<T>;
 
     /**
      * Ctor.

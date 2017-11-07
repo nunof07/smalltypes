@@ -11,7 +11,7 @@ export class Procedure<X> implements Function<X, void> {
     /**
      * Callback.
      */
-    private procedure: (input: X) => void;
+    private readonly procedure: (input: X) => void;
 
     /**
      * Ctor.

@@ -13,7 +13,7 @@ export class SafeNavigation<X> implements Function<X, void> {
     /**
      * Function.
      */
-    private func: Function<X, void>;
+    private readonly func: Function<X, void>;
 
     /**
      * Ctor.

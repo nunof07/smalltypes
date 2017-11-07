@@ -11,17 +11,17 @@ export class Ternary<T> implements Scalar<T> {
     /**
      * Test condition.
      */
-    private condition: Scalar<boolean>;
+    private readonly condition: Scalar<boolean>;
 
     /**
      * Return when condition is true.
      */
-    private ifTrue: Scalar<T>;
+    private readonly ifTrue: Scalar<T>;
 
     /**
      * Return when condition is false.
      */
-    private otherwise: Scalar<T>;
+    private readonly otherwise: Scalar<T>;
 
     /**
      * Ctor.

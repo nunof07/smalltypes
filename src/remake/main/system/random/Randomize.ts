@@ -15,7 +15,7 @@ export class Randomize implements Function<AnyIntArray, AnyIntArray> {
     /**
      * Random source.
      */
-    private source: Scalar<RandomSource>;
+    private readonly source: Scalar<RandomSource>;
 
     /**
      * Ctor.

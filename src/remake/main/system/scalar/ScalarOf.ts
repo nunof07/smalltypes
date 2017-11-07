@@ -11,7 +11,7 @@ export class ScalarOf<T> implements Scalar<T> {
     /**
      * Source value.
      */
-    private source: T;
+    private readonly source: T;
 
     /**
      * Ctor.

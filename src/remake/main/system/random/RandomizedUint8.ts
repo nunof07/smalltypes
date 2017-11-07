@@ -13,7 +13,7 @@ export class RandomizedUint8 implements Scalar<number> {
     /**
      * Randomized int.
      */
-    private randomizedInt: RandomizedInt;
+    private readonly randomizedInt: RandomizedInt;
 
     /**
      * Ctor.

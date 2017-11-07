@@ -11,7 +11,7 @@ export class Components implements Component {
     /**
      * Components.
      */
-    private components: Iterable<Component>;
+    private readonly components: Iterable<Component>;
 
     /**
      * Ctor.

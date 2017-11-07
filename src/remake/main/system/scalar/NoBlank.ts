@@ -13,7 +13,7 @@ export class NoBlank<T> implements Scalar<T> {
     /**
      * Source.
      */
-    private scalar: Scalar<T>;
+    private readonly scalar: Scalar<T>;
 
     constructor(scalar: Scalar<T>) {
         this.scalar = scalar;

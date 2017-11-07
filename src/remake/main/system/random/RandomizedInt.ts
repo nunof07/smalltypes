@@ -13,12 +13,12 @@ export class RandomizedInt implements Scalar<number> {
     /**
      * Randomize.
      */
-    private randomize: Randomize;
+    private readonly randomize: Randomize;
 
     /**
      * Callback to get array.
      */
-    private getArray: (length: number) => AnyIntArray;
+    private readonly getArray: (length: number) => AnyIntArray;
 
     /**
      * Ctor.

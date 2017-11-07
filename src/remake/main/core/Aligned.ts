@@ -11,7 +11,7 @@ export class Aligned implements Component {
     /**
      * Scale manager.
      */
-    private scale: Phaser.ScaleManager;
+    private readonly scale: Phaser.ScaleManager;
 
     /**
      * Ctor.

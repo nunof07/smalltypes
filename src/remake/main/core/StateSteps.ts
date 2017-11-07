@@ -7,20 +7,20 @@ export type StateSteps = {
     /**
      * First function called when state starts.
      */
-    initialize?: Function<void, void>;
+    readonly initialize?: Function<void, void>;
 
     /**
      * Called after {@link load}.
      */
-    create?: Function<void, void>;
+    readonly create?: Function<void, void>;
 
     /**
      * Called after {@link initialize}. Can be used for loading assets.
      */
-    load?: Function<void, void>;
+    readonly load?: Function<void, void>;
 
     /**
      * Called after {@link create} and every time during the core loop.
      */
-    update?: Function<void, void>;
+    readonly update?: Function<void, void>;
 };
