@@ -1,6 +1,8 @@
 import { Function } from '@main/system/function/index';
+import { FunctionOf } from '@main/system/function/index';
 import { final } from '@main/system/index';
 import { frozen } from '@main/system/index';
+import { IteratorResultOf } from '@main/system/iterator/index';
 
 /**
  * Mapped iterator.
@@ -36,9 +38,11 @@ export class Mapped<X, Y> implements Iterator<Y> {
     public next(value?: any): IteratorResult<Y> {
         const iteratorNext: IteratorResult<X> = this.iterator.next(value);
 
-        return {
-            done: iteratorNext.done,
-            value: this.func.apply(iteratorNext.value)
-        };
+        return new IteratorResultOf(
+            iteratorNext.done,
+            new FunctionOf((): Y =>
+                this.func.apply(iteratorNext.value)
+            )
+        ).value();
     }
 }
