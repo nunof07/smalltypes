@@ -8,9 +8,9 @@ import { test } from 'mocha-typescript';
  */
 @suite
 export class IntArrayTest {
-    private length: (arr: IntArray) => number;
+    private readonly length: (arr: IntArray) => number;
 
-    public before(): void {
+    constructor() {
         this.length = (arr: IntArray): number => arr.length;
     }
 

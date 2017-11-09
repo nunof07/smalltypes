@@ -10,9 +10,13 @@ import { test } from 'mocha-typescript';
 @suite
 export class CryptoTest {
     @test
-    public noThrows(): void {
+    public returnsValidRandomSource(): void {
         expect(
             () => new Crypto().value()
-        ).to.not.throw();
+        ).to.satisfy((result: RandomSource): boolean => {
+            const view: ArrayBufferView = result.getRandomValues(new Int8Array(1));
+
+            return view !== null && view !== undefined;
+        });
     }
 }
