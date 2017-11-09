@@ -1,6 +1,6 @@
 # Pong
 
-Pong game made with [Phaser](http://phaser.io/). Written in [TypeScript](https://www.typescriptlang.org/). Playground to test various packages.
+Pong game made with [Phaser](http://phaser.io/). Written in [TypeScript](https://www.typescriptlang.org/). Development playground to test various packages and ideas.
 
 ## Setup
 
@@ -12,7 +12,7 @@ Pong game made with [Phaser](http://phaser.io/). Written in [TypeScript](https:/
 
 - Start: `gulp` or `npm start`.
     - Default task will build, start server and watch for changes.
-    - Open game in browser (check console for which URL to use).
+    - Main file will automatically open in the browser.
 - Lint: `gulp tslint` or `npm run lint`. Runs automatically with default task.
 - Test: `gulp test` or `npm run test`. Runs automatically with default task.
 - Test coverage: `npm run coverage`.

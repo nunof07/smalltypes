@@ -65,10 +65,15 @@ gulp.task('copy', function () {
 gulp.task('build', build);
 
 gulp.task('server', function () {
-    plugins.connect.server({
+    var server = plugins.connect.server({
         root: [config.dist],
         livereload: true
     });
+
+    return gulp.src('./')
+        .pipe(plugins.open({
+            uri: 'http://' + server.host + ':' + server.port
+        }));
 });
 
 gulp.task('watch', function () {
