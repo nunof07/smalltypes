@@ -1,59 +1,59 @@
-import { IsBlank } from '@main/system/scalar/index';
+import { IsNotBlank } from '@main/system/scalar/index';
 import { ScalarOf } from '@main/system/scalar/index';
 import { expect } from 'chai';
 import { suite } from 'mocha-typescript';
 import { test } from 'mocha-typescript';
 
 /**
- * {@link IsBlank} test.
+ * {@link IsNotBlank} test.
  */
 @suite
-export class IsBlankTest {
+export class IsNotBlankTest {
     @test
     public nullTest(): void {
         expect(
-            new IsBlank(
+            new IsNotBlank(
                 new ScalarOf(null)
             ).value()
         ).to.equal(
-            true,
-            'null should be true'
+            false,
+            'null should be false'
         );
     }
 
     @test
     public undefinedTest(): void {
         expect(
-            new IsBlank(
+            new IsNotBlank(
                 new ScalarOf(undefined)
             ).value()
         ).to.equal(
-            true,
-            'undefined should be true'
+            false,
+            'undefined should be false'
         );
     }
 
     @test
     public emptyStringTest(): void {
         expect(
-            new IsBlank(
+            new IsNotBlank(
                 new ScalarOf('')
             ).value()
         ).to.equal(
-            false,
-            'empty string should be false'
+            true,
+            'empty string should be true'
         );
     }
 
     @test
     public nonEmptyStringTest(): void {
         expect(
-            new IsBlank(
-                new ScalarOf('Hello World!')
+            new IsNotBlank(
+                new ScalarOf('')
             ).value()
         ).to.equal(
-            false,
-            'non-empty string should be false'
+            true,
+            'non-empty string should be true'
         );
     }
 }
