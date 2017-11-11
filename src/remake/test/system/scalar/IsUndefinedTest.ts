@@ -1,42 +1,42 @@
-import { IsNull } from '@main/system/scalar/index';
+import { IsUndefined } from '@main/system/scalar/index';
 import { ScalarOf } from '@main/system/scalar/index';
 import { expect } from 'chai';
 import { suite } from 'mocha-typescript';
 import { test } from 'mocha-typescript';
 
 /**
- * {@link IsNull} test.
+ * {@link IsUndefined} test.
  */
 @suite
-export class IsNullTest {
+export class IsUndefinedTest {
     @test
-    public nullTest(): void {
+    public undefinedTest(): void {
         expect(
-            new IsNull(
-                new ScalarOf(null)
+            new IsUndefined(
+                new ScalarOf(undefined)
             ).value()
         ).to.equal(
             true,
-            'null should be true'
+            'undefined should be true'
         );
     }
 
     @test
-    public undefinedTest(): void {
+    public nullTest(): void {
         expect(
-            new IsNull(
-                new ScalarOf(undefined)
+            new IsUndefined(
+                new ScalarOf(null)
             ).value()
         ).to.equal(
             false,
-            'undefined should be false'
+            'null should be false'
         );
     }
 
     @test
     public emptyStringTest(): void {
         expect(
-            new IsNull(
+            new IsUndefined(
                 new ScalarOf('')
             ).value()
         ).to.equal(
@@ -48,7 +48,7 @@ export class IsNullTest {
     @test
     public nonEmptyStringTest(): void {
         expect(
-            new IsNull(
+            new IsUndefined(
                 new ScalarOf('Hello World!')
             ).value()
         ).to.equal(
