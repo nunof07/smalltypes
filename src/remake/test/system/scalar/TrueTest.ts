@@ -14,7 +14,7 @@ export class TrueTest {
            new True().value()
         ).to.equal(
             true,
-            'True must be true'
+            'True value must be true'
         );
     }
 }

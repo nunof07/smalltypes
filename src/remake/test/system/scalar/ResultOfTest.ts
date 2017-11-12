@@ -17,7 +17,7 @@ export class ResultOfTest {
            .value()
         ).to.equal(
             true,
-            'ResultOf must be true'
+            'ResultOf value must be true'
         );
     }
 

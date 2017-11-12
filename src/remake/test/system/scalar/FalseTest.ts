@@ -14,7 +14,7 @@ export class FalseTest {
            new False().value()
         ).to.equal(
             false,
-            'False must be false'
+            'False value must be false'
         );
     }
 }

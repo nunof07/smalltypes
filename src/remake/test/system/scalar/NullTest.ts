@@ -14,7 +14,7 @@ export class NullTest {
            new Null().value()
         ).to.equal(
             null,
-            'Null must be null'
+            'Null value must be null'
         );
     }
 }
