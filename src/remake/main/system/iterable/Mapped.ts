@@ -1,7 +1,6 @@
 import { Function } from '@main/system/function/index';
 import { final } from '@main/system/index';
 import { frozen } from '@main/system/index';
-import { Mapped as MappedIterator } from '@main/system/iterator/index';
 
 /**
  * Mapped iterable.
@@ -32,7 +31,9 @@ export class Mapped<X, Y> implements Iterable<Y> {
     /**
      * Iterator.
      */
-    public [Symbol.iterator](): Iterator<Y> {
-        return new MappedIterator(this.iterable[Symbol.iterator](), this.func);
+    public *[Symbol.iterator](): Iterator<Y> {
+        for (const item of this.iterable) {
+            yield this.func.apply(item);
+        }
     }
 }

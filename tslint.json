@@ -17,6 +17,7 @@
                 "static-method-regex": "^[A-Z_\\d]+$",
                 "function-regex": "^[a-z][\\w\\d]+$"
             }
-        ]
+        ],
+        "no-backbone-get-set-outside-model": false
     }
 }
