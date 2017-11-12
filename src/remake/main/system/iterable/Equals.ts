@@ -1,0 +1,58 @@
+import { final } from '@main/system/index';
+import { frozen } from '@main/system/index';
+import { Scalar } from '@main/system/scalar/index';
+
+/**
+ * Iterables equals.
+ */
+@final
+@frozen
+export class Equals<T> implements Scalar<boolean> {
+    /**
+     * Source value.
+     */
+    private readonly source: Iterable<T>;
+
+    /**
+     * Compared value.
+     */
+    private readonly compared: Iterable<T>;
+
+    /**
+     * Ctor.
+     * @param source Value.
+     * @param compared Compared.
+     */
+    constructor(source: Iterable<T>, compared: Iterable<T>) {
+        this.source = source;
+        this.compared = compared;
+    }
+
+    /**
+     * Gets the value.
+     */
+    public value(): boolean {
+        let result: boolean = true;
+        const sourceIterator: Iterator<T> = this.source[Symbol.iterator]();
+        const comparedIterator: Iterator<T> = this.compared[Symbol.iterator]();
+
+        do {
+            const sourceNext: IteratorResult<T> = sourceIterator.next();
+            const comparedNext: IteratorResult<T> = comparedIterator.next();
+
+            if (sourceNext.done === comparedNext.done) {
+                if (sourceNext.value !== comparedNext.value) {
+                    result = false;
+                } else {
+                    if (sourceNext.done) {
+                        break;
+                    }
+                }
+            } else {
+                result = false;
+            }
+        } while (result);
+
+        return result;
+    }
+}
