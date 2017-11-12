@@ -9,7 +9,7 @@ import { test } from 'mocha-typescript';
  */
 @suite
 export class FirstTest {
-    @test.only
+    @test
     public firstValue(): void {
         expect(
             new First([1, 2, 3]).value().value
@@ -18,7 +18,7 @@ export class FirstTest {
         );
     }
 
-    @test.only
+    @test
     public afterIterate(): void {
         expect(
             ((): number => {
@@ -43,7 +43,7 @@ export class FirstTest {
         );
     }
 
-    @test.only
+    @test
     public emptyIterable(): void {
         expect(
             new First([]).value().done
