@@ -11,10 +11,10 @@ export class ResultOfTest {
     @test
     public isTrue(): void {
         expect(
-           new ResultOf(
-               (): boolean => true
-           )
-           .value()
+            new ResultOf(
+                (): boolean => true
+            )
+            .value()
         ).to.equal(
             true,
             'ResultOf value must be true'
@@ -24,10 +24,10 @@ export class ResultOfTest {
     @test
     public isHelloWorld(): void {
         expect(
-           new ResultOf(
-               (): string => 'HelloWorld'
-           )
-           .value()
+            new ResultOf(
+                (): string => 'HelloWorld'
+            )
+            .value()
         ).to.equal(
             'HelloWorld'
         );

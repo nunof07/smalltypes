@@ -11,7 +11,7 @@ export class FalseTest {
     @test
     public isFalse(): void {
         expect(
-           new False().value()
+            new False().value()
         ).to.equal(
             false,
             'False value must be false'

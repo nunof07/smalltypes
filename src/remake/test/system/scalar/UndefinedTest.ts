@@ -8,10 +8,10 @@ import { test } from 'mocha-typescript';
  */
 @suite
 export class UndefinedTest {
-    @test.only
+    @test
     public isUndefined(): void {
         expect(
-           new Undefined().value()
+            new Undefined().value()
         ).to.equal(
             undefined,
             'Undefined value must be undefined'

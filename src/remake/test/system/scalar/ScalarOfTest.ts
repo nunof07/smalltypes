@@ -11,7 +11,7 @@ export class ScalarOfTest {
     @test
     public isTrue(): void {
         expect(
-           new ScalarOf(true).value()
+            new ScalarOf(true).value()
         ).to.equal(
             true,
             'ScalarOf must be true'
@@ -21,7 +21,7 @@ export class ScalarOfTest {
     @test
     public isHelloWorld(): void {
         expect(
-           new ScalarOf('HelloWorld').value()
+            new ScalarOf('HelloWorld').value()
         ).to.equal(
             'HelloWorld'
         );
