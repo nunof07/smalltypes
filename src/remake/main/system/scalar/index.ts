@@ -2,6 +2,7 @@
  * Index.
  */
 export * from './Cached';
+export * from './False';
 export * from './IsBlank';
 export * from './IsNotBlank';
 export * from './IsNull';
@@ -13,5 +14,6 @@ export * from './ResultOf';
 export * from './Scalar';
 export * from './ScalarOf';
 export * from './Ternary';
+export * from './True';
 export * from './Undefined';
 export * from './WithFallback';

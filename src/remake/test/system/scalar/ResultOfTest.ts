@@ -17,7 +17,7 @@ export class ResultOfTest {
            .value()
         ).to.equal(
             true,
-            'should be true'
+            'ResultOf must be true'
         );
     }
 
@@ -29,8 +29,7 @@ export class ResultOfTest {
            )
            .value()
         ).to.equal(
-            'HelloWorld',
-            'should be HelloWorld'
+            'HelloWorld'
         );
     }
 }

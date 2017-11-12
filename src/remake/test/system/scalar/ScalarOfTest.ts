@@ -14,7 +14,7 @@ export class ScalarOfTest {
            new ScalarOf(true).value()
         ).to.equal(
             true,
-            'should be true'
+            'ScalarOf must be true'
         );
     }
 
@@ -23,8 +23,7 @@ export class ScalarOfTest {
         expect(
            new ScalarOf('HelloWorld').value()
         ).to.equal(
-            'HelloWorld',
-            'should be HelloWorld'
+            'HelloWorld'
         );
     }
 }
