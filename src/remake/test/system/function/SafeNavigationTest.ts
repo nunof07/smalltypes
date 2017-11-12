@@ -19,7 +19,7 @@ export class SafeNavigationTest {
         );
     }
 
-    @test.only
+    @test
     public blankTest(): void {
         expect(
             () => {
@@ -28,7 +28,7 @@ export class SafeNavigationTest {
         ).to.not.throw();
     }
 
-    @test.only
+    @test
     public nonBlankTest(): void {
         expect(
             () => {

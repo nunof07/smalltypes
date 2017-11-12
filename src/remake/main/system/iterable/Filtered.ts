@@ -1,7 +1,6 @@
 import { Function } from '@main/system/function/index';
 import { final } from '@main/system/index';
 import { frozen } from '@main/system/index';
-import { Filtered as FilteredIterator } from '@main/system/iterator/index';
 
 /**
  * Filtered iterable.
@@ -32,7 +31,11 @@ export class Filtered<T> implements Iterable<T> {
     /**
      * Iterator.
      */
-    public [Symbol.iterator](): Iterator<T> {
-        return new FilteredIterator(this.iterable[Symbol.iterator](), this.func);
+    public *[Symbol.iterator](): Iterator<T> {
+        for (const item of this.iterable) {
+            if (this.func.apply(item)) {
+                yield item;
+            }
+        }
     }
 }
