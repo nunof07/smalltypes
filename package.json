@@ -23,6 +23,7 @@
     "@types/mocha": "^2.2.44",
     "@types/node": "^8.0.47",
     "babel-plugin-module-resolver": "^2.7.1",
+    "babel-plugin-transform-runtime": "^6.23.0",
     "babel-preset-env": "^1.6.0",
     "babelify": "^7.3.0",
     "browserify": "^14.4.0",

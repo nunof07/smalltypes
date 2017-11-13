@@ -12,6 +12,7 @@
                 "@main": "./src/remake/main",
                 "@test": "./src/remake/test"
             }
-        }]
+        }],
+        ["transform-runtime"]
     ]
 }
