@@ -10,7 +10,7 @@ import { test } from 'mocha-typescript';
 @suite
 export class MsCryptoTest {
     @test
-    public doestNotThrow(): void {
+    public doesNotThrow(): void {
         expect(
             () => new MsCrypto().value()
         ).to.not.throw();

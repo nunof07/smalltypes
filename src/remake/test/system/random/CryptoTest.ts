@@ -13,7 +13,7 @@ import { test } from 'mocha-typescript';
 @suite
 export class CryptoTest {
     @test
-    public returnsValidRandomSource(): void {
+    public doesNotThrow(): void {
         expect(
             () => new Crypto().value()
         ).to.not.throw();
