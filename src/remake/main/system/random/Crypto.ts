@@ -3,7 +3,7 @@ import { frozen } from '@main/system/index';
 import { Scalar } from '@main/system/scalar/index';
 
 /**
- * Crypto object with IE fallback.
+ * Window Crypto.
  */
 @final
 @frozen

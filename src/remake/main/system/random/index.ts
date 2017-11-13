@@ -3,6 +3,7 @@
  */
 export * from './Crypto';
 export * from './MsCrypto';
+export * from './NodeCrypto';
 export * from './Randomize';
 export * from './RandomizedInt';
 export * from './RandomizedInt8';
