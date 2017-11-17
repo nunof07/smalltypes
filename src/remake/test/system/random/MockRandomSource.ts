@@ -1,5 +1,5 @@
 /**
- * Mocked RandomSource that always generates the same value.
+ * Mocked RandomSource that always generates the same value (half of the int range).
  */
 export class MockRandomSource implements RandomSource {
     /**
