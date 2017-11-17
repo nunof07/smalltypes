@@ -32,6 +32,7 @@ export class ParkMillerRandom implements Random {
      * @param seed Seed number. If not provided will use a seed based on the current time.
      */
     constructor(seed: Scalar<number> = new ResultOf((): number => Date.now())) {
+        // make sure seed is number between 1 and MAX
         this.seed = new ResultOf((): number => Math.abs(seed.value() || 1) % ParkMillerRandom.MAX);
     }
 
