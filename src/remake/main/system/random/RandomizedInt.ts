@@ -15,20 +15,20 @@ export class RandomizedInt implements Scalar<number> {
     private readonly random: Random;
 
     /**
-     * Minimum possible value.
+     * Minimum possible value (inclusive).
      */
     private readonly min: number;
 
     /**
-     * Maximum possible value (exclusive).
+     * Maximum possible value (inclusive).
      */
     private readonly max: number;
 
     /**
      * Ctor.
      * @param random Random.
-     * @param min Minimum possible value.
-     * @param max Maximum possible value (exclusive).
+     * @param min Minimum possible value (inclusive).
+     * @param max Maximum possible value (inclusive).
      */
     constructor(random: Random, min: number, max: number) {
         this.random = random;

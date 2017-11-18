@@ -10,17 +10,29 @@ import { test } from 'mocha-typescript';
  */
 @suite
 export class RandomizedIntTest {
-    @test.only
+    @test
     public greaterThanOrEqualToMin(): void {
-        throw new Error();
+        expect(
+            new RandomizedInt(
+                { next: (): number => 0 },
+                1,
+                10
+            ).value()
+        ).to.equal(1);
     }
 
-    @test.only
+    @test
     public lessThanMax(): void {
-        throw new Error();
+        expect(
+            new RandomizedInt(
+                { next: (): number => 1 },
+                1,
+                10
+            ).value()
+        ).to.equal(10);
     }
 
-    @test.only
+    @test
     public randomInt(): void {
         expect(
             new RandomizedInt(
