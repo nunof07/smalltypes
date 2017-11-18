@@ -11,7 +11,7 @@ import { test } from 'mocha-typescript';
 @suite
 export class RandomizedIntTest {
     @test
-    public greaterThanOrEqualToMin(): void {
+    public min(): void {
         expect(
             new RandomizedInt(
                 { next: (): number => 0 },
@@ -22,7 +22,7 @@ export class RandomizedIntTest {
     }
 
     @test
-    public lowerThanOrEqualToMax(): void {
+    public max(): void {
         expect(
             new RandomizedInt(
                 { next: (): number => 1 },
