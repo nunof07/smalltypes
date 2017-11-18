@@ -11,6 +11,7 @@ export * from './MapOf';
 export * from './NoBlank';
 export * from './Null';
 export * from './ResultOf';
+export * from './Rounded';
 export * from './Scalar';
 export * from './ScalarOf';
 export * from './Ternary';
