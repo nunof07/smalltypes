@@ -1,19 +1,20 @@
 import { ParkMillerRandom } from '@main/system/random/index';
-import { RandomizedInt } from '@main/system/random/index';
+import { RandomizedFloat } from '@main/system/random/index';
+import { Rounded } from '@main/system/scalar/index';
 import { ScalarOf } from '@main/system/scalar/index';
 import { expect } from 'chai';
 import { suite } from 'mocha-typescript';
 import { test } from 'mocha-typescript';
 
 /**
- * {@link RandomizedInt} test.
+ * {@link RandomizedFloat} test.
  */
 @suite
-export class RandomizedIntTest {
+export class RandomizedFloatTest {
     @test
     public greaterThanOrEqualToMin(): void {
         expect(
-            new RandomizedInt(
+            new RandomizedFloat(
                 { next: (): number => 0 },
                 1,
                 10
@@ -24,7 +25,7 @@ export class RandomizedIntTest {
     @test
     public lowerThanOrEqualToMax(): void {
         expect(
-            new RandomizedInt(
+            new RandomizedFloat(
                 { next: (): number => 1 },
                 1,
                 10
@@ -33,13 +34,21 @@ export class RandomizedIntTest {
     }
 
     @test
-    public randomInt(): void {
+    public randomFloat(): void {
         expect(
-            new RandomizedInt(
-                new ParkMillerRandom(new ScalarOf(1337)),
-                1,
+            new Rounded(
+                new RandomizedFloat(
+                    new ParkMillerRandom(new ScalarOf(1337)),
+                    1,
+                    10
+                ),
                 10
             ).value()
-        ).to.equal(1);
+        ).to.equal(
+            new Rounded(
+                new ScalarOf(1.0941747012986685),
+                10
+            ).value()
+        );
     }
 }
