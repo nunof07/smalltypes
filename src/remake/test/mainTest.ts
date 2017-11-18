@@ -1,7 +1,7 @@
 import * as chai from 'chai';
-import * as assertArrays from 'chai-arrays';
+import * as chaiArrays from 'chai-arrays';
 
 /**
  * Setup chai.
  */
-chai.use(assertArrays);
+chai.use(chaiArrays);
