@@ -1,4 +1,5 @@
 import { ParkMillerRandom } from '@main/system/random/index';
+import { Rounded } from '@main/system/scalar/index';
 import { ScalarOf } from '@main/system/scalar/index';
 import { expect } from 'chai';
 import { suite } from 'mocha-typescript';
@@ -13,17 +14,21 @@ export class ParkMillerRandomTest {
     public returnsRandomSequence(): void {
         const rnd: ParkMillerRandom = new ParkMillerRandom(new ScalarOf(1337));
         expect([
-            rnd.next(),
-            rnd.next(),
-            rnd.next(),
-            rnd.next(),
-            rnd.next()
+            round(rnd.next()),
+            round(rnd.next()),
+            round(rnd.next()),
+            round(rnd.next()),
+            round(rnd.next())
         ]).to.be.equalTo([
-            0.010463855699852042,
-            0.8660227474132659,
-            0.24431577475942476,
-            0.2152263816516969,
-            0.30979642007024794
+            round(0.010463855699852042),
+            round(0.8660227474132659),
+            round(0.24431577475942476),
+            round(0.2152263816516969),
+            round(0.30979642007024794)
         ]);
+
+        function round(n: number): number {
+            return new Rounded(new ScalarOf(n), 10).value();
+        }
     }
 }
