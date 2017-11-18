@@ -14,36 +14,27 @@ export class FinalTest {
     public keepsType(): void {
         expect(
             new Final() instanceof Final
-        ).to.equal(
-            true,
-            'must be Final'
-        );
+        ).to.equal(true, 'must be Final');
     }
 
     @test
     public allowsParameters(): void {
         expect(
             () => new Final('hello')
-        ).to.not.throw(
-            Error
-        );
+        ).to.not.throw(Error);
     }
 
     @test
     public keepsPrototype(): void {
         expect(
             new Final('hello').hello()
-        ).to.equal(
-            'hello'
-        );
+        ).to.equal('hello');
     }
 
     @test
     public forbidsInheritance(): void {
         expect(
             () => new FinalSub()
-        ).to.throw(
-            IllegalInheritanceError
-        );
+        ).to.throw(IllegalInheritanceError);
     }
 }

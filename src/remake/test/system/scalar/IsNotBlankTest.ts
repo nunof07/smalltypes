@@ -15,10 +15,7 @@ export class IsNotBlankTest {
             new IsNotBlank(
                 new ScalarOf(null)
             ).value()
-        ).to.equal(
-            false,
-            'null should be false'
-        );
+        ).to.equal(false, 'null should be false');
     }
 
     @test
@@ -27,10 +24,7 @@ export class IsNotBlankTest {
             new IsNotBlank(
                 new ScalarOf(undefined)
             ).value()
-        ).to.equal(
-            false,
-            'undefined should be false'
-        );
+        ).to.equal(false, 'undefined should be false');
     }
 
     @test
@@ -39,10 +33,7 @@ export class IsNotBlankTest {
             new IsNotBlank(
                 new ScalarOf('')
             ).value()
-        ).to.equal(
-            true,
-            'empty string should be true'
-        );
+        ).to.equal(true, 'empty string should be true');
     }
 
     @test
@@ -51,9 +42,6 @@ export class IsNotBlankTest {
             new IsNotBlank(
                 new ScalarOf('')
             ).value()
-        ).to.equal(
-            true,
-            'non-empty string should be true'
-        );
+        ).to.equal(true, 'non-empty string should be true');
     }
 }

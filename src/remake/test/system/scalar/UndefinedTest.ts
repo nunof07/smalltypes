@@ -12,9 +12,6 @@ export class UndefinedTest {
     public isUndefined(): void {
         expect(
             new Undefined().value()
-        ).to.equal(
-            undefined,
-            'Undefined value must be undefined'
-        );
+        ).to.equal(undefined, 'Undefined value must be undefined');
     }
 }

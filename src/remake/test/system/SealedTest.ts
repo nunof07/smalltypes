@@ -12,9 +12,6 @@ export class SealedTest {
     public isSealed(): void {
         expect(
             Object.isSealed(Sealed)
-        ).to.equal(
-            true,
-            'sealed must be true'
-        );
+        ).to.equal(true, 'sealed must be true');
     }
 }

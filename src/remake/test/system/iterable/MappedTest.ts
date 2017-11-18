@@ -22,9 +22,6 @@ export class MappedTest {
                 ),
                 [2, 4, 6]
             ).value()
-        ).to.equal(
-            true,
-            'Must map elements'
-        );
+        ).to.equal(true, 'Must map elements');
     }
 }

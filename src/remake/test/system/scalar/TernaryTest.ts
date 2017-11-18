@@ -20,9 +20,7 @@ export class TernaryTest {
                 new ScalarOf(2)
             )
             .value()
-        ).to.equal(
-            1
-        );
+        ).to.equal(1);
     }
 
     @test
@@ -34,8 +32,6 @@ export class TernaryTest {
                 new ScalarOf(2)
             )
             .value()
-        ).to.equal(
-            2
-        );
+        ).to.equal(2);
     }
 }

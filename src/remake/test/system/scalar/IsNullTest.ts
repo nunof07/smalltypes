@@ -15,10 +15,7 @@ export class IsNullTest {
             new IsNull(
                 new ScalarOf(null)
             ).value()
-        ).to.equal(
-            true,
-            'null should be true'
-        );
+        ).to.equal(true, 'null should be true');
     }
 
     @test
@@ -27,10 +24,7 @@ export class IsNullTest {
             new IsNull(
                 new ScalarOf(undefined)
             ).value()
-        ).to.equal(
-            false,
-            'undefined should be false'
-        );
+        ).to.equal(false, 'undefined should be false');
     }
 
     @test
@@ -39,10 +33,7 @@ export class IsNullTest {
             new IsNull(
                 new ScalarOf('')
             ).value()
-        ).to.equal(
-            false,
-            'empty string should be false'
-        );
+        ).to.equal(false, 'empty string should be false');
     }
 
     @test
@@ -51,9 +42,6 @@ export class IsNullTest {
             new IsNull(
                 new ScalarOf('Hello World!')
             ).value()
-        ).to.equal(
-            false,
-            'non-empty string should be false'
-        );
+        ).to.equal(false, 'non-empty string should be false');
     }
 }

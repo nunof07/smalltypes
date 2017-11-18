@@ -20,8 +20,6 @@ export class FunctionOfTest {
     public fromCallback(): void {
         expect(
             this.func.apply('hello')
-        ).to.equal(
-            this.callback('hello')
-        );
+        ).to.equal(this.callback('hello'));
     }
 }

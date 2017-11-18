@@ -22,9 +22,6 @@ export class FilteredTest {
                 ),
                 [2, 4]
             ).value()
-        ).to.equal(
-            true,
-            'Must filter elements'
-        );
+        ).to.equal(true, 'Must filter elements');
     }
 }

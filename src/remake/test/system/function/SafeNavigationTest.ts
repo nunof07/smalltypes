@@ -34,8 +34,6 @@ export class SafeNavigationTest {
             () => {
                 this.func.apply({ message: 'hello' });
             }
-        ).to.throw(
-            'hello'
-        );
+        ).to.throw('hello');
     }
 }

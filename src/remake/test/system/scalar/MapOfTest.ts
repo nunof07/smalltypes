@@ -21,9 +21,7 @@ export class MapOfTest {
                 )
             )
             .value()
-        ).to.be.an.instanceOf(
-            Map
-        );
+        ).to.be.an.instanceOf(Map);
     }
 
     @test
@@ -39,9 +37,7 @@ export class MapOfTest {
             )
             .value()
             .size
-        ).to.equal(
-            3
-        );
+        ).to.equal(3);
     }
 
     @test
@@ -57,8 +53,6 @@ export class MapOfTest {
             )
             .value()
             .get('hello')
-        ).to.equal(
-            'hello'
-        );
+        ).to.equal('hello');
     }
 }

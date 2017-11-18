@@ -12,8 +12,6 @@ export class LengthOfTest {
     public valueTest(): void {
         expect(
             new LengthOf([1, 2, 3]).value()
-        ).to.equal(
-            3
-        );
+        ).to.equal(3);
     }
 }

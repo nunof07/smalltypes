@@ -28,9 +28,7 @@ export class ConditionedTest {
             () => {
                 this.conditioned.apply(true);
             }
-        ).to.throw(
-            true.toString()
-        );
+        ).to.throw(true.toString());
     }
 
     @test

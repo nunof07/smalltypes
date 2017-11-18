@@ -15,10 +15,7 @@ export class ResultOfTest {
                 (): boolean => true
             )
             .value()
-        ).to.equal(
-            true,
-            'ResultOf value must be true'
-        );
+        ).to.equal(true, 'ResultOf value must be true');
     }
 
     @test
@@ -28,8 +25,6 @@ export class ResultOfTest {
                 (): string => 'HelloWorld'
             )
             .value()
-        ).to.equal(
-            'HelloWorld'
-        );
+        ).to.equal('HelloWorld');
     }
 }

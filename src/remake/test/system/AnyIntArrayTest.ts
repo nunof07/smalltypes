@@ -18,17 +18,13 @@ export class AnyIntArrayTest {
     public intArrayTest(): void {
         expect(
             this.length(new Int8Array(1))
-        ).to.equal(
-            1
-        );
+        ).to.equal(1);
     }
 
     @test
     public uintArrayTest(): void {
         expect(
             this.length(new Uint8Array(1))
-        ).to.equal(
-            1
-        );
+        ).to.equal(1);
     }
 }

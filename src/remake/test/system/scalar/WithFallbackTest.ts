@@ -18,9 +18,7 @@ export class WithFallbackTest {
                 new ScalarOf(2)
             )
             .value()
-        ).to.equal(
-            2
-        );
+        ).to.equal(2);
     }
 
     @test
@@ -31,8 +29,6 @@ export class WithFallbackTest {
                 new ScalarOf(2)
             )
             .value()
-        ).to.equal(
-            1
-        );
+        ).to.equal(1);
     }
 }

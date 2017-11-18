@@ -12,9 +12,6 @@ export class NullTest {
     public isNull(): void {
         expect(
             new Null().value()
-        ).to.equal(
-            null,
-            'Null value must be null'
-        );
+        ).to.equal(null, 'Null value must be null');
     }
 }

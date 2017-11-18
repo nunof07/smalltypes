@@ -12,20 +12,14 @@ export class FrozenTest {
     public isFrozen(): void {
         expect(
             Object.isFrozen(Frozen)
-        ).to.equal(
-            true,
-            'frozen must be true'
-        );
+        ).to.equal(true, 'frozen must be true');
     }
 
     @test
     public isFrozenPrototype(): void {
         expect(
             Object.isFrozen(Frozen.prototype)
-        ).to.equal(
-            true,
-            'frozen prototype must be true'
-        );
+        ).to.equal(true, 'frozen prototype must be true');
     }
 
     @test

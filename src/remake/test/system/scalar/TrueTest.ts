@@ -12,9 +12,6 @@ export class TrueTest {
     public isTrue(): void {
         expect(
             new True().value()
-        ).to.equal(
-            true,
-            'True value must be true'
-        );
+        ).to.equal(true, 'True value must be true');
     }
 }

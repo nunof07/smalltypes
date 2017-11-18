@@ -18,26 +18,20 @@ export class UintArrayTest {
     public uint8ArrayTest(): void {
         expect(
             this.length(new Uint8Array(1))
-        ).to.equal(
-            1
-        );
+        ).to.equal(1);
     }
 
     @test
     public uint16ArrayTest(): void {
         expect(
             this.length(new Uint16Array(1))
-        ).to.equal(
-            1
-        );
+        ).to.equal(1);
     }
 
     @test
     public uint32ArrayTest(): void {
         expect(
             this.length(new Uint32Array(1))
-        ).to.equal(
-            1
-        );
+        ).to.equal(1);
     }
 }

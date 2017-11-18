@@ -19,10 +19,7 @@ export class LimitedTest {
                 ),
                 [1, 2, 3]
             ).value()
-        ).to.equal(
-            true,
-            'Must limit elements'
-        );
+        ).to.equal(true, 'Must limit elements');
     }
 
     @test
@@ -35,10 +32,7 @@ export class LimitedTest {
                 ),
                 []
             ).value()
-        ).to.equal(
-            true,
-            'Must be empty with empty iterable'
-        );
+        ).to.equal(true, 'Must be empty with empty iterable');
     }
 
     @test
@@ -51,9 +45,6 @@ export class LimitedTest {
                 ),
                 []
             ).value()
-        ).to.equal(
-            true,
-            'Must be empty with negative limit'
-        );
+        ).to.equal(true, 'Must be empty with negative limit');
     }
 }

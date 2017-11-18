@@ -17,9 +17,7 @@ export class NoBlankTest {
                 new ScalarOf(null)
             )
             .value()
-        ).to.throw(
-            IllegalStateError
-        );
+        ).to.throw(IllegalStateError);
     }
 
     @test
@@ -29,9 +27,7 @@ export class NoBlankTest {
                 new ScalarOf(undefined)
             )
             .value()
-        ).to.throw(
-            IllegalStateError
-        );
+        ).to.throw(IllegalStateError);
     }
 
     @test
@@ -41,8 +37,6 @@ export class NoBlankTest {
                 new ScalarOf('hello')
             )
             .value()
-        ).to.not.throw(
-            IllegalStateError
-        );
+        ).to.not.throw(IllegalStateError);
     }
 }

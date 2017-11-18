@@ -12,9 +12,6 @@ export class FalseTest {
     public isFalse(): void {
         expect(
             new False().value()
-        ).to.equal(
-            false,
-            'False value must be false'
-        );
+        ).to.equal(false, 'False value must be false');
     }
 }

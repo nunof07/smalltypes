@@ -15,10 +15,7 @@ export class EqualsTest {
                 [1, 2, 3],
                 [1, 2, 3]
             ).value()
-        ).to.equal(
-            true,
-            'Equals value must be true'
-        );
+        ).to.equal(true, 'Equals value must be true');
     }
 
     @test
@@ -28,9 +25,6 @@ export class EqualsTest {
                 [1, 2, 3],
                 [1, 2, 4]
             ).value()
-        ).to.equal(
-            false,
-            'Equals value must be false'
-        );
+        ).to.equal(false, 'Equals value must be false');
     }
 }
