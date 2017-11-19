@@ -13,6 +13,11 @@ import { ScalarOf } from '@main/system/scalar/index';
 @frozen
 export class SafeNavigation<X> implements Function<X, void> {
     /**
+     * Type determinant.
+     */
+    public '@@__IS_SYSTEM_FUNCTION__@@': true;
+
+    /**
      * Function.
      */
     private readonly func: Function<X, void>;

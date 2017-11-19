@@ -9,6 +9,11 @@ import { frozen } from '@main/system/index';
 @frozen
 export class Conditioned<X> implements Function<X, void> {
     /**
+     * Type determinant.
+     */
+    public '@@__IS_SYSTEM_FUNCTION__@@': true;
+
+    /**
      * Condition.
      */
     private readonly condition: Function<X, boolean>;

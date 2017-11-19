@@ -9,6 +9,11 @@ import { frozen } from '@main/system/index';
 @frozen
 export class Cached<X, Y> implements Function<X, Y> {
     /**
+     * Type determinant.
+     */
+    public '@@__IS_SYSTEM_FUNCTION__@@': true;
+
+    /**
      * Function callback.
      */
     private readonly func: Function<X, Y>;
