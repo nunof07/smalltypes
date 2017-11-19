@@ -1,5 +1,5 @@
 import { FunctionOf } from '@main/system/function/index';
-import { IsFunction } from '@main/system/scalar/index';
+import { IsFunction } from '@main/system/function/index';
 import { expect } from 'chai';
 import { suite } from 'mocha-typescript';
 import { test } from 'mocha-typescript';
