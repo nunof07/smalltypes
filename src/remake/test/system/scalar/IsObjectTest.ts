@@ -1,0 +1,55 @@
+import { IsObject } from '@main/system/scalar/index';
+import { ScalarOf } from '@main/system/scalar/index';
+import { expect } from 'chai';
+import { suite } from 'mocha-typescript';
+import { test } from 'mocha-typescript';
+
+/**
+ * {@link IsObject} test.
+ */
+@suite
+export class IsObjectTest {
+    @test
+    public includesEmptyObject(): void {
+        expect(
+            new IsObject(new ScalarOf({})).value()
+        ).to.equal(true, 'Empty object must return true');
+    }
+
+    @test
+    public includesAnonymousObject(): void {
+        expect(
+            new IsObject(new ScalarOf({ a: true })).value()
+        ).to.equal(true, 'Anonymous object must return true');
+    }
+
+    @test
+    public excludesFunction(): void {
+        expect(
+            new IsObject(new ScalarOf((): Function => {
+                return (): string => 'HelloWorld';
+            })).value()
+        ).to.equal(false, 'Function must return false');
+    }
+
+    @test
+    public excludesString(): void {
+        expect(
+            new IsObject(new ScalarOf('HelloWorld')).value()
+        ).to.equal(false, 'String must return false');
+    }
+
+    @test
+    public excludesBoolean(): void {
+        expect(
+            new IsObject(new ScalarOf(true)).value()
+        ).to.equal(false, 'Boolean must return false');
+    }
+
+    @test
+    public excludesNumber(): void {
+        expect(
+            new IsObject(new ScalarOf(10)).value()
+        ).to.equal(false, 'Number must return false');
+    }
+}
