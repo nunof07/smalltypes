@@ -16,29 +16,29 @@ export class Ternary<T> implements Scalar<T> {
     /**
      * Return when condition is true.
      */
-    private readonly ifTrue: Scalar<T>;
+    private readonly consequent: Scalar<T>;
 
     /**
      * Return when condition is false.
      */
-    private readonly otherwise: Scalar<T>;
+    private readonly alternative: Scalar<T>;
 
     /**
      * Ctor.
      * @param condition Test condition.
-     * @param ifTrue Return when condition is true.
-     * @param otherwise Return when condition is true.
+     * @param consequent Return when condition is true.
+     * @param alternative Return when condition is true.
      */
-    constructor(condition: Scalar<boolean>, ifTrue: Scalar<T>, otherwise: Scalar<T>) {
+    constructor(condition: Scalar<boolean>, consequent: Scalar<T>, alternative: Scalar<T>) {
         this.condition = condition;
-        this.ifTrue = ifTrue;
-        this.otherwise = otherwise;
+        this.consequent = consequent;
+        this.alternative = alternative;
     }
 
     /**
      * Gets the value.
      */
     public value(): T {
-        return this.condition.value() ? this.ifTrue.value() : this.otherwise.value();
+        return this.condition.value() ? this.consequent.value() : this.alternative.value();
     }
 }
