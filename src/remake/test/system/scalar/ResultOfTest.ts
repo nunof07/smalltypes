@@ -9,22 +9,11 @@ import { test } from 'mocha-typescript';
 @suite
 export class ResultOfTest {
     @test
-    public isTrue(): void {
-        expect(
-            new ResultOf(
-                (): boolean => true
-            )
-            .value()
-        ).to.equal(true, 'ResultOf value must be true');
-    }
-
-    @test
-    public isHelloWorld(): void {
+    public convertsFromJsFunction(): void {
         expect(
             new ResultOf(
                 (): string => 'HelloWorld'
-            )
-            .value()
+            ).value()
         ).to.equal('HelloWorld');
     }
 }

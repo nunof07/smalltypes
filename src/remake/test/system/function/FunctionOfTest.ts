@@ -8,18 +8,22 @@ import { test } from 'mocha-typescript';
  */
 @suite
 export class FunctionOfTest {
-    private readonly callback: (input: string) => string;
-    private readonly func: FunctionOf<string, string>;
-
-    constructor() {
-        this.callback = (input: string): string => input;
-        this.func = new FunctionOf(this.callback);
+    @test
+    public fromJsFunction(): void {
+        expect(
+            new FunctionOf(
+                (input: string): string => input
+            ).apply('hello')
+        ).to.equal('hello');
     }
 
     @test
-    public fromCallback(): void {
+    public fromFunction(): void {
         expect(
-            this.func.apply('hello')
-        ).to.equal(this.callback('hello'));
+            new FunctionOf({
+                '@@__IS_SYSTEM_FUNCTION__@@': true,
+                apply: (input: string): string => input
+            }).apply('hello')
+        ).to.equal('hello');
     }
 }
