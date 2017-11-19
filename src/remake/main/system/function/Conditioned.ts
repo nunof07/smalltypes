@@ -11,7 +11,7 @@ export class Conditioned<X> implements Function<X, void> {
     /**
      * Type determinant.
      */
-    public '@@__IS_SYSTEM_FUNCTION__@@': true;
+    public readonly '@@__IS_SYSTEM_FUNCTION__@@': true = true;
 
     /**
      * Condition.

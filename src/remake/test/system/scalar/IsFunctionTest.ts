@@ -1,3 +1,4 @@
+import { FunctionOf } from '@main/system/function/index';
 import { IsFunction } from '@main/system/scalar/index';
 import { expect } from 'chai';
 import { suite } from 'mocha-typescript';
@@ -11,7 +12,7 @@ export class IsFunctionTest {
     @test
     public detectsFunction(): void {
         expect(
-            new IsFunction((): string => 'HelloWorld').value()
+            new IsFunction(new FunctionOf((): string => 'HelloWorld')).value()
         ).to.equal(true, 'Function value must return true');
     }
 
@@ -20,5 +21,12 @@ export class IsFunctionTest {
         expect(
             new IsFunction('HelloWorld').value()
         ).to.equal(false, 'Non-function value must return false');
+    }
+
+    @test
+    public doesNotDetectJsFunction(): void {
+        expect(
+            new IsFunction((): string => 'HelloWorld').value()
+        ).to.equal(false, 'Standard JavaScript function value must return false');
     }
 }
