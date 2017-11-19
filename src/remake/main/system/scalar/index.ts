@@ -4,6 +4,7 @@
 export * from './Cached';
 export * from './False';
 export * from './IsBlank';
+export * from './IsFunction';
 export * from './IsNotBlank';
 export * from './IsNull';
 export * from './IsUndefined';
