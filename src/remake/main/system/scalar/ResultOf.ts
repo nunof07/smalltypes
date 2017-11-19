@@ -1,3 +1,4 @@
+import { Function } from '@main/system/function/index';
 import { final } from '@main/system/index';
 import { frozen } from '@main/system/index';
 import { Scalar } from '@main/system/scalar/index';
@@ -11,20 +12,20 @@ export class ResultOf<T> implements Scalar<T> {
     /**
      * Callback.
      */
-    private readonly callback: () => T;
+    private readonly func: Function<undefined, T>;
 
     /**
      * Ctor.
      * @param value Value.
      */
-    constructor(callback: () => T) {
-        this.callback = callback;
+    constructor(func: Function<undefined, T> | (() => T)) {
+        this.func = func;
     }
 
     /**
      * Gets the value.
      */
     public value(): T {
-        return this.callback();
+        return this.func.apply(undefined);
     }
 }
