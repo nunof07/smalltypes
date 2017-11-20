@@ -15,6 +15,11 @@ import { ScalarOf } from '@main/system/scalar/index';
 @frozen
 export class IsFunction<T> implements Scalar<boolean> {
     /**
+     * Type determinant.
+     */
+    public readonly '@@__IS_SYSTEM_SCALAR__@@': true = true;
+
+    /**
      * Condition.
      */
     private readonly isFunction: Scalar<boolean>;

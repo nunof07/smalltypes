@@ -11,6 +11,11 @@ import { IsUndefined } from '@main/system/scalar/index';
 @frozen
 export class IsBlank<T> implements Scalar<boolean> {
     /**
+     * Type determinant.
+     */
+    public readonly '@@__IS_SYSTEM_SCALAR__@@': true = true;
+
+    /**
      * Scalar.
      */
     private readonly scalar: Scalar<T>;

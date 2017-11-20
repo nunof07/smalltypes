@@ -9,6 +9,11 @@ import { Scalar } from '@main/system/scalar/index';
 @frozen
 export class Ternary<T> implements Scalar<T> {
     /**
+     * Type determinant.
+     */
+    public readonly '@@__IS_SYSTEM_SCALAR__@@': true = true;
+
+    /**
      * Test condition.
      */
     private readonly condition: Scalar<boolean>;

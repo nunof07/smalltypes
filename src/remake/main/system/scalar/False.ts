@@ -9,6 +9,11 @@ import { Scalar } from '@main/system/scalar/index';
 @frozen
 export class False implements Scalar<boolean> {
     /**
+     * Type determinant.
+     */
+    public readonly '@@__IS_SYSTEM_SCALAR__@@': true = true;
+
+    /**
      * Get the value.
      */
     public value(): boolean {

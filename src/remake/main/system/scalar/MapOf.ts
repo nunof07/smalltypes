@@ -11,6 +11,11 @@ import { Scalar } from '@main/system/scalar/index';
 @frozen
 export class MapOf<Z, K, V> implements Scalar<Map<K, V>> {
     /**
+     * Type determinant.
+     */
+    public readonly '@@__IS_SYSTEM_SCALAR__@@': true = true;
+
+    /**
      * Items.
      */
     private readonly entries: Iterable<Z>;

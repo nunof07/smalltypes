@@ -9,6 +9,11 @@ import { Scalar } from '@main/system/scalar/index';
 @frozen
 export class LengthOf<T> implements Scalar<number> {
     /**
+     * Type determinant.
+     */
+    public readonly '@@__IS_SYSTEM_SCALAR__@@': true = true;
+
+    /**
      * Source value.
      */
     private readonly source: Iterable<T>;

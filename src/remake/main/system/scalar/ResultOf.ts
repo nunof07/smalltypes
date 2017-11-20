@@ -11,6 +11,11 @@ import { Scalar } from '@main/system/scalar/index';
 @frozen
 export class ResultOf<T> implements Scalar<T> {
     /**
+     * Type determinant.
+     */
+    public readonly '@@__IS_SYSTEM_SCALAR__@@': true = true;
+
+    /**
      * Callback.
      */
     private readonly func: NullaryFunction<T>;
