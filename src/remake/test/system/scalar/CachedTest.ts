@@ -18,7 +18,7 @@ export class CachedTest {
         const cached: Cached<number> = new Cached(
             new ResultOf((): number => random.next())
         );
-        const expected: number = new Rounded(new ScalarOf(0.010463855699852042), 10).value();
+        const expected: number = new Rounded(0.010463855699852042, 10).value();
         expect([
             new Rounded(cached, 10).value(),
             new Rounded(cached, 10).value(),

@@ -45,10 +45,7 @@ export class RandomizedFloatTest {
                 10
             ).value()
         ).to.equal(
-            new Rounded(
-                new ScalarOf(1.0941747012986685),
-                10
-            ).value()
+            new Rounded(1.0941747012986685, 10).value()
         );
     }
 }

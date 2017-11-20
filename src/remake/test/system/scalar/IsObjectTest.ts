@@ -12,44 +12,58 @@ export class IsObjectTest {
     @test
     public includesEmptyObject(): void {
         expect(
-            new IsObject(new ScalarOf({})).value()
+            new IsObject({}).value()
         ).to.equal(true, 'Empty object must return true');
     }
 
     @test
     public includesAnonymousObject(): void {
         expect(
-            new IsObject(new ScalarOf({ a: true })).value()
+            new IsObject({ a: true }).value()
         ).to.equal(true, 'Anonymous object must return true');
     }
 
     @test
     public excludesFunction(): void {
         expect(
-            new IsObject(new ScalarOf((): Function => {
+            new IsObject((): Function => {
                 return (): string => 'HelloWorld';
-            })).value()
+            }).value()
         ).to.equal(false, 'Function must return false');
     }
 
     @test
     public excludesString(): void {
         expect(
-            new IsObject(new ScalarOf('HelloWorld')).value()
+            new IsObject('HelloWorld').value()
         ).to.equal(false, 'String must return false');
     }
 
     @test
     public excludesBoolean(): void {
         expect(
-            new IsObject(new ScalarOf(true)).value()
+            new IsObject(true).value()
         ).to.equal(false, 'Boolean must return false');
     }
 
     @test
     public excludesNumber(): void {
         expect(
+            new IsObject(10).value()
+        ).to.equal(false, 'Number must return false');
+    }
+
+    @test
+    public excludesScalarPrimitive(): void {
+        expect(
             new IsObject(new ScalarOf(10)).value()
         ).to.equal(false, 'Number must return false');
+    }
+
+    @test
+    public includesScalarObject(): void {
+        expect(
+            new IsObject(new ScalarOf({ a: true })).value()
+        ).to.equal(true, 'Scalar with object must return true');
     }
 }

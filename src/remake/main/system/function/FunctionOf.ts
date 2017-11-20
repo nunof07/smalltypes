@@ -28,8 +28,6 @@ export class FunctionOf<X, Y> implements Function<X, Y> {
      * Ctor.
      * @param func Function callback.
      */
-    constructor(func: Function<X, Y>)
-    constructor(func: (input: X) => Y)
     constructor(func: Function<X, Y> | ((input: X) => Y)) {
         this.func = new Cached(
             new Ternary(

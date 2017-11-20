@@ -30,7 +30,7 @@ export class CachedTest {
         ]);
 
         function round(n: number): number {
-            return new Rounded(new ScalarOf(n), 10).value();
+            return new Rounded(n, 10).value();
         }
     }
 }

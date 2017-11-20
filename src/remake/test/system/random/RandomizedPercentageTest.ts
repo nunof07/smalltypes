@@ -39,10 +39,7 @@ export class RandomizedPercentageTest {
                 10
             ).value()
         ).to.equal(
-            new Rounded(
-                new ScalarOf(0.010463855699852042),
-                10
-            ).value()
+            new Rounded(0.010463855699852042, 10).value()
         );
     }
 }

@@ -1,6 +1,7 @@
 import { final } from '@main/system/index';
 import { frozen } from '@main/system/index';
 import { Scalar } from '@main/system/scalar/index';
+import { ScalarOf } from '@main/system/scalar/index';
 
 /**
  * Rounded number.
@@ -29,8 +30,20 @@ export class Rounded implements Scalar<number> {
      * @param scalar Number.
      * @param precision Precision. E.g. 1 would round to 1 decimal place.
      */
-    constructor(scalar: Scalar<number>, precision: number) {
-        this.scalar = scalar;
+    constructor(scalar: Scalar<number>, precision: number)
+    /**
+     * Ctor.
+     * @param value Number.
+     * @param precision Precision. E.g. 1 would round to 1 decimal place.
+     */
+    constructor(value: number, precision: number)
+    /**
+     * Ctor.
+     * @param scalarOrValue Number.
+     * @param precision Precision. E.g. 1 would round to 1 decimal place.
+     */
+    constructor(scalarOrValue: Scalar<number> | number, precision: number) {
+        this.scalar = new ScalarOf(scalarOrValue);
         this.precision = precision;
     }
 

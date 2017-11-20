@@ -12,36 +12,35 @@ export class IsNotBlankTest {
     @test
     public nullTest(): void {
         expect(
-            new IsNotBlank(
-                new ScalarOf(null)
-            ).value()
+            new IsNotBlank(null).value()
         ).to.equal(false, 'null should be false');
     }
 
     @test
     public undefinedTest(): void {
         expect(
-            new IsNotBlank(
-                new ScalarOf(undefined)
-            ).value()
+            new IsNotBlank(undefined).value()
         ).to.equal(false, 'undefined should be false');
     }
 
     @test
     public emptyStringTest(): void {
         expect(
-            new IsNotBlank(
-                new ScalarOf('')
-            ).value()
+            new IsNotBlank('').value()
         ).to.equal(true, 'empty string should be true');
     }
 
     @test
     public nonEmptyStringTest(): void {
         expect(
-            new IsNotBlank(
-                new ScalarOf('')
-            ).value()
+            new IsNotBlank('HelloWolrd').value()
         ).to.equal(true, 'non-empty string should be true');
+    }
+
+    @test
+    public nullScalarTest(): void {
+        expect(
+            new IsNotBlank(new ScalarOf(null)).value()
+        ).to.equal(false, 'Scalar with null should be false');
     }
 }

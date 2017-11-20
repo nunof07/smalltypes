@@ -41,6 +41,6 @@ export class IsUndefined<T> implements Scalar<boolean> {
      * Get the value.
      */
     public value(): boolean {
-        return this.scalar === undefined || this.scalar.value() === undefined;
+        return this.scalar.value() === undefined;
     }
 }

@@ -4,7 +4,6 @@ import { FunctionOf } from '@main/system/function/index';
 import { final } from '@main/system/index';
 import { frozen } from '@main/system/index';
 import { IsNotBlank } from '@main/system/scalar/index';
-import { ScalarOf } from '@main/system/scalar/index';
 
 /**
  * Function that executes when input is not null or undefined.
@@ -29,7 +28,7 @@ export class SafeNavigation<X> implements Function<X, void> {
     constructor(func: Function<X, void>) {
         this.func = new Conditioned(
             new FunctionOf((input: X): boolean =>
-                new IsNotBlank(new ScalarOf(input)).value()
+                new IsNotBlank(input).value()
             ),
             func
         );

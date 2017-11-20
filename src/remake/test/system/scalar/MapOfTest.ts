@@ -14,11 +14,9 @@ export class MapOfTest {
         expect(
             new MapOf(
                 [],
-                new FunctionOf(
-                    (input: string): [string, string] => {
-                        return [input, input];
-                    }
-                )
+                (input: string): [string, string] => {
+                    return [input, input];
+                }
             )
             .value()
         ).to.be.an.instanceOf(Map);
@@ -29,11 +27,9 @@ export class MapOfTest {
         expect(
             new MapOf(
                 ['a', 'b', 'c'],
-                new FunctionOf(
-                    (input: string): [string, string] => {
-                        return [input, input];
-                    }
-                )
+                (input: string): [string, string] => {
+                    return [input, input];
+                }
             )
             .value()
             .size
@@ -45,14 +41,26 @@ export class MapOfTest {
         expect(
             new MapOf(
                 ['hello'],
-                new FunctionOf(
-                    (input: string): [string, string] => {
-                        return [input, input];
-                    }
-                )
+                (input: string): [string, string] => {
+                    return [input, input];
+                }
             )
             .value()
             .get('hello')
         ).to.equal('hello');
+    }
+
+    @test
+    public fromFunctionObject(): void {
+        expect(
+            new MapOf(
+                ['a', 'b', 'c'],
+                new FunctionOf((input: string): [string, string] => {
+                    return [input, input];
+                })
+            )
+            .value()
+            .size
+        ).to.equal(3);
     }
 }

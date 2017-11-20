@@ -12,26 +12,33 @@ export class RoundedTest {
     @test
     public roundsUp(): void {
         expect(
-            new Rounded(new ScalarOf(4.45), 1).value()
+            new Rounded(4.45, 1).value()
         ).to.equal(4.5);
     }
 
     @test
     public roundsDown(): void {
         expect(
-            new Rounded(new ScalarOf(4.44), 1).value()
+            new Rounded(4.44, 1).value()
         ).to.equal(4.4);
     }
 
     @test
     public roundsToTheTens(): void {
         expect(
-            new Rounded(new ScalarOf(4.5), 0).value()
+            new Rounded(4.5, 0).value()
         ).to.equal(5);
     }
 
     @test
     public roundsSeveralDecimals(): void {
+        expect(
+            new Rounded(4.4445, 3).value()
+        ).to.equal(4.445);
+    }
+
+    @test
+    public roundsScalar(): void {
         expect(
             new Rounded(new ScalarOf(4.4445), 3).value()
         ).to.equal(4.445);
