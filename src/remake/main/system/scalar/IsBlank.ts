@@ -1,8 +1,9 @@
 import { final } from '@main/system/index';
 import { frozen } from '@main/system/index';
-import { Scalar } from '@main/system/scalar/index';
 import { IsNull } from '@main/system/scalar/index';
 import { IsUndefined } from '@main/system/scalar/index';
+import { Scalar } from '@main/system/scalar/index';
+import { ScalarOf } from '@main/system/scalar/index';
 
 /**
  * Determines if scalar or value is null or undefined.
@@ -24,8 +25,18 @@ export class IsBlank<T> implements Scalar<boolean> {
      * Ctor.
      * @param scalar Scalar.
      */
-    constructor(scalar: Scalar<T>) {
-        this.scalar = scalar;
+    constructor(scalar: Scalar<T>)
+    /**
+     * Ctor.
+     * @param value Value.
+     */
+    constructor(value: T)
+    /**
+     * Ctor.
+     * @param scalarOrValue Scalar or value.
+     */
+    constructor(scalarOrValue: Scalar<T> | T) {
+        this.scalar = new ScalarOf(scalarOrValue);
     }
 
     /**

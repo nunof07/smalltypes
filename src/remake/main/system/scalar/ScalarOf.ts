@@ -1,5 +1,7 @@
 import { final } from '@main/system/index';
 import { frozen } from '@main/system/index';
+import { IsScalar } from '@main/system/scalar/index';
+import { ResultOf } from '@main/system/scalar/index';
 import { Scalar } from '@main/system/scalar/index';
 
 /**
@@ -16,20 +18,24 @@ export class ScalarOf<T> implements Scalar<T> {
     /**
      * Source value.
      */
-    private readonly source: T;
+    private readonly source: Scalar<T>;
 
     /**
      * Ctor.
-     * @param value Value.
+     * @param scalarOrValue Scalar or value.
      */
-    constructor(value: T) {
-        this.source = value;
+    constructor(scalarOrValue: Scalar<T> | T) {
+        this.source = new ResultOf((): T =>
+            new IsScalar(scalarOrValue).value() ?
+            (<Scalar<T>>scalarOrValue).value() :
+            <T>scalarOrValue
+        );
     }
 
     /**
      * Gets the value.
      */
     public value(): T {
-        return this.source;
+        return this.source.value();
     }
 }
