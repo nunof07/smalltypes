@@ -1,4 +1,3 @@
-import { FunctionType } from '@main/system/function/index';
 import { final } from '@main/system/index';
 import { frozen } from '@main/system/index';
 import { And } from '@main/system/scalar/index';
@@ -7,13 +6,14 @@ import { IsObject } from '@main/system/scalar/index';
 import { ResultOf } from '@main/system/scalar/index';
 import { Scalar } from '@main/system/scalar/index';
 import { ScalarOf } from '@main/system/scalar/index';
+import { ScalarType } from '@main/system/scalar/index';
 
 /**
- * Determines if variable is of type {@link Function}.
+ * Determines if variable is of type {@link Scalar}.
  */
 @final
 @frozen
-export class IsFunction<T> implements Scalar<boolean> {
+export class IsScalar<T> implements Scalar<boolean> {
     /**
      * Type determinant.
      */
@@ -22,18 +22,18 @@ export class IsFunction<T> implements Scalar<boolean> {
     /**
      * Condition.
      */
-    private readonly isFunction: Scalar<boolean>;
+    private readonly isScalar: Scalar<boolean>;
 
     /**
      * Ctor.
-     * @param maybeFunc Variable to check.
+     * @param maybeScalar Variable to check.
      */
-    constructor(maybeFunc: T) {
-        this.isFunction = new And(
-            new IsNotBlank(new ScalarOf(maybeFunc)),
-            new IsObject(new ScalarOf(maybeFunc)),
+    constructor(maybeScalar: T) {
+        this.isScalar = new And(
+            new IsNotBlank(new ScalarOf(maybeScalar)),
+            new IsObject(new ScalarOf(maybeScalar)),
             new ResultOf((): boolean => {
-                return (<FunctionType><Object>maybeFunc)['@@__IS_SYSTEM_FUNCTION__@@'] === true;
+                return (<ScalarType><Object>maybeScalar)['@@__IS_SYSTEM_SCALAR__@@'] === true;
             })
         );
     }
@@ -42,6 +42,6 @@ export class IsFunction<T> implements Scalar<boolean> {
      * Get the value.
      */
     public value(): boolean {
-        return this.isFunction.value();
+        return this.isScalar.value();
     }
 }

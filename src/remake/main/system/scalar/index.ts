@@ -9,6 +9,7 @@ export * from './IsJsFunction';
 export * from './IsNotBlank';
 export * from './IsNull';
 export * from './IsObject';
+export * from './IsScalar';
 export * from './IsUndefined';
 export * from './MapOf';
 export * from './NoBlank';
