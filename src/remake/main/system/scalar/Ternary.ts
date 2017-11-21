@@ -32,7 +32,7 @@ export class Ternary<T> implements Scalar<T> {
      * Ctor.
      * @param condition Test condition.
      * @param consequent Return when condition is true.
-     * @param alternative Return when condition is true.
+     * @param alternative Return when condition is false.
      */
     constructor(condition: Scalar<boolean>, consequent: Scalar<T>, alternative: Scalar<T>) {
         this.condition = condition;
