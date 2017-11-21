@@ -4,7 +4,7 @@ import { IsScalar } from '@main/system/scalar/index';
 import { Scalar } from '@main/system/scalar/index';
 
 /**
- * Scalar of value.
+ * Scalar of different possible inputs.
  */
 @final
 @frozen
