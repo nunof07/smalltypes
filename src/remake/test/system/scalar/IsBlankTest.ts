@@ -41,6 +41,13 @@ export class IsBlankTest {
     public nullScalarTest(): void {
         expect(
             new IsBlank(new ScalarOf(null)).value()
-        ).to.equal(true, 'Scalar with null should be false');
+        ).to.equal(true, 'Scalar with null should be true');
+    }
+
+    @test
+    public fromFunction(): void {
+        expect(
+            new IsBlank((): null => null).value()
+        ).to.equal(true, 'Function that returns null should be true');
     }
 }

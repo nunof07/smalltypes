@@ -14,9 +14,7 @@ export class CachedTest {
     @test
     public cachesValue(): void {
         const random: ParkMillerRandom = new ParkMillerRandom(new ScalarOf(1337));
-        const cached: Cached<number> = new Cached(
-            new ScalarOf((): number => random.next())
-        );
+        const cached: Cached<number> = new Cached((): number => random.next());
         const expected: number = new Rounded(0.010463855699852042, 10).value();
         expect([
             new Rounded(cached, 10).value(),

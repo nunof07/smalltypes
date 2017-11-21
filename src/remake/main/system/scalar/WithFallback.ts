@@ -47,14 +47,44 @@ export class WithFallback<T> implements Scalar<T> {
     constructor(value: T, fallbackValue: T)
     /**
      * Ctor.
-     * @param scalarOrValue Scalar or value.
-     * @param fallbackOrValue Fallback scalar or value.
+     * @param func Function.
+     * @param fallback Fallback.
      */
-    constructor(scalarOrValue: Scalar<T> | T, fallbackOrValue: Scalar<T> | T) {
+    constructor(func: () => T, fallback: () => T)
+    /**
+     * Ctor.
+     * @param func Function.
+     * @param fallbackValue Fallback value.
+     */
+    constructor(func: () => T, fallbackValue: T)
+    /**
+     * Ctor.
+     * @param value Value.
+     * @param fallback Fallback.
+     */
+    constructor(value: T, fallback: () => T)
+    /**
+     * Ctor.
+     * @param func Function.
+     * @param fallback Fallback.
+     */
+    constructor(func: () => T, fallback: Scalar<T>)
+    /**
+     * Ctor.
+     * @param scalar Scalar.
+     * @param fallback Fallback.
+     */
+    constructor(scalar: Scalar<T>, fallback: () => T)
+    /**
+     * Ctor.
+     * @param something Scalar, function or value.
+     * @param fallback Fallback scalar, function or value.
+     */
+    constructor(something: Scalar<T> | (() => T) | T, fallback: Scalar<T> | (() => T) | T) {
         this.scalar = new Ternary(
-            new IsBlank(scalarOrValue),
-            new ScalarOf(fallbackOrValue),
-            new ScalarOf(scalarOrValue)
+            new IsBlank(something),
+            new ScalarOf(fallback),
+            new ScalarOf(something)
         );
     }
 

@@ -66,4 +66,13 @@ export class IsObjectTest {
             new IsObject(new ScalarOf({ a: true })).value()
         ).to.equal(true, 'Scalar with object must return true');
     }
+
+    @test
+    public fromFunction(): void {
+        expect(
+            new IsObject((): { a: boolean } => {
+                return { a : true };
+            }).value()
+        ).to.equal(true, 'Function that returns object must return true');
+    }
 }

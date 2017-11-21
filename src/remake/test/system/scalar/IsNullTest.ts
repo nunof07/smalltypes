@@ -43,4 +43,11 @@ export class IsNullTest {
             new IsNull(new ScalarOf(null)).value()
         ).to.equal(true, 'Scalar with null should be true');
     }
+
+    @test
+    public fromFunction(): void {
+        expect(
+            new IsNull((): null => null).value()
+        ).to.equal(true, 'Function that returns null should be true');
+    }
 }

@@ -51,4 +51,18 @@ export class WithFallbackTest {
             new WithFallback(1, 2).value()
         ).to.equal(1);
     }
+
+    @test
+    public whenBlankFunctionResult(): void {
+        expect(
+            new WithFallback((): null => null, (): number => 2).value()
+        ).to.equal(2);
+    }
+
+    @test
+    public whenNotBlankFunctionResult(): void {
+        expect(
+            new WithFallback((): number => 1, (): number => 2).value()
+        ).to.equal(1);
+    }
 }

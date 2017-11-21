@@ -51,4 +51,11 @@ export class IsUndefinedTest {
             new IsUndefined('Hello World!').value()
         ).to.equal(false, 'non-empty string should be false');
     }
+
+    @test
+    public fromFunction(): void {
+        expect(
+            new IsUndefined((): undefined => undefined).value()
+        ).to.equal(true, 'Function that returns undefined should be true');
+    }
 }

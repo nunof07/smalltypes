@@ -43,4 +43,11 @@ export class RoundedTest {
             new Rounded(new ScalarOf(4.4445), 3).value()
         ).to.equal(4.445);
     }
+
+    @test
+    public roundsFunctionResult(): void {
+        expect(
+            new Rounded((): number => 4.4445, 3).value()
+        ).to.equal(4.445);
+    }
 }

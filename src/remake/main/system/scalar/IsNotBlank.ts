@@ -27,15 +27,20 @@ export class IsNotBlank<T> implements Scalar<boolean> {
     constructor(scalar: Scalar<T>)
     /**
      * Ctor.
+     * @param func Function.
+     */
+    constructor(func: () => T)
+    /**
+     * Ctor.
      * @param value Value.
      */
     constructor(value: T)
     /**
      * Ctor.
-     * @param scalarOrValue Scalar or value.
+     * @param something Scalar, function that returns value, or value.
      */
-    constructor(scalarOrValue: Scalar<T> | T) {
-        this.scalar = new ScalarOf(scalarOrValue);
+    constructor(something: Scalar<T> | (() => T) | T) {
+        this.scalar = new ScalarOf(something);
     }
 
     /**

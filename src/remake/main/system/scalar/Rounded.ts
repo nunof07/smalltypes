@@ -33,6 +33,12 @@ export class Rounded implements Scalar<number> {
     constructor(scalar: Scalar<number>, precision: number)
     /**
      * Ctor.
+     * @param func Function.
+     * @param precision Precision. E.g. 1 would round to 1 decimal place.
+     */
+    constructor(func: () => number, precision: number)
+    /**
+     * Ctor.
      * @param value Number.
      * @param precision Precision. E.g. 1 would round to 1 decimal place.
      */
@@ -42,7 +48,7 @@ export class Rounded implements Scalar<number> {
      * @param scalarOrValue Number.
      * @param precision Precision. E.g. 1 would round to 1 decimal place.
      */
-    constructor(scalarOrValue: Scalar<number> | number, precision: number) {
+    constructor(scalarOrValue: Scalar<number> | (() => number) | number, precision: number) {
         this.scalar = new ScalarOf(scalarOrValue);
         this.precision = precision;
     }
