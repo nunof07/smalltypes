@@ -1,8 +1,7 @@
 import { final } from '@main/system/index';
 import { frozen } from '@main/system/index';
-import { ResultOf } from '@main/system/scalar/index';
+import { HasTrueProperty } from '@main/system/scalar/index';
 import { Scalar } from '@main/system/scalar/index';
-import { ScalarType } from '@main/system/scalar/index';
 
 /**
  * Determines if variable is of type {@link Scalar}.
@@ -25,11 +24,7 @@ export class IsScalar<T> implements Scalar<boolean> {
      * @param maybeScalar Variable to check.
      */
     constructor(maybeScalar: T) {
-        this.isScalar = new ResultOf((): boolean =>
-            maybeScalar !== null &&
-            typeof maybeScalar === 'object' &&
-            (<ScalarType><Object>maybeScalar)['@@__IS_SYSTEM_SCALAR__@@'] === true
-        );
+        this.isScalar = new HasTrueProperty(maybeScalar, '@@__IS_SYSTEM_SCALAR__@@');
     }
 
     /**

@@ -4,6 +4,7 @@
 export * from './And';
 export * from './Cached';
 export * from './False';
+export * from './HasTrueProperty';
 export * from './IsBlank';
 export * from './IsJsFunction';
 export * from './IsNotBlank';

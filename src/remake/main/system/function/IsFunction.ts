@@ -1,7 +1,6 @@
-import { FunctionType } from '@main/system/function/index';
 import { final } from '@main/system/index';
 import { frozen } from '@main/system/index';
-import { ResultOf } from '@main/system/scalar/index';
+import { HasTrueProperty } from '@main/system/scalar/index';
 import { Scalar } from '@main/system/scalar/index';
 
 /**
@@ -25,11 +24,7 @@ export class IsFunction<T> implements Scalar<boolean> {
      * @param maybeFunc Variable to check.
      */
     constructor(maybeFunc: T) {
-        this.isFunction = new ResultOf((): boolean =>
-            maybeFunc !== null &&
-            typeof maybeFunc === 'object' &&
-            (<FunctionType><Object>maybeFunc)['@@__IS_SYSTEM_FUNCTION__@@'] === true
-        );
+        this.isFunction = new HasTrueProperty(maybeFunc, '@@__IS_SYSTEM_FUNCTION__@@');
     }
 
     /**
