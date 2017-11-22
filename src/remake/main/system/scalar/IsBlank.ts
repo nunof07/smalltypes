@@ -3,6 +3,7 @@ import { frozen } from '@main/system/index';
 import { IsNull } from '@main/system/scalar/index';
 import { IsUndefined } from '@main/system/scalar/index';
 import { Scalar } from '@main/system/scalar/index';
+import { ScalarLike } from '@main/system/scalar/index';
 import { ScalarOf } from '@main/system/scalar/index';
 
 /**
@@ -23,25 +24,10 @@ export class IsBlank<T> implements Scalar<boolean> {
 
     /**
      * Ctor.
-     * @param scalar Scalar.
-     */
-    constructor(scalar: Scalar<T>)
-    /**
-     * Ctor.
-     * @param func Function.
-     */
-    constructor(func: () => T)
-    /**
-     * Ctor.
      * @param value Value.
      */
-    constructor(value: T)
-    /**
-     * Ctor.
-     * @param something Scalar, function that returns value, or value.
-     */
-    constructor(something: Scalar<T> | (() => T) | T) {
-        this.scalar = new ScalarOf(something);
+    constructor(value: ScalarLike<T>) {
+        this.scalar = new ScalarOf(value);
     }
 
     /**

@@ -1,6 +1,10 @@
+import { FunctionOf } from '@main/system/function/index';
 import { final } from '@main/system/index';
 import { frozen } from '@main/system/index';
+import { Mapped } from '@main/system/iterable/index';
 import { Scalar } from '@main/system/scalar/index';
+import { ScalarLike } from '@main/system/scalar/index';
+import { ScalarOf } from '@main/system/scalar/index';
 
 /**
  * Logical conjunction operator.
@@ -22,8 +26,13 @@ export class And implements Scalar<boolean> {
      * Ctor.
      * @param conditions Conditions.
      */
-    constructor(...conditions: Scalar<boolean>[]) {
-        this.conditions = conditions;
+    constructor(...conditions: ScalarLike<boolean>[]) {
+        this.conditions = new Mapped(
+            conditions,
+            new FunctionOf((input: ScalarLike<boolean>): Scalar<boolean> =>
+                new ScalarOf(input)
+            )
+        );
     }
 
     /**

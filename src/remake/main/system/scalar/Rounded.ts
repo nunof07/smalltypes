@@ -1,6 +1,7 @@
 import { final } from '@main/system/index';
 import { frozen } from '@main/system/index';
 import { Scalar } from '@main/system/scalar/index';
+import { ScalarLike } from '@main/system/scalar/index';
 import { ScalarOf } from '@main/system/scalar/index';
 
 /**
@@ -23,41 +24,23 @@ export class Rounded implements Scalar<number> {
     /**
      * Precision. E.g. 1 would round to 1 decimal place.
      */
-    private readonly precision: number;
+    private readonly precision: Scalar<number>;
 
-    /**
-     * Ctor.
-     * @param scalar Number.
-     * @param precision Precision. E.g. 1 would round to 1 decimal place.
-     */
-    constructor(scalar: Scalar<number>, precision: number)
-    /**
-     * Ctor.
-     * @param func Function.
-     * @param precision Precision. E.g. 1 would round to 1 decimal place.
-     */
-    constructor(func: () => number, precision: number)
-    /**
-     * Ctor.
-     * @param value Number.
-     * @param precision Precision. E.g. 1 would round to 1 decimal place.
-     */
-    constructor(value: number, precision: number)
     /**
      * Ctor.
      * @param something Number.
      * @param precision Precision. E.g. 1 would round to 1 decimal place.
      */
-    constructor(something: Scalar<number> | (() => number) | number, precision: number) {
-        this.scalar = new ScalarOf(something);
-        this.precision = precision;
+    constructor(value: ScalarLike<number>, precision: ScalarLike<number>) {
+        this.scalar = new ScalarOf(value);
+        this.precision = new ScalarOf(precision);
     }
 
     /**
      * Get the value.
      */
     public value(): number {
-        const factor: number = Math.pow(10, this.precision);
+        const factor: number = Math.pow(10, this.precision.value());
 
         return Math.round(this.scalar.value() * factor) / factor;
     }

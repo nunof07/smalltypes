@@ -1,6 +1,7 @@
 import { final } from '@main/system/index';
 import { frozen } from '@main/system/index';
 import { Scalar } from '@main/system/scalar/index';
+import { ScalarLike } from '@main/system/scalar/index';
 import { ScalarOf } from '@main/system/scalar/index';
 
 /**
@@ -31,20 +32,10 @@ export class Cached<T> implements Scalar<T> {
 
     /**
      * Ctor.
-     * @param scalar Scalar.
+     * @param value Value.
      */
-    constructor(scalar: Scalar<T>)
-    /**
-     * Ctor.
-     * @param func Function that returns value to cache.
-     */
-    constructor(func: () => T)
-    /**
-     * Ctor.
-     * @param scalarOrFunction Scalar or function.
-     */
-    constructor(scalarOrFunction: Scalar<T> | (() => T)) {
-        this.scalar = new ScalarOf(scalarOrFunction);
+    constructor(value: ScalarLike<T>) {
+        this.scalar = new ScalarOf(value);
         this.isCached = false;
     }
 

@@ -2,6 +2,7 @@ import { final } from '@main/system/index';
 import { frozen } from '@main/system/index';
 import { IsScalar } from '@main/system/scalar/index';
 import { Scalar } from '@main/system/scalar/index';
+import { ScalarLike } from '@main/system/scalar/index';
 
 /**
  * Scalar of different possible inputs.
@@ -21,16 +22,16 @@ export class ScalarOf<T> implements Scalar<T> {
 
     /**
      * Ctor.
-     * @param something Scalar, function that returns value, or value.
+     * @param value Scalar, function that returns value, or value.
      */
-    constructor(something: Scalar<T> | (() => T) | T) {
+    constructor(value: ScalarLike<T>) {
         this.getValue = (): T => {
-            if (typeof something === 'function') {
-                return something();
-            } else if (new IsScalar(something).value()) {
-                return (<Scalar<T>>something).value();
+            if (typeof value === 'function') {
+                return value();
+            } else if (new IsScalar(value).value()) {
+                return (<Scalar<T>>value).value();
             } else {
-                return <T>something;
+                return <T>value;
             }
         };
     }

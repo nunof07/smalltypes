@@ -27,7 +27,7 @@ export class WithFallbackTest {
     @test
     public whenBlankValue(): void {
         expect(
-            new WithFallback(null, new ScalarOf(2)).value()
+            new WithFallback(new ScalarOf(null), new ScalarOf(2)).value()
         ).to.equal(2);
     }
 

@@ -1,6 +1,8 @@
 import { final } from '@main/system/index';
 import { frozen } from '@main/system/index';
 import { Scalar } from '@main/system/scalar/index';
+import { ScalarLike } from '@main/system/scalar/index';
+import { ScalarOf } from '@main/system/scalar/index';
 
 /**
  * Ternary operation.
@@ -34,10 +36,10 @@ export class Ternary<T> implements Scalar<T> {
      * @param consequent Return when condition is true.
      * @param alternative Return when condition is false.
      */
-    constructor(condition: Scalar<boolean>, consequent: Scalar<T>, alternative: Scalar<T>) {
-        this.condition = condition;
-        this.consequent = consequent;
-        this.alternative = alternative;
+    constructor(condition: ScalarLike<boolean>, consequent: ScalarLike<T>, alternative: ScalarLike<T>) {
+        this.condition = new ScalarOf(condition);
+        this.consequent = new ScalarOf(consequent);
+        this.alternative = new ScalarOf(alternative);
     }
 
     /**
