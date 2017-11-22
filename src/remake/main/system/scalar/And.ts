@@ -1,10 +1,8 @@
-import { FunctionOf } from '@main/system/function/index';
 import { final } from '@main/system/index';
 import { frozen } from '@main/system/index';
-import { Mapped } from '@main/system/iterable/index';
+import { Conditions } from '@main/system/iterable/index';
 import { Scalar } from '@main/system/scalar/index';
 import { ScalarLike } from '@main/system/scalar/index';
-import { ScalarOf } from '@main/system/scalar/index';
 
 /**
  * Logical conjunction operator.
@@ -20,19 +18,14 @@ export class And implements Scalar<boolean> {
     /**
      * Conditions.
      */
-    private readonly conditions: Iterable<Scalar<boolean>>;
+    private readonly conditions: Iterable<boolean>;
 
     /**
      * Ctor.
      * @param conditions Conditions.
      */
     constructor(...conditions: ScalarLike<boolean>[]) {
-        this.conditions = new Mapped(
-            conditions,
-            new FunctionOf((input: ScalarLike<boolean>): Scalar<boolean> =>
-                new ScalarOf(input)
-            )
-        );
+        this.conditions = new Conditions(conditions);
     }
 
     /**
@@ -40,7 +33,7 @@ export class And implements Scalar<boolean> {
      */
     public value(): boolean {
         for (const condition of this.conditions) {
-            if (!condition.value()) {
+            if (!condition) {
                 return false;
             }
         }
