@@ -14,6 +14,7 @@ export * from './IsScalar';
 export * from './IsUndefined';
 export * from './MapOf';
 export * from './Null';
+export * from './Or';
 export * from './Rounded';
 export * from './Scalar';
 export * from './ScalarOf';
