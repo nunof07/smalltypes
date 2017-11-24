@@ -13,6 +13,7 @@ export * from './IsObject';
 export * from './IsScalar';
 export * from './IsUndefined';
 export * from './MapOf';
+export * from './Not';
 export * from './Null';
 export * from './Or';
 export * from './Rounded';
