@@ -2,6 +2,7 @@
  * Index.
  */
 export * from './And';
+export * from './BoolOf';
 export * from './Cached';
 export * from './ConditionConsequentLikePair';
 export * from './ConditionConsequentPair';
