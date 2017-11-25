@@ -1,4 +1,5 @@
 import { FunctionOf } from '@main/system/function/index';
+import { ToConditionConsequentPair } from '@main/system/function/index';
 import { final } from '@main/system/index';
 import { frozen } from '@main/system/index';
 import { Filtered } from '@main/system/iterable/index';
@@ -9,7 +10,6 @@ import { ConditionConsequentPair } from '@main/system/scalar/index';
 import { Scalar } from '@main/system/scalar/index';
 import { ScalarLike } from '@main/system/scalar/index';
 import { ScalarOf } from '@main/system/scalar/index';
-import { ToConditionConsequentPair } from '@main/system/scalar/index';
 
 /**
  * Conditional scalar.
@@ -42,7 +42,7 @@ export class Conditioned<T> implements Scalar<T> {
         this.firstConditionConsequent =
             new First(
                 new Filtered(
-                    new Mapped(conditionConsequents, new ToConditionConsequentPair()),
+                    new Mapped(conditionConsequents, new ToConditionConsequentPair<T>()),
                     new FunctionOf((input: ConditionConsequentPair<T>): boolean => {
                         return input[0].value();
                     })

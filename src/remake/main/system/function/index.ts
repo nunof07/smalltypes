@@ -11,3 +11,4 @@ export * from './JsFunction';
 export * from './NullaryFunction';
 export * from './NullaryFunctionOf';
 export * from './SafeNavigation';
+export * from './ToConditionConsequentPair';
