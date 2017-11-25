@@ -1,4 +1,4 @@
-import { FunctionOf } from '@main/system/function/index';
+import { IsTrue } from '@main/system/function/index';
 import { ToConditionConsequentPair } from '@main/system/function/index';
 import { final } from '@main/system/index';
 import { frozen } from '@main/system/index';
@@ -43,9 +43,7 @@ export class Conditioned<T> implements Scalar<T> {
             new First(
                 new Filtered(
                     new Mapped(conditionConsequents, new ToConditionConsequentPair<T>()),
-                    new FunctionOf((input: ConditionConsequentPair<T>): boolean => {
-                        return input[0].value();
-                    })
+                    new IsTrue()
                 )
             );
         this.alternative = new ScalarOf(alternative);
