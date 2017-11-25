@@ -6,7 +6,7 @@ import { ConditionConsequentPair } from '@main/system/scalar/index';
 import { ScalarOf } from '@main/system/scalar/index';
 
 /**
- * Function that caches results.
+ * Converts {@link ConditionConsequentLikePair} to {@link ToConditionConsequentPair}.
  */
 @final
 @frozen

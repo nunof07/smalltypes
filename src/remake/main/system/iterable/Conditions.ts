@@ -1,9 +1,8 @@
-import { FunctionOf } from '@main/system/function/index';
+import { ToBool } from '@main/system/function/index';
 import { final } from '@main/system/index';
 import { frozen } from '@main/system/index';
 import { Mapped } from '@main/system/iterable/index';
 import { ScalarLike } from '@main/system/scalar/index';
-import { ScalarOf } from '@main/system/scalar/index';
 
 /**
  * Iterable of logical conditions.
@@ -21,12 +20,7 @@ export class Conditions implements Iterable<boolean> {
      * @param conditions Conditions.
      */
     constructor(conditions: Iterable<ScalarLike<boolean>>) {
-        this.conditions = new Mapped(
-            conditions,
-            new FunctionOf<ScalarLike<boolean>, boolean>((input: ScalarLike<boolean>): boolean =>
-                (new ScalarOf(input)).value()
-            )
-        );
+        this.conditions = new Mapped(conditions, new ToBool());
     }
 
     /**

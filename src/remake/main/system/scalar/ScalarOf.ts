@@ -1,6 +1,7 @@
+import { Function } from '@main/system/function/index';
+import { ToValue } from '@main/system/function/index';
 import { final } from '@main/system/index';
 import { frozen } from '@main/system/index';
-import { IsScalar } from '@main/system/scalar/index';
 import { Scalar } from '@main/system/scalar/index';
 import { ScalarLike } from '@main/system/scalar/index';
 
@@ -11,24 +12,22 @@ import { ScalarLike } from '@main/system/scalar/index';
 @frozen
 export class ScalarOf<T> implements Scalar<T> {
     /**
-     * Returns value.
+     * Value.
      */
-    private readonly getValue: () => T;
+    private readonly val: ScalarLike<T>;
+
+    /**
+     * Function to convert scalar-like types to their respective values.
+     */
+    private readonly toValue: Function<ScalarLike<T>, T>;
 
     /**
      * Ctor.
      * @param value Scalar, function that returns value, or value.
      */
-    constructor(value: ScalarLike<T>) {
-        this.getValue = (): T => {
-            if (typeof value === 'function') {
-                return value();
-            } else if (new IsScalar(value).value()) {
-                return (<Scalar<T>>value).value();
-            } else {
-                return <T>value;
-            }
-        };
+    constructor(value: ScalarLike<T>, toValue: Function<ScalarLike<T>, T> = new ToValue()) {
+        this.val = value;
+        this.toValue = toValue;
     }
 
     /**
@@ -42,6 +41,6 @@ export class ScalarOf<T> implements Scalar<T> {
      * Gets the value.
      */
     public value(): T {
-        return this.getValue();
+        return this.toValue.apply(this.val);
     }
 }
