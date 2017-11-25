@@ -3,6 +3,9 @@
  */
 export * from './And';
 export * from './Cached';
+export * from './ConditionConsequentLikePair';
+export * from './ConditionConsequentPair';
+export * from './Conditioned';
 export * from './False';
 export * from './HasTrueProperty';
 export * from './IsBlank';
@@ -22,6 +25,7 @@ export * from './ScalarLike';
 export * from './ScalarOf';
 export * from './ScalarType';
 export * from './Ternary';
+export * from './ToConditionConsequentPair';
 export * from './True';
 export * from './Undefined';
 export * from './WithFallback';
