@@ -11,11 +11,6 @@ import { ScalarOf } from '@main/system/scalar/index';
 @frozen
 export class Cached<T> implements Scalar<T> {
     /**
-     * Type determinant.
-     */
-    public readonly '@@__IS_SYSTEM_SCALAR__@@': true = true;
-
-    /**
      * Scalar.
      */
     private readonly scalar: Scalar<T>;
@@ -37,6 +32,13 @@ export class Cached<T> implements Scalar<T> {
     constructor(value: ScalarLike<T>) {
         this.scalar = new ScalarOf(value);
         this.isCached = false;
+    }
+
+    /**
+     * Type determinant.
+     */
+    public isScalar(): true {
+        return true;
     }
 
     /**

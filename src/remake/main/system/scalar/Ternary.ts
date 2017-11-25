@@ -11,11 +11,6 @@ import { ScalarOf } from '@main/system/scalar/index';
 @frozen
 export class Ternary<T> implements Scalar<T> {
     /**
-     * Type determinant.
-     */
-    public readonly '@@__IS_SYSTEM_SCALAR__@@': true = true;
-
-    /**
      * Test condition.
      */
     private readonly condition: Scalar<boolean>;
@@ -40,6 +35,13 @@ export class Ternary<T> implements Scalar<T> {
         this.condition = new ScalarOf(condition);
         this.consequent = new ScalarOf(consequent);
         this.alternative = new ScalarOf(alternative);
+    }
+
+    /**
+     * Type determinant.
+     */
+    public isScalar(): true {
+        return true;
     }
 
     /**

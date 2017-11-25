@@ -10,11 +10,6 @@ import { Scalar } from '@main/system/scalar/index';
 @frozen
 export class IsFunction<T> implements Scalar<boolean> {
     /**
-     * Type determinant.
-     */
-    public readonly '@@__IS_SYSTEM_SCALAR__@@': true = true;
-
-    /**
      * Condition.
      */
     private readonly isFunction: Scalar<boolean>;
@@ -25,6 +20,13 @@ export class IsFunction<T> implements Scalar<boolean> {
      */
     constructor(maybeFunc: T) {
         this.isFunction = new HasTrueResult(maybeFunc, 'isFunction');
+    }
+
+    /**
+     * Type determinant.
+     */
+    public isScalar(): true {
+        return true;
     }
 
     /**

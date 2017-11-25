@@ -25,7 +25,6 @@ export * from './Rounded';
 export * from './Scalar';
 export * from './ScalarLike';
 export * from './ScalarOf';
-export * from './ScalarType';
 export * from './Ternary';
 export * from './True';
 export * from './Undefined';

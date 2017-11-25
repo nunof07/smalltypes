@@ -9,11 +9,6 @@ import { Scalar } from '@main/system/scalar/index';
 @frozen
 export class IsJsFunction<T> implements Scalar<boolean> {
     /**
-     * Type determinant.
-     */
-    public readonly '@@__IS_SYSTEM_SCALAR__@@': true = true;
-
-    /**
      * Variable to check.
      */
     private readonly val: T;
@@ -24,6 +19,13 @@ export class IsJsFunction<T> implements Scalar<boolean> {
      */
     constructor(val: T) {
         this.val = val;
+    }
+
+    /**
+     * Type determinant.
+     */
+    public isScalar(): true {
+        return true;
     }
 
     /**

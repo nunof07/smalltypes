@@ -11,11 +11,6 @@ import { ScalarLike } from '@main/system/scalar/index';
 @frozen
 export class And implements Scalar<boolean> {
     /**
-     * Type determinant.
-     */
-    public readonly '@@__IS_SYSTEM_SCALAR__@@': true = true;
-
-    /**
      * Conditions.
      */
     private readonly conditions: Iterable<boolean>;
@@ -26,6 +21,13 @@ export class And implements Scalar<boolean> {
      */
     constructor(...conditions: ScalarLike<boolean>[]) {
         this.conditions = new Conditions(conditions);
+    }
+
+    /**
+     * Type determinant.
+     */
+    public isScalar(): true {
+        return true;
     }
 
     /**

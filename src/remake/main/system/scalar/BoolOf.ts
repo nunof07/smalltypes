@@ -12,11 +12,6 @@ import { ScalarOf } from '@main/system/scalar/index';
 @frozen
 export class BoolOf<T> implements Scalar<boolean> {
     /**
-     * Type determinant.
-     */
-    public readonly '@@__IS_SYSTEM_SCALAR__@@': true = true;
-
-    /**
      * Returns value.
      */
     private readonly bool: () => Scalar<boolean>;
@@ -35,6 +30,13 @@ export class BoolOf<T> implements Scalar<boolean> {
                 <ScalarLike<boolean>>value
             );
         };
+    }
+
+    /**
+     * Type determinant.
+     */
+    public isScalar(): true {
+        return true;
     }
 
     /**

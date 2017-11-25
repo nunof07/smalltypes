@@ -1,9 +1,12 @@
-import { ScalarType } from '@main/system/scalar/index';
-
 /**
  * Scalar.
  */
-export interface Scalar<T> extends ScalarType {
+export interface Scalar<T> {
+    /**
+     * Type determinant.
+     */
+    isScalar(): true;
+
     /**
      * Get the value.
      */

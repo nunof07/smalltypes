@@ -11,7 +11,9 @@ export class True implements Scalar<boolean> {
     /**
      * Type determinant.
      */
-    public readonly '@@__IS_SYSTEM_SCALAR__@@': true = true;
+    public isScalar(): true {
+        return true;
+    }
 
     /**
      * Get the value.

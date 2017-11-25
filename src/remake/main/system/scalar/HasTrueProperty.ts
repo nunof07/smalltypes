@@ -9,11 +9,6 @@ import { Scalar } from '@main/system/scalar/index';
 @frozen
 export class HasTrueProperty<T> implements Scalar<boolean> {
     /**
-     * Type determinant.
-     */
-    public readonly '@@__IS_SYSTEM_SCALAR__@@': true = true;
-
-    /**
      * Condition.
      */
     private readonly isPropertyTrue: () => boolean;
@@ -28,6 +23,13 @@ export class HasTrueProperty<T> implements Scalar<boolean> {
             value !== null &&
             typeof value === 'object' &&
             (<{ [key: string]: boolean }><Object>value)[propertyName] === true;
+    }
+
+    /**
+     * Type determinant.
+     */
+    public isScalar(): true {
+        return true;
     }
 
     /**

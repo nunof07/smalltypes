@@ -11,7 +11,9 @@ export class Null implements Scalar<null> {
     /**
      * Type determinant.
      */
-    public readonly '@@__IS_SYSTEM_SCALAR__@@': true = true;
+    public isScalar(): true {
+        return true;
+    }
 
     /**
      * Get the value.

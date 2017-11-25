@@ -1,6 +1,6 @@
 import { final } from '@main/system/index';
 import { frozen } from '@main/system/index';
-import { HasTrueProperty } from '@main/system/scalar/index';
+import { HasTrueResult } from '@main/system/scalar/index';
 import { Scalar } from '@main/system/scalar/index';
 
 /**
@@ -10,27 +10,29 @@ import { Scalar } from '@main/system/scalar/index';
 @frozen
 export class IsScalar<T> implements Scalar<boolean> {
     /**
-     * Type determinant.
-     */
-    public readonly '@@__IS_SYSTEM_SCALAR__@@': true = true;
-
-    /**
      * Condition.
      */
-    private readonly isScalar: Scalar<boolean>;
+    private readonly isScalarType: Scalar<boolean>;
 
     /**
      * Ctor.
      * @param maybeScalar Variable to check.
      */
     constructor(maybeScalar: T) {
-        this.isScalar = new HasTrueProperty(maybeScalar, '@@__IS_SYSTEM_SCALAR__@@');
+        this.isScalarType = new HasTrueResult(maybeScalar, 'isScalar');
+    }
+
+    /**
+     * Type determinant.
+     */
+    public isScalar(): true {
+        return true;
     }
 
     /**
      * Get the value.
      */
     public value(): boolean {
-        return this.isScalar.value();
+        return this.isScalarType.value();
     }
 }

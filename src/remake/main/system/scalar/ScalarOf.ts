@@ -11,11 +11,6 @@ import { ScalarLike } from '@main/system/scalar/index';
 @frozen
 export class ScalarOf<T> implements Scalar<T> {
     /**
-     * Type determinant.
-     */
-    public readonly '@@__IS_SYSTEM_SCALAR__@@': true = true;
-
-    /**
      * Returns value.
      */
     private readonly getValue: () => T;
@@ -34,6 +29,13 @@ export class ScalarOf<T> implements Scalar<T> {
                 return <T>value;
             }
         };
+    }
+
+    /**
+     * Type determinant.
+     */
+    public isScalar(): true {
+        return true;
     }
 
     /**

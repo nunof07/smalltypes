@@ -13,11 +13,6 @@ import { Ternary } from '@main/system/scalar/index';
 @frozen
 export class WithFallback<T> implements Scalar<T> {
     /**
-     * Type determinant.
-     */
-    public readonly '@@__IS_SYSTEM_SCALAR__@@': true = true;
-
-    /**
      * Source.
      */
     private readonly scalar: Scalar<T>;
@@ -33,6 +28,13 @@ export class WithFallback<T> implements Scalar<T> {
             new ScalarOf(fallback),
             new ScalarOf(value)
         );
+    }
+
+    /**
+     * Type determinant.
+     */
+    public isScalar(): true {
+        return true;
     }
 
     /**

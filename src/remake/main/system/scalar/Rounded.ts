@@ -12,11 +12,6 @@ import { ScalarOf } from '@main/system/scalar/index';
 @frozen
 export class Rounded implements Scalar<number> {
     /**
-     * Type determinant.
-     */
-    public readonly '@@__IS_SYSTEM_SCALAR__@@': true = true;
-
-    /**
      * Number.
      */
     private readonly scalar: Scalar<number>;
@@ -34,6 +29,13 @@ export class Rounded implements Scalar<number> {
     constructor(value: ScalarLike<number>, precision: ScalarLike<number>) {
         this.scalar = new ScalarOf(value);
         this.precision = new ScalarOf(precision);
+    }
+
+    /**
+     * Type determinant.
+     */
+    public isScalar(): true {
+        return true;
     }
 
     /**

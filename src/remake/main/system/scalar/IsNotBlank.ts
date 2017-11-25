@@ -12,11 +12,6 @@ import { ScalarOf } from '@main/system/scalar/index';
 @frozen
 export class IsNotBlank<T> implements Scalar<boolean> {
     /**
-     * Type determinant.
-     */
-    public readonly '@@__IS_SYSTEM_SCALAR__@@': true = true;
-
-    /**
      * Scalar.
      */
     private readonly scalar: Scalar<T>;
@@ -27,6 +22,13 @@ export class IsNotBlank<T> implements Scalar<boolean> {
      */
     constructor(value: ScalarLike<T>) {
         this.scalar = new ScalarOf(value);
+    }
+
+    /**
+     * Type determinant.
+     */
+    public isScalar(): true {
+        return true;
     }
 
     /**

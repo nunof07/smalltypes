@@ -12,11 +12,6 @@ import { Scalar } from '@main/system/scalar/index';
 @frozen
 export class MapOf<Z, K, V> implements Scalar<Map<K, V>> {
     /**
-     * Type determinant.
-     */
-    public readonly '@@__IS_SYSTEM_SCALAR__@@': true = true;
-
-    /**
      * Items.
      */
     private readonly entries: Iterable<Z>;
@@ -46,6 +41,13 @@ export class MapOf<Z, K, V> implements Scalar<Map<K, V>> {
     constructor(entries: Iterable<Z>, getEntry: Function<Z, [K, V]> | ((input: Z) => [K, V])) {
         this.entries = entries;
         this.getEntry = new FunctionOf(getEntry);
+    }
+
+    /**
+     * Type determinant.
+     */
+    public isScalar(): true {
+        return true;
     }
 
     /**

@@ -18,11 +18,6 @@ import { ScalarOf } from '@main/system/scalar/index';
 @frozen
 export class Conditioned<T> implements Scalar<T> {
     /**
-     * Type determinant.
-     */
-    public readonly '@@__IS_SYSTEM_SCALAR__@@': true = true;
-
-    /**
      * Condition/consequent pairs.
      */
     private readonly firstConditionConsequent: Scalar<IteratorResult<ConditionConsequentPair<T>>>;
@@ -47,6 +42,13 @@ export class Conditioned<T> implements Scalar<T> {
                 )
             );
         this.alternative = new ScalarOf(alternative);
+    }
+
+    /**
+     * Type determinant.
+     */
+    public isScalar(): true {
+        return true;
     }
 
     /**

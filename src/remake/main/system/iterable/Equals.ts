@@ -9,11 +9,6 @@ import { Scalar } from '@main/system/scalar/index';
 @frozen
 export class Equals<T> implements Scalar<boolean> {
     /**
-     * Type determinant.
-     */
-    public readonly '@@__IS_SYSTEM_SCALAR__@@': true = true;
-
-    /**
      * Source value.
      */
     private readonly source: Iterable<T>;
@@ -31,6 +26,13 @@ export class Equals<T> implements Scalar<boolean> {
     constructor(source: Iterable<T>, compared: Iterable<T>) {
         this.source = source;
         this.compared = compared;
+    }
+
+    /**
+     * Type determinant.
+     */
+    public isScalar(): true {
+        return true;
     }
 
     /**

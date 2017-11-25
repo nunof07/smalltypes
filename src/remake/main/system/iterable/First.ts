@@ -10,11 +10,6 @@ import { Scalar } from '@main/system/scalar/index';
 @frozen
 export class First<T> implements Scalar<IteratorResult<T>> {
     /**
-     * Type determinant.
-     */
-    public readonly '@@__IS_SYSTEM_SCALAR__@@': true = true;
-
-    /**
      * Source value.
      */
     private readonly source: Iterable<T>;
@@ -25,6 +20,13 @@ export class First<T> implements Scalar<IteratorResult<T>> {
      */
     constructor(value: Iterable<T>) {
         this.source = new Limited(value, 1);
+    }
+
+    /**
+     * Type determinant.
+     */
+    public isScalar(): true {
+        return true;
     }
 
     /**

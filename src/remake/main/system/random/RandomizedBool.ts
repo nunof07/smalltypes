@@ -10,11 +10,6 @@ import { Scalar } from '@main/system/scalar/index';
 @frozen
 export class RandomizedBool implements Scalar<boolean> {
     /**
-     * Type determinant.
-     */
-    public readonly '@@__IS_SYSTEM_SCALAR__@@': true = true;
-
-    /**
      * Random.
      */
     private readonly random: Random;
@@ -25,6 +20,13 @@ export class RandomizedBool implements Scalar<boolean> {
      */
     constructor(random: Random) {
         this.random = random;
+    }
+
+    /**
+     * Type determinant.
+     */
+    public isScalar(): true {
+        return true;
     }
 
     /**
