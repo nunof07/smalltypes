@@ -2,6 +2,8 @@ import { final } from '@main/system/index';
 import { frozen } from '@main/system/index';
 import { Random } from '@main/system/random/index';
 import { Scalar } from '@main/system/scalar/index';
+import { ScalarLike } from '@main/system/scalar/index';
+import { ScalarOf } from '@main/system/scalar/index';
 
 /**
  * Randomized floating point number.
@@ -17,12 +19,12 @@ export class RandomizedFloat implements Scalar<number> {
     /**
      * Minimum possible value (inclusive).
      */
-    private readonly min: number;
+    private readonly min: Scalar<number>;
 
     /**
      * Maximum possible value (inclusive).
      */
-    private readonly max: number;
+    private readonly max: Scalar<number>;
 
     /**
      * Ctor.
@@ -30,10 +32,10 @@ export class RandomizedFloat implements Scalar<number> {
      * @param min Minimum possible value (inclusive).
      * @param max Maximum possible value (inclusive).
      */
-    constructor(random: Random, min: number, max: number) {
+    constructor(random: Random, min: ScalarLike<number>, max: ScalarLike<number>) {
         this.random = random;
-        this.min = min;
-        this.max = max;
+        this.min = new ScalarOf(min);
+        this.max = new ScalarOf(max);
     }
 
     /**
@@ -47,6 +49,6 @@ export class RandomizedFloat implements Scalar<number> {
      * Get the value.
      */
     public value(): number {
-        return this.min + (this.max - this.min) * this.random.next();
+        return this.min.value() + (this.max.value() - this.min.value()) * this.random.next();
     }
 }

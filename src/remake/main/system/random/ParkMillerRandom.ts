@@ -2,6 +2,7 @@ import { final } from '@main/system/index';
 import { frozen } from '@main/system/index';
 import { Random } from '@main/system/random/index';
 import { Scalar } from '@main/system/scalar/index';
+import { ScalarLike } from '@main/system/scalar/index';
 import { ScalarOf } from '@main/system/scalar/index';
 
 /**
@@ -30,10 +31,10 @@ export class ParkMillerRandom implements Random {
      * Ctor.
      * @param seed Seed number. If not provided will use a seed based on the current time.
      */
-    constructor(seed: Scalar<number> = new ScalarOf((): number => Date.now())) {
+    constructor(seed: ScalarLike<number> = (): number => Date.now()) {
         // make sure seed is number between 1 and MAX
         this.seed = new ScalarOf((): number => {
-            let source: number = seed.value();
+            let source: number = new ScalarOf(seed).value();
             source = (source === 0 ? 1 : source);
 
             return Math.abs(source) % ParkMillerRandom.MAX;
