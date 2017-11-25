@@ -9,11 +9,6 @@ import { frozen } from '@main/system/index';
 @frozen
 export class Cached<X, Y> implements Function<X, Y> {
     /**
-     * Type determinant.
-     */
-    public readonly '@@__IS_SYSTEM_FUNCTION__@@': true = true;
-
-    /**
      * Function callback.
      */
     private readonly func: Function<X, Y>;
@@ -30,6 +25,13 @@ export class Cached<X, Y> implements Function<X, Y> {
     constructor(func: Function<X, Y>) {
         this.func = func;
         this.cache = new Map();
+    }
+
+    /**
+     * Type determinant.
+     */
+    public isFunction(): true {
+        return true;
     }
 
     /**

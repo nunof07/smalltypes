@@ -21,7 +21,7 @@ export class FunctionOfTest {
     public fromFunction(): void {
         expect(
             new FunctionOf({
-                '@@__IS_SYSTEM_FUNCTION__@@': true,
+                isFunction: (): true => true,
                 apply: (input: string): string => input
             }).apply('hello')
         ).to.equal('hello');

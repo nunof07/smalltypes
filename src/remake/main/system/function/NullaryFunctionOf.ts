@@ -11,11 +11,6 @@ import { frozen } from '@main/system/index';
 @frozen
 export class NullaryFunctionOf<Y> implements NullaryFunction<Y> {
     /**
-     * Type determinant.
-     */
-    public readonly '@@__IS_SYSTEM_FUNCTION__@@': true = true;
-
-    /**
      * Function callback.
      */
     private readonly func: Function<undefined, Y>;
@@ -26,6 +21,13 @@ export class NullaryFunctionOf<Y> implements NullaryFunction<Y> {
      */
     constructor(func: () => Y) {
         this.func = new JsFunction(<(input: undefined) => Y>func);
+    }
+
+    /**
+     * Type determinant.
+     */
+    public isFunction(): true {
+        return true;
     }
 
     /**

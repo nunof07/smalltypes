@@ -15,11 +15,6 @@ import { Ternary } from '@main/system/scalar/index';
 @frozen
 export class FunctionOf<X, Y> implements Function<X, Y> {
     /**
-     * Type determinant.
-     */
-    public readonly '@@__IS_SYSTEM_FUNCTION__@@': true = true;
-
-    /**
      * Function callback.
      */
     private readonly func: Scalar<Function<X, Y>>;
@@ -36,6 +31,13 @@ export class FunctionOf<X, Y> implements Function<X, Y> {
                 new ScalarOf(new JsFunction(<(input: X) => Y>func))
             )
         );
+    }
+
+    /**
+     * Type determinant.
+     */
+    public isFunction(): true {
+        return true;
     }
 
     /**

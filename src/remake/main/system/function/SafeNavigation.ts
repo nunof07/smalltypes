@@ -12,11 +12,6 @@ import { IsNotBlank } from '@main/system/scalar/index';
 @frozen
 export class SafeNavigation<X> implements Function<X, void> {
     /**
-     * Type determinant.
-     */
-    public readonly '@@__IS_SYSTEM_FUNCTION__@@': true = true;
-
-    /**
      * Function.
      */
     private readonly func: Function<X, void>;
@@ -32,6 +27,13 @@ export class SafeNavigation<X> implements Function<X, void> {
             ),
             func
         );
+    }
+
+    /**
+     * Type determinant.
+     */
+    public isFunction(): true {
+        return true;
     }
 
     /**

@@ -1,9 +1,12 @@
-import { FunctionType } from '@main/system/function/index';
-
 /**
  * Function.
  */
-export interface Function<X, Y> extends FunctionType {
+export interface Function<X, Y> {
+    /**
+     * Type determinant.
+     */
+    isFunction(): true;
+
     /**
      * Apply the function to the input.
      * @param input Input.

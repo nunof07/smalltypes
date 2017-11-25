@@ -9,11 +9,6 @@ import { frozen } from '@main/system/index';
 @frozen
 export class JsFunction<X, Y> implements Function<X, Y> {
     /**
-     * Type determinant.
-     */
-    public readonly '@@__IS_SYSTEM_FUNCTION__@@': true = true;
-
-    /**
      * Function callback.
      */
     private readonly func: (input: X) => Y;
@@ -24,6 +19,13 @@ export class JsFunction<X, Y> implements Function<X, Y> {
      */
     constructor(func: (input: X) => Y) {
         this.func = func;
+    }
+
+    /**
+     * Type determinant.
+     */
+    public isFunction(): true {
+        return true;
     }
 
     /**

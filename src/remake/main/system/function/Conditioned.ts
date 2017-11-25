@@ -9,11 +9,6 @@ import { frozen } from '@main/system/index';
 @frozen
 export class Conditioned<X> implements Function<X, void> {
     /**
-     * Type determinant.
-     */
-    public readonly '@@__IS_SYSTEM_FUNCTION__@@': true = true;
-
-    /**
      * Condition.
      */
     private readonly condition: Function<X, boolean>;
@@ -31,6 +26,13 @@ export class Conditioned<X> implements Function<X, void> {
     constructor(condition: Function<X, boolean>, func: Function<X, void>) {
         this.condition = condition;
         this.func = func;
+    }
+
+    /**
+     * Type determinant.
+     */
+    public isFunction(): true {
+        return true;
     }
 
     /**

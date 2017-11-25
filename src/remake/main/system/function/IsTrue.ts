@@ -14,7 +14,9 @@ export class IsTrue<T> implements Function<ScalarLike<boolean> | ConditionConseq
     /**
      * Type determinant.
      */
-    public readonly '@@__IS_SYSTEM_FUNCTION__@@': true = true;
+    public isFunction(): true {
+        return true;
+    }
 
     /**
      * Apply the function to the input.
