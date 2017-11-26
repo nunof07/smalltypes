@@ -1,5 +1,5 @@
 {
-    "main": "src/main/index.ts",
+    "main": "src/main.ts",
     "dist": "dist",
     "bundle": "smalltypes.js",
     "src": "src/**/*.ts",
