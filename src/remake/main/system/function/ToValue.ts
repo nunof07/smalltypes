@@ -1,4 +1,5 @@
 import { Function } from '@main/system/function/index';
+import { IsFunction } from '@main/system/function/index';
 import { final } from '@main/system/index';
 import { frozen } from '@main/system/index';
 import { IsScalar } from '@main/system/scalar/index';
@@ -27,6 +28,8 @@ export class ToValue<T> implements Function<ScalarLike<T>, T> {
             return input();
         } else if (new IsScalar(input).value()) {
             return (<Scalar<T>>input).value();
+        } else if (new IsFunction(input).value()) {
+            return (<Function<undefined, T>>input).apply(undefined);
         } else {
             return <T>input;
         }

@@ -1,3 +1,4 @@
+import { NullaryFunctionOf } from '@main/system/function/index';
 import { ScalarOf } from '@main/system/scalar/index';
 import { True } from '@main/system/scalar/index';
 import { expect } from 'chai';
@@ -34,6 +35,13 @@ export class ScalarOfTest {
     public fromFunction(): void {
         expect(
             new ScalarOf((): string => 'hello').value()
+        ).to.equal('hello');
+    }
+
+    @test
+    public fromNullaryFunction(): void {
+        expect(
+            new ScalarOf(new NullaryFunctionOf((): string => 'hello')).value()
         ).to.equal('hello');
     }
 }

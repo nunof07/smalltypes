@@ -1,6 +1,5 @@
+import { NullaryFunctionOf } from '@main/system/function/index';
 import { ToValue } from '@main/system/function/index';
-// import { False } from '@main/system/scalar/index';
-// import { True } from '@main/system/scalar/index';
 import { ScalarOf } from '@main/system/scalar/index';
 import { expect } from 'chai';
 import { suite } from 'mocha-typescript';
@@ -93,5 +92,12 @@ export class ToValueTest {
         expect(
             new ToValue().apply((): Object => { return { a: 'hello' }; })
         ).to.deep.equal({ a: 'hello' });
+    }
+
+    @test
+    public fromStringFunction(): void {
+        expect(
+            new ToValue().apply(new NullaryFunctionOf((): string => 'hello'))
+        ).to.equal('hello');
     }
 }
