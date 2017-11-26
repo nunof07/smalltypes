@@ -1,6 +1,6 @@
 {
     "include": [
-        "src/remake/main/**/*.ts"
+        "src/main/**/*.ts"
     ],
     "extension": [
         ".ts",

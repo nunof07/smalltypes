@@ -13,13 +13,8 @@
         "strictFunctionTypes": true,
         "strictNullChecks": true,
         "paths": {
-            "@base/*": ["src/ecs/base/*"],
-            "@core/*": ["src/ecs/core/*"],
-            "@phaser/*": ["src/ecs/phaser/*"],
-            "@pong/*": ["src/ecs/pong/*"],
-            "@system/*": ["src/ecs/system/*"],
-            "@main/*": ["src/remake/main/*"],
-            "@test/*": ["src/remake/test/*"]
+            "@main/*": ["src/main/*"],
+            "@test/*": ["src/test/*"]
         }
     }
 }

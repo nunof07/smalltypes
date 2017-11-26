@@ -4,13 +4,8 @@
         ["module-resolver", {
             "root": ["./"],
             "alias": {
-                "@base": "./src/ecs/base",
-                "@core": "./src/ecs/core",
-                "@phaser": "./src/ecs/phaser",
-                "@pong": "./src/ecs/pong",
-                "@system": "./src/ecs/system",
-                "@main": "./src/remake/main",
-                "@test": "./src/remake/test"
+                "@main": "./src/main",
+                "@test": "./src/test"
             }
         }],
         ["transform-runtime"]
