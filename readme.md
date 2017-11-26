@@ -14,11 +14,9 @@ Object-oriented utility framework written in [TypeScript](https://www.typescript
 
 ### Watch/build
 
-- Start: `gulp` or `npm start`.
-    - Default task will build, start server and watch for changes.
-    - Main file will automatically open in the browser.
-- Lint: `gulp tslint` or `npm run lint`. Runs automatically with default task.
-- Test: `gulp test` or `npm run test`. Runs automatically with default task.
+- Start: `gulp` or `npm start`. Default task will lint, build, test and watch for changes.
+- Lint: `gulp tslint` or `npm run lint`.
+- Test: `gulp test` or `npm run test`.
 - Test coverage: `npm run coverage`.
 
 ### Config
