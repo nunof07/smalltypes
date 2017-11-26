@@ -1,5 +1,8 @@
 import { final } from '@main/system/index';
 import { frozen } from '@main/system/index';
+import { Scalar } from '@main/system/scalar/index';
+import { ScalarLike } from '@main/system/scalar/index';
+import { ScalarOf } from '@main/system/scalar/index';
 
 /**
  * Limited iterable.
@@ -15,16 +18,16 @@ export class Limited<T> implements Iterable<T> {
     /**
      * Function.
      */
-    private readonly limit: number;
+    private readonly limit: Scalar<number>;
 
     /**
      * Ctor.
      * @param iterable Iterable.
      * @param number Limit.
      */
-    constructor(iterable: Iterable<T>, limit: number) {
+    constructor(iterable: Iterable<T>, limit: ScalarLike<number>) {
         this.iterable = iterable;
-        this.limit = limit;
+        this.limit = new ScalarOf(limit);
     }
 
     /**
@@ -34,7 +37,7 @@ export class Limited<T> implements Iterable<T> {
         let count: number = 0;
 
         for (const item of this.iterable) {
-            if (count >= this.limit) {
+            if (count >= this.limit.value()) {
                 break;
             }
             yield item;
