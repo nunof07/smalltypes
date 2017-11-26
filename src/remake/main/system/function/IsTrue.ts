@@ -1,8 +1,7 @@
 import { Function } from '@main/system/function/index';
 import { final } from '@main/system/index';
 import { frozen } from '@main/system/index';
-import { ConditionConsequentLikePair } from '@main/system/scalar/index';
-import { ScalarLike } from '@main/system/scalar/index';
+import { BoolLike } from '@main/system/scalar/index';
 import { BoolOf } from '@main/system/scalar/index';
 
 /**
@@ -10,7 +9,7 @@ import { BoolOf } from '@main/system/scalar/index';
  */
 @final
 @frozen
-export class IsTrue<T> implements Function<ScalarLike<boolean> | ConditionConsequentLikePair<T>, boolean> {
+export class IsTrue<T> implements Function<BoolLike<T>, boolean> {
     /**
      * Type determinant.
      */
@@ -22,7 +21,7 @@ export class IsTrue<T> implements Function<ScalarLike<boolean> | ConditionConseq
      * Apply the function to the input.
      * @param input Input.
      */
-    public apply(input: ScalarLike<boolean> | ConditionConsequentLikePair<T>): boolean {
+    public apply(input: BoolLike<T>): boolean {
         return new BoolOf(input).value();
     }
 }
