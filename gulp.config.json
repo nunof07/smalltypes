@@ -1,5 +1,5 @@
 {
-    "main": "src/remake/main/main.ts",
+    "main": "src/remake/main/system/index.ts",
     "dist": "dist",
     "bundle": "game.js",
     "src": "src/remake/**/*.ts",
