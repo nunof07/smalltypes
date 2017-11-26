@@ -1,8 +1,8 @@
 {
   "resolution": "main",
   "tree": {
-    "src": "F:\\projects\\private\\gamedev\\phaser-pong\\typings\\globals\\chai-arrays\\index.d.ts",
+    "src": "F:\\projects\\public\\smalltypes\\typings\\globals\\chai-arrays\\index.d.ts",
     "raw": "file:./typings/globals/chai-arrays/index.d.ts",
-    "typings": "F:\\projects\\private\\gamedev\\phaser-pong\\typings\\globals\\chai-arrays\\index.d.ts"
+    "typings": "F:\\projects\\public\\smalltypes\\typings\\globals\\chai-arrays\\index.d.ts"
   }
 }

@@ -4,7 +4,6 @@
     "bundle": "smalltypes.js",
     "src": "src/**/*.ts",
     "test": "src/test/**/*Test.ts",
-    "copy": [],
     "browserify": {
         "basedir": ".",
         "debug": true,

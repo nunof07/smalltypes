@@ -1,5 +1,5 @@
 /**
- * Sytem index.
+ * Main index.
  */
 export * from './final';
 export * from './frozen';

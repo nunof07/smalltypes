@@ -1,12 +1,12 @@
 {
-  "name": "phaser-pong",
+  "name": "smalltypes",
   "version": "1.0.0",
   "description": "",
-  "main": "dist/game.js",
+  "main": "dist/smalltypes.js",
   "scripts": {
     "start": "gulp",
     "lint": "gulp tslint",
-    "test": "mocha --opts mocha.opts src/remake/test/**/*Test.ts",
+    "test": "mocha --opts mocha.opts src/test/**/*Test.ts",
     "coverage": "nyc npm run test"
   },
   "author": {
@@ -15,7 +15,7 @@
   "license": "MIT",
   "repository": {
     "type": "git",
-    "url": "git+https://github.com/nunof07/phaser-pong.git"
+    "url": "git+https://github.com/nunof07/smalltypes.git"
   },
   "devDependencies": {
     "@types/chai": "^4.0.5",
@@ -31,10 +31,8 @@
     "chai": "^4.1.2",
     "chai-arrays": "^2.0.0",
     "gulp": "^3.9.1",
-    "gulp-connect": "^5.0.0",
     "gulp-load-plugins": "^1.5.0",
     "gulp-mocha": "^4.3.1",
-    "gulp-open": "^2.0.0",
     "gulp-sequence": "^0.4.6",
     "gulp-tslint": "^8.1.2",
     "gulp-util": "^3.0.8",
@@ -43,7 +41,6 @@
     "jsdom-global": "^3.0.2",
     "mocha-typescript": "^1.1.12",
     "nyc": "^11.3.0",
-    "phaser-ce": "^2.9.2",
     "source-map-support": "^0.5.0",
     "ts-node": "^3.3.0",
     "tsconfig-paths": "^2.4.0",

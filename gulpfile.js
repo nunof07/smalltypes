@@ -57,28 +57,10 @@ gulp.task('test', function () {
         });
 });
 
-gulp.task('copy', function () {
-    return gulp.src(config.copy)
-        .pipe(gulp.dest(config.dist));
-});
-
 gulp.task('build', build);
-
-gulp.task('server', function () {
-    var server = plugins.connect.server({
-        root: [config.dist],
-        livereload: true
-    });
-
-    return gulp.src('./')
-        .pipe(plugins.open({
-            uri: 'http://' + server.host + ':' + server.port
-        }));
-});
 
 gulp.task('watch', function () {
     watching = true;
-    gulp.watch(config.copy, ['copy']);
     gulp.watch(config.src, function () {
         plugins.sequence('tslint', 'test')(function (err) {
             if (err) {
@@ -92,11 +74,9 @@ gulp.task('watch', function () {
 gulp.task('default', function (cb) {
     watching = true;
     plugins.sequence(
-        'copy',
         'tslint',
         'test',
         'build',
-        'server',
         'watch',
         cb
     );
