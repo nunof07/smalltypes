@@ -1,5 +1,5 @@
 import { Function } from '@main/system/function/index';
-import { JsFunction } from '@main/system/function/index';
+import { FunctionOf } from '@main/system/function/index';
 import { NullaryFunction } from '@main/system/function/index';
 import { final } from '@main/system/index';
 import { frozen } from '@main/system/index';
@@ -20,7 +20,7 @@ export class NullaryFunctionOf<Y> implements NullaryFunction<Y> {
      * @param func Function callback.
      */
     constructor(func: () => Y) {
-        this.func = new JsFunction(<(input: undefined) => Y>func);
+        this.func = new FunctionOf<undefined, Y>(func);
     }
 
     /**
