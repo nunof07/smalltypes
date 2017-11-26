@@ -1,4 +1,6 @@
 import { Function } from '@main/system/function/index';
+import { FunctionLike } from '@main/system/function/index';
+import { FunctionOf } from '@main/system/function/index';
 import { ToBool } from '@main/system/function/index';
 import { final } from '@main/system/index';
 import { frozen } from '@main/system/index';
@@ -25,9 +27,9 @@ export class BoolOf<T> implements Scalar<boolean> {
      * Ctor.
      * @param value Boolean-like value.
      */
-    constructor(value: BoolLike<T>, toBool: Function<BoolLike<T>, boolean> = new ToBool()) {
+    constructor(value: BoolLike<T>, toBool: FunctionLike<BoolLike<T>, boolean> = new ToBool()) {
         this.bool = value;
-        this.toBool = toBool;
+        this.toBool = new FunctionOf(toBool);
     }
 
     /**

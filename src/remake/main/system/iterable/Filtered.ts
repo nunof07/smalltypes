@@ -1,4 +1,6 @@
 import { Function } from '@main/system/function/index';
+import { FunctionLike } from '@main/system/function/index';
+import { FunctionOf } from '@main/system/function/index';
 import { final } from '@main/system/index';
 import { frozen } from '@main/system/index';
 
@@ -23,9 +25,9 @@ export class Filtered<T> implements Iterable<T> {
      * @param iterable Iterable.
      * @param func Function.
      */
-    constructor(iterable: Iterable<T>, func: Function<T, boolean>) {
+    constructor(iterable: Iterable<T>, func: FunctionLike<T, boolean>) {
         this.iterable = iterable;
-        this.func = func;
+        this.func = new FunctionOf(func);
     }
 
     /**

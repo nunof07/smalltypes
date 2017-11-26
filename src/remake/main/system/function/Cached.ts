@@ -1,4 +1,6 @@
 import { Function } from '@main/system/function/index';
+import { FunctionLike } from '@main/system/function/index';
+import { FunctionOf } from '@main/system/function/index';
 import { final } from '@main/system/index';
 import { frozen } from '@main/system/index';
 
@@ -22,8 +24,8 @@ export class Cached<X, Y> implements Function<X, Y> {
      * Ctor.
      * @param func Function callback.
      */
-    constructor(func: Function<X, Y>) {
-        this.func = func;
+    constructor(func: FunctionLike<X, Y>) {
+        this.func = new FunctionOf(func);
         this.cache = new Map();
     }
 

@@ -1,4 +1,6 @@
 import { Function } from '@main/system/function/index';
+import { FunctionLike } from '@main/system/function/index';
+import { FunctionOf } from '@main/system/function/index';
 import { ToValue } from '@main/system/function/index';
 import { final } from '@main/system/index';
 import { frozen } from '@main/system/index';
@@ -21,8 +23,8 @@ export class ToBool<T> implements Function<BoolLike<T>, boolean> {
      * Ctor.
      * @param toValue Function to convert scalar-like booleans to boolean primitives.
      */
-    constructor(toValue: Function<ScalarLike<boolean>, boolean> = new ToValue()) {
-        this.toValue = toValue;
+    constructor(toValue: FunctionLike<ScalarLike<boolean>, boolean> = new ToValue()) {
+        this.toValue = new FunctionOf(toValue);
     }
 
     /**

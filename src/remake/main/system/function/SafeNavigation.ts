@@ -1,6 +1,6 @@
 import { Conditioned } from '@main/system/function/index';
 import { Function } from '@main/system/function/index';
-import { FunctionOf } from '@main/system/function/index';
+import { FunctionLike } from '@main/system/function/index';
 import { final } from '@main/system/index';
 import { frozen } from '@main/system/index';
 import { IsNotBlank } from '@main/system/scalar/index';
@@ -20,11 +20,9 @@ export class SafeNavigation<X> implements Function<X, void> {
      * Ctor.
      * @param func Function.
      */
-    constructor(func: Function<X, void>) {
+    constructor(func: FunctionLike<X, void>) {
         this.func = new Conditioned(
-            new FunctionOf((input: X): boolean =>
-                new IsNotBlank(input).value()
-            ),
+            (input: X): boolean => new IsNotBlank(input).value(),
             func
         );
     }

@@ -1,4 +1,6 @@
 import { Function } from '@main/system/function/index';
+import { FunctionLike } from '@main/system/function/index';
+import { FunctionOf } from '@main/system/function/index';
 import { final } from '@main/system/index';
 import { frozen } from '@main/system/index';
 
@@ -23,9 +25,9 @@ export class Conditioned<X> implements Function<X, void> {
      * @param condition Condition.
      * @param func Function.
      */
-    constructor(condition: Function<X, boolean>, func: Function<X, void>) {
-        this.condition = condition;
-        this.func = func;
+    constructor(condition: FunctionLike<X, boolean>, func: FunctionLike<X, void>) {
+        this.condition = new FunctionOf(condition);
+        this.func = new FunctionOf(func);
     }
 
     /**
