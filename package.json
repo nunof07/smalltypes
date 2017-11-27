@@ -1,7 +1,7 @@
 {
   "name": "smalltypes",
-  "version": "1.0.0",
-  "description": "",
+  "version": "0.1.0",
+  "description": "Object-oriented utility framework written in TypeScript.",
   "main": "dist/smalltypes.js",
   "scripts": {
     "start": "gulp",
