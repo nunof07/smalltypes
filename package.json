@@ -2,8 +2,10 @@
   "name": "smalltypes",
   "version": "0.1.0",
   "description": "Object-oriented utility framework written in TypeScript.",
-  "main": "dist/smalltypes.js",
+  "main": "dist/index.js",
+  "types": "dist/index.d.ts",
   "scripts": {
+    "prepublish": "gulp build",
     "start": "gulp",
     "lint": "gulp tslint",
     "test": "mocha --opts mocha.opts src/test/**/*Test.ts",

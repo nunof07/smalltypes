@@ -1,7 +1,7 @@
 {
-    "main": "src/main.ts",
+    "main": "src/index.ts",
     "dist": "dist",
-    "bundle": "smalltypes.js",
+    "bundle": "index.js",
     "src": "src/**/*.ts",
     "test": "src/test/**/*Test.ts",
     "browserify": {

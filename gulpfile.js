@@ -11,17 +11,20 @@ var config = require('./gulp.config.json');
 var watching = false;
 var plugins = gulpLoadPlugins();
 config.browserify.entries = [config.main];
+var browserifyObj = getBrowserify();
 var watchedBrowserify =
-    watchify(
-        browserify(config.browserify)
-            .plugin(tsify)
-            .transform(babelify, config.babel)
-    )
-    .on('update', build)
+    watchify(getBrowserify())
+    .on('update', watchifyBuild)
     .on('log', plugins.util.log);
 
-function build() {
-    return watchedBrowserify
+function getBrowserify() {
+    return browserify(config.browserify)
+        .plugin(tsify)
+        .transform(babelify, config.babel);
+}
+
+function buildFrom(obj) {
+    return obj
         .bundle()
         .on('error', function (error) {
             plugins.util.log(
@@ -35,6 +38,14 @@ function build() {
         })
         .pipe(source(config.bundle))
         .pipe(gulp.dest(config.dist));
+}
+
+function browserifyBuild() {
+    return buildFrom(browserifyObj);
+}
+
+function watchifyBuild() {
+    return buildFrom(watchedBrowserify);
 }
 
 gulp.task('tslint', function () {
@@ -57,7 +68,9 @@ gulp.task('test', function () {
         });
 });
 
-gulp.task('build', build);
+gulp.task('watchify', watchifyBuild);
+
+gulp.task('build', browserifyBuild);
 
 gulp.task('watch', function () {
     watching = true;
@@ -76,7 +89,7 @@ gulp.task('default', function (cb) {
     plugins.sequence(
         'tslint',
         'test',
-        'build',
+        'watchify',
         'watch',
         cb
     );
