@@ -1,5 +1,15 @@
+# IDE files
+.vscode
+
+# node modules
 node_modules
+
+# testing
 .nyc_output
 coverage
+
+# logs
 npm-debug.log
+
+# dist
 dist
