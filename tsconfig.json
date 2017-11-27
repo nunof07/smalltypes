@@ -17,5 +17,6 @@
             "@main/*": ["src/main/*"],
             "@test/*": ["src/test/*"]
         }
-    }
+    },
+    "exclude": ["./dist"]
 }
