@@ -1,9 +1,12 @@
 {
-    "main": "src/index.ts",
-    "dist": "dist",
-    "bundle": "index.js",
-    "src": "src/**/*.ts",
-    "test": "src/test/**/*Test.ts",
+    "paths": {
+        "entry": "src/index.ts",
+        "src": "src/**/*.ts",
+        "main": "src/main/**/*.ts",
+        "test": "src/test/**/*Test.ts",
+        "destination": "dist",
+        "bundle": "smalltypes.js"
+    },
     "browserify": {
         "basedir": ".",
         "debug": true,
@@ -28,5 +31,14 @@
             "tsconfig-paths/register",
             "source-map-support/register"
         ]
+    },
+    "declarations": {
+        "name": "smalltypes",
+        "exclude": [
+            "node_modules/**/*.d.ts",
+            "src/test/**/*.ts",
+            "typings/**/*.d.ts"
+        ],
+        "out": "smalltypes.d.ts"
     }
 }
