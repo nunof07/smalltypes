@@ -17,8 +17,8 @@ config.browserify.entries = [config.paths.entry];
 var browserifyObj = getBrowserify();
 var watchedBrowserify =
     watchify(getBrowserify())
-    .on('update', watchifyBuild)
-    .on('log', plugins.util.log);
+        .on('update', watchifyBuild)
+        .on('log', plugins.util.log);
 
 function getBrowserify() {
     return browserify(config.browserify)
@@ -83,8 +83,30 @@ gulp.task('declarations', function () {
         name: config.declarations.name,
         project: path.resolve(__dirname, './'),
         exclude: config.declarations.exclude,
-        out: path.resolve(__dirname, config.paths.destination, config.declarations.out)
+        out: path.resolve(__dirname, config.paths.destination, config.declarations.out),
+        resolveModuleId: function (params) {
+            return replacePath(params.currentModuleId, config.declarations.replace.module);
+        },
+        resolveModuleImport: function (params) {
+            return replacePath(params.importedModuleId, config.declarations.replace.import);
+        }
     });
+
+    function replacePath(source, config) {
+        var result = source;
+
+        config.forEach(function (params) {
+            result = result.replace(
+                new RegExp(params.search),
+                replacement(params.replace)
+            );
+        });
+
+        return result;
+    }
+    function replacement(replaceSource) {
+        return replaceSource.replace('{{mainModuleName}}', config.declarations.name);
+    }
 });
 
 gulp.task('watchify', watchifyBuild);

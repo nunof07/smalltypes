@@ -36,9 +36,36 @@
         "name": "smalltypes",
         "exclude": [
             "node_modules/**/*.d.ts",
+            "typings/**/*.d.ts",
             "src/test/**/*.ts",
-            "typings/**/*.d.ts"
+            "src/index.ts"
         ],
-        "out": "smalltypes.d.ts"
+        "out": "smalltypes.d.ts",
+        "replace": {
+            "module": [
+                {
+                    "search": "^main\/index$",
+                    "replace": "{{mainModuleName}}"
+                },
+                {
+                    "search": "\/index$",
+                    "replace": ""
+                },
+                {
+                    "search": "^main\/",
+                    "replace": "{{mainModuleName}}/"
+                }
+            ],
+            "import": [
+                {
+                    "search": "\/index$",
+                    "replace": ""
+                },
+                {
+                    "search": "^@main\/",
+                    "replace": "{{mainModuleName}}/"
+                }
+            ]
+        }
     }
 }
