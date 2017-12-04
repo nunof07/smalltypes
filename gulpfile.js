@@ -85,27 +85,39 @@ gulp.task('declarations', function () {
         exclude: config.declarations.exclude,
         out: path.resolve(__dirname, config.paths.destination, config.declarations.out),
         resolveModuleId: function (params) {
-            return replacePath(params.currentModuleId, config.declarations.replace.module);
+            return replacePath(params.currentModuleId, config.declarations.replace.module, params);
         },
         resolveModuleImport: function (params) {
-            return replacePath(params.importedModuleId, config.declarations.replace.import);
+            return replacePath(params.importedModuleId, config.declarations.replace.import, params);
         }
     });
 
-    function replacePath(source, config) {
+    function replacePath(source, config, resolveParams) {
         var result = source;
 
         config.forEach(function (params) {
             result = result.replace(
                 new RegExp(params.search),
-                replacement(params.replace)
+                replacement(params.replace, resolveParams)
             );
         });
 
         return result;
     }
-    function replacement(replaceSource) {
-        return replaceSource.replace('{{mainModuleName}}', config.declarations.name);
+    function replacement(replaceSource, resolveParams) {
+        var result = replaceSource.replace('{{mainModuleName}}', mainModuleName());
+
+        if (resolveParams.currentModuleId) {
+            result = result.replace('{{currentModuleFullPath}}', currentModuleFullPath(resolveParams.currentModuleId));
+        }
+
+        return result;
+    }
+    function mainModuleName() {
+        return config.declarations.name;
+    }
+    function currentModuleFullPath(currentModuleId) {
+        return replacePath(currentModuleId, config.declarations.replace.module, {});
     }
 });
 

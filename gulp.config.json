@@ -5,7 +5,7 @@
         "main": "src/main/**/*.ts",
         "test": "src/test/**/*Test.ts",
         "destination": "dist",
-        "bundle": "smalltypes.js"
+        "bundle": "index.js"
     },
     "browserify": {
         "basedir": ".",
@@ -35,35 +35,40 @@
     "declarations": {
         "name": "smalltypes",
         "exclude": [
+            "dist/**/*.ts",
             "node_modules/**/*.d.ts",
             "typings/**/*.d.ts",
             "src/test/**/*.ts",
             "src/index.ts"
         ],
-        "out": "smalltypes.d.ts",
+        "out": "index.d.ts",
         "replace": {
             "module": [
                 {
-                    "search": "^main\/index$",
+                    "search": "^main/index$",
                     "replace": "{{mainModuleName}}"
                 },
                 {
-                    "search": "\/index$",
+                    "search": "/index$",
                     "replace": ""
                 },
                 {
-                    "search": "^main\/",
+                    "search": "^main/",
                     "replace": "{{mainModuleName}}/"
                 }
             ],
             "import": [
                 {
-                    "search": "\/index$",
+                    "search": "/index$",
                     "replace": ""
                 },
                 {
-                    "search": "^@main\/",
+                    "search": "^@main/",
                     "replace": "{{mainModuleName}}/"
+                },
+                {
+                    "search": "^./",
+                    "replace": "{{currentModuleFullPath}}/"
                 }
             ]
         }
