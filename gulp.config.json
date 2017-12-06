@@ -45,7 +45,7 @@
         "replace": {
             "module": [
                 {
-                    "search": "^main/index$",
+                    "search": "^(src/)?main/index$",
                     "replace": "{{mainModuleName}}"
                 },
                 {
@@ -53,7 +53,7 @@
                     "replace": ""
                 },
                 {
-                    "search": "^main/",
+                    "search": "^(src/)?main/",
                     "replace": "{{mainModuleName}}/"
                 }
             ],

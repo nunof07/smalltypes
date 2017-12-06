@@ -2,8 +2,8 @@
   "name": "smalltypes",
   "version": "0.1.0",
   "description": "Object-oriented utility framework written in TypeScript.",
-  "main": "dist/smalltypes.js",
-  "types": "dist/smalltypes.d.ts",
+  "main": "dist/index.js",
+  "types": "dist/index.d.ts",
   "scripts": {
     "prepublish": "gulp prepublish",
     "start": "gulp",
@@ -19,6 +19,10 @@
     "type": "git",
     "url": "git+https://github.com/nunof07/smalltypes.git"
   },
+  "bugs": {
+    "url": "https://github.com/nunof07/smalltypes/issues"
+  },
+  "homepage": "https://github.com/nunof07/smalltypes#readme",
   "devDependencies": {
     "@types/chai": "^4.0.5",
     "@types/chai-arrays": "^1.0.2",
@@ -56,5 +60,8 @@
     "vinyl-source-stream": "^1.1.0",
     "watchify": "^3.9.0"
   },
-  "dependencies": {}
+  "dependencies": {},
+  "files": [
+    "dist/"
+  ]
 }
