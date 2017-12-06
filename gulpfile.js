@@ -125,6 +125,8 @@ gulp.task('watchify', watchifyBuild);
 
 gulp.task('build', browserifyBuild);
 
+gulp.task('prepublish', ['build', 'declarations']);
+
 gulp.task('watch', function () {
     watching = true;
     gulp.watch(config.paths.src, function () {

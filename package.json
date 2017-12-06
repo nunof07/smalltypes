@@ -5,7 +5,7 @@
   "main": "dist/smalltypes.js",
   "types": "dist/smalltypes.d.ts",
   "scripts": {
-    "prepublish": "gulp build",
+    "prepublish": "gulp prepublish",
     "start": "gulp",
     "lint": "gulp tslint",
     "test": "mocha --opts mocha.opts src/test/**/*Test.ts",
