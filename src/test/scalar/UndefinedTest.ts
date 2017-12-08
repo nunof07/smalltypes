@@ -1,4 +1,4 @@
-import { Undefined } from '@main/scalar/index';
+import { Undefined } from '@main';
 import { expect } from 'chai';
 import { suite } from 'mocha-typescript';
 import { test } from 'mocha-typescript';

@@ -1,18 +1,18 @@
-import { Conditioned } from '@main/function/index';
-import { FunctionOf } from '@main/function/index';
+import { Conditionalized } from '@main';
+import { FunctionOf } from '@main';
 import { expect } from 'chai';
 import { suite } from 'mocha-typescript';
 import { test } from 'mocha-typescript';
 
 /**
- * {@link Conditioned} test.
+ * {@link Conditionalized} test.
  */
 @suite
-export class ConditionedTest {
-    private readonly conditioned: Conditioned<boolean>;
+export class ConditionalizedTest {
+    private readonly conditionalized: Conditionalized<boolean>;
 
     constructor() {
-        this.conditioned = new Conditioned(
+        this.conditionalized = new Conditionalized(
             new FunctionOf((input: boolean): boolean => {
                 return input;
             }),
@@ -26,7 +26,7 @@ export class ConditionedTest {
     public conditionTrue(): void {
         expect(
             () => {
-                this.conditioned.apply(true);
+                this.conditionalized.apply(true);
             }
         ).to.throw(true.toString());
     }
@@ -35,7 +35,7 @@ export class ConditionedTest {
     public conditionFalse(): void {
         expect(
             () => {
-                this.conditioned.apply(false);
+                this.conditionalized.apply(false);
             }
         ).to.not.throw();
     }

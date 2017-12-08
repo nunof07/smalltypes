@@ -1,8 +1,8 @@
-import { ToBool } from '@main/function/index';
-import { final } from '@main/index';
-import { frozen } from '@main/index';
-import { Mapped } from '@main/iterable/index';
-import { ScalarLike } from '@main/scalar/index';
+import { final } from '@main';
+import { frozen } from '@main';
+import { Mapped } from '@main';
+import { ScalarLike } from '@main';
+import { ToBool } from '@main';
 
 /**
  * Iterable of logical conditions.

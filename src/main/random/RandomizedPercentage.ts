@@ -1,8 +1,8 @@
-import { final } from '@main/index';
-import { frozen } from '@main/index';
-import { Random } from '@main/random/index';
-import { RandomizedFloat } from '@main/random/index';
-import { Scalar } from '@main/scalar/index';
+import { final } from '@main';
+import { frozen } from '@main';
+import { Random } from '@main';
+import { RandomizedFloat } from '@main';
+import { Scalar } from '@main';
 
 /**
  * Randomized floating point number between 0 and 1.

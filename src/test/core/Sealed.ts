@@ -1,4 +1,4 @@
-import { sealed } from '@main/index';
+import { sealed } from '@main';
 
 /**
  * Sealed class.

@@ -1,10 +1,10 @@
-import { Function } from '@main/function/index';
-import { IsFunction } from '@main/function/index';
-import { final } from '@main/index';
-import { frozen } from '@main/index';
-import { IsScalar } from '@main/scalar/index';
-import { Scalar } from '@main/scalar/index';
-import { ScalarLike } from '@main/scalar/index';
+import { final } from '@main';
+import { frozen } from '@main';
+import { Function } from '@main';
+import { IsFunction } from '@main';
+import { IsScalar } from '@main';
+import { Scalar } from '@main';
+import { ScalarLike } from '@main';
 
 /**
  * Converts scalar-like types to their respective values.

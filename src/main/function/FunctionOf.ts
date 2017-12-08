@@ -1,9 +1,9 @@
-import { Function } from '@main/function/index';
-import { FunctionLike } from '@main/function/index';
-import { final } from '@main/index';
-import { frozen } from '@main/index';
-import { Cached } from '@main/scalar/index';
-import { Scalar } from '@main/scalar/index';
+import { final } from '@main';
+import { frozen } from '@main';
+import { Function } from '@main';
+import { FunctionLike } from '@main';
+import { Cached } from '@main';
+import { Scalar } from '@main';
 
 /**
  * Function of several possible types.

@@ -1,5 +1,5 @@
 /**
- * Index.
+ * Iterable index.
  */
 export * from './Conditions';
 export * from './Equals';

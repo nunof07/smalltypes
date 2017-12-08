@@ -1,8 +1,8 @@
-import { final } from '@main/index';
-import { frozen } from '@main/index';
-import { Conditions } from '@main/iterable/index';
-import { Scalar } from '@main/scalar/index';
-import { ScalarLike } from '@main/scalar/index';
+import { Conditions } from '@main';
+import { final } from '@main';
+import { frozen } from '@main';
+import { Scalar } from '@main';
+import { ScalarLike } from '@main';
 
 /**
  * Logical disjunction operator.

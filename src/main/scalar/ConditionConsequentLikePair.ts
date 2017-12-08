@@ -1,4 +1,4 @@
-import { ScalarLike } from '@main/scalar/index';
+import { ScalarLike } from '@main';
 
 /**
  * Condition/consequent like pair.

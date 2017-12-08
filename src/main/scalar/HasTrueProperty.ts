@@ -1,6 +1,6 @@
-import { final } from '@main/index';
-import { frozen } from '@main/index';
-import { Scalar } from '@main/scalar/index';
+import { final } from '@main';
+import { frozen } from '@main';
+import { Scalar } from '@main';
 
 /**
  * Determines if an object has a property set to true.

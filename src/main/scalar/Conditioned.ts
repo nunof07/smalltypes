@@ -1,15 +1,15 @@
-import { IsTrue } from '@main/function/index';
-import { ToConditionConsequentPair } from '@main/function/index';
-import { final } from '@main/index';
-import { frozen } from '@main/index';
-import { Filtered } from '@main/iterable/index';
-import { First } from '@main/iterable/index';
-import { Mapped } from '@main/iterable/index';
-import { ConditionConsequentLikePair } from '@main/scalar/index';
-import { ConditionConsequentPair } from '@main/scalar/index';
-import { Scalar } from '@main/scalar/index';
-import { ScalarLike } from '@main/scalar/index';
-import { ScalarOf } from '@main/scalar/index';
+import { ConditionConsequentLikePair } from '@main';
+import { ConditionConsequentPair } from '@main';
+import { final } from '@main';
+import { frozen } from '@main';
+import { Filtered } from '@main';
+import { First } from '@main';
+import { IsTrue } from '@main';
+import { Mapped } from '@main';
+import { Scalar } from '@main';
+import { ScalarLike } from '@main';
+import { ScalarOf } from '@main';
+import { ToConditionConsequentPair } from '@main';
 
 /**
  * Conditional scalar.

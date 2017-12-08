@@ -1,8 +1,8 @@
-import { Function } from '@main/function/index';
-import { final } from '@main/index';
-import { frozen } from '@main/index';
-import { BoolLike } from '@main/scalar/index';
-import { BoolOf } from '@main/scalar/index';
+import { BoolLike } from '@main';
+import { BoolOf } from '@main';
+import { final } from '@main';
+import { frozen } from '@main';
+import { Function } from '@main';
 
 /**
  * Function that caches results.

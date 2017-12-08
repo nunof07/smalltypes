@@ -1,15 +1,15 @@
-import { Function } from '@main/function/index';
-import { FunctionLike } from '@main/function/index';
-import { FunctionOf } from '@main/function/index';
-import { final } from '@main/index';
-import { frozen } from '@main/index';
+import { final } from '@main';
+import { frozen } from '@main';
+import { Function } from '@main';
+import { FunctionLike } from '@main';
+import { FunctionOf } from '@main';
 
 /**
  * Function that executes conditionally.
  */
 @final
 @frozen
-export class Conditioned<X> implements Function<X, void> {
+export class Conditionalized<X> implements Function<X, void> {
     /**
      * Condition.
      */

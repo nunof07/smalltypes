@@ -1,4 +1,4 @@
-import { RandomOf } from '@main/random/index';
+import { RandomOf } from '@main';
 import { MockRandomSource } from '@test/random/MockRandomSource';
 import { expect } from 'chai';
 import { suite } from 'mocha-typescript';

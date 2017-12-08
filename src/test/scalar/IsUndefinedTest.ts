@@ -1,6 +1,6 @@
-import { IsUndefined } from '@main/scalar/index';
-import { ScalarOf } from '@main/scalar/index';
-import { Undefined } from '@main/scalar/index';
+import { IsUndefined } from '@main';
+import { ScalarOf } from '@main';
+import { Undefined } from '@main';
 import { expect } from 'chai';
 import { suite } from 'mocha-typescript';
 import { test } from 'mocha-typescript';

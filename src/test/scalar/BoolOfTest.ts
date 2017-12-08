@@ -1,5 +1,5 @@
-import { BoolOf } from '@main/scalar/index';
-import { ScalarOf } from '@main/scalar/index';
+import { BoolOf } from '@main';
+import { ScalarOf } from '@main';
 import { expect } from 'chai';
 
 /**

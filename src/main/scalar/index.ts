@@ -1,5 +1,5 @@
 /**
- * Index.
+ * Scalar index.
  */
 export * from './And';
 export * from './BoolLike';

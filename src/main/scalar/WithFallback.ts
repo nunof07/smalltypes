@@ -1,10 +1,10 @@
-import { final } from '@main/index';
-import { frozen } from '@main/index';
-import { IsBlank } from '@main/scalar/index';
-import { Scalar } from '@main/scalar/index';
-import { ScalarLike } from '@main/scalar/index';
-import { ScalarOf } from '@main/scalar/index';
-import { Ternary } from '@main/scalar/index';
+import { final } from '@main';
+import { frozen } from '@main';
+import { IsBlank } from '@main';
+import { Scalar } from '@main';
+import { ScalarLike } from '@main';
+import { ScalarOf } from '@main';
+import { Ternary } from '@main';
 
 /**
  * Cached scalar.

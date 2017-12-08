@@ -1,9 +1,9 @@
-import { Conditioned } from '@main/function/index';
-import { Function } from '@main/function/index';
-import { FunctionLike } from '@main/function/index';
-import { final } from '@main/index';
-import { frozen } from '@main/index';
-import { IsNotBlank } from '@main/scalar/index';
+import { Conditionalized } from '@main';
+import { final } from '@main';
+import { frozen } from '@main';
+import { Function } from '@main';
+import { FunctionLike } from '@main';
+import { IsNotBlank } from '@main';
 
 /**
  * Function that executes when input is not null or undefined.
@@ -21,7 +21,7 @@ export class SafeNavigation<X> implements Function<X, void> {
      * @param func Function.
      */
     constructor(func: FunctionLike<X, void>) {
-        this.func = new Conditioned(
+        this.func = new Conditionalized(
             (input: X): boolean => new IsNotBlank(input).value(),
             func
         );

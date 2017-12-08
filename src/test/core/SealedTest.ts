@@ -1,4 +1,4 @@
-import { Sealed } from '@test/Sealed';
+import { Sealed } from '@test/core/Sealed';
 import { expect } from 'chai';
 import { suite } from 'mocha-typescript';
 import { test } from 'mocha-typescript';

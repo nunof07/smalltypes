@@ -1,4 +1,4 @@
-import { IllegalInheritanceError } from '@main/index';
+import { IllegalInheritanceError } from '@main';
 
 /**
  * Prevent instances from inherited classes.

@@ -1,9 +1,9 @@
-import { Function } from '@main/function/index';
-import { final } from '@main/index';
-import { frozen } from '@main/index';
-import { ConditionConsequentLikePair } from '@main/scalar/index';
-import { ConditionConsequentPair } from '@main/scalar/index';
-import { ScalarOf } from '@main/scalar/index';
+import { ConditionConsequentLikePair } from '@main';
+import { ConditionConsequentPair } from '@main';
+import { final } from '@main';
+import { frozen } from '@main';
+import { Function } from '@main';
+import { ScalarOf } from '@main';
 
 /**
  * Converts {@link ConditionConsequentLikePair} to {@link ToConditionConsequentPair}.

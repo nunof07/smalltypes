@@ -1,7 +1,7 @@
-import { final } from '@main/index';
-import { frozen } from '@main/index';
-import { HasTrueResult } from '@main/scalar/index';
-import { Scalar } from '@main/scalar/index';
+import { final } from '@main';
+import { frozen } from '@main';
+import { HasTrueResult } from '@main';
+import { Scalar } from '@main';
 
 /**
  * Determines if variable is of type {@link Function}.

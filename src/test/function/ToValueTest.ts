@@ -1,6 +1,6 @@
-import { NullaryFunctionOf } from '@main/function/index';
-import { ToValue } from '@main/function/index';
-import { ScalarOf } from '@main/scalar/index';
+import { NullaryFunctionOf } from '@main';
+import { ToValue } from '@main';
+import { ScalarOf } from '@main';
 import { expect } from 'chai';
 import { suite } from 'mocha-typescript';
 import { test } from 'mocha-typescript';

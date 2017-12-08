@@ -1,5 +1,5 @@
 /**
- * Index.
+ * Random index.
  */
 export * from './ParkMillerRandom';
 export * from './Random';

@@ -1,13 +1,13 @@
 /**
- * Index
+ * Function index
  */
-export * from './Cached';
-export * from './Conditioned';
+export * from './Conditionalized';
 export * from './Function';
 export * from './FunctionLike';
 export * from './FunctionOf';
 export * from './IsFunction';
 export * from './IsTrue';
+export * from './Memoized';
 export * from './NullaryFunction';
 export * from './NullaryFunctionOf';
 export * from './SafeNavigation';

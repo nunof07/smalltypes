@@ -1,4 +1,4 @@
-import { frozen } from '@main/index';
+import { frozen } from '@main';
 
 /**
  * Frozen class.

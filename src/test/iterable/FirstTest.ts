@@ -1,5 +1,5 @@
-import { First } from '@main/iterable/index';
-import { Scalar } from '@main/scalar/index';
+import { First } from '@main';
+import { Scalar } from '@main';
 import { expect } from 'chai';
 import { suite } from 'mocha-typescript';
 import { test } from 'mocha-typescript';

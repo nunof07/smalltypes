@@ -1,24 +1,22 @@
-import { Cached } from '@main/function/index';
-import { FunctionOf } from '@main/function/index';
+import { Memoized } from '@main';
 import { expect } from 'chai';
 import { suite } from 'mocha-typescript';
 import { test } from 'mocha-typescript';
 
 /**
- * {@link Cached} test.
+ * {@link Memoized} test.
  */
 @suite
-export class CachedTest {
+export class MemoizedTest {
     @test
     public cachesResults(): void {
         let sum: number = 0;
-        const cached: Cached<boolean, number> = new Cached(
-            new FunctionOf((): number => {
+        const cached: Memoized<boolean, number>
+            = new Memoized((): number => {
                 sum += 10;
 
                 return sum;
-            })
-        );
+            });
         expect([
             cached.apply(true),
             cached.apply(true),

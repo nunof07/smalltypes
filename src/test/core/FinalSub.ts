@@ -1,4 +1,4 @@
-import { Final } from '@test/Final';
+import { Final } from '@test/core/Final';
 
 /**
  * Child of {@link Final}.

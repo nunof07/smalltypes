@@ -1,4 +1,4 @@
-import { Function } from '@main/function/index';
+import { Function } from '@main';
 
 /**
  * Function without arguments.

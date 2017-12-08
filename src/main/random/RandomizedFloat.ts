@@ -1,9 +1,9 @@
-import { final } from '@main/index';
-import { frozen } from '@main/index';
-import { Random } from '@main/random/index';
-import { Scalar } from '@main/scalar/index';
-import { ScalarLike } from '@main/scalar/index';
-import { ScalarOf } from '@main/scalar/index';
+import { final } from '@main';
+import { frozen } from '@main';
+import { Random } from '@main';
+import { Scalar } from '@main';
+import { ScalarLike } from '@main';
+import { ScalarOf } from '@main';
 
 /**
  * Randomized floating point number.

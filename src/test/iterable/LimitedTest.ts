@@ -1,5 +1,5 @@
-import { Equals } from '@main/iterable/index';
-import { Limited } from '@main/iterable/index';
+import { Equals } from '@main';
+import { Limited } from '@main';
 import { expect } from 'chai';
 import { suite } from 'mocha-typescript';
 import { test } from 'mocha-typescript';

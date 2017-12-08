@@ -1,9 +1,9 @@
-import { Function } from '@main/function/index';
-import { ToValue } from '@main/function/index';
-import { final } from '@main/index';
-import { frozen } from '@main/index';
-import { Scalar } from '@main/scalar/index';
-import { ScalarLike } from '@main/scalar/index';
+import { final } from '@main';
+import { frozen } from '@main';
+import { Function } from '@main';
+import { Scalar } from '@main';
+import { ScalarLike } from '@main';
+import { ToValue } from '@main';
 
 /**
  * Scalar of different possible inputs.

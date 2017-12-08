@@ -1,5 +1,5 @@
-import { ConditionConsequentLikePair } from '@main/scalar/index';
-import { ScalarLike } from '@main/scalar/index';
+import { ConditionConsequentLikePair } from '@main';
+import { ScalarLike } from '@main';
 
 /**
  * Boolean-like union type.

@@ -1,4 +1,4 @@
-import { final } from '@main/index';
+import { final } from '@main';
 
 /**
  * Final class.

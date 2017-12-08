@@ -1,4 +1,4 @@
-import { Scalar } from '@main/scalar/index';
+import { Scalar } from '@main';
 
 /**
  * Condition/consequent pair.

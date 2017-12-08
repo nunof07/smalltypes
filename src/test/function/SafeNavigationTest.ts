@@ -1,5 +1,5 @@
-import { FunctionOf } from '@main/function/index';
-import { SafeNavigation } from '@main/function/index';
+import { FunctionOf } from '@main';
+import { SafeNavigation } from '@main';
 import { expect } from 'chai';
 import { suite } from 'mocha-typescript';
 import { test } from 'mocha-typescript';

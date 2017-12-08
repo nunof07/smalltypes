@@ -1,8 +1,8 @@
-import { final } from '@main/index';
-import { frozen } from '@main/index';
-import { Scalar } from '@main/scalar/index';
-import { ScalarLike } from '@main/scalar/index';
-import { ScalarOf } from '@main/scalar/index';
+import { final } from '@main';
+import { frozen } from '@main';
+import { Scalar } from '@main';
+import { ScalarLike } from '@main';
+import { ScalarOf } from '@main';
 
 /**
  * Cached scalar.

@@ -1,7 +1,7 @@
-import { final } from '@main/index';
-import { frozen } from '@main/index';
-import { Limited } from '@main/iterable/index';
-import { Scalar } from '@main/scalar/index';
+import { final } from '@main';
+import { frozen } from '@main';
+import { Limited } from '@main';
+import { Scalar } from '@main';
 
 /**
  * First item of iterable.

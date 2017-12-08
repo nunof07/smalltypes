@@ -1,4 +1,4 @@
-import { IllegalInheritanceError } from '@main/index';
+import { IllegalInheritanceError } from '@main';
 import { expect } from 'chai';
 import { suite } from 'mocha-typescript';
 import { test } from 'mocha-typescript';

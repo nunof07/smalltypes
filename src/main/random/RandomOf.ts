@@ -1,6 +1,6 @@
-import { final } from '@main/index';
-import { frozen } from '@main/index';
-import { Random } from '@main/random/index';
+import { final } from '@main';
+import { frozen } from '@main';
+import { Random } from '@main';
 
 /**
  * RandomSource as {@link Random}.

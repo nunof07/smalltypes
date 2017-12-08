@@ -1,4 +1,4 @@
-import { Frozen } from '@test/Frozen';
+import { Frozen } from '@test/core/Frozen';
 import { expect } from 'chai';
 import { suite } from 'mocha-typescript';
 import { test } from 'mocha-typescript';

@@ -1,6 +1,6 @@
-import { final } from '@main/index';
-import { frozen } from '@main/index';
-import { Scalar } from '@main/scalar/index';
+import { final } from '@main';
+import { frozen } from '@main';
+import { Scalar } from '@main';
 
 /**
  * Iterables equals.

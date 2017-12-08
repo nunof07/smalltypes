@@ -1,12 +1,12 @@
-import { Function } from '@main/function/index';
-import { FunctionLike } from '@main/function/index';
-import { FunctionOf } from '@main/function/index';
-import { ToValue } from '@main/function/index';
-import { final } from '@main/index';
-import { frozen } from '@main/index';
-import { BoolLike } from '@main/scalar/index';
-import { ConditionConsequentLikePair } from '@main/scalar/index';
-import { ScalarLike } from '@main/scalar/index';
+import { BoolLike } from '@main';
+import { ConditionConsequentLikePair } from '@main';
+import { final } from '@main';
+import { frozen } from '@main';
+import { Function } from '@main';
+import { FunctionLike } from '@main';
+import { FunctionOf } from '@main';
+import { ScalarLike } from '@main';
+import { ToValue } from '@main';
 
 /**
  * Converts boolean-like types to boolean.

@@ -1,8 +1,8 @@
-import { Function } from '@main/function/index';
-import { FunctionOf } from '@main/function/index';
-import { NullaryFunction } from '@main/function/index';
-import { final } from '@main/index';
-import { frozen } from '@main/index';
+import { final } from '@main';
+import { frozen } from '@main';
+import { Function } from '@main';
+import { FunctionOf } from '@main';
+import { NullaryFunction } from '@main';
 
 /**
  * Function without arguments.

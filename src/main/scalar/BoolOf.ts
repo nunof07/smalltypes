@@ -1,11 +1,11 @@
-import { Function } from '@main/function/index';
-import { FunctionLike } from '@main/function/index';
-import { FunctionOf } from '@main/function/index';
-import { ToBool } from '@main/function/index';
-import { final } from '@main/index';
-import { frozen } from '@main/index';
-import { BoolLike } from '@main/scalar/index';
-import { Scalar } from '@main/scalar/index';
+import { BoolLike } from '@main';
+import { final } from '@main';
+import { frozen } from '@main';
+import { Function } from '@main';
+import { FunctionLike } from '@main';
+import { FunctionOf } from '@main';
+import { Scalar } from '@main';
+import { ToBool } from '@main';
 
 /**
  * Boolean of different possible inputs.

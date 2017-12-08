@@ -1,10 +1,10 @@
-import { final } from '@main/index';
-import { frozen } from '@main/index';
-import { IsNull } from '@main/scalar/index';
-import { IsUndefined } from '@main/scalar/index';
-import { Or } from '@main/scalar/index';
-import { Scalar } from '@main/scalar/index';
-import { ScalarLike } from '@main/scalar/index';
+import { final } from '@main';
+import { frozen } from '@main';
+import { IsNull } from '@main';
+import { IsUndefined } from '@main';
+import { Or } from '@main';
+import { Scalar } from '@main';
+import { ScalarLike } from '@main';
 
 /**
  * Determines if scalar or value is null or undefined.

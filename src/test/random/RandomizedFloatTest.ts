@@ -1,7 +1,7 @@
-import { ParkMillerRandom } from '@main/random/index';
-import { RandomizedFloat } from '@main/random/index';
-import { Rounded } from '@main/scalar/index';
-import { ScalarOf } from '@main/scalar/index';
+import { ParkMillerRandom } from '@main';
+import { RandomizedFloat } from '@main';
+import { Rounded } from '@main';
+import { ScalarOf } from '@main';
 import { expect } from 'chai';
 import { suite } from 'mocha-typescript';
 import { test } from 'mocha-typescript';

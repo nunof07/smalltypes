@@ -1,4 +1,4 @@
-import { NullaryFunctionOf } from '@main/function/index';
+import { NullaryFunctionOf } from '@main';
 import { expect } from 'chai';
 import { suite } from 'mocha-typescript';
 import { test } from 'mocha-typescript';

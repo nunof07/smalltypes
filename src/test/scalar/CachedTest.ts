@@ -1,4 +1,4 @@
-import { Cached } from '@main/scalar/index';
+import { Cached } from '@main';
 import { expect } from 'chai';
 import { suite } from 'mocha-typescript';
 import { test } from 'mocha-typescript';

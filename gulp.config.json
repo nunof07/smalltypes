@@ -1,6 +1,6 @@
 {
     "paths": {
-        "entry": "src/index.ts",
+        "entry": "src/main/index.ts",
         "src": "src/**/*.ts",
         "main": "src/main/**/*.ts",
         "test": "src/test/**/*Test.ts",
@@ -65,6 +65,10 @@
                 {
                     "search": "^@main/",
                     "replace": "{{mainModuleName}}/"
+                },
+                {
+                    "search": "^@main$",
+                    "replace": "{{mainModuleName}}"
                 },
                 {
                     "search": "^./",

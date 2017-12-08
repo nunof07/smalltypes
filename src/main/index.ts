@@ -1,8 +1,8 @@
 /**
  * Main index.
  */
-export * from './final';
-export * from './frozen';
-export * from './IllegalInheritanceError';
-export * from './IllegalStateError';
-export * from './sealed';
+export * from './core/index';
+export * from './function/index';
+export * from './iterable/index';
+export * from './random/index';
+export * from './scalar/index';

@@ -1,6 +1,6 @@
-import { IllegalInheritanceError } from '@main/index';
-import { Final } from '@test/Final';
-import { FinalSub } from '@test/FinalSub';
+import { IllegalInheritanceError } from '@main';
+import { Final } from '@test/core/Final';
+import { FinalSub } from '@test/core/FinalSub';
 import { expect } from 'chai';
 import { suite } from 'mocha-typescript';
 import { test } from 'mocha-typescript';
