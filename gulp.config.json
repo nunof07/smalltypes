@@ -5,7 +5,7 @@
         "main": "src/main/**/*.ts",
         "test": "src/test/**/*Test.ts",
         "destination": "dist",
-        "bundle": "index.js"
+        "bundle": "smalltypes.js"
     },
     "browserify": {
         "basedir": ".",
@@ -41,7 +41,7 @@
             "src/test/**/*.ts",
             "src/index.ts"
         ],
-        "out": "index.d.ts",
+        "out": "smalltypes.d.ts",
         "replace": {
             "module": [
                 {
