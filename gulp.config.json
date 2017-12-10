@@ -35,46 +35,7 @@
     "declarations": {
         "name": "smalltypes",
         "exclude": [
-            "dist/**/*.ts",
-            "node_modules/**/*.d.ts",
-            "typings/**/*.d.ts",
-            "src/test/**/*.ts",
-            "src/index.ts"
-        ],
-        "out": "smalltypes.d.ts",
-        "replace": {
-            "module": [
-                {
-                    "search": "^(src/)?main/index$",
-                    "replace": "{{mainModuleName}}"
-                },
-                {
-                    "search": "/index$",
-                    "replace": ""
-                },
-                {
-                    "search": "^(src/)?main/",
-                    "replace": "{{mainModuleName}}/"
-                }
-            ],
-            "import": [
-                {
-                    "search": "/index$",
-                    "replace": ""
-                },
-                {
-                    "search": "^@main/",
-                    "replace": "{{mainModuleName}}/"
-                },
-                {
-                    "search": "^@main$",
-                    "replace": "{{mainModuleName}}"
-                },
-                {
-                    "search": "^./",
-                    "replace": "{{currentModuleFullPath}}/"
-                }
-            ]
-        }
+            "**/index.d.ts"
+        ]
     }
 }

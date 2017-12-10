@@ -7,7 +7,8 @@ var tsify = require('tsify');
 var watchify = require('watchify');
 var babelify = require('babelify');
 var path = require('path');
-var dtsGenerator = require('dts-generator');
+var dtsBuilder = require('dts-builder');
+var del = require('del');
 var tsConfig = require('./tsconfig.json');
 var config = require('./gulp.config.json');
 
@@ -71,54 +72,21 @@ gulp.task('test', function () {
         });
 });
 
-
-gulp.task('declarations:typescript', function () {
+gulp.task('declarations', function () {
     return gulp.src(config.paths.main)
         .pipe(plugins.typescript(tsConfig.compilerOptions))
-        .dts.pipe(gulp.dest(config.paths.destination));
-});
-
-gulp.task('declarations', function () {
-    dtsGenerator.default({
-        name: config.declarations.name,
-        project: path.resolve(__dirname, './'),
-        exclude: config.declarations.exclude,
-        out: path.resolve(__dirname, config.paths.destination, config.declarations.out),
-        resolveModuleId: function (params) {
-            return replacePath(params.currentModuleId, config.declarations.replace.module, params);
-        },
-        resolveModuleImport: function (params) {
-            return replacePath(params.importedModuleId, config.declarations.replace.import, params);
-        }
-    });
-
-    function replacePath(source, config, resolveParams) {
-        var result = source;
-
-        config.forEach(function (params) {
-            result = result.replace(
-                new RegExp(params.search),
-                replacement(params.replace, resolveParams)
-            );
-        });
-
-        return result;
-    }
-    function replacement(replaceSource, resolveParams) {
-        var result = replaceSource.replace('{{mainModuleName}}', mainModuleName());
-
-        if (resolveParams.currentModuleId) {
-            result = result.replace('{{currentModuleFullPath}}', currentModuleFullPath(resolveParams.currentModuleId));
-        }
-
-        return result;
-    }
-    function mainModuleName() {
-        return config.declarations.name;
-    }
-    function currentModuleFullPath(currentModuleId) {
-        return replacePath(currentModuleId, config.declarations.replace.module, {});
-    }
+        .dts.pipe(plugins.intermediate({}, function (tempDir, cb) {
+            gulp.dest(tempDir);
+            del(config.declarations.exclude, { cwd: tempDir })
+                .then(function () {
+                    dtsBuilder.generateBundles([{
+                        name: config.declarations.name,
+                        sourceDir: tempDir,
+                        destDir: config.paths.destination
+                    }]);
+                    cb();
+                });
+        }));
 });
 
 gulp.task('watchify', watchifyBuild);
