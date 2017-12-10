@@ -2,22 +2,22 @@ import { BoolLike } from '@main';
 import { ConditionConsequentLikePair } from '@main';
 import { final } from '@main';
 import { frozen } from '@main';
-import { Function } from '@main';
 import { FunctionLike } from '@main';
 import { FunctionOf } from '@main';
 import { ScalarLike } from '@main';
 import { ToValue } from '@main';
+import { UnaryFunction } from '@main';
 
 /**
  * Converts boolean-like types to boolean.
  */
 @final
 @frozen
-export class ToBool<T> implements Function<BoolLike<T>, boolean> {
+export class ToBool<T> implements UnaryFunction<BoolLike<T>, boolean> {
     /**
      * Function to convert scalar-like booleans to boolean primitives.
      */
-    private readonly toValue: Function<ScalarLike<boolean>, boolean>;
+    private readonly toValue: UnaryFunction<ScalarLike<boolean>, boolean>;
 
     /**
      * Ctor.

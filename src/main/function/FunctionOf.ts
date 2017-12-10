@@ -1,16 +1,16 @@
 import { final } from '@main';
 import { frozen } from '@main';
-import { Function } from '@main';
 import { FunctionLike } from '@main';
 import { Cached } from '@main';
 import { Scalar } from '@main';
+import { UnaryFunction } from '@main';
 
 /**
  * Function of several possible types.
  */
 @final
 @frozen
-export class FunctionOf<X, Y> implements Function<X, Y> {
+export class FunctionOf<X, Y> implements UnaryFunction<X, Y> {
     /**
      * Function callback.
      */

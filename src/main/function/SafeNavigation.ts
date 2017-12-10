@@ -1,20 +1,20 @@
 import { Conditionalized } from '@main';
 import { final } from '@main';
 import { frozen } from '@main';
-import { Function } from '@main';
 import { FunctionLike } from '@main';
 import { IsNotBlank } from '@main';
+import { UnaryFunction } from '@main';
 
 /**
  * Function that executes when input is not null or undefined.
  */
 @final
 @frozen
-export class SafeNavigation<X> implements Function<X, void> {
+export class SafeNavigation<X> implements UnaryFunction<X, void> {
     /**
      * Function.
      */
-    private readonly func: Function<X, void>;
+    private readonly func: UnaryFunction<X, void>;
 
     /**
      * Ctor.

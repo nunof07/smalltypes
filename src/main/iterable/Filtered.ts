@@ -1,8 +1,8 @@
 import { final } from '@main';
 import { frozen } from '@main';
-import { Function } from '@main';
 import { FunctionLike } from '@main';
 import { FunctionOf } from '@main';
+import { UnaryFunction } from '@main';
 
 /**
  * Filtered iterable.
@@ -18,7 +18,7 @@ export class Filtered<T> implements Iterable<T> {
     /**
      * Function.
      */
-    private readonly func: Function<T, boolean>;
+    private readonly func: UnaryFunction<T, boolean>;
 
     /**
      * Ctor.

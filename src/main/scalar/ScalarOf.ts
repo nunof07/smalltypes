@@ -1,9 +1,9 @@
 import { final } from '@main';
 import { frozen } from '@main';
-import { Function } from '@main';
 import { Scalar } from '@main';
 import { ScalarLike } from '@main';
 import { ToValue } from '@main';
+import { UnaryFunction } from '@main';
 
 /**
  * Scalar of different possible inputs.
@@ -19,13 +19,13 @@ export class ScalarOf<T> implements Scalar<T> {
     /**
      * Function to convert scalar-like types to their respective values.
      */
-    private readonly toValue: Function<ScalarLike<T>, T>;
+    private readonly toValue: UnaryFunction<ScalarLike<T>, T>;
 
     /**
      * Ctor.
      * @param value Scalar, function that returns value, or value.
      */
-    constructor(value: ScalarLike<T>, toValue: Function<ScalarLike<T>, T> = new ToValue()) {
+    constructor(value: ScalarLike<T>, toValue: UnaryFunction<ScalarLike<T>, T> = new ToValue()) {
         this.val = value;
         this.toValue = toValue;
     }

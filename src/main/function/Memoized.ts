@@ -1,19 +1,19 @@
 import { final } from '@main';
 import { frozen } from '@main';
-import { Function } from '@main';
 import { FunctionLike } from '@main';
 import { FunctionOf } from '@main';
+import { UnaryFunction } from '@main';
 
 /**
  * Function that caches results.
  */
 @final
 @frozen
-export class Memoized<X, Y> implements Function<X, Y> {
+export class Memoized<X, Y> implements UnaryFunction<X, Y> {
     /**
      * Function callback.
      */
-    private readonly func: Function<X, Y>;
+    private readonly func: UnaryFunction<X, Y>;
 
     /**
      * Results map.

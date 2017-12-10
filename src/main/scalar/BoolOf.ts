@@ -1,11 +1,11 @@
 import { BoolLike } from '@main';
 import { final } from '@main';
 import { frozen } from '@main';
-import { Function } from '@main';
 import { FunctionLike } from '@main';
 import { FunctionOf } from '@main';
 import { Scalar } from '@main';
 import { ToBool } from '@main';
+import { UnaryFunction } from '@main';
 
 /**
  * Boolean of different possible inputs.
@@ -21,7 +21,7 @@ export class BoolOf<T> implements Scalar<boolean> {
     /**
      * Function to convert bool-like types to boolean primitive.
      */
-    private readonly toBool: Function<BoolLike<T>, boolean>;
+    private readonly toBool: UnaryFunction<BoolLike<T>, boolean>;
 
     /**
      * Ctor.

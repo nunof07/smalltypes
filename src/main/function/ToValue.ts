@@ -1,17 +1,17 @@
 import { final } from '@main';
 import { frozen } from '@main';
-import { Function } from '@main';
 import { IsFunction } from '@main';
 import { IsScalar } from '@main';
 import { Scalar } from '@main';
 import { ScalarLike } from '@main';
+import { UnaryFunction } from '@main';
 
 /**
  * Converts scalar-like types to their respective values.
  */
 @final
 @frozen
-export class ToValue<T> implements Function<ScalarLike<T>, T> {
+export class ToValue<T> implements UnaryFunction<ScalarLike<T>, T> {
     /**
      * Type determinant.
      */
@@ -29,7 +29,7 @@ export class ToValue<T> implements Function<ScalarLike<T>, T> {
         } else if (new IsScalar(input).value()) {
             return (<Scalar<T>>input).value();
         } else if (new IsFunction(input).value()) {
-            return (<Function<undefined, T>>input).apply(undefined);
+            return (<UnaryFunction<undefined, T>>input).apply(undefined);
         } else {
             return <T>input;
         }

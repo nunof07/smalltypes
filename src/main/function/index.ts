@@ -2,7 +2,6 @@
  * Function index
  */
 export * from './Conditionalized';
-export * from './Function';
 export * from './FunctionLike';
 export * from './FunctionOf';
 export * from './IsFunction';
@@ -14,3 +13,4 @@ export * from './SafeNavigation';
 export * from './ToBool';
 export * from './ToConditionConsequentPair';
 export * from './ToValue';
+export * from './UnaryFunction';

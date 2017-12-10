@@ -1,10 +1,10 @@
 import { final } from '@main';
 import { frozen } from '@main';
-import { Function } from '@main';
 import { FunctionLike } from '@main';
 import { FunctionOf } from '@main';
 import { Mapped } from '@main';
 import { Scalar } from '@main';
+import { UnaryFunction } from '@main';
 
 /**
  * Map of iterable and callback.
@@ -20,7 +20,7 @@ export class MapOf<Z, K, V> implements Scalar<Map<K, V>> {
     /**
      * Function to get key value entry.
      */
-    private readonly getEntry: Function<Z, [K, V]>;
+    private readonly getEntry: UnaryFunction<Z, [K, V]>;
 
     /**
      * Ctor.

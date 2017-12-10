@@ -1,24 +1,24 @@
 import { final } from '@main';
 import { frozen } from '@main';
-import { Function } from '@main';
 import { FunctionLike } from '@main';
 import { FunctionOf } from '@main';
+import { UnaryFunction } from '@main';
 
 /**
  * Function that executes conditionally.
  */
 @final
 @frozen
-export class Conditionalized<X> implements Function<X, void> {
+export class Conditionalized<X> implements UnaryFunction<X, void> {
     /**
      * Condition.
      */
-    private readonly condition: Function<X, boolean>;
+    private readonly condition: UnaryFunction<X, boolean>;
 
     /**
      * Function.
      */
-    private readonly func: Function<X, void>;
+    private readonly func: UnaryFunction<X, void>;
 
     /**
      * Ctor.

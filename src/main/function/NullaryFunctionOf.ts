@@ -1,8 +1,8 @@
 import { final } from '@main';
 import { frozen } from '@main';
-import { Function } from '@main';
 import { FunctionOf } from '@main';
 import { NullaryFunction } from '@main';
+import { UnaryFunction } from '@main';
 
 /**
  * Function without arguments.
@@ -13,7 +13,7 @@ export class NullaryFunctionOf<Y> implements NullaryFunction<Y> {
     /**
      * Function callback.
      */
-    private readonly func: Function<undefined, Y>;
+    private readonly func: UnaryFunction<undefined, Y>;
 
     /**
      * Ctor.

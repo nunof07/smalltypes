@@ -2,15 +2,15 @@ import { ConditionConsequentLikePair } from '@main';
 import { ConditionConsequentPair } from '@main';
 import { final } from '@main';
 import { frozen } from '@main';
-import { Function } from '@main';
 import { ScalarOf } from '@main';
+import { UnaryFunction } from '@main';
 
 /**
  * Converts {@link ConditionConsequentLikePair} to {@link ToConditionConsequentPair}.
  */
 @final
 @frozen
-export class ToConditionConsequentPair<T> implements Function<ConditionConsequentLikePair<T>, ConditionConsequentPair<T>> {
+export class ToConditionConsequentPair<T> implements UnaryFunction<ConditionConsequentLikePair<T>, ConditionConsequentPair<T>> {
     /**
      * Type determinant.
      */

@@ -1,7 +1,7 @@
 /**
- * Function.
+ * Function with one argument.
  */
-export interface Function<X, Y> {
+export interface UnaryFunction<X, Y> {
     /**
      * Type determinant.
      */

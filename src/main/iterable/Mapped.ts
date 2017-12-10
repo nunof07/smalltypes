@@ -1,8 +1,8 @@
-import { Function } from '@main';
 import { FunctionLike } from '@main';
 import { FunctionOf } from '@main';
 import { final } from '@main';
 import { frozen } from '@main';
+import { UnaryFunction } from '@main';
 
 /**
  * Mapped iterable.
@@ -18,7 +18,7 @@ export class Mapped<X, Y> implements Iterable<Y> {
     /**
      * Function.
      */
-    private readonly func: Function<X, Y>;
+    private readonly func: UnaryFunction<X, Y>;
 
     /**
      * Ctor.
