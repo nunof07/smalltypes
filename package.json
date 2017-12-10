@@ -8,7 +8,7 @@
     "prepublish": "gulp prepublish",
     "start": "gulp",
     "lint": "gulp tslint",
-    "test": "mocha --opts mocha.opts src/test/**/*Test.ts",
+    "test": "mocha --opts mocha.opts",
     "coverage": "nyc npm run test"
   },
   "author": {

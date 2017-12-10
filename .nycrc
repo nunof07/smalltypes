@@ -7,6 +7,9 @@
         ".tsx"
     ],
     "exclude": [
+        "dist",
+        "typings",
+        "src/test",
         "**/index.ts",
         "**/*.d.ts"
     ],
@@ -19,5 +22,7 @@
     "reporter": [
         "text"
     ],
-    "all": true
+    "all": true,
+    "sourceMap": true,
+    "instrument": true
 }
