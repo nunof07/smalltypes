@@ -93,7 +93,15 @@ gulp.task('watchify', watchifyBuild);
 
 gulp.task('build', browserifyBuild);
 
-gulp.task('prepublish', ['build', 'declarations']);
+gulp.task('prepublish', function (cb) {
+    plugins.sequence(
+        'tslint',
+        'test',
+        'build',
+        'declarations',
+        cb
+    );
+});
 
 gulp.task('watch', function () {
     watching = true;
