@@ -3,4 +3,5 @@
 --require ts-node/register
 --require tsconfig-paths/register
 --require source-map-support/register
+--exit
 src/test/**/*Test.ts
