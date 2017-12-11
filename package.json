@@ -7,6 +7,8 @@
   "scripts": {
     "prepublish": "gulp prepublish",
     "start": "gulp",
+    "watch": "gulp",
+    "build": "gulp build",
     "lint": "gulp tslint",
     "test": "mocha --opts mocha.opts",
     "coverage": "nyc npm run test"
