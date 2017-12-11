@@ -1,5 +1,7 @@
 # SmallTypes
 
+[![Build Status](https://travis-ci.org/nunof07/smalltypes.svg?branch=master)](https://travis-ci.org/nunof07/smalltypes)
+
 Object-oriented utility framework written in [TypeScript](https://www.typescriptlang.org/). Heavily inspired by [Cactoos](https://github.com/yegor256/cactoos).
 
 **Warning**: very early version. Not usable for production.
