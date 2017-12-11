@@ -17,7 +17,7 @@ export class RandomOfTest {
             rnd.next(),
             rnd.next(),
             rnd.next()
-        ]).to.be.equalTo([
+        ]).to.deep.equal([
             expected,
             expected,
             expected

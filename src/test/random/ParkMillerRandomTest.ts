@@ -19,7 +19,7 @@ export class ParkMillerRandomTest {
             round(rnd.next()),
             round(rnd.next()),
             round(rnd.next())
-        ]).to.be.equalTo([
+        ]).to.deep.equal([
             round(0.010463855699852042),
             round(0.8660227474132659),
             round(0.24431577475942476),

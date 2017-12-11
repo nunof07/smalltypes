@@ -20,7 +20,7 @@ export class CachedTest {
             cached.value(),
             cached.value(),
             cached.value()
-        ]).to.be.equalTo([
+        ]).to.deep.equal([
             10,
             10,
             10

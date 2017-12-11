@@ -21,7 +21,7 @@ export class MemoizedTest {
             cached.apply(true),
             cached.apply(true),
             cached.apply(true)
-        ]).to.be.equalTo([
+        ]).to.deep.equal([
             10,
             10,
             10
