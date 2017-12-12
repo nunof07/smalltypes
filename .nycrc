@@ -20,6 +20,8 @@
         "source-map-support/register"
     ],
     "reporter": [
+        "html",
+        "lcov",
         "text"
     ],
     "all": true,
