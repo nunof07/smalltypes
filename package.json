@@ -8,11 +8,13 @@
     "prepublish": "gulp prepublish",
     "start": "gulp",
     "watch": "gulp",
-    "build": "gulp build",
+    "build": "gulp build && gulp declarations",
     "lint": "gulp tslint",
     "test": "mocha --opts mocha.opts",
     "coverage": "nyc npm run test",
-    "coverage:upload": "codecov --file coverage/lcov.info --disable search"
+    "coverage:upload": "codecov --file coverage/lcov.info --disable search",
+    "travis": "npm run lint && npm run coverage && npm run build",
+    "travis:after_success": "npm run coverage:upload"
   },
   "author": {
     "name": "Nuno Freitas"
