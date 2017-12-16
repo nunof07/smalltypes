@@ -11,6 +11,20 @@ import { test } from 'mocha-typescript';
 @suite
 export class ParkMillerRandomTest {
     @test
+    public defaultConstructor(): void {
+        expect(
+            () => new ParkMillerRandom().next()
+        ).to.not.throw();
+    }
+
+    @test
+    public zeroAsSeed(): void {
+        expect(
+            new ParkMillerRandom(0).next()
+        ).to.not.equal(0);
+    }
+
+    @test
     public returnsRandomSequence(): void {
         const rnd: ParkMillerRandom = new ParkMillerRandom(new ScalarOf(1337));
         expect([
