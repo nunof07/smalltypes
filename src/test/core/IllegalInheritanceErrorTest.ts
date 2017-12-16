@@ -11,7 +11,9 @@ export class IllegalInheritanceErrorTest {
     @test
     public throwTest(): void {
         expect(
-            () => { throw new IllegalInheritanceError('My custom message'); }
+            () => {
+                throw new IllegalInheritanceError('My custom message');
+            }
         ).to.throw(IllegalInheritanceError);
     }
 }

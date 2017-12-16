@@ -11,7 +11,9 @@ export class IllegalStateErrorTest {
     @test
     public throwTest(): void {
         expect(
-            () => { throw new IllegalStateError('My custom message'); }
+            () => {
+                throw new IllegalStateError('My custom message');
+            }
         ).to.throw(IllegalStateError);
     }
 }

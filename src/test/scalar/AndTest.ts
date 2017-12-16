@@ -1,6 +1,6 @@
 import { And } from '@main';
-import { True } from '@main';
 import { False } from '@main';
+import { True } from '@main';
 import { expect } from 'chai';
 import { suite } from 'mocha-typescript';
 import { test } from 'mocha-typescript';

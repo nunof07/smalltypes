@@ -1,5 +1,5 @@
-import { Equals } from '@main';
 import { Conditions } from '@main';
+import { Equals } from '@main';
 import { False } from '@main';
 import { True } from '@main';
 import { expect } from 'chai';

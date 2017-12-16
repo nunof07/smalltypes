@@ -1,5 +1,5 @@
-import { FunctionOf } from '@main';
 import { Equals } from '@main';
+import { FunctionOf } from '@main';
 import { Mapped } from '@main';
 import { expect } from 'chai';
 import { suite } from 'mocha-typescript';

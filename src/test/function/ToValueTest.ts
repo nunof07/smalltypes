@@ -1,6 +1,6 @@
 import { NullaryFunctionOf } from '@main';
-import { ToValue } from '@main';
 import { ScalarOf } from '@main';
+import { ToValue } from '@main';
 import { expect } from 'chai';
 import { suite } from 'mocha-typescript';
 import { test } from 'mocha-typescript';
@@ -90,7 +90,9 @@ export class ToValueTest {
     @test
     public fromObjectJsFunction(): void {
         expect(
-            new ToValue().apply((): Object => { return { a: 'hello' }; })
+            new ToValue().apply((): Object => {
+                return { a: 'hello' };
+            })
         ).to.deep.equal({ a: 'hello' });
     }
 
