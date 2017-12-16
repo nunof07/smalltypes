@@ -5,7 +5,7 @@
     ],
     "rules": {
         "indent": [true, "spaces", 4],
-        "linebreak-style": [false, "LF"],
+        "linebreak-style": [true, "LF"],
         "interface-name": [true, "never-prefix"],
         "strict-boolean-expressions": [true, "allow-undefined-union"],
         "no-unused-variable": true,
