@@ -34,4 +34,14 @@ export class EqualsTest {
             ).value()
         ).to.equal(false, 'Equals value must be false');
     }
+
+    @test
+    public differentLengthsTest(): void {
+        expect(
+            new Equals(
+                [1, 2, 3],
+                [1, 2, 3, 4]
+            ).value()
+        ).to.equal(false, 'With different lengths equals value must be false');
+    }
 }
