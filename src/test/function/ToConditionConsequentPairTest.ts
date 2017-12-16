@@ -10,6 +10,13 @@ import { test } from 'mocha-typescript';
 @suite
 export class ToConditionConsequentPairTest {
     @test
+    public isFunction(): void {
+        expect(
+            new ToConditionConsequentPair().isFunction()
+        ).to.equal(true, 'Must be a function');
+    }
+
+    @test
     public converts(): void {
         const pair: ConditionConsequentPair<string> = new ToConditionConsequentPair<string>().apply([false, 'hello']);
         expect(

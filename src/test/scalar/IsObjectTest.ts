@@ -10,6 +10,13 @@ import { test } from 'mocha-typescript';
 @suite
 export class IsObjectTest {
     @test
+    public isScalar(): void {
+        expect(
+            new IsObject(true).isScalar()
+        ).to.equal(true, 'Must be a scalar');
+    }
+
+    @test
     public includesEmptyObject(): void {
         expect(
             new IsObject({}).value()

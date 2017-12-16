@@ -11,6 +11,13 @@ import { test } from 'mocha-typescript';
 @suite
 export class ToValueTest {
     @test
+    public isFunction(): void {
+        expect(
+            new ToValue().isFunction()
+        ).to.equal(true, 'Must be a function');
+    }
+
+    @test
     public fromStringPrimitive(): void {
         expect(
             new ToValue().apply('hello')

@@ -23,6 +23,13 @@ export class ConditionalizedTest {
     }
 
     @test
+    public isFunction(): void {
+        expect(
+            this.conditionalized.isFunction()
+        ).to.equal(true, 'Must be a function');
+    }
+
+    @test
     public conditionTrue(): void {
         expect(
             () => {

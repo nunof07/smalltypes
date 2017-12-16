@@ -11,6 +11,13 @@ import { test } from 'mocha-typescript';
 @suite
 export class IsUndefinedTest {
     @test
+    public isScalar(): void {
+        expect(
+            new IsUndefined(true).isScalar()
+        ).to.equal(true, 'Must be a scalar');
+    }
+
+    @test
     public undefinedTest(): void {
         expect(
             new IsUndefined(undefined).value()

@@ -11,6 +11,13 @@ import { test } from 'mocha-typescript';
 @suite
 export class IsTrueTest {
     @test
+    public isFunction(): void {
+        expect(
+            new IsTrue().isFunction()
+        ).to.equal(true, 'Must be a function');
+    }
+
+    @test
     public truePrimitive(): void {
         expect(
             new IsTrue().apply(true)

@@ -9,6 +9,13 @@ import { test } from 'mocha-typescript';
 @suite
 export class EqualsTest {
     @test
+    public isScalar(): void {
+        expect(
+            new Equals([], []).isScalar()
+        ).to.equal(true, 'Must be a scalar');
+    }
+
+    @test
     public trueTest(): void {
         expect(
             new Equals(

@@ -1,5 +1,6 @@
 import { FunctionOf } from '@main';
 import { IsFunction } from '@main';
+import { UnaryFunction } from '@main';
 import { expect } from 'chai';
 import { suite } from 'mocha-typescript';
 import { test } from 'mocha-typescript';
@@ -9,10 +10,23 @@ import { test } from 'mocha-typescript';
  */
 @suite
 export class IsFunctionTest {
+    private readonly actualFunction: UnaryFunction<undefined, string>;
+
+    constructor() {
+        this.actualFunction = new FunctionOf((): string => 'HelloWorld');
+    }
+
+    @test
+    public isScalar(): void {
+        expect(
+            new IsFunction(this.actualFunction).isScalar()
+        ).to.equal(true, 'Must be a scalar');
+    }
+
     @test
     public detectsFunction(): void {
         expect(
-            new IsFunction(new FunctionOf((): string => 'HelloWorld')).value()
+            new IsFunction(this.actualFunction).value()
         ).to.equal(true, 'Function value must return true');
     }
 

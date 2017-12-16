@@ -9,6 +9,13 @@ import { test } from 'mocha-typescript';
 @suite
 export class IsJsFunctionTest {
     @test
+    public isScalar(): void {
+        expect(
+            new IsJsFunction(true).isScalar()
+        ).to.equal(true, 'Must be a scalar');
+    }
+
+    @test
     public detectsFunction(): void {
         expect(
             new IsJsFunction((): string => 'HelloWorld').value()

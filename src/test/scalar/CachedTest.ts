@@ -9,6 +9,13 @@ import { test } from 'mocha-typescript';
 @suite
 export class CachedTest {
     @test
+    public isScalar(): void {
+        expect(
+            new Cached(1).isScalar()
+        ).to.equal(true, 'Must be a scalar');
+    }
+
+    @test
     public cachesValue(): void {
         let sum: number = 0;
         const cached: Cached<number> = new Cached((): number => {

@@ -10,6 +10,13 @@ import { test } from 'mocha-typescript';
 @suite
 export class RoundedTest {
     @test
+    public isScalar(): void {
+        expect(
+            new Rounded(1, 1).isScalar()
+        ).to.equal(true, 'Must be a scalar');
+    }
+
+    @test
     public roundsUp(): void {
         expect(
             new Rounded(4.45, 1).value()

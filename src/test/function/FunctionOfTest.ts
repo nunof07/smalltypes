@@ -9,6 +9,15 @@ import { test } from 'mocha-typescript';
 @suite
 export class FunctionOfTest {
     @test
+    public isFunction(): void {
+        expect(
+            new FunctionOf(
+                (input: string): string => input
+            ).isFunction()
+        ).to.equal(true, 'Must be a function');
+    }
+
+    @test
     public fromJsFunction(): void {
         expect(
             new FunctionOf(

@@ -9,6 +9,13 @@ import { test } from 'mocha-typescript';
 @suite
 export class NullTest {
     @test
+    public isScalar(): void {
+        expect(
+            new Null().isScalar()
+        ).to.equal(true, 'Must be a scalar');
+    }
+
+    @test
     public isNull(): void {
         expect(
             new Null().value()

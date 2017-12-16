@@ -11,6 +11,13 @@ import { test } from 'mocha-typescript';
 @suite
 export class ToBoolTest {
     @test
+    public isFunction(): void {
+        expect(
+            new ToBool().isFunction()
+        ).to.equal(true, 'Must be a function');
+    }
+
+    @test
     public fromFalsePrimitive(): void {
         expect(
             new ToBool().apply(false)

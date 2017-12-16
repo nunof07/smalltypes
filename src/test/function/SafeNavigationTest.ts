@@ -20,6 +20,13 @@ export class SafeNavigationTest {
     }
 
     @test
+    public isFunction(): void {
+        expect(
+            this.func.isFunction()
+        ).to.equal(true, 'Must be a function');
+    }
+
+    @test
     public blankTest(): void {
         expect(
             () => {

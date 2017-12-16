@@ -12,6 +12,13 @@ import { test } from 'mocha-typescript';
 @suite
 export class ConditionedTest {
     @test
+    public isScalar(): void {
+        expect(
+            new Conditioned(1).isScalar()
+        ).to.equal(true, 'Must be a scalar');
+    }
+
+    @test
     public justAlternative(): void {
         expect(
             new Conditioned('hello').value()

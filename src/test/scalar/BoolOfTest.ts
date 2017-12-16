@@ -12,6 +12,12 @@ export class BoolOfTest {
         this.bool = bool;
     }
 
+    public isScalar(): void {
+        expect(
+            new BoolOf(this.bool).isScalar()
+        ).to.equal(true, 'Must be a scalar');
+    }
+
     public fromPrimitive(): void {
         expect(
             new BoolOf(this.bool).value()

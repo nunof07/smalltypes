@@ -11,6 +11,13 @@ import { test } from 'mocha-typescript';
 @suite
 export class OrTest {
     @test
+    public isScalar(): void {
+        expect(
+            new Or().isScalar()
+        ).to.equal(true, 'Must be a scalar');
+    }
+
+    @test
     public isTrue(): void {
         expect(
             new Or(false, true).value()

@@ -10,6 +10,13 @@ import { test } from 'mocha-typescript';
 @suite
 export class FirstTest {
     @test
+    public isScalar(): void {
+        expect(
+            new First([]).isScalar()
+        ).to.equal(true, 'Must be a scalar');
+    }
+
+    @test
     public firstValue(): void {
         expect(
             new First([1, 2, 3]).value().value

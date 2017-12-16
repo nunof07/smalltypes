@@ -9,6 +9,13 @@ import { test } from 'mocha-typescript';
 @suite
 export class HasTruePropertyTest {
     @test
+    public isScalar(): void {
+        expect(
+            new HasTrueProperty({ }, 'myCheck').isScalar()
+        ).to.equal(true, 'Must be a scalar');
+    }
+
+    @test
     public hasTrueProperty(): void {
         expect(
             new HasTrueProperty({ myCheck: true }, 'myCheck').value()

@@ -14,6 +14,11 @@ export class BoolOfFalseTest {
     }
 
     @test
+    public isScalar(): void {
+        this.test.isScalar();
+    }
+
+    @test
     public fromPrimitive(): void {
         this.test.fromPrimitive();
     }

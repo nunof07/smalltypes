@@ -11,6 +11,13 @@ import { test } from 'mocha-typescript';
 @suite
 export class NotTest {
     @test
+    public isScalar(): void {
+        expect(
+            new Not(true).isScalar()
+        ).to.equal(true, 'Must be a scalar');
+    }
+
+    @test
     public notFalse(): void {
         expect(
             new Not(false).value()

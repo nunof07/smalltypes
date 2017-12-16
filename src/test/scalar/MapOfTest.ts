@@ -10,6 +10,18 @@ import { test } from 'mocha-typescript';
 @suite
 export class MapOfTest {
     @test
+    public isScalar(): void {
+        expect(
+            new MapOf(
+                ['hello'],
+                (input: string): [string, string] => {
+                    return [input, input];
+                }
+            ).isScalar()
+        ).to.equal(true, 'Must be a scalar');
+    }
+
+    @test
     public isMap(): void {
         expect(
             new MapOf(

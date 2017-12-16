@@ -11,6 +11,13 @@ import { test } from 'mocha-typescript';
 @suite
 export class WithFallbackTest {
     @test
+    public isScalar(): void {
+        expect(
+            new WithFallback(true, true).isScalar()
+        ).to.equal(true, 'Must be a scalar');
+    }
+
+    @test
     public whenBlank(): void {
         expect(
             new WithFallback(new Null(), new ScalarOf(2)).value()

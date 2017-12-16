@@ -12,6 +12,13 @@ import { test } from 'mocha-typescript';
 @suite
 export class TernaryTest {
     @test
+    public isScalar(): void {
+        expect(
+            new Ternary(true, true, true).isScalar()
+        ).to.equal(true, 'Must be a scalar');
+    }
+
+    @test
     public trueTest(): void {
         expect(
             new Ternary(

@@ -11,6 +11,13 @@ import { test } from 'mocha-typescript';
 @suite
 export class ScalarOfTest {
     @test
+    public isScalar(): void {
+        expect(
+            new ScalarOf(1).isScalar()
+        ).to.equal(true, 'Must be a scalar');
+    }
+
+    @test
     public isTrue(): void {
         expect(
             new ScalarOf(true).value()

@@ -12,6 +12,14 @@ import { test } from 'mocha-typescript';
 @suite
 export class RandomizedPercentageTest {
     @test
+    public isScalar(): void {
+        expect(
+            new RandomizedPercentage({ next: (): number => 0 })
+                .isScalar()
+        ).to.equal(true, 'Must be a scalar');
+    }
+
+    @test
     public min(): void {
         expect(
             new RandomizedPercentage({

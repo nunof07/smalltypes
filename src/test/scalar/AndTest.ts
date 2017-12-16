@@ -11,6 +11,13 @@ import { test } from 'mocha-typescript';
 @suite
 export class AndTest {
     @test
+    public isScalar(): void {
+        expect(
+            new And().isScalar()
+        ).to.equal(true, 'Must be a scalar');
+    }
+
+    @test
     public isTrue(): void {
         expect(
             new And(true, true).value()
