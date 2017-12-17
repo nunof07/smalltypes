@@ -89,6 +89,27 @@ gulp.task('declarations', function () {
         }));
 });
 
+gulp.task('documentation:typedoc', function () {
+    var typeDocConfig = Object.assign({}, config.documentation);
+    return gulp.src(config.paths.main)
+        .pipe(plugins.typedoc(typeDocConfig));
+});
+
+gulp.task('documentation:nojekyll', function () {
+    // tell GitHub we are not using Jekyll for our Pages
+    return plugins.file('.nojekyll', '', { src: true })
+        .pipe(gulp.dest(config.documentation.out));
+});
+
+gulp.task('documentation', function (cb) {
+    plugins.sequence(
+        'documentation:typedoc',
+        'documentation:nojekyll',
+        cb
+    );
+});
+
+
 gulp.task('watchify', watchifyBuild);
 
 gulp.task('build', browserifyBuild);
@@ -99,6 +120,7 @@ gulp.task('prepublish', function (cb) {
         'test',
         'build',
         'declarations',
+        'documentation',
         cb
     );
 });

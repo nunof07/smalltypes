@@ -37,5 +37,14 @@
         "exclude": [
             "**/index.d.ts"
         ]
+    },
+    "documentation": {
+        "out": "docs",
+        "mode": "file",
+        "excludeExternals": true,
+        "excludePrivate": true,
+        "name": "SmallTypes",
+        "readme": "none",
+        "ignoreCompilerErrors": true
     }
 }

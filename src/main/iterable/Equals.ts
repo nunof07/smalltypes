@@ -3,7 +3,7 @@ import { frozen } from '@main';
 import { Scalar } from '@main';
 
 /**
- * Iterables equals.
+ * Compare two iterables for equality.
  */
 @final
 @frozen

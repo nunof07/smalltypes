@@ -4,7 +4,7 @@ import { HasTrueResult } from '@main';
 import { Scalar } from '@main';
 
 /**
- * Determines if variable is of type {@link Function}.
+ * Determines if variable is of type {@link UnaryFunction}.
  */
 @final
 @frozen
