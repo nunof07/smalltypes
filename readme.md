@@ -17,47 +17,60 @@ Object-oriented utility framework written in [TypeScript](https://www.typescript
 
 **Warning**: very early version. Not usable for production.
 
-## Contribute
+## Getting started
+
+### Installing
+
+`smalltypes` is available on [npm](https://www.npmjs.com/package/smalltypes). You can install it using:
+
+```bash
+npm install --save smalltypes
+```
+
+### Documentation
+
+- [API documentation](https://nunof07.github.io/smalltypes/).
+
+## Development
+
+### Requirements
+
+- [Node](https://nodejs.org/en/).
 
 ### Setup
 
-- Clone repo.
-- Install npm.
-- Run `npm install` to install dependencies.
+Clone the repository:
 
-### Watch/build
+```bash
+git clone https://github.com/nunof07/smalltypes.git
+```
 
-- Start: `gulp` or `npm start`. Default task will lint, build, test and watch for changes.
-- Lint: `gulp tslint` or `npm run lint`.
-- Test: `gulp test` or `npm run test`.
-- Test coverage: `npm run coverage`.
+Change the working directoy:
 
-### Config
+```bash
+cd smalltypes
+```
 
-See files in root.
+Install dependencies:
 
-### Development notes
+```bash
+npm install
+```
 
-#### Module resolution
+### Running
 
-Use absolute paths to import modules. Inform TypeScript and Babel how to resolve these paths.
+Main tasks:
 
-For TypeScript:
+- `npm start` or `gulp`: Default task will lint, build, test and watch for changes.
+- `npm run build`: Build library and TypeScript declarations.
+- `npm run coverage`: Test coverage report.
+- `gulp documentation`: Generate API documentation.
 
-- Open file `tsconfig.json`.
-- Configure variables `compilerOptions.baseUrl` and `compilerOptions.paths`.
-
-For Babel:
-
-- Open file `.babelrc`.
-- Configure variables `root` and `alias` for `module-resolver` under `plugins`.
-
-More info on [Using absolute paths with TypeScript, Babel and Browserify](http://www.broculos.net/2017/10/using-absolute-paths-with-typescript.html#.WfDAmWhSyUk).
-
-## Main development dependencies
+## Built With
 
 - Language: [TypeScript](http://www.typescriptlang.org/).
 - Tasks: [gulp](https://gulpjs.com/).
-- Build: [Browserify](http://browserify.org/), [Babel](https://babeljs.io/)
+- Build: [Browserify](http://browserify.org/), [TypeScript](http://www.typescriptlang.org/), [Babel](https://babeljs.io/).
 - Tests: [Mocha](https://mochajs.org), [Chai](http://chaijs.com/), [Istanbul](https://istanbul.js.org/).
 - Lint: [TSLint](https://palantir.github.io/tslint/).
+- Code Integration: [Travis CI](https://travis-ci.org/), [Codecov](https://codecov.io/), [Code Climate](https://codeclimate.com/), [bitHound](https://www.bithound.io/).
