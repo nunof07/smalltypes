@@ -16,3 +16,6 @@ dist
 
 # typings
 typings/**/typings.json
+
+# rollup typescript 2 plugin
+.rpt2_cache
