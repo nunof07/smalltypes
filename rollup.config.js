@@ -1,4 +1,5 @@
 import typescript from 'rollup-plugin-typescript2';
+import babel from 'rollup-plugin-babel';
 import config from './gulp.config.json';
 
 export default {
@@ -15,6 +16,9 @@ export default {
                 declaration: false
             },
             typescript: require('typescript')
+        }),
+        babel({
+            runtimeHelpers: true
         })
 	]
 };
