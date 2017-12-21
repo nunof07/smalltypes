@@ -13,7 +13,7 @@ export default {
     },
     plugins: [
         tslint({
-            throwError: true
+            throwError: false
         }),
 		typescript({
             tsconfigOverride: {
@@ -22,5 +22,8 @@ export default {
             typescript: require('typescript')
         }),
         babel()
-	]
+    ],
+    watch: {
+        clearScreen: false
+    }
 };

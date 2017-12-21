@@ -5,7 +5,7 @@
         "main": "src/main/**/*.ts",
         "test": "src/test/**/*Test.ts",
         "destination": "dist",
-        "bundle": "smalltypes.js"
+        "bundle": "smalltypes_rollup.js"
     },
     "browserify": {
         "basedir": ".",
