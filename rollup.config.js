@@ -17,8 +17,6 @@ export default {
             },
             typescript: require('typescript')
         }),
-        babel({
-            runtimeHelpers: true
-        })
+        babel()
 	]
 };

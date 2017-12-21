@@ -5,13 +5,6 @@
         }]
     ],
     "plugins": [
-        ["module-resolver", {
-            "root": ["./"],
-            "alias": {
-                "@main": "./src/main",
-                "@test": "./src/test"
-            }
-        }],
-        ["transform-runtime"]
+        ["external-helpers"]
     ]
 }
