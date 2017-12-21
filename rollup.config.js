@@ -1,5 +1,6 @@
-import typescript from 'rollup-plugin-typescript2';
 import babel from 'rollup-plugin-babel';
+import tslint from 'rollup-plugin-tslint';
+import typescript from 'rollup-plugin-typescript2';
 import config from './gulp.config.json';
 
 export default {
@@ -11,6 +12,9 @@ export default {
         sourcemap: true
     },
     plugins: [
+        tslint({
+            throwError: true
+        }),
 		typescript({
             tsconfigOverride: {
                 declaration: false
