@@ -109,34 +109,47 @@ gulp.task('documentation', function (cb) {
     );
 });
 
-gulp.task('rollup', function () {
+function startRollup() {
     var babel = require('rollup-plugin-babel');
     var typescript = require('rollup-plugin-typescript2');
     var tslint = require('rollup-plugin-tslint');
 
     return gulp
         .src(config.paths.entry)
+        .pipe(watching ? plugins.watch(config.paths.src, { verbose: true }) : plugins.util.noop())
+        .pipe(watching ? plugins.plumber() : plugins.util.noop())
         //.pipe(sourcemaps.init())
-        .pipe(plugins.betterRollup({
-            plugins: [
-                tslint({
-                    throwError: true
-                }),
-                typescript({
-                    tsconfigOverride: {
-                        declaration: false
-                    },
-                    typescript: require('typescript')
-                }),
-                babel()
-            ]
-        }, {
-            format: 'umd',
-            name: 'smalltypes'
-        }))
+        .pipe(plugins.betterRollup(
+            {
+                plugins: [
+                    // tslint({
+                    //     throwError: true
+                    // }),
+                    typescript({
+                        tsconfigOverride: {
+                            declaration: false
+                        },
+                        typescript: require('typescript')
+                    }),
+                    babel()
+                ]
+            }, {
+                format: 'umd',
+                name: 'smalltypes'
+            }
+        ))
         //.pipe(sourcemaps.write('.'))
         .pipe(plugins.rename(config.paths.bundle))
         .pipe(gulp.dest(config.paths.destination));
+}
+
+gulp.task('rollup', function () {
+    return startRollup();
+});
+
+gulp.task('rollup:watch', function () {
+    watching = true;
+    return startRollup();
 });
 
 
