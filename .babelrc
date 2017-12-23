@@ -1,13 +1,14 @@
 {
-    "presets": ["env"],
+    "presets": [
+        ["env", {
+            "modules": false
+        }]
+    ],
     "plugins": [
-        ["module-resolver", {
-            "root": ["./"],
-            "alias": {
-                "@main": "./src/main",
-                "@test": "./src/test"
-            }
+        ["transform-runtime", {
+            "helpers": false,
+            "polyfill": false
         }],
-        ["transform-runtime"]
+        ["external-helpers"]
     ]
 }

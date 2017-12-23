@@ -1,24 +1,16 @@
 {
+    "module": "smalltypes",
     "paths": {
         "entry": "src/main/index.ts",
         "src": "src/**/*.ts",
         "main": "src/main/**/*.ts",
         "test": "src/test/**/*Test.ts",
         "destination": "dist",
-        "bundle": "smalltypes.js"
+        "bundle": "smalltypes.js",
+        "bundle_full": "dist/smalltypes.js"
     },
-    "browserify": {
-        "basedir": ".",
-        "debug": true,
-        "cache": {},
-        "packageCache": {},
-        "standalone": "smalltypes"
-    },
-    "babel": {
-        "extensions": [
-            ".js",
-            ".ts"
-        ]
+    "rollup": {
+        "format": "umd"
     },
     "tslint": {
         "formatter": "stylish"
@@ -33,7 +25,6 @@
         ]
     },
     "declarations": {
-        "name": "smalltypes",
         "exclude": [
             "**/index.d.ts"
         ]
