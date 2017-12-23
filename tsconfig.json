@@ -2,7 +2,7 @@
     "compilerOptions": {
         "target": "es6",
         "baseUrl": ".",
-        "declaration": true,
+        "declaration": false,
         "sourceMap": true,
         "experimentalDecorators": true,
         "alwaysStrict": true,

@@ -9,9 +9,6 @@ var babelify = require('babelify');
 var path = require('path');
 var dtsBuilder = require('dts-builder');
 var del = require('del');
-var rollupStream = require('rollup-stream');
-var source = require('vinyl-source-stream');
-var buffer = require('vinyl-buffer');
 var tsConfig = require('./tsconfig.json');
 var config = require('./gulp.config.json');
 
@@ -76,8 +73,10 @@ gulp.task('test', function () {
 });
 
 gulp.task('declarations', function () {
+    var tsProject = plugins.typescript.createProject('tsconfig.json', { declaration: true });
+
     return gulp.src(config.paths.main)
-        .pipe(plugins.typescript(tsConfig.compilerOptions))
+        .pipe(tsProject())
         .dts.pipe(plugins.intermediate({}, function (tempDir, cb) {
             gulp.dest(tempDir);
             del(config.declarations.exclude, { cwd: tempDir })
@@ -110,85 +109,6 @@ gulp.task('documentation', function (cb) {
         'documentation:nojekyll',
         cb
     );
-});
-
-function startRollup() {
-    var babel = require('rollup-plugin-babel');
-    var typescript = require('rollup-plugin-typescript2');
-    var tslint = require('rollup-plugin-tslint');
-
-    return gulp
-        .src(config.paths.entry)
-        .pipe(watching ? plugins.watch(config.paths.src, { verbose: true }) : plugins.util.noop())
-        .pipe(watching ? plugins.plumber() : plugins.util.noop())
-        //.pipe(sourcemaps.init())
-        .pipe(plugins.betterRollup(
-            {
-                plugins: [
-                    // tslint({
-                    //     throwError: true
-                    // }),
-                    typescript({
-                        tsconfigOverride: {
-                            declaration: false
-                        },
-                        typescript: require('typescript')
-                    }),
-                    babel()
-                ]
-            }, {
-                format: 'umd',
-                name: 'smalltypes'
-            }
-        ))
-        //.pipe(sourcemaps.write('.'))
-        .pipe(plugins.rename(config.paths.bundle))
-        .pipe(gulp.dest(config.paths.destination));
-}
-
-gulp.task('rollup', function () {
-    return startRollup();
-});
-
-gulp.task('rollup:watch', function () {
-    watching = true;
-    return startRollup();
-});
-
-gulp.task('rollup-stream', function () {
-    var babel = require('rollup-plugin-babel');
-    var typescript = require('rollup-plugin-typescript2');
-    var tslint = require('rollup-plugin-tslint');
-
-    return rollupStream({
-            input: config.paths.entry,
-            // output: {
-                //file: 'dist/smalltypes_rollup_stream.js',
-                format: 'umd',
-                name: 'smalltypes',
-                sourcemap: true,
-            // },
-            plugins: [
-                // tslint({
-                //     throwError: false
-                // }),
-                typescript({
-                    tsconfigOverride: {
-                        declaration: false
-                    },
-                    typescript: require('typescript')
-                }),
-                babel()
-            ],
-            rollup: require('rollup')
-        })
-        .pipe(source(config.paths.bundle + '-stream2.js'))
-        // .pipe(source('index.ts', './src/main'))
-        // .pipe(buffer())
-        // .pipe(plugins.sourcemaps.init({ loadMaps: true }))
-        // .pipe(plugins.rename(config.paths.bundle + '-stream.js'))
-        // .pipe(plugins.sourcemaps.write('.'))
-        .pipe(gulp.dest(config.paths.destination));
 });
 
 gulp.task('watchify', watchifyBuild);
