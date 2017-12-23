@@ -9,6 +9,9 @@ var babelify = require('babelify');
 var path = require('path');
 var dtsBuilder = require('dts-builder');
 var del = require('del');
+var rollupStream = require('rollup-stream');
+var source = require('vinyl-source-stream');
+var buffer = require('vinyl-buffer');
 var tsConfig = require('./tsconfig.json');
 var config = require('./gulp.config.json');
 
@@ -152,6 +155,41 @@ gulp.task('rollup:watch', function () {
     return startRollup();
 });
 
+gulp.task('rollup-stream', function () {
+    var babel = require('rollup-plugin-babel');
+    var typescript = require('rollup-plugin-typescript2');
+    var tslint = require('rollup-plugin-tslint');
+
+    return rollupStream({
+            input: config.paths.entry,
+            // output: {
+                //file: 'dist/smalltypes_rollup_stream.js',
+                format: 'umd',
+                name: 'smalltypes',
+                sourcemap: true,
+            // },
+            plugins: [
+                // tslint({
+                //     throwError: false
+                // }),
+                typescript({
+                    tsconfigOverride: {
+                        declaration: false
+                    },
+                    typescript: require('typescript')
+                }),
+                babel()
+            ],
+            rollup: require('rollup')
+        })
+        .pipe(source(config.paths.bundle + '-stream2.js'))
+        // .pipe(source('index.ts', './src/main'))
+        // .pipe(buffer())
+        // .pipe(plugins.sourcemaps.init({ loadMaps: true }))
+        // .pipe(plugins.rename(config.paths.bundle + '-stream.js'))
+        // .pipe(plugins.sourcemaps.write('.'))
+        .pipe(gulp.dest(config.paths.destination));
+});
 
 gulp.task('watchify', watchifyBuild);
 

@@ -12,9 +12,9 @@ export default {
         sourcemap: true
     },
     plugins: [
-        tslint({
-            throwError: false
-        }),
+        // tslint({
+        //     throwError: false
+        // }),
 		typescript({
             tsconfigOverride: {
                 declaration: false
