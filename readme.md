@@ -61,16 +61,15 @@ npm install
 
 Main tasks:
 
-- `npm start` or `gulp`: Default task will lint, build, test and watch for changes.
-- `npm run build`: Build library and TypeScript declarations.
+- `npm run dev`: Lint, test, and watch for changes.
+- `npm run build`: Build library and documentation.
 - `npm run coverage`: Test coverage report.
-- `gulp documentation`: Generate API documentation.
 
 ## Built With
 
 - Language: [TypeScript](http://www.typescriptlang.org/).
 - Tasks: [gulp](https://gulpjs.com/).
-- Build: [Browserify](http://browserify.org/), [TypeScript](http://www.typescriptlang.org/), [Babel](https://babeljs.io/).
+- Build: [rollup.js](https://rollupjs.org/), [TypeScript](http://www.typescriptlang.org/), [Babel](https://babeljs.io/).
 - Tests: [Mocha](https://mochajs.org), [Chai](http://chaijs.com/), [Istanbul](https://istanbul.js.org/).
 - Lint: [TSLint](https://palantir.github.io/tslint/).
 - Code Integration: [Travis CI](https://travis-ci.org/), [Codecov](https://codecov.io/), [Code Climate](https://codeclimate.com/), [bitHound](https://www.bithound.io/).
