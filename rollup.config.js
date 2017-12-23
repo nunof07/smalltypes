@@ -6,9 +6,9 @@ export default {
     input: config.paths.entry,
     output: {
         file: config.paths.bundle_full,
-        format: 'umd',
-        name: 'smalltypes',
-        sourcemap: true
+        format: config.rollup.format,
+        name: config.module,
+        sourcemap: false
     },
     plugins: [
 		typescript({
