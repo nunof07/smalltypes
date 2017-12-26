@@ -6,8 +6,8 @@
         "main": "src/main/**/*.ts",
         "test": "src/test/**/*Test.ts",
         "destination": "dist",
-        "bundle": "smalltypes.js",
-        "bundle_full": "dist/smalltypes.js"
+        "bundle": "smalltypes.min.js",
+        "bundle_full": "dist/smalltypes.min.js"
     },
     "rollup": {
         "format": "umd"
