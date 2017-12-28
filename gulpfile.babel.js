@@ -1,12 +1,10 @@
 import gulp from 'gulp';
 import lint from './tasks/lint';
 import test from './tasks/test';
-import documentatiion from './tasks/documentation';
+import documentation from './tasks/documentation';
+import declarations from './tasks/declarations';
+
 var gulpLoadPlugins = require('gulp-load-plugins');
-var tslint = require('tslint');
-var dtsBuilder = require('dts-builder');
-var del = require('del');
-var merge2 = require('merge2');
 var config = require('./gulp.config.json');
 var plugins = gulpLoadPlugins();
 
@@ -25,24 +23,5 @@ gulp.task('dev', function () {
 
 gulp.task('lint', () => lint(config));
 gulp.task('test', () => test(config));
-
-gulp.task('declarations', function () {
-    var tsProject = plugins.typescript.createProject('tsconfig.json', { declaration: true });
-
-    return gulp.src(config.paths.main)
-        .pipe(tsProject())
-        .dts.pipe(plugins.intermediate({}, function (tempDir, done) {
-            gulp.dest(tempDir);
-            del(config.declarations.exclude, { cwd: tempDir })
-                .then(function () {
-                    dtsBuilder.generateBundles([{
-                        name: config.module,
-                        sourceDir: tempDir,
-                        destDir: config.paths.destination
-                    }]);
-                    done();
-                });
-        }));
-});
-
-gulp.task('documentation', () => documentatiion(config));
+gulp.task('declarations', () => declarations(config));
+gulp.task('documentation', () => documentation(config));
