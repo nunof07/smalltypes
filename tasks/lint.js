@@ -7,7 +7,7 @@ import { Linter } from 'tslint';
  * @param {object} config 
  * @returns {NodeJS.ReadWriteStream}
  */
-export default function lint(config) {
+export function lint(config) {
     const options = Object.assign(
         { program: Linter.createProgram('./tsconfig.json') },
         config.tslint.options

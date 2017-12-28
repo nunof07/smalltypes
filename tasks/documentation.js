@@ -30,7 +30,7 @@ function createNoJekyllFile(config) {
  * @param {object} config 
  * @returns {NodeJS.ReadWriteStream}
  */
-export default function documentation(config) {
+export function documentation(config) {
     return merge2(
         runTypedoc(config),
         createNoJekyllFile(config)

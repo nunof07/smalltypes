@@ -51,7 +51,7 @@ function mergeDeclarations(config, tempDir, done) {
  * @param {object} config 
  * @returns {NodeJS.ReadWriteStream}
  */
-export default function declarations(config) {
+export function declarations(config) {
     return createDeclarations(config, (tempDir, done) => {
         deleteExcludedFiles(config, tempDir, () => {
             mergeDeclarations(config, tempDir, done);

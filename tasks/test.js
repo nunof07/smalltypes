@@ -6,7 +6,7 @@ import mocha from 'gulp-mocha';
  * @param {object} config 
  * @returns {NodeJS.ReadWriteStream}
  */
-export default function test(config) {
+export function test(config) {
     return gulp.src(config.paths.test)
         .pipe(mocha(config.mocha))
         .on('error', () => {
