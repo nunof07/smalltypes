@@ -4,10 +4,8 @@ import { Linter } from 'tslint';
 
 /**
  * Lint source code.
- * @param {Gulp} gulp 
- * @param {IGulpPlugins} plugins 
  * @param {object} config 
- * @returns {function}
+ * @returns {NodeJS.ReadWriteStream}
  */
 export default function lint(config) {
     const options = Object.assign(

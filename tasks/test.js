@@ -3,10 +3,8 @@ import mocha from 'gulp-mocha';
 
 /**
  * Run unit tests.
- * @param {Gulp} gulp 
- * @param {IGulpPlugins} plugins 
  * @param {object} config 
- * @returns {function}
+ * @returns {NodeJS.ReadWriteStream}
  */
 export default function test(config) {
     return gulp.src(config.paths.test)

@@ -1,6 +1,7 @@
 import gulp from 'gulp';
 import lint from './tasks/lint';
 import test from './tasks/test';
+import documentatiion from './tasks/documentation';
 var gulpLoadPlugins = require('gulp-load-plugins');
 var tslint = require('tslint');
 var dtsBuilder = require('dts-builder');
@@ -44,14 +45,4 @@ gulp.task('declarations', function () {
         }));
 });
 
-gulp.task('documentation', function () {
-    var typeDocConfig = Object.assign({}, config.documentation);
-
-    return merge2(
-        gulp.src(config.paths.main)
-            .pipe(plugins.typedoc(typeDocConfig)),
-        // tell GitHub we are not using Jekyll for our Pages (create empty .nojekyll file)
-        plugins.file('.nojekyll', '', { src: true })
-            .pipe(gulp.dest(config.documentation.out))
-    );
-});
+gulp.task('documentation', () => documentatiion(config));
