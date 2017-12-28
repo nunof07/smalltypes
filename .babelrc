@@ -1,14 +1,5 @@
 {
     "presets": [
-        ["env", {
-            "modules": false
-        }]
-    ],
-    "plugins": [
-        ["transform-runtime", {
-            "helpers": false,
-            "polyfill": false
-        }],
-        ["external-helpers"]
+        ["env"]
     ]
 }

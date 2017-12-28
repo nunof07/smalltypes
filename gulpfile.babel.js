@@ -1,3 +1,4 @@
+import lint from './tasks/lint';
 var gulp = require('gulp');
 var gulpLoadPlugins = require('gulp-load-plugins');
 var tslint = require('tslint');
@@ -20,15 +21,7 @@ gulp.task('dev', function () {
         .pipe(plugins.plumber());
 });
 
-gulp.task('lint', function () {
-    config.tslint.program = tslint.Linter.createProgram('./tsconfig.json');
-
-    return gulp.src(config.paths.src)
-        .pipe(plugins.tslint(config.tslint))
-        .pipe(plugins.tslint.report({
-            emitError: false
-        }));
-});
+gulp.task('lint', lint(gulp, plugins, config));
 
 gulp.task('test', function () {
     return gulp.src(config.paths.test)
