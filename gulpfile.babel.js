@@ -1,5 +1,6 @@
+import gulp from 'gulp';
 import lint from './tasks/lint';
-var gulp = require('gulp');
+import test from './tasks/test';
 var gulpLoadPlugins = require('gulp-load-plugins');
 var tslint = require('tslint');
 var dtsBuilder = require('dts-builder');
@@ -22,14 +23,7 @@ gulp.task('dev', function () {
 });
 
 gulp.task('lint', () => lint(config));
-
-gulp.task('test', function () {
-    return gulp.src(config.paths.test)
-        .pipe(plugins.mocha(config.mocha))
-        .on('error', function (err) {
-            this.emit('end');
-        });
-});
+gulp.task('test', () => test(config));
 
 gulp.task('declarations', function () {
     var tsProject = plugins.typescript.createProject('tsconfig.json', { declaration: true });
