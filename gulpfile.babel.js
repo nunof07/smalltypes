@@ -21,7 +21,7 @@ gulp.task('dev', function () {
         .pipe(plugins.plumber());
 });
 
-gulp.task('lint', lint(gulp, plugins, config));
+gulp.task('lint', () => lint(config));
 
 gulp.task('test', function () {
     return gulp.src(config.paths.test)
