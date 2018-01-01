@@ -1,4 +1,4 @@
-import babel from 'rollup-plugin-babel';
+import babel from 'tasks/rollup/babel';
 import typescript from 'rollup-plugin-typescript2';
 import commonjs from 'rollup-plugin-commonjs';
 import nodeResolve from 'rollup-plugin-node-resolve';
@@ -24,23 +24,7 @@ export default {
         typescript({
             typescript: require('typescript')
         }),
-        babel({
-            babelrc: false,
-            runtimeHelpers: true,
-            presets: [
-                ["env", {
-                    "modules": false
-                }]
-            ],
-            plugins: [
-                ["transform-runtime", {
-                    "helpers": false,
-                    "polyfill": false
-                }],
-                ["external-helpers"]
-            ],
-            exclude: 'node_modules/**'
-        }),
+        babel,
         uglify(
             {
                 output: {
