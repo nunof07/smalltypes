@@ -1,11 +1,11 @@
-import babel from 'rollup-plugin-babel';
-import typescript from 'rollup-plugin-typescript2';
-import commonjs from 'rollup-plugin-commonjs';
-import nodeResolve from 'rollup-plugin-node-resolve';
-import license from 'rollup-plugin-license';
-import uglify from 'rollup-plugin-uglify';
-import path from 'path';
-import { minify } from 'uglify-es';
+import {
+    babel,
+    commonjs,
+    license,
+    nodeResolve,
+    typescript,
+    uglify
+} from './tasks/rollup/index';
 import config from './gulp.config.json';
 
 export default {
@@ -17,31 +17,12 @@ export default {
         sourcemap: false
     },
     plugins: [
-        nodeResolve(),
-        commonjs({
-            include: 'node_modules/**'
-        }),
-        typescript({
-            typescript: require('typescript')
-        }),
-        babel({
-            runtimeHelpers: true,
-            exclude: 'node_modules/**'
-        }),
-        uglify(
-            {
-                output: {
-                    comments: /^\/*!/
-                }
-            },
-            minify
-        ),
-        license({
-            sourceMap: true,
-            banner: {
-                file: path.join(__dirname, 'LICENSE_BANNER')
-            }
-        }),
+        nodeResolve,
+        commonjs,
+        typescript,
+        babel,
+        uglify,
+        license,
     ],
     watch: {
         clearScreen: false
