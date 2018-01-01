@@ -1,6 +1,6 @@
 import gulp from 'gulp';
 import del from 'del';
-import dtsBuilder from 'dts-builder';
+import { generateBundles } from 'dts-builder';
 import typescript from 'gulp-typescript';
 import intermediate from 'gulp-intermediate';
 
@@ -38,7 +38,7 @@ function deleteExcludedFiles(config, tempDir, done) {
  * @param {callback} done 
  */
 function mergeDeclarations(config, tempDir, done) {
-    dtsBuilder.generateBundles([{
+    generateBundles([{
         name: config.module,
         sourceDir: tempDir,
         destDir: config.paths.destination
