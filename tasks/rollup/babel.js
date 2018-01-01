@@ -1,6 +1,6 @@
-import babel from 'rollup-plugin-babel';
+import rollupBabel from 'rollup-plugin-babel';
 
-export default babel({
+export const babel = rollupBabel({
     babelrc: false,
     runtimeHelpers: true,
     presets: [
