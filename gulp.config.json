@@ -13,7 +13,12 @@
         "format": "umd"
     },
     "tslint": {
-        "formatter": "stylish"
+        "options": {
+            "formatter": "stylish"
+        },
+        "report": {
+            "emitError": false
+        }
     },
     "mocha": {
         "reporter": "dot",

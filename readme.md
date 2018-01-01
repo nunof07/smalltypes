@@ -65,6 +65,17 @@ Main tasks:
 - `npm run build`: Build library and documentation.
 - `npm run coverage`: Test coverage report.
 
+### Project structure
+
+- `dist`: Built files.
+- `docs`: API documentation.
+- `src/main`: Main source code of the library.
+- `src/test`: Unit tests.
+- `tasks`: Source code for build tasks and static integration.
+- `typings`: Manually specified TypeScript definition files.
+
+**Note:** the Babel configuration at `.babelrc` is mainly used for gulp. For the Babel configuration used to build the library see how the Babel Rollup plugin is setup.
+
 ## Built With
 
 - Language: [TypeScript](http://www.typescriptlang.org/).
