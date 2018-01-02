@@ -22,8 +22,8 @@ export class HasTrueResult<T> implements Scalar<boolean> {
         this.isResultTrue = (): boolean =>
             value !== null &&
             typeof value === 'object' &&
-            typeof (<{ [key: string]: () => true }><Object>value)[functionName] === 'function' &&
-            (<{ [key: string]: () => true }><Object>value)[functionName]();
+            typeof (<{ readonly [key: string]: () => true }><Object>value)[functionName] === 'function' &&
+            (<{ readonly [key: string]: () => true }><Object>value)[functionName]();
     }
 
     /**

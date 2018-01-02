@@ -25,6 +25,7 @@ export class ParkMillerRandom implements Random {
     /**
      * Next seed.
      */
+    // tslint:disable-next-line:readonly-keyword
     private seed: Scalar<number>;
 
     /**

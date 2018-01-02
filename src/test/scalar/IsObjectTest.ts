@@ -77,7 +77,7 @@ export class IsObjectTest {
     @test
     public fromFunction(): void {
         expect(
-            new IsObject((): { a: boolean } => {
+            new IsObject((): { readonly a: boolean } => {
                 return { a : true };
             }).value()
         ).to.equal(true, 'Function that returns object must return true');

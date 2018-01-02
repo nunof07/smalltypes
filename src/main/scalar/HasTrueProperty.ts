@@ -22,7 +22,7 @@ export class HasTrueProperty<T> implements Scalar<boolean> {
         this.isPropertyTrue = (): boolean =>
             value !== null &&
             typeof value === 'object' &&
-            (<{ [key: string]: boolean }><Object>value)[propertyName] === true;
+            (<{ readonly [key: string]: boolean }><Object>value)[propertyName] === true;
     }
 
     /**

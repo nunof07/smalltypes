@@ -1,8 +1,10 @@
 import { final } from '@main';
 import { frozen } from '@main';
+import { Memoized } from '@main';
 import { Scalar } from '@main';
 import { ScalarLike } from '@main';
 import { ScalarOf } from '@main';
+import { UnaryFunction } from '@main';
 
 /**
  * Cached scalar.
@@ -11,27 +13,18 @@ import { ScalarOf } from '@main';
 @frozen
 export class Cached<T> implements Scalar<T> {
     /**
-     * Scalar.
+     * Cache result.
      */
-    private readonly scalar: Scalar<T>;
-
-    /**
-     * Whether {@link scalar} is cached.
-     */
-    private isCached: boolean;
-
-    /**
-     * Cached value from scalar.
-     */
-    private cache: T;
+    private readonly memoize: UnaryFunction<boolean, T>;
 
     /**
      * Ctor.
      * @param value Value.
      */
     constructor(value: ScalarLike<T>) {
-        this.scalar = new ScalarOf(value);
-        this.isCached = false;
+        this.memoize = new Memoized<boolean, T>((): T =>
+            new ScalarOf(value).value()
+        );
     }
 
     /**
@@ -45,11 +38,6 @@ export class Cached<T> implements Scalar<T> {
      * Get the value.
      */
     public value(): T {
-        if (!this.isCached) {
-            this.cache = this.scalar.value();
-            this.isCached = true;
-        }
-
-        return this.cache;
+        return this.memoize.apply(true);
     }
 }
