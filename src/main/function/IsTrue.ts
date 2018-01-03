@@ -1,14 +1,10 @@
 import { BoolLike } from '@main';
 import { BoolOf } from '@main';
-import { final } from '@main';
-import { frozen } from '@main';
 import { UnaryFunction } from '@main';
 
 /**
  * Function that caches results.
  */
-@final
-@frozen
 export class IsTrue<T> implements UnaryFunction<BoolLike<T>, boolean> {
     /**
      * Type determinant.

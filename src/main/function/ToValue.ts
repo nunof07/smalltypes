@@ -1,5 +1,3 @@
-import { final } from '@main';
-import { frozen } from '@main';
 import { IsFunction } from '@main';
 import { IsScalar } from '@main';
 import { Scalar } from '@main';
@@ -9,8 +7,6 @@ import { UnaryFunction } from '@main';
 /**
  * Converts scalar-like types to their respective values.
  */
-@final
-@frozen
 export class ToValue<T> implements UnaryFunction<ScalarLike<T>, T> {
     /**
      * Type determinant.

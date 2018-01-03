@@ -1,5 +1,3 @@
-import { final } from '@main';
-import { frozen } from '@main';
 import { Scalar } from '@main';
 import { ScalarLike } from '@main';
 import { ToValue } from '@main';
@@ -8,8 +6,6 @@ import { UnaryFunction } from '@main';
 /**
  * Scalar of different possible inputs.
  */
-@final
-@frozen
 export class ScalarOf<T> implements Scalar<T> {
     /**
      * Value.

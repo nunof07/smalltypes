@@ -1,12 +1,8 @@
-import { final } from '@main';
-import { frozen } from '@main';
 import { Random } from '@main';
 
 /**
  * RandomSource as {@link Random}.
  */
-@final
-@frozen
 export class RandomOf implements Random {
     /**
      * Random source.

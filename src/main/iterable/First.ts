@@ -1,13 +1,9 @@
-import { final } from '@main';
-import { frozen } from '@main';
 import { Limited } from '@main';
 import { Scalar } from '@main';
 
 /**
  * First item of iterable.
  */
-@final
-@frozen
 export class First<T> implements Scalar<IteratorResult<T>> {
     /**
      * Source value.

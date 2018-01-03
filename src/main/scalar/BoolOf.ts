@@ -1,6 +1,4 @@
 import { BoolLike } from '@main';
-import { final } from '@main';
-import { frozen } from '@main';
 import { FunctionLike } from '@main';
 import { FunctionOf } from '@main';
 import { Scalar } from '@main';
@@ -10,8 +8,6 @@ import { UnaryFunction } from '@main';
 /**
  * Boolean of different possible inputs.
  */
-@final
-@frozen
 export class BoolOf<T> implements Scalar<boolean> {
     /**
      * Boolean.

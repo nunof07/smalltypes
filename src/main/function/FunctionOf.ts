@@ -1,5 +1,3 @@
-import { final } from '@main';
-import { frozen } from '@main';
 import { FunctionLike } from '@main';
 import { Scalar } from '@main';
 import { ScalarOf } from '@main';
@@ -8,8 +6,6 @@ import { UnaryFunction } from '@main';
 /**
  * Function of several possible types.
  */
-@final
-@frozen
 export class FunctionOf<X, Y> implements UnaryFunction<X, Y> {
     /**
      * Function callback.

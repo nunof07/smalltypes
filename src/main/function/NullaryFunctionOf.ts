@@ -1,5 +1,3 @@
-import { final } from '@main';
-import { frozen } from '@main';
 import { FunctionOf } from '@main';
 import { NullaryFunction } from '@main';
 import { UnaryFunction } from '@main';
@@ -7,8 +5,6 @@ import { UnaryFunction } from '@main';
 /**
  * Function without arguments.
  */
-@final
-@frozen
 export class NullaryFunctionOf<Y> implements NullaryFunction<Y> {
     /**
      * Function callback.

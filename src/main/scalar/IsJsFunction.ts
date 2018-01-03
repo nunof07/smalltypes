@@ -1,12 +1,8 @@
-import { final } from '@main';
-import { frozen } from '@main';
 import { Scalar } from '@main';
 
 /**
  * Determines if variable is a standard JavaScript function.
  */
-@final
-@frozen
 export class IsJsFunction<T> implements Scalar<boolean> {
     /**
      * Variable to check.

@@ -1,5 +1,3 @@
-import { final } from '@main';
-import { frozen } from '@main';
 import { Memoized } from '@main';
 import { Scalar } from '@main';
 import { ScalarLike } from '@main';
@@ -9,8 +7,6 @@ import { UnaryFunction } from '@main';
 /**
  * Cached scalar.
  */
-@final
-@frozen
 export class Cached<T> implements Scalar<T> {
     /**
      * Cache result.

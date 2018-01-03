@@ -1,5 +1,3 @@
-import { final } from '@main';
-import { frozen } from '@main';
 import { FunctionLike } from '@main';
 import { FunctionOf } from '@main';
 import { UnaryFunction } from '@main';
@@ -7,8 +5,6 @@ import { UnaryFunction } from '@main';
 /**
  * Function that executes conditionally.
  */
-@final
-@frozen
 export class Conditionalized<X> implements UnaryFunction<X, void> {
     /**
      * Condition.

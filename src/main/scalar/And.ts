@@ -1,14 +1,10 @@
 import { Conditions } from '@main';
-import { final } from '@main';
-import { frozen } from '@main';
 import { Scalar } from '@main';
 import { ScalarLike } from '@main';
 
 /**
  * Logical conjunction operator.
  */
-@final
-@frozen
 export class And implements Scalar<boolean> {
     /**
      * Conditions.

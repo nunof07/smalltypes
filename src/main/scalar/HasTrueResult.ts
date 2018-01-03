@@ -1,12 +1,8 @@
-import { final } from '@main';
-import { frozen } from '@main';
 import { Scalar } from '@main';
 
 /**
  * Determines if an object has a nullary function that returns true.
  */
-@final
-@frozen
 export class HasTrueResult<T> implements Scalar<boolean> {
     /**
      * Condition.
