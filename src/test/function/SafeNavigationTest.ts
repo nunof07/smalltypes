@@ -9,11 +9,11 @@ import { test } from 'mocha-typescript';
  */
 @suite
 export class SafeNavigationTest {
-    private readonly func: SafeNavigation<{ message: string } | undefined>;
+    private readonly func: SafeNavigation<{ readonly message: string } | undefined>;
 
     constructor() {
         this.func = new SafeNavigation(
-            new FunctionOf((input: { message: string }): void => {
+            new FunctionOf((input: { readonly message: string }): void => {
                 throw new Error(input.message);
             })
         );

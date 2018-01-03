@@ -1,7 +1,5 @@
 import { ConditionConsequentLikePair } from '@main';
 import { ConditionConsequentPair } from '@main';
-import { final } from '@main';
-import { frozen } from '@main';
 import { Filtered } from '@main';
 import { First } from '@main';
 import { IsTrue } from '@main';
@@ -14,8 +12,6 @@ import { ToConditionConsequentPair } from '@main';
 /**
  * Conditional scalar.
  */
-@final
-@frozen
 export class Conditioned<T> implements Scalar<T> {
     /**
      * Condition/consequent pairs.

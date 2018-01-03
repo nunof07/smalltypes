@@ -1,5 +1,3 @@
-import { final } from '@main';
-import { frozen } from '@main';
 import { Random } from '@main';
 import { Scalar } from '@main';
 import { ScalarLike } from '@main';
@@ -14,8 +12,6 @@ import { ScalarOf } from '@main';
  * @see https://github.com/SirAnthony/rand31
  * @see https://gist.github.com/blixt/f17b47c62508be59987b
  */
-@final
-@frozen
 export class ParkMillerRandom implements Random {
     /**
      * Maximum (exclusive) possible value.
@@ -25,6 +21,7 @@ export class ParkMillerRandom implements Random {
     /**
      * Next seed.
      */
+    // tslint:disable-next-line:readonly-keyword
     private seed: Scalar<number>;
 
     /**

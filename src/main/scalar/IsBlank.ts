@@ -1,5 +1,3 @@
-import { final } from '@main';
-import { frozen } from '@main';
 import { IsNull } from '@main';
 import { IsUndefined } from '@main';
 import { Or } from '@main';
@@ -9,8 +7,6 @@ import { ScalarLike } from '@main';
 /**
  * Determines if scalar or value is null or undefined.
  */
-@final
-@frozen
 export class IsBlank<T> implements Scalar<boolean> {
     /**
      * Scalar.

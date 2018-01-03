@@ -1,7 +1,9 @@
 {
     "extends": [
         "tslint-microsoft-contrib",
-        "tslint-eslint-rules"
+        "tslint-eslint-rules",
+        "tslint-immutable",
+        "tslint-no-subclass"
     ],
     "rules": {
         "indent": [true, "spaces", 4],
@@ -27,6 +29,9 @@
         "ordered-imports": [true, { "grouped-imports": true }],
         "space-within-parens": [true, 0],
         "arrow-parens": true,
+        "cyclomatic-complexity": [true, 5],
+        "max-file-line-count": [true, 300],
+        "no-parameter-reassignment": true,
 
         // tslint-eslint-rules
         "no-empty-character-class": true,
@@ -51,6 +56,16 @@
         // "sort-imports": [true, { "ignore-case": true }],
         // "ter-no-tabs": true,
         "ter-prefer-arrow-callback": [true],
-        "ter-arrow-spacing": [true]
+        "ter-arrow-spacing": [true],
+
+        // tslint-immutable
+        "readonly-keyword": true,
+        "no-let": [true, "ignore-local"],
+        "no-object-mutation": [true, { "ignore-prefix": ["this."] }],
+        "no-delete": true,
+        "no-mixed-interface": true,
+
+        // tslint-no-subclass
+        "no-subclass": [true, "Error"]
     }
 }

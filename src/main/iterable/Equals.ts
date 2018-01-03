@@ -1,12 +1,8 @@
-import { final } from '@main';
-import { frozen } from '@main';
 import { Scalar } from '@main';
 
 /**
  * Compare two iterables for equality.
  */
-@final
-@frozen
 export class Equals<T> implements Scalar<boolean> {
     /**
      * Source value.

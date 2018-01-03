@@ -1,5 +1,3 @@
-import { final } from '@main';
-import { frozen } from '@main';
 import { Mapped } from '@main';
 import { ScalarLike } from '@main';
 import { ToBool } from '@main';
@@ -7,8 +5,6 @@ import { ToBool } from '@main';
 /**
  * Iterable of logical conditions.
  */
-@final
-@frozen
 export class Conditions implements Iterable<boolean> {
     /**
      * Iterable.

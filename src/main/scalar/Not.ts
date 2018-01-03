@@ -1,5 +1,3 @@
-import { final } from '@main';
-import { frozen } from '@main';
 import { Scalar } from '@main';
 import { ScalarLike } from '@main';
 import { ScalarOf } from '@main';
@@ -7,8 +5,6 @@ import { ScalarOf } from '@main';
 /**
  * Negates a logical condition.
  */
-@final
-@frozen
 export class Not implements Scalar<boolean> {
     /**
      * Scalar.

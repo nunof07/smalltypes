@@ -1,14 +1,10 @@
 import { FunctionLike } from '@main';
 import { FunctionOf } from '@main';
-import { final } from '@main';
-import { frozen } from '@main';
 import { UnaryFunction } from '@main';
 
 /**
  * Mapped iterable.
  */
-@final
-@frozen
 export class Mapped<X, Y> implements Iterable<Y> {
     /**
      * Iterable.

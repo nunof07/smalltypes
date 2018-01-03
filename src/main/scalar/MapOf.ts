@@ -1,5 +1,3 @@
-import { final } from '@main';
-import { frozen } from '@main';
 import { FunctionLike } from '@main';
 import { FunctionOf } from '@main';
 import { Mapped } from '@main';
@@ -9,8 +7,6 @@ import { UnaryFunction } from '@main';
 /**
  * Map of iterable and callback.
  */
-@final
-@frozen
 export class MapOf<Z, K, V> implements Scalar<Map<K, V>> {
     /**
      * Items.

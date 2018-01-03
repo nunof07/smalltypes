@@ -1,13 +1,9 @@
-import { final } from '@main';
-import { frozen } from '@main';
 import { Random } from '@main';
 import { Scalar } from '@main';
 
 /**
  * Randomized bool.
  */
-@final
-@frozen
 export class RandomizedBool implements Scalar<boolean> {
     /**
      * Random.

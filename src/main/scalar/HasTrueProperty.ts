@@ -1,12 +1,8 @@
-import { final } from '@main';
-import { frozen } from '@main';
 import { Scalar } from '@main';
 
 /**
  * Determines if an object has a property set to true.
  */
-@final
-@frozen
 export class HasTrueProperty<T> implements Scalar<boolean> {
     /**
      * Condition.
@@ -22,7 +18,7 @@ export class HasTrueProperty<T> implements Scalar<boolean> {
         this.isPropertyTrue = (): boolean =>
             value !== null &&
             typeof value === 'object' &&
-            (<{ [key: string]: boolean }><Object>value)[propertyName] === true;
+            (<{ readonly [key: string]: boolean }><Object>value)[propertyName] === true;
     }
 
     /**

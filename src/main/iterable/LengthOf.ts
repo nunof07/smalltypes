@@ -1,12 +1,8 @@
-import { final } from '@main';
-import { frozen } from '@main';
 import { Scalar } from '@main';
 
 /**
  * Length of iterable.
  */
-@final
-@frozen
 export class LengthOf<T> implements Scalar<number> {
     /**
      * Source value.

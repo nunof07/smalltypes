@@ -1,13 +1,9 @@
-import { final } from '@main';
-import { frozen } from '@main';
 import { HasTrueResult } from '@main';
 import { Scalar } from '@main';
 
 /**
  * Determines if variable is of type {@link Scalar}.
  */
-@final
-@frozen
 export class IsScalar<T> implements Scalar<boolean> {
     /**
      * Condition.

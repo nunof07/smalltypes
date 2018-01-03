@@ -1,5 +1,3 @@
-import { final } from '@main';
-import { frozen } from '@main';
 import { Scalar } from '@main';
 import { ScalarLike } from '@main';
 import { ScalarOf } from '@main';
@@ -8,8 +6,6 @@ import { ScalarOf } from '@main';
  * Rounded number.
  * Code adapted from https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Math/round.
  */
-@final
-@frozen
 export class Rounded implements Scalar<number> {
     /**
      * Number.

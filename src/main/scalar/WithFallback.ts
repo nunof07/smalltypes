@@ -1,5 +1,3 @@
-import { final } from '@main';
-import { frozen } from '@main';
 import { IsBlank } from '@main';
 import { Scalar } from '@main';
 import { ScalarLike } from '@main';
@@ -9,8 +7,6 @@ import { Ternary } from '@main';
 /**
  * Cached scalar.
  */
-@final
-@frozen
 export class WithFallback<T> implements Scalar<T> {
     /**
      * Source.

@@ -1,5 +1,3 @@
-import { final } from '@main';
-import { frozen } from '@main';
 import { Random } from '@main';
 import { RandomizedFloat } from '@main';
 import { Scalar } from '@main';
@@ -7,8 +5,6 @@ import { Scalar } from '@main';
 /**
  * Randomized floating point number between 0 and 1.
  */
-@final
-@frozen
 export class RandomizedPercentage implements Scalar<number> {
     /**
      * Randomized floating point number.

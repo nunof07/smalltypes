@@ -1,15 +1,11 @@
-import { final } from '@main';
-import { frozen } from '@main';
 import { FunctionLike } from '@main';
-import { Cached } from '@main';
 import { Scalar } from '@main';
+import { ScalarOf } from '@main';
 import { UnaryFunction } from '@main';
 
 /**
  * Function of several possible types.
  */
-@final
-@frozen
 export class FunctionOf<X, Y> implements UnaryFunction<X, Y> {
     /**
      * Function callback.
@@ -21,10 +17,10 @@ export class FunctionOf<X, Y> implements UnaryFunction<X, Y> {
      * @param func Function callback.
      */
     constructor(func: FunctionLike<X, Y>) {
-        this.func = new Cached((): ((input: X) => Y) =>
-                typeof func === 'function' ?
-                func :
-                (input: X): Y => func.apply(input)
+        this.func = new ScalarOf((): ((input: X) => Y) =>
+            typeof func === 'function' ?
+            func :
+            (input: X): Y => func.apply(input)
         );
     }
 
