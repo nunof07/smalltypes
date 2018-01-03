@@ -74,6 +74,7 @@
     "tslint-eslint-rules": "^4.1.1",
     "tslint-immutable": "^4.5.0",
     "tslint-microsoft-contrib": "^5.0.1",
+    "tslint-no-subclass": "^0.2.1",
     "typedoc": "^0.9.0",
     "typescript": "^2.6.1",
     "typings": "^2.1.1",

@@ -2,7 +2,8 @@
     "extends": [
         "tslint-microsoft-contrib",
         "tslint-eslint-rules",
-        "tslint-immutable"
+        "tslint-immutable",
+        "tslint-no-subclass"
     ],
     "rules": {
         "indent": [true, "spaces", 4],
@@ -62,6 +63,9 @@
         "no-let": [true, "ignore-local"],
         "no-object-mutation": [true, { "ignore-prefix": ["this."] }],
         "no-delete": true,
-        "no-mixed-interface": true
+        "no-mixed-interface": true,
+
+        // tslint-no-subclass
+        "no-subclass": [true, "Error"]
     }
 }
