@@ -1,4 +1,5 @@
 import gulp from 'gulp';
+import cache from 'gulp-cached';
 import tslint from 'gulp-tslint';
 import { Linter } from 'tslint';
 
@@ -14,6 +15,7 @@ export function lint(config) {
     );
 
     return gulp.src(config.paths.src)
+        .pipe(cache('lint'))
         .pipe(tslint(options))
         .pipe(tslint.report(config.tslint.report));
 }
