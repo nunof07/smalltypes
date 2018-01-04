@@ -4,7 +4,7 @@ node_js:
 before_script:
   - curl -L https://codeclimate.com/downloads/test-reporter/test-reporter-latest-linux-amd64 > ./cc-test-reporter
   - chmod +x ./cc-test-reporter
-  - ./cc-test-reporter before-build
+  - ./cc-test-reporter before-build --debug
 script: npm run ci:main
 after_success:
   - npm run ci:after_success
