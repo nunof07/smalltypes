@@ -1,6 +1,6 @@
 {
   "name": "smalltypes",
-  "version": "0.4.1",
+  "version": "0.4.2",
   "description": "Object-oriented utility framework written in TypeScript.",
   "main": "dist/smalltypes.min.js",
   "types": "dist/smalltypes.d.ts",
@@ -18,7 +18,7 @@
     "ci:after_success": "codecov"
   },
   "scripts-info": {
-  	"info": "Displays information about the scripts",
+    "info": "Displays information about the scripts",
     "start": "Lint, test, and watch for changes",
     "dev": "Lint, test, and watch for changes",
     "lint": "Lint the source code",
