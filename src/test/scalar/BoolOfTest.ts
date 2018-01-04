@@ -1,5 +1,7 @@
-import { BoolOf } from '@main';
-import { ScalarOf } from '@main';
+import {
+    BoolOf,
+    ScalarOf
+} from '@main';
 import { expect } from 'chai';
 
 /**

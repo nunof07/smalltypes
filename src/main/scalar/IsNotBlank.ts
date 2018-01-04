@@ -1,7 +1,9 @@
-import { IsBlank } from '@main';
-import { Scalar } from '@main';
-import { ScalarLike } from '@main';
-import { ScalarOf } from '@main';
+import {
+    IsBlank,
+    Scalar,
+    ScalarLike,
+    ScalarOf
+} from '@main';
 
 /**
  * Determines if scalar or value is not null and not undefined.

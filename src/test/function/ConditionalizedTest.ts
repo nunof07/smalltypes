@@ -1,8 +1,9 @@
-import { Conditionalized } from '@main';
-import { FunctionOf } from '@main';
+import {
+    Conditionalized,
+    FunctionOf
+} from '@main';
 import { expect } from 'chai';
-import { suite } from 'mocha-typescript';
-import { test } from 'mocha-typescript';
+import { suite, test } from 'mocha-typescript';
 
 /**
  * {@link Conditionalized} test.

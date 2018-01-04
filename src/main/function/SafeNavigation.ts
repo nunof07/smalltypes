@@ -1,7 +1,9 @@
-import { Conditionalized } from '@main';
-import { FunctionLike } from '@main';
-import { IsNotBlank } from '@main';
-import { UnaryFunction } from '@main';
+import {
+    Conditionalized,
+    FunctionLike,
+    IsNotBlank,
+    UnaryFunction
+} from '@main';
 
 /**
  * Function that executes when input is not null or undefined.

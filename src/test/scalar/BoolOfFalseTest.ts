@@ -1,6 +1,5 @@
 import { BoolOfTest } from '@test/scalar/BoolOfTest';
-import { suite } from 'mocha-typescript';
-import { test } from 'mocha-typescript';
+import { suite, test } from 'mocha-typescript';
 
 /**
  * {@link BoolOf} test.

@@ -1,6 +1,8 @@
-import { Random } from '@main';
-import { RandomizedFloat } from '@main';
-import { Scalar } from '@main';
+import {
+    Random,
+    RandomizedFloat,
+    Scalar
+} from '@main';
 
 /**
  * Randomized floating point number between 0 and 1.

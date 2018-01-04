@@ -1,5 +1,7 @@
-import { Random } from '@main';
-import { Scalar } from '@main';
+import {
+    Random,
+    Scalar
+} from '@main';
 
 /**
  * Randomized bool.

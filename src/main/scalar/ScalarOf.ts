@@ -1,7 +1,9 @@
-import { Scalar } from '@main';
-import { ScalarLike } from '@main';
-import { ToValue } from '@main';
-import { UnaryFunction } from '@main';
+import {
+    Scalar,
+    ScalarLike,
+    ToValue,
+    UnaryFunction
+} from '@main';
 
 /**
  * Scalar of different possible inputs.

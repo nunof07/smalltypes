@@ -1,9 +1,10 @@
-import { ParkMillerRandom } from '@main';
-import { RandomizedInt } from '@main';
-import { ScalarOf } from '@main';
+import {
+    ParkMillerRandom,
+    RandomizedInt,
+    ScalarOf
+} from '@main';
 import { expect } from 'chai';
-import { suite } from 'mocha-typescript';
-import { test } from 'mocha-typescript';
+import { suite, test } from 'mocha-typescript';
 
 /**
  * {@link RandomizedInt} test.

@@ -1,7 +1,9 @@
-import { Random } from '@main';
-import { Scalar } from '@main';
-import { ScalarLike } from '@main';
-import { ScalarOf } from '@main';
+import {
+    Random,
+    Scalar,
+    ScalarLike,
+    ScalarOf
+} from '@main';
 
 /**
  * Park-Miller random source.

@@ -1,8 +1,9 @@
-import { IsScalar } from '@main';
-import { ScalarOf } from '@main';
+import {
+    IsScalar,
+    ScalarOf
+} from '@main';
 import { expect } from 'chai';
-import { suite } from 'mocha-typescript';
-import { test } from 'mocha-typescript';
+import { suite, test } from 'mocha-typescript';
 
 /**
  * {@link IsScalar} test.

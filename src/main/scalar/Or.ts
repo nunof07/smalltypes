@@ -1,6 +1,8 @@
-import { Conditions } from '@main';
-import { Scalar } from '@main';
-import { ScalarLike } from '@main';
+import {
+    Conditions,
+    Scalar,
+    ScalarLike
+} from '@main';
 
 /**
  * Logical disjunction operator.

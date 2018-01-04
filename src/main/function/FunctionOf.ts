@@ -1,7 +1,9 @@
-import { FunctionLike } from '@main';
-import { Scalar } from '@main';
-import { ScalarOf } from '@main';
-import { UnaryFunction } from '@main';
+import {
+    FunctionLike,
+    Scalar,
+    ScalarOf,
+    UnaryFunction
+} from '@main';
 
 /**
  * Function of several possible types.

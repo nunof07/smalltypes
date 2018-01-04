@@ -1,8 +1,10 @@
-import { IsFunction } from '@main';
-import { IsScalar } from '@main';
-import { Scalar } from '@main';
-import { ScalarLike } from '@main';
-import { UnaryFunction } from '@main';
+import {
+    IsFunction,
+    IsScalar,
+    Scalar,
+    ScalarLike,
+    UnaryFunction
+} from '@main';
 
 /**
  * Converts scalar-like types to their respective values.

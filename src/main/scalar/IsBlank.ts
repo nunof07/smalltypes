@@ -1,8 +1,10 @@
-import { IsNull } from '@main';
-import { IsUndefined } from '@main';
-import { Or } from '@main';
-import { Scalar } from '@main';
-import { ScalarLike } from '@main';
+import {
+    IsNull,
+    IsUndefined,
+    Or,
+    Scalar,
+    ScalarLike
+} from '@main';
 
 /**
  * Determines if scalar or value is null or undefined.
