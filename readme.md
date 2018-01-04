@@ -65,6 +65,8 @@ Main tasks:
 - `npm run build`: Build library and documentation.
 - `npm run coverage`: Test coverage report.
 
+Execute `npm run info` for information about all available tasks.
+
 ### Project structure
 
 - `dist`: Built files.

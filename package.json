@@ -5,6 +5,7 @@
   "main": "dist/smalltypes.min.js",
   "types": "dist/smalltypes.d.ts",
   "scripts": {
+    "info": "npm-scripts-info",
     "start": "npm run dev",
     "dev": "gulp dev",
     "lint": "tslint --config tslint.json --project tsconfig.json --format stylish src/**/*.ts",
@@ -15,6 +16,19 @@
     "prepublish": "npm run lint && npm run test && npm run build",
     "ci:main": "npm run lint && npm run coverage && npm run build",
     "ci:after_success": "codecov"
+  },
+  "scripts-info": {
+  	"info": "Displays information about the scripts",
+    "start": "Lint, test, and watch for changes",
+    "dev": "Lint, test, and watch for changes",
+    "lint": "Lint the source code",
+    "test": "Run the tests",
+    "build:script": "Build the JavaScript file",
+    "build": "Build JavaScript, declarations, and documentation",
+    "coverage": "Run the tests and report coverage",
+    "prepublish": "Executed before publishing to npm (lint, test, and build)",
+    "ci:main": "Executed during code integration service (lint, coverage, and build)",
+    "ci:after_success": "Executed after code integration service (upload code coverage)"
   },
   "author": {
     "name": "Nuno Freitas"
@@ -59,6 +73,7 @@
     "merge2": "^1.2.0",
     "mocha": "^4.0.1",
     "mocha-typescript": "^1.1.12",
+    "npm-scripts-info": "^0.3.6",
     "nyc": "^11.4.0",
     "rollup": "^0.52.3",
     "rollup-plugin-babel": "^3.0.3",
