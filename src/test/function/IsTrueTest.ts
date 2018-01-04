@@ -1,9 +1,10 @@
-import { False } from '@main';
-import { IsTrue } from '@main';
-import { True } from '@main';
+import {
+    False,
+    IsTrue,
+    True
+} from '@main';
 import { expect } from 'chai';
-import { suite } from 'mocha-typescript';
-import { test } from 'mocha-typescript';
+import { suite, test } from 'mocha-typescript';
 
 /**
  * {@link IsTrue} test.

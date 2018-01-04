@@ -1,10 +1,12 @@
-import { BoolLike } from '@main';
-import { ConditionConsequentLikePair } from '@main';
-import { FunctionLike } from '@main';
-import { FunctionOf } from '@main';
-import { ScalarLike } from '@main';
-import { ToValue } from '@main';
-import { UnaryFunction } from '@main';
+import {
+    BoolLike,
+    ConditionConsequentLikePair,
+    FunctionLike,
+    FunctionOf,
+    ScalarLike,
+    ToValue,
+    UnaryFunction
+} from '@main';
 
 /**
  * Converts boolean-like types to boolean.

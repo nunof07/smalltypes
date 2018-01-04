@@ -1,8 +1,10 @@
-import { IsBlank } from '@main';
-import { Scalar } from '@main';
-import { ScalarLike } from '@main';
-import { ScalarOf } from '@main';
-import { Ternary } from '@main';
+import {
+    IsBlank,
+    Scalar,
+    ScalarLike,
+    ScalarOf,
+    Ternary
+} from '@main';
 
 /**
  * Cached scalar.

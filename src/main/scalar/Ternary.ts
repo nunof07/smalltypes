@@ -1,6 +1,8 @@
-import { Scalar } from '@main';
-import { ScalarLike } from '@main';
-import { ScalarOf } from '@main';
+import {
+    Scalar,
+    ScalarLike,
+    ScalarOf
+} from '@main';
 
 /**
  * Ternary operation.

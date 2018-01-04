@@ -1,9 +1,10 @@
-import { NullaryFunctionOf } from '@main';
-import { ScalarOf } from '@main';
-import { ToValue } from '@main';
+import {
+    NullaryFunctionOf,
+    ScalarOf,
+    ToValue
+} from '@main';
 import { expect } from 'chai';
-import { suite } from 'mocha-typescript';
-import { test } from 'mocha-typescript';
+import { suite, test } from 'mocha-typescript';
 
 /**
  * {@link ToValue} test.

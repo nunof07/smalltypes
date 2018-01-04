@@ -1,8 +1,10 @@
-import { Memoized } from '@main';
-import { Scalar } from '@main';
-import { ScalarLike } from '@main';
-import { ScalarOf } from '@main';
-import { UnaryFunction } from '@main';
+import {
+    Memoized,
+    Scalar,
+    ScalarLike,
+    ScalarOf,
+    UnaryFunction
+} from '@main';
 
 /**
  * Cached scalar.

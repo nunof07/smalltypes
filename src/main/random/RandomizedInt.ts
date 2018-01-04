@@ -1,7 +1,9 @@
-import { Random } from '@main';
-import { RandomizedFloat } from '@main';
-import { Scalar } from '@main';
-import { ScalarLike } from '@main';
+import {
+    Random,
+    RandomizedFloat,
+    Scalar,
+    ScalarLike
+} from '@main';
 
 /**
  * Randomized integer.

@@ -1,10 +1,11 @@
-import { Conditions } from '@main';
-import { Equals } from '@main';
-import { False } from '@main';
-import { True } from '@main';
+import {
+    Conditions,
+    Equals,
+    False,
+    True
+} from '@main';
 import { expect } from 'chai';
-import { suite } from 'mocha-typescript';
-import { test } from 'mocha-typescript';
+import { suite, test } from 'mocha-typescript';
 
 /**
  * {@link Conditions} test.

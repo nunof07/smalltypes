@@ -1,6 +1,8 @@
-import { BoolLike } from '@main';
-import { BoolOf } from '@main';
-import { UnaryFunction } from '@main';
+import {
+    BoolLike,
+    BoolOf,
+    UnaryFunction
+} from '@main';
 
 /**
  * Function that caches results.

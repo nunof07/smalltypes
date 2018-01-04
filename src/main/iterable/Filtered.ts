@@ -1,6 +1,8 @@
-import { FunctionLike } from '@main';
-import { FunctionOf } from '@main';
-import { UnaryFunction } from '@main';
+import {
+    FunctionLike,
+    FunctionOf,
+    UnaryFunction
+} from '@main';
 
 /**
  * Filtered iterable.

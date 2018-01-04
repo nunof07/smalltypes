@@ -1,8 +1,10 @@
-import { FunctionLike } from '@main';
-import { FunctionOf } from '@main';
-import { Mapped } from '@main';
-import { Scalar } from '@main';
-import { UnaryFunction } from '@main';
+import {
+    FunctionLike,
+    FunctionOf,
+    Mapped,
+    Scalar,
+    UnaryFunction
+} from '@main';
 
 /**
  * Map of iterable and callback.

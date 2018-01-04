@@ -1,8 +1,7 @@
 import { RandomOf } from '@main';
 import { MockRandomSource } from '@test/random/MockRandomSource';
 import { expect } from 'chai';
-import { suite } from 'mocha-typescript';
-import { test } from 'mocha-typescript';
+import { suite, test } from 'mocha-typescript';
 
 /**
  * {@link RandomOf} test.

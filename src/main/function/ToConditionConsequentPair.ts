@@ -1,7 +1,9 @@
-import { ConditionConsequentLikePair } from '@main';
-import { ConditionConsequentPair } from '@main';
-import { ScalarOf } from '@main';
-import { UnaryFunction } from '@main';
+import {
+    ConditionConsequentLikePair,
+    ConditionConsequentPair,
+    ScalarOf,
+    UnaryFunction
+} from '@main';
 
 /**
  * Converts {@link ConditionConsequentLikePair} to {@link ToConditionConsequentPair}.

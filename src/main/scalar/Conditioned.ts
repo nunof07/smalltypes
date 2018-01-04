@@ -1,13 +1,15 @@
-import { ConditionConsequentLikePair } from '@main';
-import { ConditionConsequentPair } from '@main';
-import { Filtered } from '@main';
-import { First } from '@main';
-import { IsTrue } from '@main';
-import { Mapped } from '@main';
-import { Scalar } from '@main';
-import { ScalarLike } from '@main';
-import { ScalarOf } from '@main';
-import { ToConditionConsequentPair } from '@main';
+import {
+    ConditionConsequentLikePair,
+    ConditionConsequentPair,
+    Filtered,
+    First,
+    IsTrue,
+    Mapped,
+    Scalar,
+    ScalarLike,
+    ScalarOf,
+    ToConditionConsequentPair
+} from '@main';
 
 /**
  * Conditional scalar.

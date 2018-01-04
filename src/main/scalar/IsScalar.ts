@@ -1,5 +1,7 @@
-import { HasTrueResult } from '@main';
-import { Scalar } from '@main';
+import {
+    HasTrueResult,
+    Scalar
+} from '@main';
 
 /**
  * Determines if variable is of type {@link Scalar}.

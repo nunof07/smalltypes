@@ -1,6 +1,8 @@
-import { FunctionOf } from '@main';
-import { NullaryFunction } from '@main';
-import { UnaryFunction } from '@main';
+import {
+    FunctionOf,
+    NullaryFunction,
+    UnaryFunction
+} from '@main';
 
 /**
  * Function without arguments.

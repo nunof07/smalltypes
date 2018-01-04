@@ -1,6 +1,8 @@
-import { Mapped } from '@main';
-import { ScalarLike } from '@main';
-import { ToBool } from '@main';
+import {
+    Mapped,
+    ScalarLike,
+    ToBool
+} from '@main';
 
 /**
  * Iterable of logical conditions.

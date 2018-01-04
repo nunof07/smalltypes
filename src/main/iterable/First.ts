@@ -1,5 +1,7 @@
-import { Limited } from '@main';
-import { Scalar } from '@main';
+import {
+    Limited,
+    Scalar
+} from '@main';
 
 /**
  * First item of iterable.

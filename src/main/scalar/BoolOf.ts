@@ -1,9 +1,11 @@
-import { BoolLike } from '@main';
-import { FunctionLike } from '@main';
-import { FunctionOf } from '@main';
-import { Scalar } from '@main';
-import { ToBool } from '@main';
-import { UnaryFunction } from '@main';
+import {
+    BoolLike,
+    FunctionLike,
+    FunctionOf,
+    Scalar,
+    ToBool,
+    UnaryFunction
+} from '@main';
 
 /**
  * Boolean of different possible inputs.

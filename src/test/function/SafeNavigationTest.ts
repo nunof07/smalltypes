@@ -1,8 +1,9 @@
-import { FunctionOf } from '@main';
-import { SafeNavigation } from '@main';
+import {
+    FunctionOf,
+    SafeNavigation
+} from '@main';
 import { expect } from 'chai';
-import { suite } from 'mocha-typescript';
-import { test } from 'mocha-typescript';
+import { suite, test } from 'mocha-typescript';
 
 /**
  * {@link SafeNavigation} test.
