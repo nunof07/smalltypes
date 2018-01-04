@@ -1,14 +1,16 @@
 # SmallTypes
 
-[![Greenkeeper badge](https://badges.greenkeeper.io/nunof07/smalltypes.svg)](https://greenkeeper.io/)
-
 [![Build Status](https://travis-ci.org/nunof07/smalltypes.svg?branch=master)](https://travis-ci.org/nunof07/smalltypes)
+
 [![codecov](https://codecov.io/gh/nunof07/smalltypes/branch/master/graph/badge.svg)](https://codecov.io/gh/nunof07/smalltypes)
 [![Maintainability](https://api.codeclimate.com/v1/badges/21adf54dc86017e175d9/maintainability)](https://codeclimate.com/github/nunof07/smalltypes/maintainability)
 [![Test Coverage](https://api.codeclimate.com/v1/badges/21adf54dc86017e175d9/test_coverage)](https://codeclimate.com/github/nunof07/smalltypes/test_coverage)
 [![bitHound Overall Score](https://www.bithound.io/github/nunof07/smalltypes/badges/score.svg)](https://www.bithound.io/github/nunof07/smalltypes)
+
 [![Dependencies](https://david-dm.org/nunof07/smalltypes.svg)](https://david-dm.org/nunof07/smalltypes)
 [![Development Dependencies](https://david-dm.org/nunof07/smalltypes/dev-status.svg)](https://david-dm.org/nunof07/smalltypes?type=dev)
+[![Greenkeeper badge](https://badges.greenkeeper.io/nunof07/smalltypes.svg)](https://greenkeeper.io/)
+
 [![Lines of Code](https://tokei.rs/b1/github/nunof07/smalltypes)](https://github.com/Aaronepower/tokei)
 [![Files](https://tokei.rs/b1/github/nunof07/smalltypes?category=files)](https://github.com/Aaronepower/tokei)
 [![License: MIT](https://img.shields.io/badge/License-MIT-yellow.svg)](https://opensource.org/licenses/MIT)
