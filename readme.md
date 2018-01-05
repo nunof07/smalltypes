@@ -2,6 +2,7 @@
 
 [![Build Status](https://travis-ci.org/nunof07/smalltypes.svg?branch=master)](https://travis-ci.org/nunof07/smalltypes)
 [![semantic-release](https://img.shields.io/badge/%20%20%F0%9F%93%A6%F0%9F%9A%80-semantic--release-e10079.svg)](https://github.com/semantic-release/semantic-release)
+[![Commitizen friendly](https://img.shields.io/badge/commitizen-friendly-brightgreen.svg)](http://commitizen.github.io/cz-cli/)
 
 [![codecov](https://codecov.io/gh/nunof07/smalltypes/branch/master/graph/badge.svg)](https://codecov.io/gh/nunof07/smalltypes)
 [![Maintainability](https://api.codeclimate.com/v1/badges/21adf54dc86017e175d9/maintainability)](https://codeclimate.com/github/nunof07/smalltypes/maintainability)
@@ -69,6 +70,7 @@ Main tasks:
 - `npm run dev`: Lint, test, and watch for changes.
 - `npm run build`: Build library and documentation.
 - `npm run coverage`: Test coverage report.
+- `npm run commit`: Commit changes.
 
 Execute `npm run info` for information about all available tasks.
 

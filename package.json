@@ -15,7 +15,8 @@
     "coverage": "nyc npm run test",
     "coverage:codecov": "codecov",
     "prepublish": "npm run lint && npm run test && npm run build",
-    "semantic-release": "semantic-release"
+    "semantic-release": "semantic-release",
+    "commit": "git add -A && git-cz"
   },
   "scripts-info": {
     "info": "Displays information about the scripts",
@@ -28,7 +29,8 @@
     "coverage": "Run the tests and report coverage to console",
     "coverage:codecov": "Upload test coverage to Codecov",
     "prepublish": "Executed before publishing to npm (lint, test, and build)",
-    "semantic-release": "Run semantic release (check for changes and publish new versions) - meant to be run from CI"
+    "semantic-release": "Run semantic release (check for changes and publish new versions) - meant to be run from CI",
+    "commit": "Commit staged changes using Commitizen"
   },
   "author": {
     "name": "Nuno Freitas"
@@ -54,6 +56,8 @@
     "babel-preset-env": "^1.6.0",
     "chai": "^4.1.2",
     "codecov": "^3.0.0",
+    "commitizen": "^2.9.6",
+    "cz-conventional-changelog": "^2.1.0",
     "del": "^3.0.0",
     "dts-builder": "^1.1.3",
     "gulp": "^3.9.1",
@@ -100,5 +104,10 @@
   "dependencies": {},
   "files": [
     "dist/"
-  ]
+  ],
+  "config": {
+    "commitizen": {
+      "path": "node_modules/cz-conventional-changelog"
+    }
+  }
 }
