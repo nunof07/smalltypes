@@ -11,3 +11,4 @@ export * from './Folded';
 export * from './LengthOf';
 export * from './Limited';
 export * from './Mapped';
+export * from './Sum';
