@@ -1,6 +1,7 @@
 import {
     HasTrueResult,
-    Scalar
+    Scalar,
+    UnaryFunction
 } from '@main';
 
 /**
@@ -8,16 +9,26 @@ import {
  */
 export class IsScalar<T> implements Scalar<boolean> {
     /**
-     * Condition.
+     * Check if function with true result exists.
      */
-    private readonly isScalarType: Scalar<boolean>;
+    private readonly hasTrueResult: UnaryFunction<T, boolean>;
+
+    /**
+     * Variable to check.
+     */
+    private readonly maybeScalar: T;
 
     /**
      * Ctor.
      * @param maybeScalar Variable to check.
+     * @param hasTrueResult Check if function with true result exists.
      */
-    constructor(maybeScalar: T) {
-        this.isScalarType = new HasTrueResult(maybeScalar, 'isScalar');
+    constructor(
+        maybeScalar: T,
+        hasTrueResult: UnaryFunction<T, boolean> = new HasTrueResult('isScalar')
+    ) {
+        this.hasTrueResult = hasTrueResult;
+        this.maybeScalar = maybeScalar;
     }
 
     /**
@@ -31,6 +42,6 @@ export class IsScalar<T> implements Scalar<boolean> {
      * Get the value.
      */
     public value(): boolean {
-        return this.isScalarType.value();
+        return this.hasTrueResult.apply(this.maybeScalar);
     }
 }
