@@ -9,7 +9,7 @@ import mocha from 'gulp-mocha';
 export function test(config) {
     return gulp.src(config.paths.test)
         .pipe(mocha(config.mocha))
-        .on('error', () => {
+        .on('error', function () {
             this.emit('end');
         });
 }
