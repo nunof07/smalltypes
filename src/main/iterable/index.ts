@@ -8,7 +8,7 @@ export * from './Equals';
 export * from './Filtered';
 export * from './First';
 export * from './Folded';
-export * from './LengthOf';
+export * from './Length';
 export * from './Limited';
 export * from './Mapped';
 export * from './Sum';

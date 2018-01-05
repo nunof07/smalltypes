@@ -3,7 +3,7 @@ import { Scalar } from '@main';
 /**
  * Length of iterable.
  */
-export class LengthOf<T> implements Scalar<number> {
+export class Length<T> implements Scalar<number> {
     /**
      * Source value.
      */
