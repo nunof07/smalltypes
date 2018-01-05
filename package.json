@@ -27,7 +27,8 @@
     "build": "Build JavaScript, declarations, and documentation",
     "coverage": "Run the tests and report coverage to console",
     "coverage:codecov": "Upload test coverage to Codecov",
-    "prepublish": "Executed before publishing to npm (lint, test, and build)"
+    "prepublish": "Executed before publishing to npm (lint, test, and build)",
+    "semantic-release": "Run semantic release (check for changes and publish new versions) - meant to be run from CI"
   },
   "author": {
     "name": "Nuno Freitas"
