@@ -70,7 +70,7 @@ Main tasks:
 - `npm run dev`: Lint, test, and watch for changes.
 - `npm run build`: Build library and documentation.
 - `npm run coverage`: Test coverage report.
-- `npm run commit`: Commit changes.
+- `npm run commit`: Adds and commits all current changes.
 
 Execute `npm run info` for information about all available tasks.
 

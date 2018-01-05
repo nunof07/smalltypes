@@ -30,7 +30,7 @@
     "coverage:codecov": "Upload test coverage to Codecov",
     "prepublish": "Executed before publishing to npm (lint, test, and build)",
     "semantic-release": "Run semantic release (check for changes and publish new versions) - meant to be run from CI",
-    "commit": "Commit staged changes using Commitizen"
+    "commit": "Stags all current changes and commit using Commitizen"
   },
   "author": {
     "name": "Nuno Freitas"
