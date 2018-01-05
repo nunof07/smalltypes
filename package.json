@@ -1,6 +1,6 @@
 {
   "name": "smalltypes",
-  "version": "0.5.1",
+  "version": "0.0.0-development",
   "description": "Object-oriented utility framework written in TypeScript.",
   "main": "dist/smalltypes.min.js",
   "types": "dist/smalltypes.d.ts",
@@ -13,9 +13,10 @@
     "build:script": "rollup --config",
     "build": "rollup --config && gulp declarations && gulp documentation",
     "coverage": "nyc npm run test",
+    "coverage:codecov": "codecov",
     "prepublish": "npm run lint && npm run test && npm run build",
-    "ci:main": "npm run lint && npm run coverage && npm run build",
-    "ci:after_success": "codecov"
+    "semantic-release": "semantic-release",
+    "commit": "git add -A && git-cz"
   },
   "scripts-info": {
     "info": "Displays information about the scripts",
@@ -25,10 +26,11 @@
     "test": "Run the tests",
     "build:script": "Build the JavaScript file",
     "build": "Build JavaScript, declarations, and documentation",
-    "coverage": "Run the tests and report coverage",
+    "coverage": "Run the tests and report coverage to console",
+    "coverage:codecov": "Upload test coverage to Codecov",
     "prepublish": "Executed before publishing to npm (lint, test, and build)",
-    "ci:main": "Executed during code integration service (lint, coverage, and build)",
-    "ci:after_success": "Executed after code integration service (upload code coverage)"
+    "semantic-release": "Run semantic release (check for changes and publish new versions) - meant to be run from CI",
+    "commit": "Stags all current changes and commit using Commitizen"
   },
   "author": {
     "name": "Nuno Freitas"
@@ -36,7 +38,7 @@
   "license": "MIT",
   "repository": {
     "type": "git",
-    "url": "git+https://github.com/nunof07/smalltypes.git"
+    "url": "https://github.com/nunof07/smalltypes.git"
   },
   "bugs": {
     "url": "https://github.com/nunof07/smalltypes/issues"
@@ -54,6 +56,8 @@
     "babel-preset-env": "^1.6.0",
     "chai": "^4.1.2",
     "codecov": "^3.0.0",
+    "commitizen": "^2.9.6",
+    "cz-conventional-changelog": "^2.1.0",
     "del": "^3.0.0",
     "dts-builder": "^1.1.3",
     "gulp": "^3.9.1",
@@ -83,6 +87,7 @@
     "rollup-plugin-node-resolve": "^3.0.0",
     "rollup-plugin-typescript2": "^0.9.0",
     "rollup-plugin-uglify": "^2.0.1",
+    "semantic-release": "^11.0.2",
     "source-map-support": "^0.5.0",
     "ts-node": "^4.0.1",
     "tsconfig-paths": "^2.4.0",
@@ -99,5 +104,10 @@
   "dependencies": {},
   "files": [
     "dist/"
-  ]
+  ],
+  "config": {
+    "commitizen": {
+      "path": "node_modules/cz-conventional-changelog"
+    }
+  }
 }
