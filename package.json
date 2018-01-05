@@ -13,9 +13,8 @@
     "build:script": "rollup --config",
     "build": "rollup --config && gulp declarations && gulp documentation",
     "coverage": "nyc npm run test",
-    "prepublish": "npm run lint && npm run test && npm run build",
-    "ci:main": "npm run lint && npm run coverage && npm run build",
-    "ci:after_success": "codecov"
+    "coverage:codecov": "codecov",
+    "prepublish": "npm run lint && npm run test && npm run build"
   },
   "scripts-info": {
     "info": "Displays information about the scripts",
@@ -25,10 +24,9 @@
     "test": "Run the tests",
     "build:script": "Build the JavaScript file",
     "build": "Build JavaScript, declarations, and documentation",
-    "coverage": "Run the tests and report coverage",
-    "prepublish": "Executed before publishing to npm (lint, test, and build)",
-    "ci:main": "Executed during code integration service (lint, coverage, and build)",
-    "ci:after_success": "Executed after code integration service (upload code coverage)"
+    "coverage": "Run the tests and report coverage to console",
+    "coverage:codecov": "Upload test coverage to Codecov",
+    "prepublish": "Executed before publishing to npm (lint, test, and build)"
   },
   "author": {
     "name": "Nuno Freitas"
