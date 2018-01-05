@@ -4,6 +4,7 @@
 export * from './Conditionalized';
 export * from './FunctionLike';
 export * from './FunctionOf';
+export * from './HasTrueProperty';
 export * from './HasTrueResult';
 export * from './IsFunction';
 export * from './IsTrue';

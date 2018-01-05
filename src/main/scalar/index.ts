@@ -9,7 +9,6 @@ export * from './ConditionConsequentLikePair';
 export * from './ConditionConsequentPair';
 export * from './Conditioned';
 export * from './False';
-export * from './HasTrueProperty';
 export * from './IsBlank';
 export * from './IsJsFunction';
 export * from './IsNotBlank';
