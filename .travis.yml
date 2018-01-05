@@ -15,5 +15,6 @@ script:
   - npm run build
 after_success:
   - npm run coverage:codecov
+  - npm run semantic-release
 after_script:
   - ./cc-test-reporter after-build --exit-code $TRAVIS_TEST_RESULT --debug

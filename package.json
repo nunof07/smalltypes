@@ -1,6 +1,6 @@
 {
   "name": "smalltypes",
-  "version": "0.5.1",
+  "version": "0.0.0-development",
   "description": "Object-oriented utility framework written in TypeScript.",
   "main": "dist/smalltypes.min.js",
   "types": "dist/smalltypes.d.ts",
@@ -14,7 +14,8 @@
     "build": "rollup --config && gulp declarations && gulp documentation",
     "coverage": "nyc npm run test",
     "coverage:codecov": "codecov",
-    "prepublish": "npm run lint && npm run test && npm run build"
+    "prepublish": "npm run lint && npm run test && npm run build",
+    "semantic-release": "semantic-release"
   },
   "scripts-info": {
     "info": "Displays information about the scripts",
@@ -34,7 +35,7 @@
   "license": "MIT",
   "repository": {
     "type": "git",
-    "url": "git+https://github.com/nunof07/smalltypes.git"
+    "url": "https://github.com/nunof07/smalltypes.git"
   },
   "bugs": {
     "url": "https://github.com/nunof07/smalltypes/issues"
@@ -81,6 +82,7 @@
     "rollup-plugin-node-resolve": "^3.0.0",
     "rollup-plugin-typescript2": "^0.9.0",
     "rollup-plugin-uglify": "^2.0.1",
+    "semantic-release": "^11.0.2",
     "source-map-support": "^0.5.0",
     "ts-node": "^4.0.1",
     "tsconfig-paths": "^2.4.0",
