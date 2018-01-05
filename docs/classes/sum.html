@@ -3,7 +3,7 @@
 <head>
 	<meta charset="utf-8">
 	<meta http-equiv="X-UA-Compatible" content="IE=edge">
-	<title>IsJsFunction | SmallTypes</title>
+	<title>Sum | SmallTypes</title>
 	<meta name="description" content="">
 	<meta name="viewport" content="width=device-width, initial-scale=1">
 	<link rel="stylesheet" href="../assets/css/main.css">
@@ -54,10 +54,10 @@
 					<a href="../index.html">Globals</a>
 				</li>
 				<li>
-					<a href="isjsfunction.html">IsJsFunction</a>
+					<a href="sum.html">Sum</a>
 				</li>
 			</ul>
-			<h1>Class IsJsFunction&lt;T&gt;</h1>
+			<h1>Class Sum</h1>
 		</div>
 	</div>
 </header>
@@ -67,23 +67,15 @@
 			<section class="tsd-panel tsd-comment">
 				<div class="tsd-comment tsd-typography">
 					<div class="lead">
-						<p>Determines if variable is a standard JavaScript function.</p>
+						<p>Sum of numbers.</p>
 					</div>
 				</div>
-			</section>
-			<section class="tsd-panel tsd-type-parameters">
-				<h3>Type parameters</h3>
-				<ul class="tsd-type-parameters">
-					<li>
-						<h4>T</h4>
-					</li>
-				</ul>
 			</section>
 			<section class="tsd-panel tsd-hierarchy">
 				<h3>Hierarchy</h3>
 				<ul class="tsd-hierarchy">
 					<li>
-						<span class="target">IsJsFunction</span>
+						<span class="target">Sum</span>
 					</li>
 				</ul>
 			</section>
@@ -100,14 +92,14 @@
 						<section class="tsd-index-section ">
 							<h3>Constructors</h3>
 							<ul class="tsd-index-list">
-								<li class="tsd-kind-constructor tsd-parent-kind-class"><a href="isjsfunction.html#constructor" class="tsd-kind-icon">constructor</a></li>
+								<li class="tsd-kind-constructor tsd-parent-kind-class"><a href="sum.html#constructor" class="tsd-kind-icon">constructor</a></li>
 							</ul>
 						</section>
 						<section class="tsd-index-section ">
 							<h3>Methods</h3>
 							<ul class="tsd-index-list">
-								<li class="tsd-kind-method tsd-parent-kind-class"><a href="isjsfunction.html#isscalar" class="tsd-kind-icon">is<wbr>Scalar</a></li>
-								<li class="tsd-kind-method tsd-parent-kind-class"><a href="isjsfunction.html#value" class="tsd-kind-icon">value</a></li>
+								<li class="tsd-kind-method tsd-parent-kind-class"><a href="sum.html#isscalar" class="tsd-kind-icon">is<wbr>Scalar</a></li>
+								<li class="tsd-kind-method tsd-parent-kind-class"><a href="sum.html#value" class="tsd-kind-icon">value</a></li>
 							</ul>
 						</section>
 					</div>
@@ -119,13 +111,13 @@
 					<a name="constructor" class="tsd-anchor"></a>
 					<h3>constructor</h3>
 					<ul class="tsd-signatures tsd-kind-constructor tsd-parent-kind-class">
-						<li class="tsd-signature tsd-kind-icon">new <wbr>IsJs<wbr>Function<span class="tsd-signature-symbol">(</span>val<span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">T</span><span class="tsd-signature-symbol">)</span><span class="tsd-signature-symbol">: </span><a href="isjsfunction.html" class="tsd-signature-type">IsJsFunction</a></li>
+						<li class="tsd-signature tsd-kind-icon">new <wbr>Sum<span class="tsd-signature-symbol">(</span>source<span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">Iterable</span><span class="tsd-signature-symbol">&lt;</span><span class="tsd-signature-type">number</span><span class="tsd-signature-symbol">&gt;</span><span class="tsd-signature-symbol">)</span><span class="tsd-signature-symbol">: </span><a href="sum.html" class="tsd-signature-type">Sum</a></li>
 					</ul>
 					<ul class="tsd-descriptions">
 						<li class="tsd-description">
 							<aside class="tsd-sources">
 								<ul>
-									<li>Defined in <a href="https://github.com/nunof07/smalltypes/blob/c0473f2/src/main/scalar/IsJsFunction.ts#L10">scalar/IsJsFunction.ts:10</a></li>
+									<li>Defined in <a href="https://github.com/nunof07/smalltypes/blob/c0473f2/src/main/iterable/Sum.ts#L14">iterable/Sum.ts:14</a></li>
 								</ul>
 							</aside>
 							<div class="tsd-comment tsd-typography">
@@ -136,15 +128,15 @@
 							<h4 class="tsd-parameters-title">Parameters</h4>
 							<ul class="tsd-parameters">
 								<li>
-									<h5>val: <span class="tsd-signature-type">T</span></h5>
+									<h5>source: <span class="tsd-signature-type">Iterable</span><span class="tsd-signature-symbol">&lt;</span><span class="tsd-signature-type">number</span><span class="tsd-signature-symbol">&gt;</span></h5>
 									<div class="tsd-comment tsd-typography">
 										<div class="lead">
-											<p>Variable to check.</p>
+											<p>Source.</p>
 										</div>
 									</div>
 								</li>
 							</ul>
-							<h4 class="tsd-returns-title">Returns <a href="isjsfunction.html" class="tsd-signature-type">IsJsFunction</a></h4>
+							<h4 class="tsd-returns-title">Returns <a href="sum.html" class="tsd-signature-type">Sum</a></h4>
 						</li>
 					</ul>
 				</section>
@@ -161,7 +153,7 @@
 						<li class="tsd-description">
 							<aside class="tsd-sources">
 								<ul>
-									<li>Defined in <a href="https://github.com/nunof07/smalltypes/blob/c0473f2/src/main/scalar/IsJsFunction.ts#L23">scalar/IsJsFunction.ts:23</a></li>
+									<li>Defined in <a href="https://github.com/nunof07/smalltypes/blob/c0473f2/src/main/iterable/Sum.ts#L32">iterable/Sum.ts:32</a></li>
 								</ul>
 							</aside>
 							<div class="tsd-comment tsd-typography">
@@ -177,21 +169,21 @@
 					<a name="value" class="tsd-anchor"></a>
 					<h3>value</h3>
 					<ul class="tsd-signatures tsd-kind-method tsd-parent-kind-class">
-						<li class="tsd-signature tsd-kind-icon">value<span class="tsd-signature-symbol">(</span><span class="tsd-signature-symbol">)</span><span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">boolean</span></li>
+						<li class="tsd-signature tsd-kind-icon">value<span class="tsd-signature-symbol">(</span><span class="tsd-signature-symbol">)</span><span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">number</span></li>
 					</ul>
 					<ul class="tsd-descriptions">
 						<li class="tsd-description">
 							<aside class="tsd-sources">
 								<ul>
-									<li>Defined in <a href="https://github.com/nunof07/smalltypes/blob/c0473f2/src/main/scalar/IsJsFunction.ts#L30">scalar/IsJsFunction.ts:30</a></li>
+									<li>Defined in <a href="https://github.com/nunof07/smalltypes/blob/c0473f2/src/main/iterable/Sum.ts#L39">iterable/Sum.ts:39</a></li>
 								</ul>
 							</aside>
 							<div class="tsd-comment tsd-typography">
 								<div class="lead">
-									<p>Get the value.</p>
+									<p>Gets the value.</p>
 								</div>
 							</div>
-							<h4 class="tsd-returns-title">Returns <span class="tsd-signature-type">boolean</span></h4>
+							<h4 class="tsd-returns-title">Returns <span class="tsd-signature-type">number</span></h4>
 						</li>
 					</ul>
 				</section>
@@ -209,17 +201,17 @@
 				<ul class="before-current">
 				</ul>
 				<ul class="current">
-					<li class="current tsd-kind-class tsd-has-type-parameter">
-						<a href="isjsfunction.html" class="tsd-kind-icon">Is<wbr>JsFunction</a>
+					<li class="current tsd-kind-class">
+						<a href="sum.html" class="tsd-kind-icon">Sum</a>
 						<ul>
 							<li class=" tsd-kind-constructor tsd-parent-kind-class">
-								<a href="isjsfunction.html#constructor" class="tsd-kind-icon">constructor</a>
+								<a href="sum.html#constructor" class="tsd-kind-icon">constructor</a>
 							</li>
 							<li class=" tsd-kind-method tsd-parent-kind-class">
-								<a href="isjsfunction.html#isscalar" class="tsd-kind-icon">is<wbr>Scalar</a>
+								<a href="sum.html#isscalar" class="tsd-kind-icon">is<wbr>Scalar</a>
 							</li>
 							<li class=" tsd-kind-method tsd-parent-kind-class">
-								<a href="isjsfunction.html#value" class="tsd-kind-icon">value</a>
+								<a href="sum.html#value" class="tsd-kind-icon">value</a>
 							</li>
 						</ul>
 					</li>

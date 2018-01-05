@@ -3,7 +3,7 @@
 <head>
 	<meta charset="utf-8">
 	<meta http-equiv="X-UA-Compatible" content="IE=edge">
-	<title>IsJsFunction | SmallTypes</title>
+	<title>Folded | SmallTypes</title>
 	<meta name="description" content="">
 	<meta name="viewport" content="width=device-width, initial-scale=1">
 	<link rel="stylesheet" href="../assets/css/main.css">
@@ -54,10 +54,10 @@
 					<a href="../index.html">Globals</a>
 				</li>
 				<li>
-					<a href="isjsfunction.html">IsJsFunction</a>
+					<a href="folded.html">Folded</a>
 				</li>
 			</ul>
-			<h1>Class IsJsFunction&lt;T&gt;</h1>
+			<h1>Class Folded&lt;T, U&gt;</h1>
 		</div>
 	</div>
 </header>
@@ -67,7 +67,7 @@
 			<section class="tsd-panel tsd-comment">
 				<div class="tsd-comment tsd-typography">
 					<div class="lead">
-						<p>Determines if variable is a standard JavaScript function.</p>
+						<p>Reduce iterable to a single value.</p>
 					</div>
 				</div>
 			</section>
@@ -77,13 +77,16 @@
 					<li>
 						<h4>T</h4>
 					</li>
+					<li>
+						<h4>U</h4>
+					</li>
 				</ul>
 			</section>
 			<section class="tsd-panel tsd-hierarchy">
 				<h3>Hierarchy</h3>
 				<ul class="tsd-hierarchy">
 					<li>
-						<span class="target">IsJsFunction</span>
+						<span class="target">Folded</span>
 					</li>
 				</ul>
 			</section>
@@ -100,14 +103,14 @@
 						<section class="tsd-index-section ">
 							<h3>Constructors</h3>
 							<ul class="tsd-index-list">
-								<li class="tsd-kind-constructor tsd-parent-kind-class"><a href="isjsfunction.html#constructor" class="tsd-kind-icon">constructor</a></li>
+								<li class="tsd-kind-constructor tsd-parent-kind-class"><a href="folded.html#constructor" class="tsd-kind-icon">constructor</a></li>
 							</ul>
 						</section>
 						<section class="tsd-index-section ">
 							<h3>Methods</h3>
 							<ul class="tsd-index-list">
-								<li class="tsd-kind-method tsd-parent-kind-class"><a href="isjsfunction.html#isscalar" class="tsd-kind-icon">is<wbr>Scalar</a></li>
-								<li class="tsd-kind-method tsd-parent-kind-class"><a href="isjsfunction.html#value" class="tsd-kind-icon">value</a></li>
+								<li class="tsd-kind-method tsd-parent-kind-class"><a href="folded.html#isscalar" class="tsd-kind-icon">is<wbr>Scalar</a></li>
+								<li class="tsd-kind-method tsd-parent-kind-class"><a href="folded.html#value" class="tsd-kind-icon">value</a></li>
 							</ul>
 						</section>
 					</div>
@@ -119,13 +122,13 @@
 					<a name="constructor" class="tsd-anchor"></a>
 					<h3>constructor</h3>
 					<ul class="tsd-signatures tsd-kind-constructor tsd-parent-kind-class">
-						<li class="tsd-signature tsd-kind-icon">new <wbr>IsJs<wbr>Function<span class="tsd-signature-symbol">(</span>val<span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">T</span><span class="tsd-signature-symbol">)</span><span class="tsd-signature-symbol">: </span><a href="isjsfunction.html" class="tsd-signature-type">IsJsFunction</a></li>
+						<li class="tsd-signature tsd-kind-icon">new <wbr>Folded<span class="tsd-signature-symbol">(</span>source<span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">Iterable</span><span class="tsd-signature-symbol">&lt;</span><span class="tsd-signature-type">T</span><span class="tsd-signature-symbol">&gt;</span>, accumulator<span class="tsd-signature-symbol">: </span><a href="../index.html#functionlike" class="tsd-signature-type">FunctionLike</a><span class="tsd-signature-symbol">&lt;</span><a href="../interfaces/accumulation.html" class="tsd-signature-type">Accumulation</a><span class="tsd-signature-symbol">&lt;</span><span class="tsd-signature-type">U</span><span class="tsd-signature-symbol">, </span><span class="tsd-signature-type">T</span><span class="tsd-signature-symbol">&gt;</span><span class="tsd-signature-symbol">, </span><a href="../index.html#scalarlike" class="tsd-signature-type">ScalarLike</a><span class="tsd-signature-symbol">&lt;</span><span class="tsd-signature-type">U</span><span class="tsd-signature-symbol">&gt;</span><span class="tsd-signature-symbol">&gt;</span>, initial<span class="tsd-signature-symbol">: </span><a href="../index.html#scalarlike" class="tsd-signature-type">ScalarLike</a><span class="tsd-signature-symbol">&lt;</span><span class="tsd-signature-type">U</span><span class="tsd-signature-symbol">&gt;</span><span class="tsd-signature-symbol">)</span><span class="tsd-signature-symbol">: </span><a href="folded.html" class="tsd-signature-type">Folded</a></li>
 					</ul>
 					<ul class="tsd-descriptions">
 						<li class="tsd-description">
 							<aside class="tsd-sources">
 								<ul>
-									<li>Defined in <a href="https://github.com/nunof07/smalltypes/blob/c0473f2/src/main/scalar/IsJsFunction.ts#L10">scalar/IsJsFunction.ts:10</a></li>
+									<li>Defined in <a href="https://github.com/nunof07/smalltypes/blob/c0473f2/src/main/iterable/Folded.ts#L29">iterable/Folded.ts:29</a></li>
 								</ul>
 							</aside>
 							<div class="tsd-comment tsd-typography">
@@ -136,15 +139,31 @@
 							<h4 class="tsd-parameters-title">Parameters</h4>
 							<ul class="tsd-parameters">
 								<li>
-									<h5>val: <span class="tsd-signature-type">T</span></h5>
+									<h5>source: <span class="tsd-signature-type">Iterable</span><span class="tsd-signature-symbol">&lt;</span><span class="tsd-signature-type">T</span><span class="tsd-signature-symbol">&gt;</span></h5>
 									<div class="tsd-comment tsd-typography">
 										<div class="lead">
-											<p>Variable to check.</p>
+											<p>Iterable.</p>
+										</div>
+									</div>
+								</li>
+								<li>
+									<h5>accumulator: <a href="../index.html#functionlike" class="tsd-signature-type">FunctionLike</a><span class="tsd-signature-symbol">&lt;</span><a href="../interfaces/accumulation.html" class="tsd-signature-type">Accumulation</a><span class="tsd-signature-symbol">&lt;</span><span class="tsd-signature-type">U</span><span class="tsd-signature-symbol">, </span><span class="tsd-signature-type">T</span><span class="tsd-signature-symbol">&gt;</span><span class="tsd-signature-symbol">, </span><a href="../index.html#scalarlike" class="tsd-signature-type">ScalarLike</a><span class="tsd-signature-symbol">&lt;</span><span class="tsd-signature-type">U</span><span class="tsd-signature-symbol">&gt;</span><span class="tsd-signature-symbol">&gt;</span></h5>
+									<div class="tsd-comment tsd-typography">
+										<div class="lead">
+											<p>Accumulation function.</p>
+										</div>
+									</div>
+								</li>
+								<li>
+									<h5>initial: <a href="../index.html#scalarlike" class="tsd-signature-type">ScalarLike</a><span class="tsd-signature-symbol">&lt;</span><span class="tsd-signature-type">U</span><span class="tsd-signature-symbol">&gt;</span></h5>
+									<div class="tsd-comment tsd-typography">
+										<div class="lead">
+											<p>Initial value.</p>
 										</div>
 									</div>
 								</li>
 							</ul>
-							<h4 class="tsd-returns-title">Returns <a href="isjsfunction.html" class="tsd-signature-type">IsJsFunction</a></h4>
+							<h4 class="tsd-returns-title">Returns <a href="folded.html" class="tsd-signature-type">Folded</a></h4>
 						</li>
 					</ul>
 				</section>
@@ -161,7 +180,7 @@
 						<li class="tsd-description">
 							<aside class="tsd-sources">
 								<ul>
-									<li>Defined in <a href="https://github.com/nunof07/smalltypes/blob/c0473f2/src/main/scalar/IsJsFunction.ts#L23">scalar/IsJsFunction.ts:23</a></li>
+									<li>Defined in <a href="https://github.com/nunof07/smalltypes/blob/c0473f2/src/main/iterable/Folded.ts#L50">iterable/Folded.ts:50</a></li>
 								</ul>
 							</aside>
 							<div class="tsd-comment tsd-typography">
@@ -177,21 +196,21 @@
 					<a name="value" class="tsd-anchor"></a>
 					<h3>value</h3>
 					<ul class="tsd-signatures tsd-kind-method tsd-parent-kind-class">
-						<li class="tsd-signature tsd-kind-icon">value<span class="tsd-signature-symbol">(</span><span class="tsd-signature-symbol">)</span><span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">boolean</span></li>
+						<li class="tsd-signature tsd-kind-icon">value<span class="tsd-signature-symbol">(</span><span class="tsd-signature-symbol">)</span><span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">U</span></li>
 					</ul>
 					<ul class="tsd-descriptions">
 						<li class="tsd-description">
 							<aside class="tsd-sources">
 								<ul>
-									<li>Defined in <a href="https://github.com/nunof07/smalltypes/blob/c0473f2/src/main/scalar/IsJsFunction.ts#L30">scalar/IsJsFunction.ts:30</a></li>
+									<li>Defined in <a href="https://github.com/nunof07/smalltypes/blob/c0473f2/src/main/iterable/Folded.ts#L57">iterable/Folded.ts:57</a></li>
 								</ul>
 							</aside>
 							<div class="tsd-comment tsd-typography">
 								<div class="lead">
-									<p>Get the value.</p>
+									<p>Gets the value.</p>
 								</div>
 							</div>
-							<h4 class="tsd-returns-title">Returns <span class="tsd-signature-type">boolean</span></h4>
+							<h4 class="tsd-returns-title">Returns <span class="tsd-signature-type">U</span></h4>
 						</li>
 					</ul>
 				</section>
@@ -210,16 +229,16 @@
 				</ul>
 				<ul class="current">
 					<li class="current tsd-kind-class tsd-has-type-parameter">
-						<a href="isjsfunction.html" class="tsd-kind-icon">Is<wbr>JsFunction</a>
+						<a href="folded.html" class="tsd-kind-icon">Folded</a>
 						<ul>
 							<li class=" tsd-kind-constructor tsd-parent-kind-class">
-								<a href="isjsfunction.html#constructor" class="tsd-kind-icon">constructor</a>
+								<a href="folded.html#constructor" class="tsd-kind-icon">constructor</a>
 							</li>
 							<li class=" tsd-kind-method tsd-parent-kind-class">
-								<a href="isjsfunction.html#isscalar" class="tsd-kind-icon">is<wbr>Scalar</a>
+								<a href="folded.html#isscalar" class="tsd-kind-icon">is<wbr>Scalar</a>
 							</li>
 							<li class=" tsd-kind-method tsd-parent-kind-class">
-								<a href="isjsfunction.html#value" class="tsd-kind-icon">value</a>
+								<a href="folded.html#value" class="tsd-kind-icon">value</a>
 							</li>
 						</ul>
 					</li>

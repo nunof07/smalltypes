@@ -1,10 +1,14 @@
 /**
  * Iterable index.
  */
+export * from './Accumulation';
+export * from './AccumulationOf';
 export * from './Conditions';
 export * from './Equals';
 export * from './Filtered';
 export * from './First';
-export * from './LengthOf';
+export * from './Folded';
+export * from './Length';
 export * from './Limited';
 export * from './Mapped';
+export * from './Sum';
