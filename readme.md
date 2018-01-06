@@ -92,4 +92,6 @@ Execute `npm run info` for information about all available tasks.
 - Build: [rollup.js](https://rollupjs.org/), [TypeScript](http://www.typescriptlang.org/), [Babel](https://babeljs.io/).
 - Tests: [Mocha](https://mochajs.org), [Chai](http://chaijs.com/), [Istanbul](https://istanbul.js.org/).
 - Lint: [TSLint](https://palantir.github.io/tslint/).
+- Release: [semantic-release](https://github.com/semantic-release/semantic-release), [Commitizen](http://commitizen.github.io/cz-cli/).
+- Dependencies: [Greenkeeper](https://greenkeeper.io/).
 - Code Integration: [Travis CI](https://travis-ci.org/), [Codecov](https://codecov.io/), [Code Climate](https://codeclimate.com/), [bitHound](https://www.bithound.io/).
