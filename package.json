@@ -43,6 +43,7 @@
   },
   "homepage": "https://github.com/nunof07/smalltypes#readme",
   "devDependencies": {
+    "@semantic-release/git": "^2.0.1",
     "@types/chai": "^4.1.0",
     "@types/core-js": "^0.9.44",
     "@types/mocha": "^2.2.46",
