@@ -5,7 +5,7 @@ import {
 } from '@main';
 
 /**
- * Function that caches results.
+ * Determines if a boolean like variable returns true.
  */
 export class IsTrue<T> implements UnaryFunction<BoolLike<T>, boolean> {
     /**
