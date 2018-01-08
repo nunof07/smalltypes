@@ -1,5 +1,5 @@
 import {
-    IsBlank,
+    IsEmpty,
     Scalar,
     ScalarLike,
     ScalarOf,
@@ -22,7 +22,7 @@ export class WithFallback<T> implements Scalar<T> {
      */
     constructor(value: ScalarLike<T>, fallback: ScalarLike<T>) {
         this.scalar = new Ternary(
-            new IsBlank(value),
+            new IsEmpty(value),
             new ScalarOf(fallback),
             new ScalarOf(value)
         );

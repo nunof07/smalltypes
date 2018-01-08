@@ -8,6 +8,7 @@ export * from './Equals';
 export * from './Filtered';
 export * from './First';
 export * from './Folded';
+export * from './IsEmptyIterable';
 export * from './Length';
 export * from './Limited';
 export * from './Mapped';
