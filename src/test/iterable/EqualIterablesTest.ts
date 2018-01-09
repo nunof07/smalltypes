@@ -43,4 +43,42 @@ export class EqualIterablesTest {
             ).value()
         ).to.equal(false, 'With different lengths equals value must be false');
     }
+
+    @test
+    public equivalentObjects(): void {
+        expect(
+            new EqualIterables(
+                [
+                    { a: 1 },
+                    { a: 1 },
+                    { a: 1 }
+                ],
+                [
+                    { a: 1 },
+                    { a: 1 },
+                    { a: 1 }
+                ]
+            ).value()
+        ).to.equal(false, 'Equivalent objects with default strict compare should return false');
+    }
+
+    @test
+    public equivalentObjectsCustomCompare(): void {
+        expect(
+            new EqualIterables(
+                [
+                    { a: 1 },
+                    { a: 1 },
+                    { a: 1 }
+                ],
+                [
+                    { a: 1 },
+                    { a: 1 },
+                    { a: 1 }
+                ],
+                (source: { readonly a: number }, compared: { readonly a: number }): boolean =>
+                    source.a === compared.a
+            ).value()
+        ).to.equal(true, 'Equivalent objects with custom compare should return true');
+    }
 }
