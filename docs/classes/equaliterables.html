@@ -3,7 +3,7 @@
 <head>
 	<meta charset="utf-8">
 	<meta http-equiv="X-UA-Compatible" content="IE=edge">
-	<title>HasLength | SmallTypes</title>
+	<title>EqualIterables | SmallTypes</title>
 	<meta name="description" content="">
 	<meta name="viewport" content="width=device-width, initial-scale=1">
 	<link rel="stylesheet" href="../assets/css/main.css">
@@ -54,10 +54,10 @@
 					<a href="../index.html">Globals</a>
 				</li>
 				<li>
-					<a href="haslength.html">HasLength</a>
+					<a href="equaliterables.html">EqualIterables</a>
 				</li>
 			</ul>
-			<h1>Class HasLength&lt;T&gt;</h1>
+			<h1>Class EqualIterables&lt;T&gt;</h1>
 		</div>
 	</div>
 </header>
@@ -67,7 +67,7 @@
 			<section class="tsd-panel tsd-comment">
 				<div class="tsd-comment tsd-typography">
 					<div class="lead">
-						<p>Determines if scalar or value has a length property.</p>
+						<p>Compare two iterables for equality.</p>
 					</div>
 				</div>
 			</section>
@@ -83,7 +83,7 @@
 				<h3>Hierarchy</h3>
 				<ul class="tsd-hierarchy">
 					<li>
-						<span class="target">HasLength</span>
+						<span class="target">EqualIterables</span>
 					</li>
 				</ul>
 			</section>
@@ -100,14 +100,14 @@
 						<section class="tsd-index-section ">
 							<h3>Constructors</h3>
 							<ul class="tsd-index-list">
-								<li class="tsd-kind-constructor tsd-parent-kind-class"><a href="haslength.html#constructor" class="tsd-kind-icon">constructor</a></li>
+								<li class="tsd-kind-constructor tsd-parent-kind-class"><a href="equaliterables.html#constructor" class="tsd-kind-icon">constructor</a></li>
 							</ul>
 						</section>
 						<section class="tsd-index-section ">
 							<h3>Methods</h3>
 							<ul class="tsd-index-list">
-								<li class="tsd-kind-method tsd-parent-kind-class"><a href="haslength.html#isscalar" class="tsd-kind-icon">is<wbr>Scalar</a></li>
-								<li class="tsd-kind-method tsd-parent-kind-class"><a href="haslength.html#value" class="tsd-kind-icon">value</a></li>
+								<li class="tsd-kind-method tsd-parent-kind-class"><a href="equaliterables.html#isscalar" class="tsd-kind-icon">is<wbr>Scalar</a></li>
+								<li class="tsd-kind-method tsd-parent-kind-class"><a href="equaliterables.html#value" class="tsd-kind-icon">value</a></li>
 							</ul>
 						</section>
 					</div>
@@ -119,13 +119,13 @@
 					<a name="constructor" class="tsd-anchor"></a>
 					<h3>constructor</h3>
 					<ul class="tsd-signatures tsd-kind-constructor tsd-parent-kind-class">
-						<li class="tsd-signature tsd-kind-icon">new <wbr>Has<wbr>Length<span class="tsd-signature-symbol">(</span>value<span class="tsd-signature-symbol">: </span><a href="../index.html#scalarlike" class="tsd-signature-type">ScalarLike</a><span class="tsd-signature-symbol">&lt;</span><span class="tsd-signature-type">T</span><span class="tsd-signature-symbol">&gt;</span>, compared<span class="tsd-signature-symbol">: </span><a href="../index.html#scalarlike" class="tsd-signature-type">ScalarLike</a><span class="tsd-signature-symbol">&lt;</span><span class="tsd-signature-type">number</span><span class="tsd-signature-symbol">&gt;</span><span class="tsd-signature-symbol">)</span><span class="tsd-signature-symbol">: </span><a href="haslength.html" class="tsd-signature-type">HasLength</a></li>
+						<li class="tsd-signature tsd-kind-icon">new <wbr>Equal<wbr>Iterables<span class="tsd-signature-symbol">(</span>source<span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">Iterable</span><span class="tsd-signature-symbol">&lt;</span><span class="tsd-signature-type">T</span><span class="tsd-signature-symbol">&gt;</span>, compared<span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">Iterable</span><span class="tsd-signature-symbol">&lt;</span><span class="tsd-signature-type">T</span><span class="tsd-signature-symbol">&gt;</span><span class="tsd-signature-symbol">)</span><span class="tsd-signature-symbol">: </span><a href="equaliterables.html" class="tsd-signature-type">EqualIterables</a></li>
 					</ul>
 					<ul class="tsd-descriptions">
 						<li class="tsd-description">
 							<aside class="tsd-sources">
 								<ul>
-									<li>Defined in <a href="https://github.com/nunof07/smalltypes/blob/5fb65eb/src/main/scalar/HasLength.ts#L14">scalar/HasLength.ts:14</a></li>
+									<li>Defined in <a href="https://github.com/nunof07/smalltypes/blob/5fb65eb/src/main/iterable/EqualIterables.ts#L15">iterable/EqualIterables.ts:15</a></li>
 								</ul>
 							</aside>
 							<div class="tsd-comment tsd-typography">
@@ -136,7 +136,7 @@
 							<h4 class="tsd-parameters-title">Parameters</h4>
 							<ul class="tsd-parameters">
 								<li>
-									<h5>value: <a href="../index.html#scalarlike" class="tsd-signature-type">ScalarLike</a><span class="tsd-signature-symbol">&lt;</span><span class="tsd-signature-type">T</span><span class="tsd-signature-symbol">&gt;</span></h5>
+									<h5>source: <span class="tsd-signature-type">Iterable</span><span class="tsd-signature-symbol">&lt;</span><span class="tsd-signature-type">T</span><span class="tsd-signature-symbol">&gt;</span></h5>
 									<div class="tsd-comment tsd-typography">
 										<div class="lead">
 											<p>Value.</p>
@@ -144,15 +144,15 @@
 									</div>
 								</li>
 								<li>
-									<h5>compared: <a href="../index.html#scalarlike" class="tsd-signature-type">ScalarLike</a><span class="tsd-signature-symbol">&lt;</span><span class="tsd-signature-type">number</span><span class="tsd-signature-symbol">&gt;</span></h5>
+									<h5>compared: <span class="tsd-signature-type">Iterable</span><span class="tsd-signature-symbol">&lt;</span><span class="tsd-signature-type">T</span><span class="tsd-signature-symbol">&gt;</span></h5>
 									<div class="tsd-comment tsd-typography">
 										<div class="lead">
-											<p>Compared length value.</p>
+											<p>Compared.</p>
 										</div>
 									</div>
 								</li>
 							</ul>
-							<h4 class="tsd-returns-title">Returns <a href="haslength.html" class="tsd-signature-type">HasLength</a></h4>
+							<h4 class="tsd-returns-title">Returns <a href="equaliterables.html" class="tsd-signature-type">EqualIterables</a></h4>
 						</li>
 					</ul>
 				</section>
@@ -169,7 +169,7 @@
 						<li class="tsd-description">
 							<aside class="tsd-sources">
 								<ul>
-									<li>Defined in <a href="https://github.com/nunof07/smalltypes/blob/5fb65eb/src/main/scalar/HasLength.ts#L28">scalar/HasLength.ts:28</a></li>
+									<li>Defined in <a href="https://github.com/nunof07/smalltypes/blob/5fb65eb/src/main/iterable/EqualIterables.ts#L30">iterable/EqualIterables.ts:30</a></li>
 								</ul>
 							</aside>
 							<div class="tsd-comment tsd-typography">
@@ -191,12 +191,12 @@
 						<li class="tsd-description">
 							<aside class="tsd-sources">
 								<ul>
-									<li>Defined in <a href="https://github.com/nunof07/smalltypes/blob/5fb65eb/src/main/scalar/HasLength.ts#L35">scalar/HasLength.ts:35</a></li>
+									<li>Defined in <a href="https://github.com/nunof07/smalltypes/blob/5fb65eb/src/main/iterable/EqualIterables.ts#L37">iterable/EqualIterables.ts:37</a></li>
 								</ul>
 							</aside>
 							<div class="tsd-comment tsd-typography">
 								<div class="lead">
-									<p>Get the value.</p>
+									<p>Gets the value.</p>
 								</div>
 							</div>
 							<h4 class="tsd-returns-title">Returns <span class="tsd-signature-type">boolean</span></h4>
@@ -218,16 +218,16 @@
 				</ul>
 				<ul class="current">
 					<li class="current tsd-kind-class tsd-has-type-parameter">
-						<a href="haslength.html" class="tsd-kind-icon">Has<wbr>Length</a>
+						<a href="equaliterables.html" class="tsd-kind-icon">Equal<wbr>Iterables</a>
 						<ul>
 							<li class=" tsd-kind-constructor tsd-parent-kind-class">
-								<a href="haslength.html#constructor" class="tsd-kind-icon">constructor</a>
+								<a href="equaliterables.html#constructor" class="tsd-kind-icon">constructor</a>
 							</li>
 							<li class=" tsd-kind-method tsd-parent-kind-class">
-								<a href="haslength.html#isscalar" class="tsd-kind-icon">is<wbr>Scalar</a>
+								<a href="equaliterables.html#isscalar" class="tsd-kind-icon">is<wbr>Scalar</a>
 							</li>
 							<li class=" tsd-kind-method tsd-parent-kind-class">
-								<a href="haslength.html#value" class="tsd-kind-icon">value</a>
+								<a href="equaliterables.html#value" class="tsd-kind-icon">value</a>
 							</li>
 						</ul>
 					</li>
