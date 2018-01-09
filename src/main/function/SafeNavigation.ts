@@ -1,7 +1,10 @@
 import {
     Conditionalized,
     FunctionLike,
-    IsNotBlank,
+    IsNull,
+    IsUndefined,
+    Not,
+    Or,
     UnaryFunction
 } from '@main';
 
@@ -20,7 +23,13 @@ export class SafeNavigation<X> implements UnaryFunction<X, void> {
      */
     constructor(func: FunctionLike<X, void>) {
         this.func = new Conditionalized(
-            (input: X): boolean => new IsNotBlank(input).value(),
+            (input: X): boolean =>
+                new Not(
+                    new Or(
+                        new IsNull(input),
+                        new IsUndefined(input)
+                    )
+                ).value(),
             func
         );
     }
