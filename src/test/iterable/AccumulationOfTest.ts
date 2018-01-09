@@ -1,7 +1,7 @@
 import {
     Accumulation,
     AccumulationOf,
-    Equals,
+    EqualIterables,
     False,
     True
 } from '@main';
@@ -18,7 +18,7 @@ export class AccumulationOfTest {
         const accumulation: Accumulation<string, string> = new AccumulationOf('hello', 'world');
 
         expect(
-            new Equals(
+            new EqualIterables(
                 [accumulation.memo(), accumulation.current()],
                 ['hello', 'world']
             ).value()
@@ -30,7 +30,7 @@ export class AccumulationOfTest {
         const accumulation: Accumulation<boolean, boolean> = new AccumulationOf(new True(), new False());
 
         expect(
-            new Equals(
+            new EqualIterables(
                 [accumulation.memo(), accumulation.current()],
                 [true, false]
             ).value()
@@ -42,7 +42,7 @@ export class AccumulationOfTest {
         const accumulation: Accumulation<string, string> = new AccumulationOf((): string => 'hello', (): string => 'world');
 
         expect(
-            new Equals(
+            new EqualIterables(
                 [accumulation.memo(), accumulation.current()],
                 ['hello', 'world']
             ).value()

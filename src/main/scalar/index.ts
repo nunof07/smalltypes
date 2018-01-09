@@ -8,6 +8,7 @@ export * from './Cached';
 export * from './ConditionConsequentLikePair';
 export * from './ConditionConsequentPair';
 export * from './Conditioned';
+export * from './Equals';
 export * from './False';
 export * from './HasLength';
 export * from './HasNumberProperty';

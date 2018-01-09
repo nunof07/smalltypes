@@ -1,5 +1,5 @@
 import {
-    Equals,
+    EqualIterables,
     Limited
 } from '@main';
 import { expect } from 'chai';
@@ -13,7 +13,7 @@ export class LimitedTest {
     @test
     public limits(): void {
         expect(
-            new Equals(
+            new EqualIterables(
                 new Limited(
                     [1, 2, 3, 4, 5],
                     3
@@ -26,7 +26,7 @@ export class LimitedTest {
     @test
     public emptyIterableTest(): void {
         expect(
-            new Equals(
+            new EqualIterables(
                 new Limited(
                     [],
                     3
@@ -39,7 +39,7 @@ export class LimitedTest {
     @test
     public negativeLimitTest(): void {
         expect(
-            new Equals(
+            new EqualIterables(
                 new Limited(
                     [1, 2, 3],
                     -1

@@ -1,23 +1,23 @@
-import { Equals } from '@main';
+import { EqualIterables } from '@main';
 import { expect } from 'chai';
 import { suite, test } from 'mocha-typescript';
 
 /**
- * {@link Equals} test.
+ * {@link EqualIterables} test.
  */
 @suite
-export class EqualsTest {
+export class EqualIterablesTest {
     @test
     public isScalar(): void {
         expect(
-            new Equals([], []).isScalar()
+            new EqualIterables([], []).isScalar()
         ).to.equal(true, 'Must be a scalar');
     }
 
     @test
     public trueTest(): void {
         expect(
-            new Equals(
+            new EqualIterables(
                 [1, 2, 3],
                 [1, 2, 3]
             ).value()
@@ -27,7 +27,7 @@ export class EqualsTest {
     @test
     public falseTest(): void {
         expect(
-            new Equals(
+            new EqualIterables(
                 [1, 2, 3],
                 [1, 2, 4]
             ).value()
@@ -37,7 +37,7 @@ export class EqualsTest {
     @test
     public differentLengthsTest(): void {
         expect(
-            new Equals(
+            new EqualIterables(
                 [1, 2, 3],
                 [1, 2, 3, 4]
             ).value()

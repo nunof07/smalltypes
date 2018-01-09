@@ -1,6 +1,6 @@
 import {
     Cached,
-    Equals,
+    EqualIterables,
     Filtered,
     Limited,
     Mapped,
@@ -51,7 +51,7 @@ export class ReadmeTest {
     @test
     public equals(): void {
         expect(
-            new Equals(// compare iterables for equality
+            new EqualIterables(// compare iterables for equality
                 ['Hello', 'World', '!'],
                 new Mapped(// map each item in an iterable to a different value
                     new Limited(// limit an iterable to a certain amount of items

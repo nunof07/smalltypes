@@ -3,7 +3,7 @@ import { Scalar } from '@main';
 /**
  * Compare two iterables for equality.
  */
-export class Equals<T> implements Scalar<boolean> {
+export class EqualIterables<T> implements Scalar<boolean> {
     /**
      * Source value.
      */

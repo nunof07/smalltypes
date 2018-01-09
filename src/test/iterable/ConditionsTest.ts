@@ -1,6 +1,6 @@
 import {
     Conditions,
-    Equals,
+    EqualIterables,
     False,
     True
 } from '@main';
@@ -15,7 +15,7 @@ export class ConditionsTest {
     @test
     public fromPrimitives(): void {
         expect(
-            new Equals(
+            new EqualIterables(
                 new Conditions([true, false, true]),
                 [true, false, true]
             ).value()
@@ -25,7 +25,7 @@ export class ConditionsTest {
     @test
     public fromScalars(): void {
         expect(
-            new Equals(
+            new EqualIterables(
                 new Conditions([new True(), new False(), new True()]),
                 [true, false, true]
             ).value()
@@ -35,7 +35,7 @@ export class ConditionsTest {
     @test
     public fromFunctions(): void {
         expect(
-            new Equals(
+            new EqualIterables(
                 new Conditions([(): boolean => true, (): boolean => false, (): boolean => true]),
                 [true, false, true]
             ).value()
