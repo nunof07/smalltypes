@@ -1,5 +1,5 @@
 import {
-    Equals,
+    EqualIterables,
     FunctionOf,
     Mapped
 } from '@main';
@@ -14,7 +14,7 @@ export class MappedTest {
     @test
     public maps(): void {
         expect(
-            new Equals(
+            new EqualIterables(
                 new Mapped(
                     [1, 2, 3],
                     new FunctionOf((input: number): number => {

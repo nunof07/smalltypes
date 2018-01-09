@@ -71,7 +71,7 @@ new Cached(// make sure value is only computed once
 Filtering, limiting, and mapping collection. Comparing two collections for equality.
 
 ```typescript
-new Equals(// compare iterables for equality
+new EqualIterables(// compare iterables for equality
     ['Hello', 'World', '!'],
     new Mapped(// map each item in an iterable to a different value
         new Limited(// limit an iterable to a certain amount of items

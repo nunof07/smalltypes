@@ -1,5 +1,5 @@
 import {
-    Equals,
+    EqualIterables,
     Filtered,
     FunctionOf
 } from '@main';
@@ -14,7 +14,7 @@ export class FilteredTest {
     @test
     public filters(): void {
         expect(
-            new Equals(
+            new EqualIterables(
                 new Filtered(
                     [1, 2, 3, 4, 5],
                     new FunctionOf((input: number): boolean => {
