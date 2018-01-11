@@ -22,15 +22,21 @@ export class ToValue<T> implements UnaryFunction<ScalarLike<T>, T> {
      * @param input Input.
      */
     public apply(input: ScalarLike<T>): T {
-        return (
-            typeof input === 'function'
-                ? this.fromScalarOrUnit(input())
-            : new IsScalar(input).value()
-                ? this.fromScalar(input)
-            : new IsFunction(input).value()
-                ? this.fromFunction(input)
-            : this.fromUnit(input)
-        );
+        let result: T;
+
+        if (typeof input === 'function') {
+            result = this.fromScalarOrUnit(
+                input()
+            );
+        } else if (new IsScalar(input).value()) {
+            result = this.fromScalar(input);
+        } else if (new IsFunction(input).value()) {
+            result = this.fromFunction(input);
+        } else {
+            result = this.fromUnit(input);
+        }
+
+        return result;
     }
 
     /**

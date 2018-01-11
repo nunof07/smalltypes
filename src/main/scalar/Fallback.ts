@@ -2,14 +2,13 @@ import {
     IsEmpty,
     Scalar,
     ScalarLike,
-    ScalarOf,
     Ternary
 } from '@main';
 
 /**
- * Cached scalar.
+ * Value with a fallback.
  */
-export class WithFallback<T> implements Scalar<T> {
+export class Fallback<T> implements Scalar<T> {
     /**
      * Source.
      */
@@ -23,8 +22,8 @@ export class WithFallback<T> implements Scalar<T> {
     constructor(value: ScalarLike<T>, fallback: ScalarLike<T>) {
         this.scalar = new Ternary(
             new IsEmpty(value),
-            new ScalarOf(fallback),
-            new ScalarOf(value)
+            fallback,
+            value
         );
     }
 

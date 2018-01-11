@@ -1,5 +1,5 @@
 import {
-    Conditionalized,
+    Gated,
     Scalar,
     ScalarOf
 } from '@main';
@@ -7,21 +7,21 @@ import { expect } from 'chai';
 import { suite, test } from 'mocha-typescript';
 
 /**
- * {@link Conditionalized} test.
+ * {@link Gated} test.
  */
 @suite
-export class ConditionalizedTest {
-    private readonly conditionalized: Conditionalized<boolean>;
-    private readonly conditionalizedScalar: Conditionalized<boolean>;
+export class GatedTest {
+    private readonly gated: Gated<boolean>;
+    private readonly gatedScalar: Gated<boolean>;
 
     constructor() {
-        this.conditionalized = new Conditionalized(
+        this.gated = new Gated(
             (input: boolean): boolean => input,
             (input: boolean): void => {
                 throw new Error(input.toString());
             }
         );
-        this.conditionalizedScalar = new Conditionalized(
+        this.gatedScalar = new Gated(
             (input: boolean): Scalar<boolean> => new ScalarOf(input),
             (input: boolean): void => {
                 throw new Error(input.toString());
@@ -32,7 +32,7 @@ export class ConditionalizedTest {
     @test
     public isFunction(): void {
         expect(
-            this.conditionalized.isFunction()
+            this.gated.isFunction()
         ).to.equal(true, 'Must be a function');
     }
 
@@ -40,7 +40,7 @@ export class ConditionalizedTest {
     public conditionTrue(): void {
         expect(
             () => {
-                this.conditionalized.apply(true);
+                this.gated.apply(true);
             }
         ).to.throw(true.toString());
     }
@@ -49,7 +49,7 @@ export class ConditionalizedTest {
     public conditionFalse(): void {
         expect(
             () => {
-                this.conditionalized.apply(false);
+                this.gated.apply(false);
             }
         ).to.not.throw();
     }
@@ -58,7 +58,7 @@ export class ConditionalizedTest {
     public scalarConditionTrue(): void {
         expect(
             () => {
-                this.conditionalizedScalar.apply(true);
+                this.gatedScalar.apply(true);
             }
         ).to.throw(true.toString());
     }
@@ -67,7 +67,7 @@ export class ConditionalizedTest {
     public scalarConditionFalse(): void {
         expect(
             () => {
-                this.conditionalizedScalar.apply(false);
+                this.gatedScalar.apply(false);
             }
         ).to.not.throw();
     }

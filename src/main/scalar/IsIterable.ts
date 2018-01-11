@@ -21,10 +21,10 @@ export class IsIterable<T> implements Scalar<boolean> {
         this.isIterable = new ScalarOf((): boolean => {
             const converted: T = new ScalarOf(value).value();
 
-            return converted !== null &&
-                converted !== undefined &&
+            return converted !== null
+                && converted !== undefined
                 // tslint:disable-next-line:no-any
-                typeof (<any>converted)[Symbol.iterator] === 'function';
+                && typeof (<any>converted)[Symbol.iterator] === 'function';
         });
     }
 

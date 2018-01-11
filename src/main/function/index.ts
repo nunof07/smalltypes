@@ -1,13 +1,12 @@
 /**
  * Function index
  */
-export * from './Conditionalized';
 export * from './FunctionLike';
 export * from './FunctionOf';
+export * from './Gated';
 export * from './HasTrueProperty';
 export * from './HasTrueResult';
 export * from './IsFunction';
-export * from './IsTrue';
 export * from './Memoized';
 export * from './NullaryFunction';
 export * from './NullaryFunctionOf';

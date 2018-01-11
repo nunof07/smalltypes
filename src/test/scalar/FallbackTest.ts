@@ -1,76 +1,76 @@
 import {
+    Fallback,
     Null,
-    ScalarOf,
-    WithFallback
+    ScalarOf
 } from '@main';
 import { expect } from 'chai';
 import { suite, test } from 'mocha-typescript';
 
 /**
- * {@link WithFallback} test.
+ * {@link Fallback} test.
  */
 @suite
-export class WithFallbackTest {
+export class FallbackTest {
     @test
     public isScalar(): void {
         expect(
-            new WithFallback(true, true).isScalar()
+            new Fallback(true, true).isScalar()
         ).to.equal(true, 'Must be a scalar');
     }
 
     @test
     public whenBlank(): void {
         expect(
-            new WithFallback(new Null(), new ScalarOf(2)).value()
+            new Fallback(new Null(), new ScalarOf(2)).value()
         ).to.equal(2);
     }
 
     @test
     public whenNotBlank(): void {
         expect(
-            new WithFallback(new ScalarOf(1), new ScalarOf(2)).value()
+            new Fallback(new ScalarOf(1), new ScalarOf(2)).value()
         ).to.equal(1);
     }
 
     @test
     public whenBlankValue(): void {
         expect(
-            new WithFallback(new ScalarOf(null), new ScalarOf(2)).value()
+            new Fallback(new ScalarOf(null), new ScalarOf(2)).value()
         ).to.equal(2);
     }
 
     @test
     public whenNotBlankValue(): void {
         expect(
-            new WithFallback(1, new ScalarOf(2)).value()
+            new Fallback(1, new ScalarOf(2)).value()
         ).to.equal(1);
     }
 
     @test
     public whenBlankValueWithValueFallback(): void {
         expect(
-            new WithFallback(null, 2).value()
+            new Fallback(null, 2).value()
         ).to.equal(2);
     }
 
     @test
     public whenNotBlankValueWithValueFallback(): void {
         expect(
-            new WithFallback(1, 2).value()
+            new Fallback(1, 2).value()
         ).to.equal(1);
     }
 
     @test
     public whenBlankFunctionResult(): void {
         expect(
-            new WithFallback((): null => null, (): number => 2).value()
+            new Fallback((): null => null, (): number => 2).value()
         ).to.equal(2);
     }
 
     @test
     public whenNotBlankFunctionResult(): void {
         expect(
-            new WithFallback((): number => 1, (): number => 2).value()
+            new Fallback((): number => 1, (): number => 2).value()
         ).to.equal(1);
     }
 }
