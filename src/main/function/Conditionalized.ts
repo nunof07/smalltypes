@@ -1,6 +1,8 @@
 import {
     FunctionLike,
     FunctionOf,
+    ScalarLike,
+    ToValue,
     UnaryFunction
 } from '@main';
 
@@ -11,7 +13,12 @@ export class Conditionalized<X> implements UnaryFunction<X, void> {
     /**
      * Condition.
      */
-    private readonly condition: UnaryFunction<X, boolean>;
+    private readonly condition: UnaryFunction<X, ScalarLike<boolean>>;
+
+    /**
+     * Convert to ScalarLike to value.
+     */
+    private readonly toBool: UnaryFunction<ScalarLike<boolean>, boolean>;
 
     /**
      * Function.
@@ -23,9 +30,14 @@ export class Conditionalized<X> implements UnaryFunction<X, void> {
      * @param condition Condition.
      * @param func Function.
      */
-    constructor(condition: FunctionLike<X, boolean>, func: FunctionLike<X, void>) {
+    constructor(
+        condition: FunctionLike<X, ScalarLike<boolean>>,
+        func: FunctionLike<X, void>,
+        toBool: UnaryFunction<ScalarLike<boolean>, boolean> = new ToValue()
+    ) {
         this.condition = new FunctionOf(condition);
         this.func = new FunctionOf(func);
+        this.toBool = toBool;
     }
 
     /**
@@ -40,7 +52,7 @@ export class Conditionalized<X> implements UnaryFunction<X, void> {
      * @param input Input.
      */
     public apply(input: X): void {
-        if (this.condition.apply(input)) {
+        if (this.toBool.apply(this.condition.apply(input))) {
             this.func.apply(input);
         }
     }

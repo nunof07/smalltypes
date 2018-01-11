@@ -103,6 +103,20 @@ export class IsEmptyTest {
     }
 
     @test
+    public emptyScalarIterableTest(): void {
+        expect(
+            new IsEmpty(new ScalarOf(new Limited([], 10))).value()
+        ).to.equal(true, 'Empty scalar iterable should be true');
+    }
+
+    @test
+    public nonEmptyScalarIterableTest(): void {
+        expect(
+            new IsEmpty(new ScalarOf(new Limited([1, 2, 3], 10))).value()
+        ).to.equal(false, 'Non-empty scalar iterable should be false');
+    }
+
+    @test
     public falseTest(): void {
         expect(
             new IsEmpty(false).value()

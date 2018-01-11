@@ -1,4 +1,7 @@
-import { IsEmptyIterable } from '@main';
+import {
+    IsEmptyIterable,
+    ScalarOf
+} from '@main';
 import { expect } from 'chai';
 import { suite, test } from 'mocha-typescript';
 
@@ -26,5 +29,19 @@ export class IsEmptyIterableTest {
         expect(
             new IsEmptyIterable([1, 2]).value()
         ).to.equal(false, 'Non-empty iterable should return false');
+    }
+
+    @test
+    public emptyScalarTest(): void {
+        expect(
+            new IsEmptyIterable(new ScalarOf([])).value()
+        ).to.equal(true, 'Empty scalar iterable should return true');
+    }
+
+    @test
+    public nonEmptyScalarTest(): void {
+        expect(
+            new IsEmptyIterable(new ScalarOf([1, 2])).value()
+        ).to.equal(false, 'Non-empty scalar iterable should return false');
     }
 }

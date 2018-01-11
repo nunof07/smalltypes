@@ -1,4 +1,7 @@
-import { Length } from '@main';
+import {
+    Length,
+    ScalarOf
+} from '@main';
 import { expect } from 'chai';
 import { suite, test } from 'mocha-typescript';
 
@@ -26,5 +29,12 @@ export class LengthTest {
         expect(
             new Length([]).value()
         ).to.equal(0);
+    }
+
+    @test
+    public scalarTest(): void {
+        expect(
+            new Length(new ScalarOf([1, 2, 3])).value()
+        ).to.equal(3);
     }
 }

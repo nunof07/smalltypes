@@ -1,5 +1,6 @@
 import {
     And,
+    Casted,
     HasLength,
     HasSize,
     IsBool,
@@ -11,8 +12,7 @@ import {
     IsUndefined,
     Or,
     Scalar,
-    ScalarLike,
-    ScalarOf
+    ScalarLike
 } from '@main';
 
 /**
@@ -49,11 +49,11 @@ export class IsEmpty<T> implements Scalar<boolean> {
             new IsEmptyObject(value),
             new And(
                 new IsIterable(value),
-                (): boolean =>
-                    new IsEmptyIterable(
-                        // tslint:disable-next-line:no-any
-                        <Iterable<any>><any>new ScalarOf(value).value()
-                    ).value()
+                // tslint:disable-next-line:no-any
+                new IsEmptyIterable<any>(
+                    // tslint:disable-next-line:no-any
+                    new Casted<Iterable<any>>(value)
+                )
             )
         );
     }

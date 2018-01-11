@@ -1,6 +1,7 @@
 import {
     Length,
-    Scalar
+    Scalar,
+    ScalarLike
 } from '@main';
 
 /**
@@ -16,7 +17,7 @@ export class IsEmptyIterable<T> implements Scalar<boolean> {
      * Ctor.
      * @param value Value.
      */
-    constructor(value: Iterable<T>) {
+    constructor(value: ScalarLike<Iterable<T>>) {
         this.length = new Length(value);
     }
 

@@ -50,6 +50,11 @@ export class HasNumberProperty<T> implements Scalar<boolean> {
         // tslint:disable-next-line:no-any
         const converted: any = <any>this.scalar.value();
 
-        return typeof converted[name] === 'number' && converted[name] === this.compared.value();
+        return converted !== null
+            && typeof converted === 'object'
+            // tslint:disable-next-line:no-unsafe-any
+            && typeof converted[name] === 'number'
+            // tslint:disable-next-line:no-unsafe-any
+            && converted[name] === this.compared.value();
     }
 }
