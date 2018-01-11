@@ -3,11 +3,11 @@ import {
     ConditionConsequentPair,
     Filtered,
     First,
-    IsTrue,
     Mapped,
     Scalar,
     ScalarLike,
     ScalarOf,
+    ToBool,
     ToConditionConsequentPair
 } from '@main';
 
@@ -36,7 +36,7 @@ export class Conditioned<T> implements Scalar<T> {
             new First(
                 new Filtered(
                     new Mapped(conditionConsequents, new ToConditionConsequentPair<T>()),
-                    new IsTrue()
+                    new ToBool()
                 )
             );
         this.alternative = new ScalarOf(alternative);

@@ -7,9 +7,9 @@ import {
 } from '@main';
 
 /**
- * Function that executes conditionally.
+ * Function that executes conditionally based on the result of another function.
  */
-export class Conditionalized<X> implements UnaryFunction<X, void> {
+export class Gated<X> implements UnaryFunction<X, void> {
     /**
      * Condition.
      */

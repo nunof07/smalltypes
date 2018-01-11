@@ -1,6 +1,6 @@
 import {
-    Conditionalized,
     FunctionLike,
+    Gated,
     IsNull,
     IsUndefined,
     Not,
@@ -23,7 +23,7 @@ export class SafeNavigation<X> implements UnaryFunction<X, void> {
      * @param func Function.
      */
     constructor(func: FunctionLike<X, void>) {
-        this.func = new Conditionalized(
+        this.func = new Gated(
             (input: X): Scalar<boolean> =>
                 new Not(
                     new Or(

@@ -1,7 +1,4 @@
-import {
-    FunctionOf,
-    SafeNavigation
-} from '@main';
+import { SafeNavigation } from '@main';
 import { expect } from 'chai';
 import { suite, test } from 'mocha-typescript';
 
@@ -14,9 +11,9 @@ export class SafeNavigationTest {
 
     constructor() {
         this.func = new SafeNavigation(
-            new FunctionOf((input: { readonly message: string }): void => {
+            (input: { readonly message: string }): void => {
                 throw new Error(input.message);
-            })
+            }
         );
     }
 

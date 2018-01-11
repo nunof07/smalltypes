@@ -35,6 +35,9 @@ export class IsEmptyObject<T> implements Scalar<boolean> {
     public value(): boolean {
         const converted: T = this.scalar.value();
 
-        return converted !== null && converted !== undefined && (Object.keys(converted).length === 0 && converted.constructor === Object);
+        return converted !== null
+            && converted !== undefined
+            && Object.keys(converted).length === 0
+            && converted.constructor === Object;
     }
 }
