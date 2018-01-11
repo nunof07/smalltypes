@@ -3,7 +3,7 @@
 <head>
 	<meta charset="utf-8">
 	<meta http-equiv="X-UA-Compatible" content="IE=edge">
-	<title>RandomizedFloat | SmallTypes</title>
+	<title>Casted | SmallTypes</title>
 	<meta name="description" content="">
 	<meta name="viewport" content="width=device-width, initial-scale=1">
 	<link rel="stylesheet" href="../assets/css/main.css">
@@ -54,10 +54,10 @@
 					<a href="../index.html">Globals</a>
 				</li>
 				<li>
-					<a href="randomizedfloat.html">RandomizedFloat</a>
+					<a href="casted.html">Casted</a>
 				</li>
 			</ul>
-			<h1>Class RandomizedFloat</h1>
+			<h1>Class Casted&lt;T&gt;</h1>
 		</div>
 	</div>
 </header>
@@ -67,15 +67,23 @@
 			<section class="tsd-panel tsd-comment">
 				<div class="tsd-comment tsd-typography">
 					<div class="lead">
-						<p>Randomized floating point number.</p>
+						<p>Cast to another type.</p>
 					</div>
 				</div>
+			</section>
+			<section class="tsd-panel tsd-type-parameters">
+				<h3>Type parameters</h3>
+				<ul class="tsd-type-parameters">
+					<li>
+						<h4>T</h4>
+					</li>
+				</ul>
 			</section>
 			<section class="tsd-panel tsd-hierarchy">
 				<h3>Hierarchy</h3>
 				<ul class="tsd-hierarchy">
 					<li>
-						<span class="target">RandomizedFloat</span>
+						<span class="target">Casted</span>
 					</li>
 				</ul>
 			</section>
@@ -92,14 +100,14 @@
 						<section class="tsd-index-section ">
 							<h3>Constructors</h3>
 							<ul class="tsd-index-list">
-								<li class="tsd-kind-constructor tsd-parent-kind-class"><a href="randomizedfloat.html#constructor" class="tsd-kind-icon">constructor</a></li>
+								<li class="tsd-kind-constructor tsd-parent-kind-class"><a href="casted.html#constructor" class="tsd-kind-icon">constructor</a></li>
 							</ul>
 						</section>
 						<section class="tsd-index-section ">
 							<h3>Methods</h3>
 							<ul class="tsd-index-list">
-								<li class="tsd-kind-method tsd-parent-kind-class"><a href="randomizedfloat.html#isscalar" class="tsd-kind-icon">is<wbr>Scalar</a></li>
-								<li class="tsd-kind-method tsd-parent-kind-class"><a href="randomizedfloat.html#value" class="tsd-kind-icon">value</a></li>
+								<li class="tsd-kind-method tsd-parent-kind-class"><a href="casted.html#isscalar" class="tsd-kind-icon">is<wbr>Scalar</a></li>
+								<li class="tsd-kind-method tsd-parent-kind-class"><a href="casted.html#value" class="tsd-kind-icon">value</a></li>
 							</ul>
 						</section>
 					</div>
@@ -111,13 +119,13 @@
 					<a name="constructor" class="tsd-anchor"></a>
 					<h3>constructor</h3>
 					<ul class="tsd-signatures tsd-kind-constructor tsd-parent-kind-class">
-						<li class="tsd-signature tsd-kind-icon">new <wbr>Randomized<wbr>Float<span class="tsd-signature-symbol">(</span>random<span class="tsd-signature-symbol">: </span><a href="../interfaces/random.html" class="tsd-signature-type">Random</a>, min<span class="tsd-signature-symbol">: </span><a href="../index.html#scalarlike" class="tsd-signature-type">ScalarLike</a><span class="tsd-signature-symbol">&lt;</span><span class="tsd-signature-type">number</span><span class="tsd-signature-symbol">&gt;</span>, max<span class="tsd-signature-symbol">: </span><a href="../index.html#scalarlike" class="tsd-signature-type">ScalarLike</a><span class="tsd-signature-symbol">&lt;</span><span class="tsd-signature-type">number</span><span class="tsd-signature-symbol">&gt;</span><span class="tsd-signature-symbol">)</span><span class="tsd-signature-symbol">: </span><a href="randomizedfloat.html" class="tsd-signature-type">RandomizedFloat</a></li>
+						<li class="tsd-signature tsd-kind-icon">new <wbr>Casted<span class="tsd-signature-symbol">(</span>source<span class="tsd-signature-symbol">: </span><a href="../index.html#scalarlike" class="tsd-signature-type">ScalarLike</a><span class="tsd-signature-symbol">&lt;</span><span class="tsd-signature-type">any</span><span class="tsd-signature-symbol">&gt;</span><span class="tsd-signature-symbol">)</span><span class="tsd-signature-symbol">: </span><a href="casted.html" class="tsd-signature-type">Casted</a></li>
 					</ul>
 					<ul class="tsd-descriptions">
 						<li class="tsd-description">
 							<aside class="tsd-sources">
 								<ul>
-									<li>Defined in <a href="https://github.com/nunof07/smalltypes/blob/5cc8d6e/src/main/random/RandomizedFloat.ts#L25">random/RandomizedFloat.ts:25</a></li>
+									<li>Defined in <a href="https://github.com/nunof07/smalltypes/blob/5cc8d6e/src/main/scalar/Casted.ts#L15">scalar/Casted.ts:15</a></li>
 								</ul>
 							</aside>
 							<div class="tsd-comment tsd-typography">
@@ -128,31 +136,15 @@
 							<h4 class="tsd-parameters-title">Parameters</h4>
 							<ul class="tsd-parameters">
 								<li>
-									<h5>random: <a href="../interfaces/random.html" class="tsd-signature-type">Random</a></h5>
+									<h5>source: <a href="../index.html#scalarlike" class="tsd-signature-type">ScalarLike</a><span class="tsd-signature-symbol">&lt;</span><span class="tsd-signature-type">any</span><span class="tsd-signature-symbol">&gt;</span></h5>
 									<div class="tsd-comment tsd-typography">
 										<div class="lead">
-											<p>Random.</p>
-										</div>
-									</div>
-								</li>
-								<li>
-									<h5>min: <a href="../index.html#scalarlike" class="tsd-signature-type">ScalarLike</a><span class="tsd-signature-symbol">&lt;</span><span class="tsd-signature-type">number</span><span class="tsd-signature-symbol">&gt;</span></h5>
-									<div class="tsd-comment tsd-typography">
-										<div class="lead">
-											<p>Minimum possible value (inclusive).</p>
-										</div>
-									</div>
-								</li>
-								<li>
-									<h5>max: <a href="../index.html#scalarlike" class="tsd-signature-type">ScalarLike</a><span class="tsd-signature-symbol">&lt;</span><span class="tsd-signature-type">number</span><span class="tsd-signature-symbol">&gt;</span></h5>
-									<div class="tsd-comment tsd-typography">
-										<div class="lead">
-											<p>Maximum possible value (inclusive).</p>
+											<p>Source value.</p>
 										</div>
 									</div>
 								</li>
 							</ul>
-							<h4 class="tsd-returns-title">Returns <a href="randomizedfloat.html" class="tsd-signature-type">RandomizedFloat</a></h4>
+							<h4 class="tsd-returns-title">Returns <a href="casted.html" class="tsd-signature-type">Casted</a></h4>
 						</li>
 					</ul>
 				</section>
@@ -169,7 +161,7 @@
 						<li class="tsd-description">
 							<aside class="tsd-sources">
 								<ul>
-									<li>Defined in <a href="https://github.com/nunof07/smalltypes/blob/5cc8d6e/src/main/random/RandomizedFloat.ts#L42">random/RandomizedFloat.ts:42</a></li>
+									<li>Defined in <a href="https://github.com/nunof07/smalltypes/blob/5cc8d6e/src/main/scalar/Casted.ts#L29">scalar/Casted.ts:29</a></li>
 								</ul>
 							</aside>
 							<div class="tsd-comment tsd-typography">
@@ -185,13 +177,13 @@
 					<a name="value" class="tsd-anchor"></a>
 					<h3>value</h3>
 					<ul class="tsd-signatures tsd-kind-method tsd-parent-kind-class">
-						<li class="tsd-signature tsd-kind-icon">value<span class="tsd-signature-symbol">(</span><span class="tsd-signature-symbol">)</span><span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">number</span></li>
+						<li class="tsd-signature tsd-kind-icon">value<span class="tsd-signature-symbol">(</span><span class="tsd-signature-symbol">)</span><span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">T</span></li>
 					</ul>
 					<ul class="tsd-descriptions">
 						<li class="tsd-description">
 							<aside class="tsd-sources">
 								<ul>
-									<li>Defined in <a href="https://github.com/nunof07/smalltypes/blob/5cc8d6e/src/main/random/RandomizedFloat.ts#L49">random/RandomizedFloat.ts:49</a></li>
+									<li>Defined in <a href="https://github.com/nunof07/smalltypes/blob/5cc8d6e/src/main/scalar/Casted.ts#L36">scalar/Casted.ts:36</a></li>
 								</ul>
 							</aside>
 							<div class="tsd-comment tsd-typography">
@@ -199,7 +191,7 @@
 									<p>Get the value.</p>
 								</div>
 							</div>
-							<h4 class="tsd-returns-title">Returns <span class="tsd-signature-type">number</span></h4>
+							<h4 class="tsd-returns-title">Returns <span class="tsd-signature-type">T</span></h4>
 						</li>
 					</ul>
 				</section>
@@ -217,17 +209,17 @@
 				<ul class="before-current">
 				</ul>
 				<ul class="current">
-					<li class="current tsd-kind-class">
-						<a href="randomizedfloat.html" class="tsd-kind-icon">Randomized<wbr>Float</a>
+					<li class="current tsd-kind-class tsd-has-type-parameter">
+						<a href="casted.html" class="tsd-kind-icon">Casted</a>
 						<ul>
 							<li class=" tsd-kind-constructor tsd-parent-kind-class">
-								<a href="randomizedfloat.html#constructor" class="tsd-kind-icon">constructor</a>
+								<a href="casted.html#constructor" class="tsd-kind-icon">constructor</a>
 							</li>
 							<li class=" tsd-kind-method tsd-parent-kind-class">
-								<a href="randomizedfloat.html#isscalar" class="tsd-kind-icon">is<wbr>Scalar</a>
+								<a href="casted.html#isscalar" class="tsd-kind-icon">is<wbr>Scalar</a>
 							</li>
 							<li class=" tsd-kind-method tsd-parent-kind-class">
-								<a href="randomizedfloat.html#value" class="tsd-kind-icon">value</a>
+								<a href="casted.html#value" class="tsd-kind-icon">value</a>
 							</li>
 						</ul>
 					</li>

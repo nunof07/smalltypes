@@ -119,13 +119,13 @@
 					<a name="constructor" class="tsd-anchor"></a>
 					<h3>constructor</h3>
 					<ul class="tsd-signatures tsd-kind-constructor tsd-parent-kind-class">
-						<li class="tsd-signature tsd-kind-icon">new <wbr>Conditionalized<span class="tsd-signature-symbol">(</span>condition<span class="tsd-signature-symbol">: </span><a href="../index.html#functionlike" class="tsd-signature-type">FunctionLike</a><span class="tsd-signature-symbol">&lt;</span><span class="tsd-signature-type">X</span><span class="tsd-signature-symbol">, </span><span class="tsd-signature-type">boolean</span><span class="tsd-signature-symbol">&gt;</span>, func<span class="tsd-signature-symbol">: </span><a href="../index.html#functionlike" class="tsd-signature-type">FunctionLike</a><span class="tsd-signature-symbol">&lt;</span><span class="tsd-signature-type">X</span><span class="tsd-signature-symbol">, </span><span class="tsd-signature-type">void</span><span class="tsd-signature-symbol">&gt;</span><span class="tsd-signature-symbol">)</span><span class="tsd-signature-symbol">: </span><a href="conditionalized.html" class="tsd-signature-type">Conditionalized</a></li>
+						<li class="tsd-signature tsd-kind-icon">new <wbr>Conditionalized<span class="tsd-signature-symbol">(</span>condition<span class="tsd-signature-symbol">: </span><a href="../index.html#functionlike" class="tsd-signature-type">FunctionLike</a><span class="tsd-signature-symbol">&lt;</span><span class="tsd-signature-type">X</span><span class="tsd-signature-symbol">, </span><a href="../index.html#scalarlike" class="tsd-signature-type">ScalarLike</a><span class="tsd-signature-symbol">&lt;</span><span class="tsd-signature-type">boolean</span><span class="tsd-signature-symbol">&gt;</span><span class="tsd-signature-symbol">&gt;</span>, func<span class="tsd-signature-symbol">: </span><a href="../index.html#functionlike" class="tsd-signature-type">FunctionLike</a><span class="tsd-signature-symbol">&lt;</span><span class="tsd-signature-type">X</span><span class="tsd-signature-symbol">, </span><span class="tsd-signature-type">void</span><span class="tsd-signature-symbol">&gt;</span>, toBool<span class="tsd-signature-symbol">?: </span><a href="../interfaces/unaryfunction.html" class="tsd-signature-type">UnaryFunction</a><span class="tsd-signature-symbol">&lt;</span><a href="../index.html#scalarlike" class="tsd-signature-type">ScalarLike</a><span class="tsd-signature-symbol">&lt;</span><span class="tsd-signature-type">boolean</span><span class="tsd-signature-symbol">&gt;</span><span class="tsd-signature-symbol">, </span><span class="tsd-signature-type">boolean</span><span class="tsd-signature-symbol">&gt;</span><span class="tsd-signature-symbol">)</span><span class="tsd-signature-symbol">: </span><a href="conditionalized.html" class="tsd-signature-type">Conditionalized</a></li>
 					</ul>
 					<ul class="tsd-descriptions">
 						<li class="tsd-description">
 							<aside class="tsd-sources">
 								<ul>
-									<li>Defined in <a href="https://github.com/nunof07/smalltypes/blob/272999c/src/main/function/Conditionalized.ts#L19">function/Conditionalized.ts:19</a></li>
+									<li>Defined in <a href="https://github.com/nunof07/smalltypes/blob/5cc8d6e/src/main/function/Conditionalized.ts#L26">function/Conditionalized.ts:26</a></li>
 								</ul>
 							</aside>
 							<div class="tsd-comment tsd-typography">
@@ -136,7 +136,7 @@
 							<h4 class="tsd-parameters-title">Parameters</h4>
 							<ul class="tsd-parameters">
 								<li>
-									<h5>condition: <a href="../index.html#functionlike" class="tsd-signature-type">FunctionLike</a><span class="tsd-signature-symbol">&lt;</span><span class="tsd-signature-type">X</span><span class="tsd-signature-symbol">, </span><span class="tsd-signature-type">boolean</span><span class="tsd-signature-symbol">&gt;</span></h5>
+									<h5>condition: <a href="../index.html#functionlike" class="tsd-signature-type">FunctionLike</a><span class="tsd-signature-symbol">&lt;</span><span class="tsd-signature-type">X</span><span class="tsd-signature-symbol">, </span><a href="../index.html#scalarlike" class="tsd-signature-type">ScalarLike</a><span class="tsd-signature-symbol">&lt;</span><span class="tsd-signature-type">boolean</span><span class="tsd-signature-symbol">&gt;</span><span class="tsd-signature-symbol">&gt;</span></h5>
 									<div class="tsd-comment tsd-typography">
 										<div class="lead">
 											<p>Condition.</p>
@@ -150,6 +150,9 @@
 											<p>Function.</p>
 										</div>
 									</div>
+								</li>
+								<li>
+									<h5><span class="tsd-flag ts-flagDefault value">Default value</span> toBool: <a href="../interfaces/unaryfunction.html" class="tsd-signature-type">UnaryFunction</a><span class="tsd-signature-symbol">&lt;</span><a href="../index.html#scalarlike" class="tsd-signature-type">ScalarLike</a><span class="tsd-signature-symbol">&lt;</span><span class="tsd-signature-type">boolean</span><span class="tsd-signature-symbol">&gt;</span><span class="tsd-signature-symbol">, </span><span class="tsd-signature-type">boolean</span><span class="tsd-signature-symbol">&gt;</span><span class="tsd-signature-symbol"> =&nbsp;new ToValue()</span></h5>
 								</li>
 							</ul>
 							<h4 class="tsd-returns-title">Returns <a href="conditionalized.html" class="tsd-signature-type">Conditionalized</a></h4>
@@ -169,7 +172,7 @@
 						<li class="tsd-description">
 							<aside class="tsd-sources">
 								<ul>
-									<li>Defined in <a href="https://github.com/nunof07/smalltypes/blob/272999c/src/main/function/Conditionalized.ts#L42">function/Conditionalized.ts:42</a></li>
+									<li>Defined in <a href="https://github.com/nunof07/smalltypes/blob/5cc8d6e/src/main/function/Conditionalized.ts#L54">function/Conditionalized.ts:54</a></li>
 								</ul>
 							</aside>
 							<div class="tsd-comment tsd-typography">
@@ -200,7 +203,7 @@
 						<li class="tsd-description">
 							<aside class="tsd-sources">
 								<ul>
-									<li>Defined in <a href="https://github.com/nunof07/smalltypes/blob/272999c/src/main/function/Conditionalized.ts#L34">function/Conditionalized.ts:34</a></li>
+									<li>Defined in <a href="https://github.com/nunof07/smalltypes/blob/5cc8d6e/src/main/function/Conditionalized.ts#L46">function/Conditionalized.ts:46</a></li>
 								</ul>
 							</aside>
 							<div class="tsd-comment tsd-typography">
