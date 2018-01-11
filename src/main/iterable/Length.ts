@@ -1,4 +1,8 @@
-import { Scalar } from '@main';
+import {
+    Scalar,
+    ScalarLike,
+    ScalarOf
+} from '@main';
 
 /**
  * Length of iterable.
@@ -7,14 +11,14 @@ export class Length<T> implements Scalar<number> {
     /**
      * Source value.
      */
-    private readonly source: Iterable<T>;
+    private readonly source: Scalar<Iterable<T>>;
 
     /**
      * Ctor.
      * @param value Value.
      */
-    constructor(value: Iterable<T>) {
-        this.source = value;
+    constructor(value: ScalarLike<Iterable<T>>) {
+        this.source = new ScalarOf(value);
     }
 
     /**
@@ -29,9 +33,10 @@ export class Length<T> implements Scalar<number> {
      */
     public value(): number {
         let length: number = 0;
+        const iterable: Iterable<T> = this.source.value();
 
         // tslint:disable-next-line:variable-name
-        for (const _item of this.source) {
+        for (const _item of iterable) {
             length += 1;
         }
 

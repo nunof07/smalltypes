@@ -5,6 +5,7 @@ import {
     IsUndefined,
     Not,
     Or,
+    Scalar,
     UnaryFunction
 } from '@main';
 
@@ -23,13 +24,13 @@ export class SafeNavigation<X> implements UnaryFunction<X, void> {
      */
     constructor(func: FunctionLike<X, void>) {
         this.func = new Conditionalized(
-            (input: X): boolean =>
+            (input: X): Scalar<boolean> =>
                 new Not(
                     new Or(
                         new IsNull(input),
                         new IsUndefined(input)
                     )
-                ).value(),
+                ),
             func
         );
     }

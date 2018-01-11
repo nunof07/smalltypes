@@ -1,6 +1,7 @@
 import {
     Conditionalized,
-    FunctionOf
+    Scalar,
+    ScalarOf
 } from '@main';
 import { expect } from 'chai';
 import { suite, test } from 'mocha-typescript';
@@ -11,15 +12,20 @@ import { suite, test } from 'mocha-typescript';
 @suite
 export class ConditionalizedTest {
     private readonly conditionalized: Conditionalized<boolean>;
+    private readonly conditionalizedScalar: Conditionalized<boolean>;
 
     constructor() {
         this.conditionalized = new Conditionalized(
-            new FunctionOf((input: boolean): boolean => {
-                return input;
-            }),
-            new FunctionOf((input: boolean): void => {
+            (input: boolean): boolean => input,
+            (input: boolean): void => {
                 throw new Error(input.toString());
-            })
+            }
+        );
+        this.conditionalizedScalar = new Conditionalized(
+            (input: boolean): Scalar<boolean> => new ScalarOf(input),
+            (input: boolean): void => {
+                throw new Error(input.toString());
+            }
         );
     }
 
@@ -44,6 +50,24 @@ export class ConditionalizedTest {
         expect(
             () => {
                 this.conditionalized.apply(false);
+            }
+        ).to.not.throw();
+    }
+
+    @test
+    public scalarConditionTrue(): void {
+        expect(
+            () => {
+                this.conditionalizedScalar.apply(true);
+            }
+        ).to.throw(true.toString());
+    }
+
+    @test
+    public scalarConditionFalse(): void {
+        expect(
+            () => {
+                this.conditionalizedScalar.apply(false);
             }
         ).to.not.throw();
     }

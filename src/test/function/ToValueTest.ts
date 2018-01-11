@@ -1,5 +1,6 @@
 import {
     NullaryFunctionOf,
+    Scalar,
     ScalarOf,
     ToValue
 } from '@main';
@@ -82,6 +83,13 @@ export class ToValueTest {
     }
 
     @test
+    public fromScalarStringJsFunction(): void {
+        expect(
+            new ToValue().apply((): Scalar<string> => new ScalarOf('hello'))
+        ).to.equal('hello');
+    }
+
+    @test
     public fromNumberJsFunction(): void {
         expect(
             new ToValue().apply((): number => 1337)
@@ -108,6 +116,13 @@ export class ToValueTest {
     public fromStringFunction(): void {
         expect(
             new ToValue().apply(new NullaryFunctionOf((): string => 'hello'))
+        ).to.equal('hello');
+    }
+
+    @test
+    public fromScalarStringFunction(): void {
+        expect(
+            new ToValue().apply(new NullaryFunctionOf((): Scalar<string> => new ScalarOf('hello')))
         ).to.equal('hello');
     }
 }
