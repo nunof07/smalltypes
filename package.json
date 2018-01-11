@@ -1,6 +1,6 @@
 {
   "name": "smalltypes",
-  "version": "0.11.0",
+  "version": "0.12.0",
   "description": "Object-oriented utility framework written in TypeScript.",
   "main": "dist/smalltypes.min.js",
   "types": "dist/smalltypes.d.ts",

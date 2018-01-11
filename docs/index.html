@@ -73,16 +73,17 @@
 								<li class="tsd-kind-class tsd-has-type-parameter"><a href="classes/boolof.html" class="tsd-kind-icon">Bool<wbr>Of</a></li>
 								<li class="tsd-kind-class tsd-has-type-parameter"><a href="classes/cached.html" class="tsd-kind-icon">Cached</a></li>
 								<li class="tsd-kind-class tsd-has-type-parameter"><a href="classes/casted.html" class="tsd-kind-icon">Casted</a></li>
-								<li class="tsd-kind-class tsd-has-type-parameter"><a href="classes/conditionalized.html" class="tsd-kind-icon">Conditionalized</a></li>
 								<li class="tsd-kind-class tsd-has-type-parameter"><a href="classes/conditioned.html" class="tsd-kind-icon">Conditioned</a></li>
 								<li class="tsd-kind-class"><a href="classes/conditions.html" class="tsd-kind-icon">Conditions</a></li>
 								<li class="tsd-kind-class tsd-has-type-parameter"><a href="classes/equaliterables.html" class="tsd-kind-icon">Equal<wbr>Iterables</a></li>
 								<li class="tsd-kind-class tsd-has-type-parameter"><a href="classes/equals.html" class="tsd-kind-icon">Equals</a></li>
+								<li class="tsd-kind-class tsd-has-type-parameter"><a href="classes/fallback.html" class="tsd-kind-icon">Fallback</a></li>
 								<li class="tsd-kind-class"><a href="classes/false.html" class="tsd-kind-icon">False</a></li>
 								<li class="tsd-kind-class tsd-has-type-parameter"><a href="classes/filtered.html" class="tsd-kind-icon">Filtered</a></li>
 								<li class="tsd-kind-class tsd-has-type-parameter"><a href="classes/first.html" class="tsd-kind-icon">First</a></li>
 								<li class="tsd-kind-class tsd-has-type-parameter"><a href="classes/folded.html" class="tsd-kind-icon">Folded</a></li>
 								<li class="tsd-kind-class tsd-has-type-parameter"><a href="classes/functionof.html" class="tsd-kind-icon">Function<wbr>Of</a></li>
+								<li class="tsd-kind-class tsd-has-type-parameter"><a href="classes/gated.html" class="tsd-kind-icon">Gated</a></li>
 								<li class="tsd-kind-class tsd-has-type-parameter"><a href="classes/haslength.html" class="tsd-kind-icon">Has<wbr>Length</a></li>
 								<li class="tsd-kind-class tsd-has-type-parameter"><a href="classes/hasnumberproperty.html" class="tsd-kind-icon">Has<wbr>Number<wbr>Property</a></li>
 								<li class="tsd-kind-class tsd-has-type-parameter"><a href="classes/hassize.html" class="tsd-kind-icon">Has<wbr>Size</a></li>
@@ -101,7 +102,6 @@
 								<li class="tsd-kind-class tsd-has-type-parameter"><a href="classes/isnumber.html" class="tsd-kind-icon">Is<wbr>Number</a></li>
 								<li class="tsd-kind-class tsd-has-type-parameter"><a href="classes/isobject.html" class="tsd-kind-icon">Is<wbr>Object</a></li>
 								<li class="tsd-kind-class tsd-has-type-parameter"><a href="classes/isscalar.html" class="tsd-kind-icon">Is<wbr>Scalar</a></li>
-								<li class="tsd-kind-class tsd-has-type-parameter"><a href="classes/istrue.html" class="tsd-kind-icon">Is<wbr>True</a></li>
 								<li class="tsd-kind-class tsd-has-type-parameter"><a href="classes/isundefined.html" class="tsd-kind-icon">Is<wbr>Undefined</a></li>
 								<li class="tsd-kind-class tsd-has-type-parameter"><a href="classes/length.html" class="tsd-kind-icon">Length</a></li>
 								<li class="tsd-kind-class tsd-has-type-parameter"><a href="classes/limited.html" class="tsd-kind-icon">Limited</a></li>
@@ -128,7 +128,6 @@
 								<li class="tsd-kind-class tsd-has-type-parameter"><a href="classes/tovalue.html" class="tsd-kind-icon">To<wbr>Value</a></li>
 								<li class="tsd-kind-class"><a href="classes/true.html" class="tsd-kind-icon">True</a></li>
 								<li class="tsd-kind-class"><a href="classes/undefined.html" class="tsd-kind-icon">Undefined</a></li>
-								<li class="tsd-kind-class tsd-has-type-parameter"><a href="classes/withfallback.html" class="tsd-kind-icon">With<wbr>Fallback</a></li>
 							</ul>
 						</section>
 						<section class="tsd-index-section ">
@@ -162,7 +161,7 @@
 					<div class="tsd-signature tsd-kind-icon">Bool<wbr>Like<span class="tsd-signature-symbol">:</span> <a href="index.html#scalarlike" class="tsd-signature-type">ScalarLike</a><span class="tsd-signature-symbol">&lt;</span><span class="tsd-signature-type">boolean</span><span class="tsd-signature-symbol">&gt;</span><span class="tsd-signature-symbol"> | </span><a href="index.html#conditionconsequentlikepair" class="tsd-signature-type">ConditionConsequentLikePair</a><span class="tsd-signature-symbol">&lt;</span><span class="tsd-signature-type">T</span><span class="tsd-signature-symbol">&gt;</span></div>
 					<aside class="tsd-sources">
 						<ul>
-							<li>Defined in <a href="https://github.com/nunof07/smalltypes/blob/5cc8d6e/src/main/scalar/BoolLike.ts#L9">scalar/BoolLike.ts:9</a></li>
+							<li>Defined in <a href="https://github.com/nunof07/smalltypes/blob/75bf4bc/src/main/scalar/BoolLike.ts#L9">scalar/BoolLike.ts:9</a></li>
 						</ul>
 					</aside>
 					<div class="tsd-comment tsd-typography">
@@ -177,7 +176,7 @@
 					<div class="tsd-signature tsd-kind-icon">Condition<wbr>Consequent<wbr>Like<wbr>Pair<span class="tsd-signature-symbol">:</span> <span class="tsd-signature-symbol">[</span><a href="index.html#scalarlike" class="tsd-signature-type">ScalarLike</a><span class="tsd-signature-symbol">&lt;</span><span class="tsd-signature-type">boolean</span><span class="tsd-signature-symbol">&gt;</span><span class="tsd-signature-symbol">, </span><a href="index.html#scalarlike" class="tsd-signature-type">ScalarLike</a><span class="tsd-signature-symbol">&lt;</span><span class="tsd-signature-type">T</span><span class="tsd-signature-symbol">&gt;</span><span class="tsd-signature-symbol">]</span></div>
 					<aside class="tsd-sources">
 						<ul>
-							<li>Defined in <a href="https://github.com/nunof07/smalltypes/blob/5cc8d6e/src/main/scalar/ConditionConsequentLikePair.ts#L6">scalar/ConditionConsequentLikePair.ts:6</a></li>
+							<li>Defined in <a href="https://github.com/nunof07/smalltypes/blob/75bf4bc/src/main/scalar/ConditionConsequentLikePair.ts#L6">scalar/ConditionConsequentLikePair.ts:6</a></li>
 						</ul>
 					</aside>
 					<div class="tsd-comment tsd-typography">
@@ -192,7 +191,7 @@
 					<div class="tsd-signature tsd-kind-icon">Condition<wbr>Consequent<wbr>Pair<span class="tsd-signature-symbol">:</span> <span class="tsd-signature-symbol">[</span><a href="interfaces/scalar.html" class="tsd-signature-type">Scalar</a><span class="tsd-signature-symbol">&lt;</span><span class="tsd-signature-type">boolean</span><span class="tsd-signature-symbol">&gt;</span><span class="tsd-signature-symbol">, </span><a href="interfaces/scalar.html" class="tsd-signature-type">Scalar</a><span class="tsd-signature-symbol">&lt;</span><span class="tsd-signature-type">T</span><span class="tsd-signature-symbol">&gt;</span><span class="tsd-signature-symbol">]</span></div>
 					<aside class="tsd-sources">
 						<ul>
-							<li>Defined in <a href="https://github.com/nunof07/smalltypes/blob/5cc8d6e/src/main/scalar/ConditionConsequentPair.ts#L6">scalar/ConditionConsequentPair.ts:6</a></li>
+							<li>Defined in <a href="https://github.com/nunof07/smalltypes/blob/75bf4bc/src/main/scalar/ConditionConsequentPair.ts#L6">scalar/ConditionConsequentPair.ts:6</a></li>
 						</ul>
 					</aside>
 					<div class="tsd-comment tsd-typography">
@@ -207,7 +206,7 @@
 					<div class="tsd-signature tsd-kind-icon">Function<wbr>Like<span class="tsd-signature-symbol">:</span> <a href="interfaces/unaryfunction.html" class="tsd-signature-type">UnaryFunction</a><span class="tsd-signature-symbol">&lt;</span><span class="tsd-signature-type">X</span><span class="tsd-signature-symbol">, </span><span class="tsd-signature-type">Y</span><span class="tsd-signature-symbol">&gt;</span><span class="tsd-signature-symbol"> | </span><span class="tsd-signature-type">function</span></div>
 					<aside class="tsd-sources">
 						<ul>
-							<li>Defined in <a href="https://github.com/nunof07/smalltypes/blob/5cc8d6e/src/main/function/FunctionLike.ts#L6">function/FunctionLike.ts:6</a></li>
+							<li>Defined in <a href="https://github.com/nunof07/smalltypes/blob/75bf4bc/src/main/function/FunctionLike.ts#L6">function/FunctionLike.ts:6</a></li>
 						</ul>
 					</aside>
 					<div class="tsd-comment tsd-typography">
@@ -222,7 +221,7 @@
 					<div class="tsd-signature tsd-kind-icon">Scalar<wbr>Like<span class="tsd-signature-symbol">:</span> <a href="interfaces/scalar.html" class="tsd-signature-type">Scalar</a><span class="tsd-signature-symbol">&lt;</span><span class="tsd-signature-type">T</span><span class="tsd-signature-symbol">&gt;</span><span class="tsd-signature-symbol"> | </span><a href="interfaces/nullaryfunction.html" class="tsd-signature-type">NullaryFunction</a><span class="tsd-signature-symbol">&lt;</span><span class="tsd-signature-type">T</span><span class="tsd-signature-symbol">&gt;</span><span class="tsd-signature-symbol"> | </span><a href="interfaces/nullaryfunction.html" class="tsd-signature-type">NullaryFunction</a><span class="tsd-signature-symbol">&lt;</span><a href="interfaces/scalar.html" class="tsd-signature-type">Scalar</a><span class="tsd-signature-symbol">&lt;</span><span class="tsd-signature-type">T</span><span class="tsd-signature-symbol">&gt;</span><span class="tsd-signature-symbol">&gt;</span><span class="tsd-signature-symbol"> | </span><a href="interfaces/unaryfunction.html" class="tsd-signature-type">UnaryFunction</a><span class="tsd-signature-symbol">&lt;</span><span class="tsd-signature-type">undefined</span><span class="tsd-signature-symbol">, </span><span class="tsd-signature-type">T</span><span class="tsd-signature-symbol">&gt;</span><span class="tsd-signature-symbol"> | </span><a href="interfaces/unaryfunction.html" class="tsd-signature-type">UnaryFunction</a><span class="tsd-signature-symbol">&lt;</span><span class="tsd-signature-type">undefined</span><span class="tsd-signature-symbol">, </span><a href="interfaces/scalar.html" class="tsd-signature-type">Scalar</a><span class="tsd-signature-symbol">&lt;</span><span class="tsd-signature-type">T</span><span class="tsd-signature-symbol">&gt;</span><span class="tsd-signature-symbol">&gt;</span><span class="tsd-signature-symbol"> | </span><span class="tsd-signature-type">function</span><span class="tsd-signature-symbol"> | </span><span class="tsd-signature-type">function</span><span class="tsd-signature-symbol"> | </span><span class="tsd-signature-type">T</span></div>
 					<aside class="tsd-sources">
 						<ul>
-							<li>Defined in <a href="https://github.com/nunof07/smalltypes/blob/5cc8d6e/src/main/scalar/ScalarLike.ts#L10">scalar/ScalarLike.ts:10</a></li>
+							<li>Defined in <a href="https://github.com/nunof07/smalltypes/blob/75bf4bc/src/main/scalar/ScalarLike.ts#L10">scalar/ScalarLike.ts:10</a></li>
 						</ul>
 					</aside>
 					<div class="tsd-comment tsd-typography">
@@ -259,9 +258,6 @@
 						<a href="classes/casted.html" class="tsd-kind-icon">Casted</a>
 					</li>
 					<li class=" tsd-kind-class tsd-has-type-parameter">
-						<a href="classes/conditionalized.html" class="tsd-kind-icon">Conditionalized</a>
-					</li>
-					<li class=" tsd-kind-class tsd-has-type-parameter">
 						<a href="classes/conditioned.html" class="tsd-kind-icon">Conditioned</a>
 					</li>
 					<li class=" tsd-kind-class">
@@ -272,6 +268,9 @@
 					</li>
 					<li class=" tsd-kind-class tsd-has-type-parameter">
 						<a href="classes/equals.html" class="tsd-kind-icon">Equals</a>
+					</li>
+					<li class=" tsd-kind-class tsd-has-type-parameter">
+						<a href="classes/fallback.html" class="tsd-kind-icon">Fallback</a>
 					</li>
 					<li class=" tsd-kind-class">
 						<a href="classes/false.html" class="tsd-kind-icon">False</a>
@@ -287,6 +286,9 @@
 					</li>
 					<li class=" tsd-kind-class tsd-has-type-parameter">
 						<a href="classes/functionof.html" class="tsd-kind-icon">Function<wbr>Of</a>
+					</li>
+					<li class=" tsd-kind-class tsd-has-type-parameter">
+						<a href="classes/gated.html" class="tsd-kind-icon">Gated</a>
 					</li>
 					<li class=" tsd-kind-class tsd-has-type-parameter">
 						<a href="classes/haslength.html" class="tsd-kind-icon">Has<wbr>Length</a>
@@ -341,9 +343,6 @@
 					</li>
 					<li class=" tsd-kind-class tsd-has-type-parameter">
 						<a href="classes/isscalar.html" class="tsd-kind-icon">Is<wbr>Scalar</a>
-					</li>
-					<li class=" tsd-kind-class tsd-has-type-parameter">
-						<a href="classes/istrue.html" class="tsd-kind-icon">Is<wbr>True</a>
 					</li>
 					<li class=" tsd-kind-class tsd-has-type-parameter">
 						<a href="classes/isundefined.html" class="tsd-kind-icon">Is<wbr>Undefined</a>
@@ -422,9 +421,6 @@
 					</li>
 					<li class=" tsd-kind-class">
 						<a href="classes/undefined.html" class="tsd-kind-icon">Undefined</a>
-					</li>
-					<li class=" tsd-kind-class tsd-has-type-parameter">
-						<a href="classes/withfallback.html" class="tsd-kind-icon">With<wbr>Fallback</a>
 					</li>
 					<li class=" tsd-kind-interface tsd-has-type-parameter">
 						<a href="interfaces/accumulation.html" class="tsd-kind-icon">Accumulation</a>
