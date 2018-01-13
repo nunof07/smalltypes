@@ -89,7 +89,7 @@
     "semantic-release": "^11.2.0",
     "source-map-support": "^0.5.0",
     "ts-node": "^4.0.1",
-    "tsconfig-paths": "^2.7.3",
+    "tsconfig-paths": "^3.0.0",
     "tslint": "^5.7.0",
     "tslint-eslint-rules": "^4.1.1",
     "tslint-immutable": "^4.5.0",
