@@ -1,5 +1,13 @@
 # SmallTypes
 
+**DEPRECATED**: This package is no longer maintained.
+
+The goal of this package was to create a pure object-oriented generic utility library (no static methods, no code in constructors, no class inheritance, etc.).
+
+While achievable, the limitations of the JavaScript/TypeScript language make this goal very cumbersome to reach and I feel the performance penalties and extra verbosity from this approach in this context is not justified in the end.
+
+---
+
 [![Build Status](https://travis-ci.org/nunof07/smalltypes.svg?branch=master)](https://travis-ci.org/nunof07/smalltypes)
 [![semantic-release](https://img.shields.io/badge/%20%20%F0%9F%93%A6%F0%9F%9A%80-semantic--release-e10079.svg)](https://github.com/semantic-release/semantic-release)
 [![Commitizen friendly](https://img.shields.io/badge/commitizen-friendly-brightgreen.svg)](http://commitizen.github.io/cz-cli/)
@@ -20,8 +28,6 @@
 [![NPM](https://nodei.co/npm/smalltypes.png?downloads=true&downloadRank=true&stars=true)](https://nodei.co/npm/smalltypes/)
 
 Object-oriented utility framework written in [TypeScript](https://www.typescriptlang.org/). Heavily inspired by [Cactoos](https://github.com/yegor256/cactoos).
-
-**Warning**: very early version. Not usable for production.
 
 ## Getting started
 
