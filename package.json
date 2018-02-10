@@ -84,7 +84,7 @@
     "rollup-plugin-commonjs": "^8.2.6",
     "rollup-plugin-license": "^0.5.0",
     "rollup-plugin-node-resolve": "^3.0.0",
-    "rollup-plugin-typescript2": "^0.10.0",
+    "rollup-plugin-typescript2": "^0.11.1",
     "rollup-plugin-uglify": "^2.0.1",
     "semantic-release": "^12.2.2",
     "source-map-support": "^0.5.0",
